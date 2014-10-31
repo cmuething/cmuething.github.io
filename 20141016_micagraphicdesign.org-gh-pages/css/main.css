@@ -1,0 +1,157 @@
+@font-face {
+    font-family: 'BLOKKNeue-Regular';
+    src: url('BLOKKNeue-Regular.eot');
+    src: url('BLOKKNeue-Regular.eot?#iefix') format('embedded-opentype'),
+         url('BLOKKNeue-Regular.woff') format('woff'),
+         url('BLOKKNeue-Regular.svg#BLOKKNeue-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.masthead .social,
+.main,
+.sub,
+.footer {
+	display: none;
+}
+
+
+body {
+	background: black;
+}
+
+
+.container {
+	position: relative;
+	width: 95%;
+	max-width: 960px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.masthead {
+	background-color: #00FF91;
+}
+
+.masthead .brand {
+	width: 98px;
+	margin: 0 auto;
+}
+
+.masthead .utility {
+	font-family: Caxton Std;
+	
+}
+
+.masthead .utility .link {
+	padding: 15px 10px;
+	text-decoration: none;
+	color: black;
+}
+
+.masthead .utility .item {
+	border-left: 1px solid black;
+}
+
+.navigation {
+	font-family: 'BLOKKNeue-Regular', Caxton Std;
+	font-weight: bold; 
+	border-bottom: 3px solid #222; 
+}
+
+.navigation .item {
+	font-size: 24px;
+}
+
+.navigation .link {
+	padding: 10px 35px;
+	text-decoration: none;
+	line-height: 30px;
+	color: #00FF91;
+	background-color: #222;
+}
+
+.navigation .link:hover {
+	background-color: #333333;
+	font-family: Balto;
+}
+
+
+@media screen and (min-width: 500px) {
+	
+	/* Menu "Object" */
+	.menu {
+		padding-left: 0;
+		margin-left: 0;
+		font-size: 0;
+		list-style: none;
+	}
+	
+	.menu .item {
+		display: inline-block;
+		font-size: 16px; /* 1rem */
+		vertical-align: top;
+	}
+	
+	.menu .item + .item {
+		margin-left: 16px; /* space between items */
+	}
+	
+	.menu .link {
+		display: block;
+	}
+
+	.masthead .brand {
+	}
+	
+	.masthead .navigation {
+		text-align: center;	
+	}
+	
+	.navigation .item {
+		font-size: 24px;
+	}
+	
+	.navigation .item + .item {
+		margin-left: 0;
+	}
+	
+	
+	.masthead .utility {
+		text-align: center;
+	}
+
+}
+
+@media screen and (min-width: 768px) {
+	.masthead .container {
+		overflow: visible;
+	}
+	
+	.masthead .container:before,
+	.masthead .container:after {
+	    content: " "; /* 1 */
+	    display: table; /* 2 */
+	}
+
+	.masthead .container:after {
+	    clear: both;
+	}
+	
+	.masthead .brand {
+		float: left;
+	}
+	
+	.masthead .navigation {
+		position: absolute;
+		top: 100%;
+		width: 100%;
+		background: black;
+	}
+	
+	.masthead .utility {
+		float: right;
+		width: 55%;
+		text-align: right;
+	}
+}
