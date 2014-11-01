@@ -33,40 +33,67 @@ body {
 	background-color: #00FF91;
 }
 
+/* mica brand */
+
 .masthead .brand {
+	position: absolute; /* ?????Do I need position absolute to center vert. in container???? */
+	top: 5px;
 	width: 98px;
 	margin: 0 auto;
 }
 
+.masthead .brand a:hover {
+	background-color: black;
+}
+
+/* utility navigation */
+
 .masthead .utility {
-	font-family: Caxton Std;
-	
+	font-family: 'BLOKKNeue-Regular';	
 }
 
 .masthead .utility .link {
-	padding: 15px 10px;
+	padding: 10px 20px;
 	text-decoration: none;
-	color: black;
+	color: #00d062;
+}
+
+.masthead .utility .link:hover {
+	font-family: Caxton Std;
+	background-color: black;
+	color: #00FF91;
+}
+
+.masthead .utility .link:active {
+	font-family: Caxton Std;
+	background-color: black;
+	color: #00FF91;
 }
 
 .masthead .utility .item {
 	border-left: 1px solid black;
 }
 
+/* main navigation */
+
 .navigation {
 	font-family: 'BLOKKNeue-Regular', Caxton Std;
 	font-weight: bold; 
-	border-bottom: 3px solid #222; 
+}
+
+.navigation:hover {
+
 }
 
 .navigation .item {
 	font-size: 24px;
+	margin-left: 10px;
 }
 
 .navigation .link {
 	padding: 10px 35px;
 	text-decoration: none;
-	line-height: 30px;
+	line-height: 45px;
 	color: #00FF91;
 	background-color: #222;
 }
@@ -75,7 +102,6 @@ body {
 	background-color: #333333;
 	font-family: Balto;
 }
-
 
 @media screen and (min-width: 500px) {
 	
@@ -89,12 +115,12 @@ body {
 	
 	.menu .item {
 		display: inline-block;
-		font-size: 16px; /* 1rem */
+		font-size: 14px; /* 1rem */
 		vertical-align: top;
 	}
 	
 	.menu .item + .item {
-		margin-left: 16px; /* space between items */
+		margin-left: none; /* space between items */
 	}
 	
 	.menu .link {
@@ -113,7 +139,7 @@ body {
 	}
 	
 	.navigation .item + .item {
-		margin-left: 0;
+		/* margin-left: 10px; */
 	}
 	
 	
@@ -123,7 +149,7 @@ body {
 
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
 	.masthead .container {
 		overflow: visible;
 	}
@@ -151,7 +177,7 @@ body {
 	
 	.masthead .utility {
 		float: right;
-		width: 55%;
+		width: 65%;
 		text-align: right;
 	}
 }
