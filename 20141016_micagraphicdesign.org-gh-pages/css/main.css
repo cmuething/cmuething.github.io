@@ -33,6 +33,29 @@ body {
 	background-color: #00FF91;
 }
 
+/* drop down menu test */
+
+.cbp-spmenu {
+	background: #47a3da;
+	position: fixed;
+}
+
+.cbp-spmenu-horizontal {
+	width: 100%;
+	height: 150px;
+	left: 0;
+	z-index: 1000;
+	overflow: hidden;
+}
+
+.cbp-spmenu-top {
+	top: -150px;
+}
+
+.cbp-spmenu-top.cbp-spmenu-open {
+	top: 0px;
+}
+
 /* mica brand */
 
 .masthead .brand {
