@@ -1,21 +1,12 @@
-@font-face {
-    font-family: 'BLOKKNeue-Regular';
-    src: url('fonts/BLOKKNeue-Regular.eot');
-    src: url('fonts/BLOKKNeue-Regular.eot?#iefix') format('embedded-opentype'),
-         url('fonts/BLOKKNeue-Regular.woff') format('woff'),
-         url('fonts/BLOKKNeue-Regular.svg#BLOKKNeue-Regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
 .masthead .social,
 .sub,
-.footer {
+.footer
+{
 	display: none;
 }
 
 body {
-	background: #333333;
+	background: black;
 }
 
 /*
@@ -30,15 +21,19 @@ body {
 
 .container {
 	position: relative;
-	width: 95%;
+	width: 100%;
 	max-width: 960px;
 	margin: 0 auto;
-	overflow: hidden;
+	overflow: visible;
 }
 
 .masthead {
 	background-color: #00FF91;
 }
+
+
+
+
 
 /* drop down menu test */
 
@@ -65,13 +60,17 @@ body {
 }
 */
 
+
+
+
+
 /* mica brand */
 
 .masthead .brand {
 	position: absolute; /* ?????Do I need position absolute to center vert. in container???? */
-	top: 7px;
+	top: 20%;
+	vertical-align: top;
 	width: 98px;
-	margin: 0 auto;
 	background-color: black;
 }
 
@@ -81,41 +80,41 @@ body {
 	width: 98px;
 }
 
-.landing-page {
-	text-align: center;
-	color: white;
-	font-size: 89%;
-	display: block;
+
+
+/* central brand image */
+
+.billboard {
+	position: relative;
+	border: 1px solid pink;
+	margin: 0 auto;
+/* 	margin-top: 67px; */
+	max-width: 960px;
+	width: 100%;
+	min-height: 320px;
+	height: 100%;
+	overflow: hidden;
+	background: url('../img/test.svg') -305px center no-repeat;
+	background-size: 100% 165%; 
+}
+
+img.lines {
+	display: none;
 	position: absolute;
+/*     ???? How to center this image ???? */
 	width: 100%;
-	height: 500px;
-	background-color: black;
-	margin-top: 120px;
+	height: 100%;
 }
 
-.line1 {
-	width: 100%;
-        height: 47px;
-        border-bottom: 2px solid #00FF91;
-        -webkit-transform:
-            translateY(200px)
-            translateX(5px)
-            rotate(27deg); 
-        position: absolute;
-        /* top: -20px; */
+img.logos {
+	height: 10em;
+	position: absolute;
+	top: 28%;
+	left: 46%;
 }
 
-.line2 {
-	width: 100%;
-        height: 47px;
-        border-bottom: 2px solid #00FF91;
-        -webkit-transform:
-            translateY(200px)
-            translateX(5px)
-            rotate(-27deg); 
-        position: absolute;
-        /* top: -20px; */
-}
+
+
 
 /* utility navigation */
 
@@ -124,20 +123,26 @@ body {
 }
 
 .masthead .utility .link {
+	position: relative;
 	padding: 10px 0px 10px 0px;
 	text-decoration: none;
 	color: #00d062;
 	text-align: center;
+	z-index: 3;
 }
 
 .masthead .utility .link:hover {
 	font-family: Caxton Std;
+	font-size: 12px;
+	line-height: 19px;
 	background-color: black;
 	color: #00FF91;
 }
 
 .masthead .utility .link:active {
 	font-family: Caxton Std;
+	font-size: 12px;
+	line-height: 19px;
 	background-color: black;
 	color: #00FF91;
 }
@@ -145,7 +150,10 @@ body {
 .masthead .utility .item {
 	border-left: 1px solid black;
 	width: 100px;
+	position: relative;
 }
+
+
 
 
 
@@ -154,17 +162,13 @@ body {
 
 .navigation {
 	font-family: 'BLOKKNeue-Regular', Caxton Std;
+	text-transform: capitalize;
 	font-weight: bold; 
 	text-align: center;
 }
 
-.navigation:hover {
-	
-}
-
 .navigation .item {
 	font-size: 24px;
-	margin-left: 1px;
 	width: 190px;
 }
 
@@ -174,15 +178,16 @@ body {
 	line-height: 45px;
 	color: #00FF91;
 	background-color: #222;
+	border-left: solid 1px black;
 }
 
 .navigation .link:hover {
-	background-color: black;
+	background-color: #1d1d1d;
 	font-family: Balto;
+	box-shadow: inset 5px 0px 15px #161616, inset -5px 0px 15px #161616;
 }
 
 .navigation .link:active {
-	background-color: red;
 	font-family: Balto;
 }
 
@@ -190,51 +195,55 @@ body {
 	background-color: red;
 }
 
+
+
+
+
+
 /* main content */
 
 .main .heading {
+	font-family: 'BLOKKNeue-Regular';
 	list-style: none;
-	text-decoration: none;
-	
+	text-decoration: none;	
+}
+		
 .main .link {
-		text-decoration: none;
-		color: white;
-
-	}
-	
-.main .permalink {
-		text-decoration: none;
-		color: white;
-	}
-	
-.main .date {
-		color: white;
-	}
-	
-.main .copy {
-		color: #797979;
-		line-height: 22px;
-		max-height: 66px;
-		text-overflow: ellipsis;
-		overflow: hidden;
-	}
-	
-.main .copy p {
-		margin: 0;
-		max-height: 66px;
-		text-overflow: ellipsis;
-	}
-	
-.main .attach  {
-		height: 349px;
-		width: 658px;
-		background-color: black;
-		margin-top: 15px;
-	}
-.menus.paging{
-
+	text-decoration: none;
+	color: white;
 }
 	
+.main .permalink {
+	text-decoration: none;
+	color: white;
+}
+	
+
+.main .date {
+	color: white;
+}
+
+	
+.main .copy {
+		list-style: none;
+		width: 10em;
+		font-size: 12px;
+		color: #797979;
+}
+
+.main .copy p {
+		width: 10em;
+		text-overflow: ellipsis; /* must be on child element */
+		overflow: hidden;
+		white-space: nowrap;
+}
+	
+h1.page.heading {
+	
+}
+
+h1.page.heading:hover {
+	font-family: Caxton Std;
 }
 
 @media screen and (max-width: 500px) {
@@ -309,6 +318,14 @@ body {
     }
 }
 */
+
+	.main .attach  {
+		height: 349px;
+		width: 638px;
+		background-color: black;
+		margin-top: 15px;
+		overflow: hidden;
+	}
   
 	.menu {
 		padding-left: 0;
@@ -319,12 +336,13 @@ body {
 	
 	.menu .item {
 		display: inline-block;
+		width: 100%;
 		font-size: 14px; /* 1rem */
 		vertical-align: top;
 	}
 	
 	.menu .item + .item {
-		margin-left: none; /* space between items */
+		margin-left: 0; /* space between items */
 	}
 	
 	.menu .link {
@@ -377,20 +395,21 @@ body {
 		position: absolute;
 		top: 100%;
 		width: 100%;
-		background: black;
+		background: #212121;
 	}
 	
 	.masthead .utility {
 		float: right;
 		width: 65%;
 		text-align: right;
+		max-width: 960px;
+		margin: 0 auto;	
 	}
-	
 	
 /* main event listings */	
 	
 	.main {
-		margin-top: 600px;
+		float: left;
 		margin-left: 20px;
 	}
 	
@@ -403,8 +422,9 @@ body {
 		
 	}
 	
-	.main .item-event {
+	.main .item {
 		display: inline-block;
+		width: 75%;
 		
 	}
 	
@@ -431,6 +451,8 @@ body {
 		margin: 0 auto;
 	}
 	
+	
+	
 }
 
 /*
@@ -454,9 +476,9 @@ Added to test dropdown menu
 .cbp-spmenu {
 	position: absolute;
 	top: 0;
-	left: 0;
+	right: 0;
 	z-index: 2;
-	width: 100%;
+	width: 400px;
 	height: 0;
 	padding: 39px 15px 15px;
 	max-height: 0;
@@ -468,6 +490,8 @@ Added to test dropdown menu
 	transform: translateY(-100px);
 }
 
+/* ABOUT */
+ 
 .js-about-active #cbp-spmenu-s3 {
 	padding: 39px 15px 15px;
 	height: auto;
@@ -478,5 +502,80 @@ Added to test dropdown menu
 }
 
 .js-about-active .masthead .utility .link[href*="#About"] {
+	background-color: black;
+}
+
+/* CONTACT */
+
+.js-contact-active #cbp-spmenu-s4 {
+	padding: 39px 15px 15px;
+	height: auto;
+	max-height: 1000px;
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.js-contact-active .masthead .utility .link[href*="#Contact"] {
+	background-color: black;
+}
+
+/* SUBSCRIBE */
+
+.js-subscribe-active #cbp-spmenu-s5 {
+	padding: 39px 15px 15px;
+	height: auto;
+	max-height: 1000px;
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.js-subscribe-active .masthead .utility .link[href*="#Subscribe"] {
+	background-color: black;
+}
+
+/* ARCHIVES */
+
+.js-archives-active #cbp-spmenu-s6 {
+	padding: 39px 15px 15px;
+	height: auto;
+	max-height: 1000px;
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.js-archives-active .masthead .utility .link[href*="#Archives"] {
+	background-color: black;
+}
+
+/* LOGIN */
+
+.js-login-active #cbp-spmenu-s7 {
+	padding: 39px 15px 15px;
+	height: auto;
+	max-height: 1000px;
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.js-login-active .masthead .utility .link[href*="#Login"] {
+	background-color: black;
+}
+
+/* SEARCH */
+
+.js-search-active #cbp-spmenu-s8 {
+	padding: 39px 15px 15px;
+	height: auto;
+	max-height: 1000px;
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.js-subscribe-active .masthead .utility .link[href*="#Search"] {
 	background-color: black;
 }
