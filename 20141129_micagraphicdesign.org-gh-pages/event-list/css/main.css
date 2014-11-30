@@ -1,0 +1,601 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+.masthead .social,
+.sub,
+.footer
+{
+	display: none;
+}
+
+body {
+	background: black;
+}
+
+/*
+.shim {
+	height: 100%;
+	width: 1010px;
+	margin: 0 auto;
+	background-color: black;
+	overflow: hidden;
+}
+*/
+
+.container {
+	position: relative;
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	overflow: visible;
+}
+
+.masthead {
+	background-color: #00FF91;
+}
+
+
+
+/* mica brand */
+
+.masthead .brand {
+	float: left;
+	position: absolute;
+	top: 20%;
+	vertical-align: top;
+	width: 98px;
+	background-color: black;
+}
+
+.masthead .brand a:hover {
+	background-color: #00FF91;
+	padding: 10px 10px;
+	width: 98px;
+}
+
+
+
+/* utility navigation */
+
+.masthead .utility {
+	font-family: 'BLOKKNeue-Regular';
+	float: right;
+	width: 65%;
+	text-align: right;
+	max-width: 960px;
+	margin: 0 auto;	
+}
+
+.masthead .utility .link {
+	position: relative;
+	padding: 10px 0px 10px 0px;
+	text-decoration: none;
+	color: #00d062;
+	text-align: center;
+	z-index: 3;
+}
+
+.masthead .utility .link:hover {
+	font-family: Caxton Std;
+	font-size: 12px;
+	line-height: 19px;
+	background-color: black;
+	color: #00FF91;
+}
+
+.masthead .utility .link:active {
+	font-family: Caxton Std;
+	font-size: 12px;
+	line-height: 19px;
+	background-color: black;
+	color: #00FF91;
+}
+
+.masthead .utility .item {
+	border-left: 1px solid black;
+	width: 100px;
+	position: relative;
+}
+
+
+
+
+/* main navigation */
+
+.masthead .navigation {
+		text-align: center;	
+		position: absolute;
+		top: 100%;
+		width: 100%;
+		background: #212121;
+}
+
+.navigation {
+	font-family: 'BLOKKNeue-Regular', Caxton Std;
+	text-transform: capitalize;
+	font-weight: bold; 
+	text-align: center;
+}
+
+.navigation .item {
+	font-size: 24px;
+	width: 190px;
+}
+
+.navigation .link {
+	padding: 10px 0px;
+	text-decoration: none;
+	line-height: 45px;
+	color: #00FF91;
+	background-color: #222;
+	border-left: solid 1px black;
+}
+
+.navigation .link:hover {
+	background-color: #1d1d1d;
+	font-family: Balto;
+	box-shadow: inset 5px 0px 15px #161616, inset -5px 0px 15px #161616;
+}
+
+.navigation .link:active {
+	font-family: Balto;
+}
+
+.navigation a:hover {
+	background-color: red;
+}
+
+
+
+
+/* main content */
+
+
+.main .heading {
+	font-family: 'BLOKKNeue-Regular';
+	list-style: none;
+	text-decoration: none;	
+}
+		
+.main .link {
+	text-decoration: none;
+	color: white;
+}
+	
+.main .permalink {
+	text-decoration: none;
+	color: white;
+}
+	
+
+.main .date {
+	color: white;
+}
+
+	
+.main .copy {
+		list-style: none;
+		width: 10em;
+		font-size: 12px;
+		color: #797979;
+}
+
+.main .copy p {
+		width: 10em;
+		text-overflow: ellipsis; /* must be on child element */
+		overflow: hidden;
+		white-space: nowrap;
+}
+	
+h1.page.heading {
+	
+}
+
+h1.page.heading:hover {
+	font-family: Caxton Std;
+}
+
+
+.secondary {
+	float: right;
+	right: 0px;
+	width: 25%;
+	height: 100px;
+	overflow-y: scroll;
+}
+
+
+
+
+/*
+Added to test dropdown menu
+*/
+.masthead {
+	position: relative;
+	z-index: 2;
+}
+
+.masthead .utility {
+	position: relative;
+	z-index: 2;
+}
+
+.page {
+	position: relative;
+	z-index: 1;
+}
+
+.cbp-spmenu {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 2;
+	width: 400px;
+	height: 0;
+	padding: 39px 15px 15px;
+	max-height: 0;
+	overflow: hidden;
+	opacity: 0;
+	background: #333333;
+	transition: all .3s linear;
+	-webkit-transform: translateY(-100px);
+	transform: translateY(-100px);
+}
+
+/* ABOUT */
+ 
+.js-about-active #cbp-spmenu-s3 {
+	padding: 39px 15px 15px;
+	height: auto;
+	max-height: 1000px;
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.js-about-active .masthead .utility .link[href*="#About"] {
+	background-color: black;
+}
+
+/* CONTACT */
+
+.js-contact-active #cbp-spmenu-s4 {
+	padding: 39px 15px 15px;
+	height: auto;
+	max-height: 1000px;
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.js-contact-active .masthead .utility .link[href*="#Contact"] {
+	background-color: black;
+}
+
+/* SUBSCRIBE */
+
+.js-subscribe-active #cbp-spmenu-s5 {
+	padding: 39px 15px 15px;
+	height: auto;
+	max-height: 1000px;
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.js-subscribe-active .masthead .utility .link[href*="#Subscribe"] {
+	background-color: black;
+}
+
+/* ARCHIVES */
+
+.js-archives-active #cbp-spmenu-s6 {
+	padding: 39px 15px 15px;
+	height: auto;
+	max-height: 1000px;
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.js-archives-active .masthead .utility .link[href*="#Archives"] {
+	background-color: black;
+}
+
+/* LOGIN */
+
+.js-login-active #cbp-spmenu-s7 {
+	padding: 39px 15px 15px;
+	height: auto;
+	max-height: 1000px;
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.js-login-active .masthead .utility .link[href*="#Login"] {
+	background-color: black;
+}
+
+/* SEARCH */
+
+.js-search-active #cbp-spmenu-s8 {
+	padding: 39px 15px 15px;
+	height: auto;
+	max-height: 1000px;
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.js-subscribe-active .masthead .utility .link[href*="#Search"] {
+	background-color: black;
+}
+
+/* ==========================================================================
+   Author's custom media queries
+   ========================================================================== */
+@media screen and (max-width: 320px) {
+
+}
+
+@media screen and (max-width: 720px) {
+
+}
+
+@media screen and (max-width: 960px) {
+	
+}
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
