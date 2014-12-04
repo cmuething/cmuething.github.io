@@ -102,26 +102,24 @@ body {
 	background: black;
 }
 
-/*
 .shim {
 	height: 100%;
-	width: 1010px;
+	max-width: 960px;
 	margin: 0 auto;
 	background-color: black;
 	overflow: hidden;
 }
-*/
 
 .container {
 	position: relative;
 	width: 100%;
 	max-width: 960px;
-	margin: 0 auto;
-	overflow: visible;
 }
 
 .masthead {
-	background-color: #00FF91;
+	position: fixed;
+	width: 960px;
+	z-index: 2;
 }
 
 
@@ -131,15 +129,21 @@ body {
 .masthead .brand {
 	float: left;
 	position: absolute;
-	top: 20%;
-	vertical-align: top;
+	left: 5px;
 	width: 98px;
+	height: 20px;
+	top: 3px;
+	z-index: 1000;
+	vertical-align: center;
+	overflow: hidden;
+}
+
+a.mark {
 	background-color: black;
 }
 
 .masthead .brand a:hover {
 	background-color: #00FF91;
-	padding: 10px 10px;
 	width: 98px;
 }
 
@@ -147,18 +151,25 @@ body {
 
 /* utility navigation */
 
+
 .masthead .utility {
 	font-family: 'BLOKKNeue-Regular';
-	float: right;
-	width: 65%;
-	text-align: right;
+	height: 30px;
 	max-width: 960px;
 	margin: 0 auto;	
+	background-color: #00FF91; 
 }
+
+.masthead .menu {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	height: 0px;
+}
+
 
 .masthead .utility .link {
 	position: relative;
-	padding: 10px 0px 10px 0px;
+	padding: 0px 0px 0px 0px;
 	text-decoration: none;
 	color: #00d062;
 	text-align: center;
@@ -169,8 +180,8 @@ body {
 	font-family: Caxton Std;
 	font-size: 12px;
 	line-height: 19px;
-	background-color: black;
-	color: #00FF91;
+	background-color: #00FF91;
+	color: #00d062;
 }
 
 .masthead .utility .link:active {
@@ -182,9 +193,13 @@ body {
 }
 
 .masthead .utility .item {
+	float: right;
+	height: 30px;
 	border-left: 1px solid black;
 	width: 100px;
 	position: relative;
+	display: inline-block;
+	text-align: center;
 }
 
 
@@ -193,35 +208,42 @@ body {
 /* main navigation */
 
 .masthead .navigation {
-		text-align: center;	
-		position: absolute;
-		top: 100%;
-		width: 100%;
+		position: relative;
+		max-width: 960px;
+		margin: 0 auto;
+		height: 45px;
 		background: #212121;
+		padding-left: 0px;		
+}
+
+.masthead .menu.level-1 {
+	margin: 0 auto;
+	padding-left: 0;
 }
 
 .navigation {
 	font-family: 'BLOKKNeue-Regular', Caxton Std;
-	text-transform: capitalize;
 	font-weight: bold; 
-	text-align: center;
 }
 
 .navigation .item {
 	font-size: 24px;
-	width: 190px;
+	width: 170px;
+	text-align: center;
+	display: inline-block;
+	border-left: solid 1px black;
 }
 
 .navigation .link {
-	padding: 10px 0px;
+/* 	padding: 10px 0px 10px 0px; */
+	margin: 0 auto;
 	text-decoration: none;
 	line-height: 45px;
 	color: #00FF91;
 	background-color: #222;
-	border-left: solid 1px black;
 }
 
-.navigation .link:hover {
+.navigation .item:hover {
 	background-color: #1d1d1d;
 	font-family: Balto;
 	box-shadow: inset 5px 0px 15px #161616, inset -5px 0px 15px #161616;
@@ -231,20 +253,52 @@ body {
 	font-family: Balto;
 }
 
-.navigation a:hover {
-	background-color: red;
+
+.enter {
+	margin-top: 76px;
 }
 
 
 
 
+/* right side content */
+
+.side {
+	position: relative;
+	background-color: #212121;
+	width: 384px;
+	height: 100%;
+	overflow: scroll;
+	float: right;
+	margin-top: 50px;
+}
+
+.item.playlist {
+	font-family: Caxton Std;
+	text-align: center;
+}
+
+.side .heading {
+	list-style: none;
+	text-decoration: none;	
+}
+
+
+
 /* main content */
 
+.main {
+	width: 576px;
+	overflow: hidden;
+	float: left;
+	margin-top: 20px;
+}
 
 .main .heading {
 	font-family: 'BLOKKNeue-Regular';
 	list-style: none;
 	text-decoration: none;	
+	color: white;
 }
 		
 .main .link {
@@ -260,38 +314,53 @@ body {
 
 .main .date {
 	color: white;
+	float: left;
+	top: 0px;
+}
+
+.main .location {
+	float: right;
 }
 
 	
 .main .copy {
 		list-style: none;
-		width: 10em;
+		width: 100%;
 		font-size: 12px;
 		color: #797979;
 }
 
 .main .copy p {
-		width: 10em;
+		width: 100%;
 		text-overflow: ellipsis; /* must be on child element */
 		overflow: hidden;
 		white-space: nowrap;
 }
 	
 h1.page.heading {
-	
+	font-size: 30pt;
+	width: 150px;
+	top: -90px;
+	left: 25px;
+	margin-right: 15px; 
+	position: absolute;
 }
 
 h1.page.heading:hover {
 	font-family: Caxton Std;
 }
 
+.main .header {	
+	font-family: Caxton Std;
+	display: inline-block;
+	width: 100%;
+}
 
-.secondary {
-	float: right;
-	right: 0px;
-	width: 25%;
-	height: 100px;
-	overflow-y: scroll;
+h2.heading {
+	position: relative;
+	margin: 0 auto;
+	text-align: center;
+	
 }
 
 
@@ -300,11 +369,6 @@ h1.page.heading:hover {
 /*
 Added to test dropdown menu
 */
-.masthead {
-	position: relative;
-	z-index: 2;
-}
-
 .masthead .utility {
 	position: relative;
 	z-index: 2;
@@ -316,6 +380,10 @@ Added to test dropdown menu
 }
 
 .cbp-spmenu {
+	font-family: Caxton Std;
+	color: white;
+	text-align: left;
+	font-size: 12px;
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -422,6 +490,17 @@ Added to test dropdown menu
 	background-color: black;
 }
 
+
+
+/* list pagination */
+
+.menu.paginate .item {
+	list-style: none;
+	text-decoration: none;
+	display: inline-block;
+	padding-left: 0px;
+}
+
 /* ==========================================================================
    Author's custom media queries
    ========================================================================== */
@@ -430,10 +509,24 @@ Added to test dropdown menu
 }
 
 @media screen and (max-width: 720px) {
-
+	
+.side {
+	display: none;
+}
+	
 }
 
 @media screen and (max-width: 960px) {
+
+.masthead {
+	max-width: 960px;
+	width: 100%;
+}
+
+.main {
+	width: 60%;
+	overflow: hidden;
+	float: left;
 	
 }
 

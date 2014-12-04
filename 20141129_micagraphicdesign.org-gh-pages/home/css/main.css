@@ -92,6 +92,150 @@ textarea {
    ========================================================================== */
 
 
+.masthead .social,
+.sub,
+.footer
+{
+	display: none;
+}
+
+body {
+	background: black;
+}
+
+/*
+.shim {
+	height: 100%;
+	width: 1010px;
+	margin: 0 auto;
+	background-color: black;
+	overflow: hidden;
+}
+*/
+
+.container {
+	position: relative;
+	width: 100%;
+	max-width: 960px;
+}
+
+.masthead {
+	max-width: 960px;
+	margin: 0 auto;
+/* 	background-color: #00FF91; */
+}
+
+
+
+/* mica brand */
+
+.masthead .brand {
+	float: left;
+	position: absolute;
+	top: 10%;
+	vertical-align: top;
+	width: 98px;
+	background-color: red;
+	z-index: 1000;
+}
+
+.masthead .brand a:hover {
+	background-color: #00FF91;
+	padding: 10px 10px;
+	width: 98px;
+}
+
+
+
+/* utility navigation */
+
+.masthead .utility {
+	font-family: 'BLOKKNeue-Regular';
+	height: 60px;
+	max-width: 960px;
+	margin: 0 auto;	
+	background-color: #00FF91; 
+}
+
+.masthead .utility .link {
+	position: relative;
+	padding: 10px 0px 10px 0px;
+	text-decoration: none;
+	color: #00d062;
+	text-align: center;
+	z-index: 3;
+}
+
+.masthead .utility .link:hover {
+	font-family: Caxton Std;
+	font-size: 12px;
+	line-height: 19px;
+	background-color: #00FF91;
+	color: #00d062;
+}
+
+.masthead .utility .link:active {
+	font-family: Caxton Std;
+	font-size: 12px;
+	line-height: 19px;
+	background-color: black;
+	color: #00FF91;
+}
+
+.masthead .utility .item {
+	float: right;
+	border-left: 1px solid black;
+	width: 100px;
+	position: relative;
+	display: inline-block;
+	text-align: center;
+}
+
+
+
+
+/* main navigation */
+
+.masthead .navigation {
+		position: relative;
+		max-width: 960px;
+		margin: 0 auto;
+		height: 50px;
+		background: #212121;
+}
+
+.navigation {
+	font-family: 'BLOKKNeue-Regular', Caxton Std;
+	font-weight: bold; 
+}
+
+.navigation .item {
+	font-size: 24px;
+	width: 150px;
+	text-align: center;
+	display: inline-block;
+	border-left: solid 1px black;
+}
+
+.navigation .link {
+/* 	padding: 10px 0px 10px 0px; */
+	margin: 0 auto;
+	text-decoration: none;
+	line-height: 45px;
+	color: #00FF91;
+	background-color: #222;
+}
+
+.navigation .item:hover {
+	background-color: #1d1d1d;
+	font-family: Balto;
+	box-shadow: inset 5px 0px 15px #161616, inset -5px 0px 15px #161616;
+}
+
+.navigation .link:active {
+	font-family: Balto;
+}
+
 
 
 
