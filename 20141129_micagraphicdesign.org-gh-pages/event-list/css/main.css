@@ -90,6 +90,29 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=21050b4c-8775-435f-a741-5730a38467f7");
+@font-face{
+font-family:"Caxton W01 Light";
+src:url("Fonts/191669dc-6429-45a2-9ff1-600a15595081.eot?#iefix");
+src:url("Fonts/191669dc-6429-45a2-9ff1-600a15595081.eot?#iefix") format("eot"),url("Fonts/6271cd63-26eb-4136-9c1c-733fa5171117.woff") format("woff"),url("Fonts/5b8f49d8-5775-486e-90d2-de0dcc0f2633.ttf") format("truetype"),url("Fonts/50350ba8-5ad6-474d-9f98-e9260e38b009.svg#50350ba8-5ad6-474d-9f98-e9260e38b009") format("svg");
+}
+@font-face{
+font-family:"Caxton W01 Book";
+src:url("Fonts/b142b246-1061-4b93-a864-d43f348a3078.eot?#iefix");
+src:url("Fonts/b142b246-1061-4b93-a864-d43f348a3078.eot?#iefix") format("eot"),url("Fonts/8b340ad4-fc37-4e27-becf-98b7ae3e1792.woff") format("woff"),url("Fonts/d1476c79-de90-4422-9db7-05ef5e6139b8.ttf") format("truetype"),url("Fonts/0b13bb0b-7430-4047-90b3-bde037651a0f.svg#0b13bb0b-7430-4047-90b3-bde037651a0f") format("svg");
+}
+@font-face{
+font-family:"Caxton W01 Bold";
+src:url("Fonts/54b132dd-a75b-432e-9ef6-0ea793d63beb.eot?#iefix");
+src:url("Fonts/54b132dd-a75b-432e-9ef6-0ea793d63beb.eot?#iefix") format("eot"),url("Fonts/22b275f7-6cad-4159-b944-baec2b3c08e2.woff") format("woff"),url("Fonts/726accf3-f02e-4e0b-a861-e5296683985f.ttf") format("truetype"),url("Fonts/05c34b27-5bf7-41ef-a106-64740abae194.svg#05c34b27-5bf7-41ef-a106-64740abae194") format("svg");
+}
+@font-face{
+font-family:"Caxton W01 Bold Italic";
+src:url("Fonts/b9b86cb2-0b21-4f48-8df0-40b1e03d4a04.eot?#iefix");
+src:url("Fonts/b9b86cb2-0b21-4f48-8df0-40b1e03d4a04.eot?#iefix") format("eot"),url("Fonts/213bd7eb-1eed-48e3-ba04-a6ed68a7ca8e.woff") format("woff"),url("Fonts/422d134d-663e-4c31-934c-011806894e28.ttf") format("truetype"),url("Fonts/dd2f55b6-852f-4d29-a588-3aea8839d1f6.svg#dd2f55b6-852f-4d29-a588-3aea8839d1f6") format("svg");
+}
+
+
 
 .masthead .social,
 .sub,
@@ -177,7 +200,7 @@ a.mark {
 }
 
 .masthead .utility .link:hover {
-	font-family: Caxton Std;
+	font-family: "Caxton W01 Bold";
 	font-size: 12px;
 	line-height: 19px;
 	background-color: #00FF91;
@@ -185,7 +208,7 @@ a.mark {
 }
 
 .masthead .utility .link:active {
-	font-family: Caxton Std;
+	font-family: "Caxton W01 Bold";
 	font-size: 12px;
 	line-height: 19px;
 	background-color: black;
@@ -208,12 +231,12 @@ a.mark {
 /* main navigation */
 
 .masthead .navigation {
-		position: relative;
-		max-width: 960px;
-		margin: 0 auto;
-		height: 45px;
-		background: #212121;
-		padding-left: 0px;		
+	position: relative;
+	max-width: 960px;
+	margin: 0 auto;
+	height: 45px;
+	background: #212121;
+	padding-left: 0px;		
 }
 
 .masthead .menu.level-1 {
@@ -222,7 +245,7 @@ a.mark {
 }
 
 .navigation {
-	font-family: 'BLOKKNeue-Regular', Caxton Std;
+	font-family: 'BLOKKNeue-Regular', "Caxton W01 Bold";
 	font-weight: bold; 
 }
 
@@ -266,15 +289,15 @@ a.mark {
 .side {
 	position: relative;
 	background-color: #212121;
-	width: 384px;
+	width: 325px;
 	height: 100%;
 	overflow: scroll;
 	float: right;
-	margin-top: 50px;
+	
 }
 
 .item.playlist {
-	font-family: Caxton Std;
+	font-family: "Caxton W01 Bold";
 	text-align: center;
 }
 
@@ -288,10 +311,23 @@ a.mark {
 /* main content */
 
 .main {
+	font-family: "Caxton W01 Bold";
 	width: 576px;
-	overflow: hidden;
 	float: left;
-	margin-top: 20px;
+	color: white;
+}
+
+.item .header {
+	position: relative;
+}
+
+.item .heading {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+
+
 }
 
 .main .heading {
@@ -310,7 +346,7 @@ a.mark {
 	text-decoration: none;
 	color: white;
 }
-	
+
 
 .main .date {
 	color: white;
@@ -324,6 +360,7 @@ a.mark {
 
 	
 .main .copy {
+		font-family: "Caxton W01 Bold";
 		list-style: none;
 		width: 100%;
 		font-size: 12px;
@@ -338,31 +375,62 @@ a.mark {
 }
 	
 h1.page.heading {
-	font-size: 30pt;
+	font-size: 24px;
 	width: 150px;
-	top: -90px;
+	top: -70px;
 	left: 25px;
 	margin-right: 15px; 
 	position: absolute;
 }
 
 h1.page.heading:hover {
-	font-family: Caxton Std;
+	font-family: "Caxton W01 Bold";
 }
 
 .main .header {	
-	font-family: Caxton Std;
+	font-family: "Caxton W01 Bold";
 	display: inline-block;
 	width: 100%;
 }
 
 h2.heading {
 	position: relative;
+	width: 30%;
 	margin: 0 auto;
-	text-align: center;
-	
+	text-align: center;	
 }
 
+h2.heading:hover {
+
+}
+
+.item.event {
+	margin: 15px 0 15px 0;
+}
+
+/* image styling */
+
+.item .attach {
+	max-width: 576px;
+	max-height: 360px;
+	overflow: hidden;
+}
+
+.item .attach .permalink {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	background: url(../img/mica_gd_img.svg) left top no-repeat;
+	background-size: 100%;
+}
+
+.item .attach .permalink img {
+	opacity: 0;
+}
+
+.item .attach .permalink:hover img {
+	opacity: 1;
+}
 
 
 
@@ -380,7 +448,7 @@ Added to test dropdown menu
 }
 
 .cbp-spmenu {
-	font-family: Caxton Std;
+	font-family: "Caxton W01 Book";
 	color: white;
 	text-align: left;
 	font-size: 12px;
@@ -507,12 +575,15 @@ Added to test dropdown menu
 @media screen and (max-width: 320px) {
 
 }
-
-@media screen and (max-width: 720px) {
 	
-.side {
-	display: none;
-}
+@media screen and (max-width: 720px) {
+	.item .heading {
+		position: absolute;
+		
+	}
+	.side {
+		display: none;
+	}
 	
 }
 
