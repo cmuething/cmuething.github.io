@@ -115,7 +115,7 @@ src:url("Fonts/b9b86cb2-0b21-4f48-8df0-40b1e03d4a04.eot?#iefix") format("eot"),u
 
 .masthead .social,
 .sub,
-.footer
+.item .footer,
 {
 	display: none;
 }
@@ -289,7 +289,7 @@ a.mark {
 
 
 .enter {
-	margin-top: 0px;
+	margin-top: 76px;
 	}
 
 
@@ -326,8 +326,6 @@ a.mark {
 .side .social .menus {
 	display: none; 
 }
-
-
 
 /* main content */
 
@@ -449,13 +447,13 @@ h2.heading {
 
 /* image styling */
 
-.item .attach {
+.events .attach {
 	max-width: 576px;
 	max-height: 360px;
 	overflow: hidden;
 }
 
-.item .attach .permalink {
+.events .attach .permalink {
 	display: block;
 	max-width: 100%;
 	height: auto;
@@ -474,6 +472,29 @@ h2.heading {
 }
 
 
+
+
+.gallery .slide {
+	max-width: 576px;
+	max-height: 360px;
+	overflow: hidden;
+}
+
+.gallery .slides a {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	background: url(../img/mica_gd_img.svg) left top no-repeat;
+	background-size: 100%;
+}
+
+.gallery .slides .link img {
+	opacity: 0;
+}
+
+.gallery .slides .link:hover img {
+	opacity: 1;
+}
 
 
 
@@ -623,6 +644,20 @@ Added to test dropdown menu
 	padding-left: 0px;
 }
 
+/* footer of page */
+
+.footer {
+	background-color: #00FF91;
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.footer .departments .link {
+	list-style: none;
+	text-decoration: none;
+	display: inline-block;
+	color: black;
+}
 
 
 /* ==========================================================================

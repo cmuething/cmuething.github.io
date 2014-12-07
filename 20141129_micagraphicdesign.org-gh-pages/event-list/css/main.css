@@ -294,8 +294,11 @@ a.mark {
 	margin-top: 76px;
 }
 
+/* social menus */
 
-
+.social .menus {
+	position: fixed;
+}
 
 /* right side content */
 
@@ -307,29 +310,51 @@ a.mark {
 	overflow: auto;
 	float: right;
 	margin-right: 3%;
-	
+}
+
+.side .header {
+	margin-bottom: 25px;
 }
 
 .item.playlist {
+	clear: right;
 	font-family: "Caxton W01 Bold";
 	text-align: center;
 }
 
-.side .header {
+
+.side h1.heading {
+	margin: 0px;
+}
+
+.side .header .heading a {
+	font-size: 22px;
 	position: relative;
 	display: inline-block;
 	list-style: none;
 	text-decoration: none;	
 	color: white;
+	padding: 15px;
 }
 
-.side iframe {
-	position: relative;
+.side .header .byline {
+	font-size: 12px;
+	font-color: #bdbdbd;
 }
 
-.side .social .menus {
-	display: none; 
+.side .header .byline a{
+	list-style: none;
+	text-decoration: none;
+	color: white;
+	font-family: "Caxton W01 Bold";
 }
+
+.side .item.playlist .byline .type{
+	font-family: "Caxton W01 Book";
+	color: #7d7d7d;
+}
+
+
 
 
 
@@ -360,11 +385,11 @@ a.mark {
 	font-family: "Caxton W01 Book";
 }
 
-.item .header {
+.item.event .header {
 	position: relative;
 }
 
-.item .heading {
+.item.event .heading {
 	display: block;
 	position: absolute;
 	width: 100%;
@@ -628,16 +653,23 @@ Added to test dropdown menu
 /* page footer */
 
 .footer {
+	font-family: "Caxton W01 Bold"; 
 	background-color: #00FF91;
 	max-width: 960px;
 	margin: 0 auto;
+	list-style: square;
 }
 
-.footer .departments .link {
-	list-style: none;
-	text-decoration: none;
+.footer .departments .menu .link {
 	display: inline-block;
-	color: black;
+	text-decoration: none;
+	color: red;
+	position: relative;
+
+}
+
+.footer .departments .menu item {
+	display: inline-block;
 }
 
 /* ==========================================================================
