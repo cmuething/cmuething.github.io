@@ -116,7 +116,8 @@ src:url("Fonts/b9b86cb2-0b21-4f48-8df0-40b1e03d4a04.eot?#iefix") format("eot"),u
 
 .masthead .social,
 .sub,
-.footer
+.item .footer,
+.calendar
 {
 	display: none;
 }
@@ -131,6 +132,10 @@ body {
 	margin: 0 auto;
 	background-color: black;
 	overflow: hidden;
+}
+
+.page {
+	height: auto; /* MUST BE A PX VALUE IN ORDER FOR SIDE TO BE HEIGHT:100% */
 }
 
 .container {
@@ -158,7 +163,7 @@ body {
 	padding-left: 5px;
 	position: absolute;
 	left: 5px;
-	width: 98px;
+	width: 80px;
 	height: 20px;
 	top: 3px;
 	z-index: 1000;
@@ -174,7 +179,7 @@ a.mark {
 
 .masthead .brand:hover {
 	background-color: #00FF91;
-	width: 98px;
+	width: 80px;
 }
 
 
@@ -295,12 +300,13 @@ a.mark {
 /* right side content */
 
 .side {
-	position: relative;
+	display: block;
 	background-color: #212121;
-	width: 325px;
-	height: 100%;
-	overflow: scroll;
+	max-width: 270px;
+	min-height: 100%;
+	overflow: auto;
 	float: right;
+	margin-right: 3%;
 	
 }
 
@@ -309,10 +315,20 @@ a.mark {
 	text-align: center;
 }
 
-.side .heading a{
-	display: block;
+.side .header {
+	position: relative;
+	display: inline-block;
 	list-style: none;
 	text-decoration: none;	
+	color: white;
+}
+
+.side iframe {
+	position: relative;
+}
+
+.side .social .menus {
+	display: none; 
 }
 
 
@@ -322,8 +338,26 @@ a.mark {
 .main {
 	font-family: "Caxton W01 Book";
 	max-width: 576px;
-	float: left;
-	color: white;
+	margin-left: 3%;
+	margin-right: 10px;
+}
+
+/*
+.main .item .event {
+	max-width: 576px;
+	max-height: 130px;
+}
+*/
+
+/* TOGGLE OFF THIS CLASS */
+
+.main .content {
+	font-family: 'BLOKKNeue-Regular';
+	background-color: black;
+}
+
+.main .content:hover {
+	font-family: "Caxton W01 Book";
 }
 
 .item .header {
@@ -339,7 +373,6 @@ a.mark {
 
 
 .main .heading {
-	font-family: 'BLOKKNeue-Regular';
 	list-style: none;
 	text-decoration: none;	
 	color: white;
@@ -359,12 +392,15 @@ a.mark {
 .main .date {
 	color: white;
 	float: left;
+	text-align: left;
 	top: 0px;
-	max-width: 100px;
+	max-width: 135px;
 }
 
 .main .location {
 	float: right;
+	max-width: 100px;
+	text-align: right;
 }
 
 	
@@ -383,9 +419,10 @@ a.mark {
 }
 	
 h1.page.heading {
+	font-family: 'BLOKKNeue-Regular'; 
 	font-size: 2em;
 	width: 150px;
-	top: -70px;
+	top: -80px;
 	left: 25px;
 	position: absolute;
 }
@@ -396,7 +433,7 @@ h1.page.heading:hover {
 }
 
 .main .header {	
-	font-family: "Caxton W01 Bold";
+/* 	font-family: "Caxton W01 Bold"; */
 	display: inline-block;
 	width: 100%;
 }
@@ -429,6 +466,8 @@ h2.heading {
 	background: url(../img/mica_gd_img.svg) left top no-repeat;
 	background-size: 100%;
 }
+
+/* TOGGLE THESE CLASSES */
 
 .item .attach .permalink img {
 	opacity: 0;
@@ -503,7 +542,8 @@ Added to test dropdown menu
 }
 
 .js-contact-active .masthead .utility .link[href*="#Contact"] {
-	background-color: black;
+	font-family: "Caxton W01 Bold";
+	font-size: 12px;
 }
 
 /* SUBSCRIBE */
@@ -518,8 +558,9 @@ Added to test dropdown menu
 }
 
 .js-subscribe-active .masthead .utility .link[href*="#Subscribe"] {
-	background-color: black;
-}
+	font-family: "Caxton W01 Bold";
+	font-size: 12px;
+	}
 
 /* ARCHIVES */
 
@@ -533,8 +574,9 @@ Added to test dropdown menu
 }
 
 .js-archives-active .masthead .utility .link[href*="#Archives"] {
-	background-color: black;
-}
+	font-family: "Caxton W01 Bold";
+	font-size: 12px;
+	}
 
 /* LOGIN */
 
@@ -548,8 +590,9 @@ Added to test dropdown menu
 }
 
 .js-login-active .masthead .utility .link[href*="#Login"] {
-	background-color: black;
-}
+	font-family: "Caxton W01 Bold";
+	font-size: 12px;
+	}
 
 /* SEARCH */
 
@@ -562,25 +605,49 @@ Added to test dropdown menu
 	transform: translateY(0%);
 }
 
-.js-subscribe-active .masthead .utility .link[href*="#Search"] {
-	background-color: black;
-}
+.js-search-active .masthead .utility .link[href*="#Search"] {
+	font-family: "Caxton W01 Bold";
+	font-size: 12px;
+	}
 
 
 
 /* list pagination */
 
+.menus.paging {
+	max-width: 576px;
+	float: left;
+}
+
 .menu.paginate .item {
 	list-style: none;
 	text-decoration: none;
 	display: inline-block;
-	padding-left: 0px;
+}
+
+/* page footer */
+
+.footer {
+	background-color: #00FF91;
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.footer .departments .link {
+	list-style: none;
+	text-decoration: none;
+	display: inline-block;
+	color: black;
 }
 
 /* ==========================================================================
    Author's custom media queries
    ========================================================================== */
 @media screen and (max-width: 320px) {
+
+.enter {
+	margin-top: 100px;
+}
 
 }
 	
@@ -593,16 +660,16 @@ Added to test dropdown menu
 /* --------- COLLAPSIBLE PANELS ----------*/
  
 .expandable-panel {
-    width:100px;
+    width:100%;
     position:relative;
     min-height:30px;
-/*     overflow:auto; */
+    overflow: auto;
 	background-color: #00FF91;
     margin-bottom: 20px;
 }
 
 .expandable-panel-heading {
-    width:100px;
+    width:100%;
     cursor:pointer;
     min-height:30px;
     clear:both;
@@ -661,7 +728,7 @@ Added to test dropdown menu
 	float: left;
 	position: absolute;
 	left: 5px;
-	width: 100%;
+	width: 80px;
 	height: 20px;
 	top: 3px;
 	z-index: 1000;
@@ -684,7 +751,7 @@ a.mobile.mark {
     width:20px;
     height:20px;
     position:absolute;
-    background-image:url(../img/icon-close-open.png);
+    background-image: url(../img/icon-close-open.png);
     background-color: red;
     right:15px;
     z-index: 99999;
@@ -810,10 +877,11 @@ a.mobile.mark {
 	}
 }
 
+
+
+
+
 @media screen and (max-width: 960px) {
-
-
-
 
 
 .navigation {
