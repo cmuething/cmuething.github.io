@@ -113,11 +113,18 @@ src:url("Fonts/b9b86cb2-0b21-4f48-8df0-40b1e03d4a04.eot?#iefix") format("eot"),u
 }
 
 
-.masthead .social,
+.side .social,
 .sub,
-.item .footer,
+.categories,
+.tags,
+.item .footer
 {
-	display: none;
+display: none;
+}
+
+li {
+	list-style: none;
+	text-decoration: none;
 }
 
 body {
@@ -424,13 +431,132 @@ Added to test dropdown menu
 	}
 
 
+
+/*
+.main .content {
+	max-width: 960px;
+	margin: 0 20px 0 20px;
+	overflow: hidden;
+}
+*/
+
+.main {
+	font-family: "Caxton W01 Book";
+	color: #ababab;
+}
+
+.main .content .header {
+	width: 100%;
+	height: 100px;
+	color: white;
+}
+
+.main .content .header h1{
+	font-family: "Caxton W01 Bold";
+	display: block;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+/*
+	margin-left: 280px;
+	margin-right: 280px;
+*/
+}
+
+/*
+.main .content .header .heading {
+	text-align: center;
+	margin: 0 auto;
+	background-color: red;
+	width: 400px;
+}
+*/
+
+.main .content .date{
+	color: white;
+	float: left;
+	text-align: left;
+	top: 0px;
+	max-width: 135px;
+	margin: 0;
+}
+
+.main .content .byline {
+	float: right;
+	max-width: 150px;
+	text-align: right;
+}
+
+.main .content .byline .link {
+	list-style: none;
+	text-decoration: none;
+	color: white;
+}
+
+
 /* profiles */
 
-.profiles {
+
+.main .profiles .src img {
+	max-width: 350px;
+	max-height: 350px; 
+	background-color: red;
+}
+
+.main .profiles {
+	margin: 0 auto;
+	text-align: center;
+}
+
+
+
+.profile.card .attach {
+	max-width: 350px;
+	max-height: 350px;
+	display: inline-block;
+	overflow: hidden;
+}
+
+.profile.card .attach .permalink {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	background: url(../img/mica_gd_square.svg) left top no-repeat;
+	background-size: 100%;
+}
+
+.profile.card .attach .permalink img{
+	opacity: 0;
+}
+
+.profile.card .attach .permalink img:hover{
+	opacity: 1;
+}
+
+.profile.card {
+	display: inline-block;
+}
+
+.profile.card .social.list {
+	float: right;
+	width: 30px;
+	background-color: #00FF91; 
 	
 }
 
-/* right side content */
+.profile.card .social.list .link {
+	color: black;
+	text-align: center;
+	margin: 0 auto;
+}
+
+
+
+
+
+
+/* right side content COPY FROM EVENT-LIST PAGE*/
 
 .social {
 	position: fixed;

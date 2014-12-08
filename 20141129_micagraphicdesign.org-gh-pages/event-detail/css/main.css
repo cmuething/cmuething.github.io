@@ -116,7 +116,7 @@ src:url("Fonts/b9b86cb2-0b21-4f48-8df0-40b1e03d4a04.eot?#iefix") format("eot"),u
 
 .masthead .social,
 .sub,
-.item .footer,
+.item .footer
 {
 	display: none;
 }
