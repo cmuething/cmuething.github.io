@@ -90,19 +90,976 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=21050b4c-8775-435f-a741-5730a38467f7");
+@font-face{
+font-family:"Caxton W01 Light";
+src:url("Fonts/191669dc-6429-45a2-9ff1-600a15595081.eot?#iefix");
+src:url("Fonts/191669dc-6429-45a2-9ff1-600a15595081.eot?#iefix") format("eot"),url("Fonts/6271cd63-26eb-4136-9c1c-733fa5171117.woff") format("woff"),url("Fonts/5b8f49d8-5775-486e-90d2-de0dcc0f2633.ttf") format("truetype"),url("Fonts/50350ba8-5ad6-474d-9f98-e9260e38b009.svg#50350ba8-5ad6-474d-9f98-e9260e38b009") format("svg");
+}
+@font-face{
+font-family:"Caxton W01 Book";
+src:url("Fonts/b142b246-1061-4b93-a864-d43f348a3078.eot?#iefix");
+src:url("Fonts/b142b246-1061-4b93-a864-d43f348a3078.eot?#iefix") format("eot"),url("Fonts/8b340ad4-fc37-4e27-becf-98b7ae3e1792.woff") format("woff"),url("Fonts/d1476c79-de90-4422-9db7-05ef5e6139b8.ttf") format("truetype"),url("Fonts/0b13bb0b-7430-4047-90b3-bde037651a0f.svg#0b13bb0b-7430-4047-90b3-bde037651a0f") format("svg");
+}
+@font-face{
+font-family:"Caxton W01 Bold";
+src:url("Fonts/54b132dd-a75b-432e-9ef6-0ea793d63beb.eot?#iefix");
+src:url("Fonts/54b132dd-a75b-432e-9ef6-0ea793d63beb.eot?#iefix") format("eot"),url("Fonts/22b275f7-6cad-4159-b944-baec2b3c08e2.woff") format("woff"),url("Fonts/726accf3-f02e-4e0b-a861-e5296683985f.ttf") format("truetype"),url("Fonts/05c34b27-5bf7-41ef-a106-64740abae194.svg#05c34b27-5bf7-41ef-a106-64740abae194") format("svg");
+}
+@font-face{
+font-family:"Caxton W01 Bold Italic";
+src:url("Fonts/b9b86cb2-0b21-4f48-8df0-40b1e03d4a04.eot?#iefix");
+src:url("Fonts/b9b86cb2-0b21-4f48-8df0-40b1e03d4a04.eot?#iefix") format("eot"),url("Fonts/213bd7eb-1eed-48e3-ba04-a6ed68a7ca8e.woff") format("woff"),url("Fonts/422d134d-663e-4c31-934c-011806894e28.ttf") format("truetype"),url("Fonts/dd2f55b6-852f-4d29-a588-3aea8839d1f6.svg#dd2f55b6-852f-4d29-a588-3aea8839d1f6") format("svg");
+}
+
+@font-face {
+    font-family: 'BLOKKNeue-Regular';
+    src: url('BLOKKNeue-Regular.eot');
+    src: url('BLOKKNeue-Regular.eot?#iefix') format('embedded-opentype'),
+         url('BLOKKNeue-Regular.woff') format('woff'),
+         url('BLOKKNeue-Regular.svg#BLOKKNeue-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.masthead .social,
+.collapse-toggle,
+.sub,
+.item .footer,
+.calendar
+{
+	display: none;
+}
+
+li {
+	list-style: none;
+	text-decoration: none;
+}
+
+body {
+	background: black;
+}
+
+.shim {
+	height: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	background-color: black;
+	overflow: hidden;
+}
+
+.page {
+	height: auto; /* MUST BE A PX VALUE IN ORDER FOR SIDE TO BE HEIGHT:100% */
+}
+
+.container {
+	position: relative;
+	width: 100%;
+	max-width: 960px;
+}
+
+.masthead {
+	position: fixed;
+	width: 960px;
+	z-index: 2;
+}
+
+
+
+/* mica brand */
+
+.masthead .brand {
+	float: left;
+	background-image: url(../img/mica_logo.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: black;
+	padding-left: 5px;
+	position: absolute;
+	left: 5px;
+	width: 80px;
+	height: 20px;
+	top: 3px;
+	z-index: 1000;
+	vertical-align: center;
+	overflow: hidden;
+}
+
+/*
+a.mark {
+	width: 8px;
+}
+*/
+
+.masthead .brand:hover {
+	background-color: #00FF91;
+	width: 80px;
+}
+
+
+
+/* utility navigation */
+
+
+.masthead .utility {
+	font-family: 'BLOKKNeue-Regular';
+	height: 30px;
+	max-width: 960px;
+	margin: 0 auto;	
+	background-color: #00FF91; 
+}
+
+.masthead .menu {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	height: 0px;
+}
+
+
+.masthead .utility .item {
+	float: right;
+	height: 30px;
+	border-left: 1px solid black;
+	width: 100px;
+	position: relative;
+	display: inline-block;
+	text-align: center;
+}
+
+.masthead .utility .link {
+	position: relative;
+	padding: 0px 0px 0px 0px;
+	text-decoration: none;
+	color: #00d062;
+	text-align: center;
+	z-index: 3;
+}
+
+.masthead .utility .link:hover {
+	font-family: "Caxton W01 Bold";
+	font-size: 12px;
+	line-height: 19px;
+	color: #00d062;
+}
+
+.masthead .utility .link:active {
+	font-family: "Caxton W01 Bold";
+	font-size: 12px;
+	line-height: 19px;
+	color: black;
+}
 
 
 
 
 
 
+/* main navigation */
+
+.navigation {
+	font-family: 'BLOKKNeue-Regular', "Caxton W01 Bold";
+	font-weight: bold; 
+}
+
+.masthead .navigation {
+	position: relative;
+	max-width: 960px;
+	margin: 0 auto;
+	height: 45px;
+	background: #212121;
+}
+
+.navigation .item + .item { 
+}
+
+.masthead .menu.level-1 {
+	margin: 0 auto;
+	padding-left: 0;
+}
+
+.navigation .item {
+	font-size: 22px;
+	padding: 0px 0px 0px 0px;
+	width: 191px;
+	text-align: center;
+	border-left: solid 1px black;
+	list-style: none;
+	float: left;
+}
+
+.navigation .link {
+	text-decoration: none;
+	line-height: 45px;
+	color: #00FF91;
+}
+
+.navigation .item:hover {
+	background-color: #1d1d1d;
+	font-family: Balto;
+	box-shadow: inset 5px 0px 15px #161616, inset -5px 0px 15px #161616;
+}
+
+.navigation .link:active {
+	font-family: Balto;
+}
+
+
+.enter {
+	margin-top: 76px;
+}
+
+/* social icons/links */
+
+
+
+.scroll .social.menus .link {
+	color: black;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.scroll .social.menus {
+	position: absolute;
+	background-color: #00FF91;
+	width: 30px;
+	top: 20px;
+	right: 340px;
+}
+
+.scroll .social.menus ul{
+/* 	margin-top: 3px; */
+	text-align: center;
+	padding-left: 0px;
+	margin: 5px 0 5px 0;
+}
+
+/*
+.scroll .social .menus {
+	position: fixed;
+}
+*/
+
+
+
+/* right side content */
+
+.side {
+	display: block;
+	background-color: #1c1c1c;
+	width: 320px;
+	min-height: 100%;
+	overflow: auto;
+	float: right;
+	margin-right: 20px;
+	margin-left: 30px;
+	margin-top: 20px;
+	padding-bottom: 9999px;
+	margin-bottom: -9999px;
+}
+
+.side .header {
+	margin-bottom: 25px;
+}
+
+/*
+.side .spotify {
+	width: 270px;
+	float: right;
+}
+*/
+
+.item.playlist {
+	clear: right;
+	font-family: "Caxton W01 Bold";
+	text-align: center;
+}
+
+
+.side h1.heading {
+	margin: 0px;
+}
+
+.side .header .heading a {
+	font-size: 22px;
+	position: relative;
+	display: inline-block;
+	list-style: none;
+	text-decoration: none;	
+	color: white;
+	padding: 15px;
+}
+
+.side .header .byline {
+	font-size: 12px;
+	font-color: #bdbdbd;
+}
+
+.side .header .byline a{
+	list-style: none;
+	text-decoration: none;
+	color: white;
+	font-family: "Caxton W01 Bold";
+}
+
+.side .item.playlist .byline .type{
+	font-family: "Caxton W01 Book";
+	color: #7d7d7d;
+}
+
+
+
+
+
+/* main content */
+
+.main {
+	font-family: "Caxton W01 Book";
+	overflow: hidden;
+	/*max-width: 576px;*/
+	margin-left: 20px;
+	margin-right: 10px;
+}
+
+/*
+.main .item .event {
+	max-width: 576px;
+	max-height: 130px;
+}
+*/
+
+/* TOGGLE OFF THIS CLASS */
+
+.main .content {
+	font-family: 'BLOKKNeue-Regular';
+	background-color: black;
+	margin-bottom: 25px;
+}
+
+.main .content:hover {
+	font-family: "Caxton W01 Book";
+}
+
+.item.event .header {
+	position: relative;
+	height: 100%;
+}
+
+.item.event .heading {
+	display: block;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+}
+
+
+.main .heading {
+	list-style: none;
+	text-decoration: none;	
+	color: white;
+	margin: 5px 0 0 0;
+}
+		
+.main .link {
+	text-decoration: none;
+	color: white;
+}
+	
+.main .permalink {
+	text-decoration: none;
+	color: white;
+}
+
+
+.main .date {
+	color: white;
+	float: left;
+	text-align: left;
+	top: 0px;
+	max-width: 135px;
+	margin-bottom: 0px;
+}
+
+.main .location {
+	float: right;
+	max-width: 100px;
+	text-align: right;
+	margin-bottom: 0px;
+}
+
+.main .copy {
+	list-style: none;
+	width: 100%;
+	font-size: 12px;
+	color: #797979;
+}
+
+.main .copy p {
+	width: 100%;
+	text-overflow: ellipsis; /* must be on child element */
+	overflow: hidden;
+	white-space: nowrap;
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+	
+h1.page.heading {
+	font-family: 'BLOKKNeue-Regular'; 
+	font-size: 2em;
+	width: 150px;
+	top: -60px;
+	left: 25px;
+	position: absolute;
+}
+
+h1.page.heading:hover {
+	font-family: "Caxton W01 Bold";
+	cursor: pointer;
+}
+
+.main .header {	
+/* 	font-family: "Caxton W01 Bold"; */
+	display: inline-block;
+	width: 100%;
+}
+
+/*
+h2.heading {
+	position: relative;
+	width: 30%;
+	margin: 0 auto;
+	text-align: center;	
+}
+*/
+
+.item.event {
+	margin: 20px 0 10px 0;
+}
+
+/* image styling */
+
+.item .attach {
+	max-width: 576px;
+	max-height: 360px;
+	overflow: hidden;
+}
+
+.item .attach .permalink {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	background: url(../img/mica_gd_img.svg) left top no-repeat;
+	background-size: 100%;
+}
+
+/* TOGGLE THESE CLASSES */
+
+.item .attach .permalink img {
+	opacity: 0;
+}
+
+.item .attach .permalink:hover img {
+	opacity: 1;
+}
+
+
+
+/*
+Added to test dropdown menu
+*/
+.masthead .utility {
+	position: relative;
+	z-index: 2;
+}
+
+.page {
+	position: relative;
+	z-index: 1;
+}
+
+.cbp-spmenu {
+	font-family: "Caxton W01 Book";
+	color: darkgray;
+	text-align: center;
+	font-size: 12px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 2;
+	width: 300px;
+	height: 0;
+	padding: 39px 15px 15px;
+	max-height: 0;
+	overflow: hidden;
+	opacity: 0;
+	background: #333333;
+	transition: all .3s linear;
+	-webkit-transform: translateY(-100px);
+	transform: translateY(-100px);
+    -webkit-box-shadow: 5px 0px 15px 0px black;
+}
+
+/* ABOUT */
+ 
+.js-about-active #cbp-spmenu-s3 {
+	padding: 39px 15px 15px;
+	height: auto;
+	max-height: 1000px;
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.js-about-active .masthead .utility .link[href*="#About"] {
+	font-family: "Caxton W01 Bold";
+	font-size: 12px;
+}
+
+/* CONTACT */
+
+.js-contact-active #cbp-spmenu-s4 {
+	padding: 39px 15px 15px;
+	height: auto;
+	max-height: 1000px;
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.js-contact-active .masthead .utility .link[href*="#Contact"] {
+	font-family: "Caxton W01 Bold";
+	font-size: 12px;
+}
+
+/* SUBSCRIBE */
+
+.js-subscribe-active #cbp-spmenu-s5 {
+	padding: 39px 15px 15px;
+	height: auto;
+	max-height: 1000px;
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.js-subscribe-active .masthead .utility .link[href*="#Subscribe"] {
+	font-family: "Caxton W01 Bold";
+	font-size: 12px;
+	}
+
+/* ARCHIVES */
+
+.js-archives-active #cbp-spmenu-s6 {
+	padding: 39px 15px 15px;
+	height: auto;
+	max-height: 1000px;
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.js-archives-active .masthead .utility .link[href*="#Archives"] {
+	font-family: "Caxton W01 Bold";
+	font-size: 12px;
+	}
+
+/* LOGIN */
+
+.js-login-active #cbp-spmenu-s7 {
+	padding: 39px 15px 15px;
+	height: auto;
+	max-height: 1000px;
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.js-login-active .masthead .utility .link[href*="#Login"] {
+	font-family: "Caxton W01 Bold";
+	font-size: 12px;
+	}
+
+/* SEARCH */
+
+.js-search-active #cbp-spmenu-s8 {
+	padding: 39px 15px 15px;
+	height: auto;
+	max-height: 1000px;
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.js-search-active .masthead .utility .link[href*="#Search"] {
+	font-family: "Caxton W01 Bold";
+	font-size: 12px;
+	}
+
+
+
+/* list pagination */
+
+.menus.paging {
+	max-width: 576px;
+	margin-left: 20px;
+}
+
+ul.menu.paginate {
+	text-align: center;
+	padding-left: 0px;
+}
+
+.menus .paginate .item {
+	list-style: none;
+	text-decoration: none;
+	display: inline-block;
+	text-align: center;
+}
+
+/* page footer */
+
+.footer {
+	font-family: "Caxton W01 Bold";
+	font-size: 12px; 
+	background-color: #00FF91;
+	max-width: 960px;
+	height: 30px;
+	margin: 0 auto;
+	list-style: square;
+}
+
+.footer .departments .menu .link {
+	text-decoration: none;
+	color: black;
+}
+
+.footer .menu.ui {
+	float: left;
+	margin-top: 7px;
+	background-color: #00FF91;
+}
+
+.footer .menu.ui .item + .item {
+	margin-left: 30px;
+}
+
+.footer .menu.ui li.item {
+	display: inline-block;
+	float: left;
+}
+
+.footer .legal {
+	margin-top: 7px;
+	margin-right: 30px;
+	color: #00d062;
+	float: right;	
+}
+
+/* ==========================================================================
+   Author's custom media queries
+   ========================================================================== */
+@media screen and (max-width: 320px) {
+
+.enter {
+	margin-top: 100px;
+}
+
+}
+
+
+
+	
+@media screen and (max-width: 720px) {
+
+.enter {
+	margin-top: 100px;
+}
+
+
+/*
+.mobile-header {
+	height: 30px;
+	background-color: red;
+}
+*/
+
+.brand 
+
+/* --------- COLLAPSIBLE MENU ----------*/
+ 
+.collapse {
+  height: 0;
+  max-height: 0;
+  padding: 0;
+  overflow: hidden;
+  border: none;
+  transition: all .3s linear;
+}
+
+
+.collapse-toggle {
+	display: block!important;	
+  padding: 0;
+  border: 0;
+  background: none;
+  background-color: red;
+  
+  position: absolute;
+  right:0;
+  z-index: 99999;
+}
+
+
+.collapse.active {
+  height: auto;
+  max-height: 1000px;
+}
+
+.scroll .social.menus {
+	position: absolute;
+	background-color: #00FF91;
+	width: 30px;
+	right: 0px;
+}
+
+/* mica brand */
+
+/*
+.mobile .brand {
+	float: left;
+	position: absolute;
+	left: 5px;
+	width: 80px;
+	height: 20px;
+	top: 3px;
+	z-index: 1000;
+	vertical-align: center;
+	overflow: hidden;
+}
+
+a.mobile.mark {
+	background-color: black;
+}
+
+.mobile .brand a:hover {
+	background-color: #00FF91;
+	width: 98px;
+}
+*/
+
+
+
+/*
+.icon-close-open {
+    width:20px;
+    height:20px;
+    position:absolute;
+    background-image: url(../img/icon-close-open.png);
+    background-color: red;
+    right:15px;
+    z-index: 99999;
+}
+*/
+
+
+
+/* utility navigation */
+
+
+.masthead .utility {
+	font-family: 'BLOKKNeue-Regular';
+	text-align: center;
+	height: 60px;
+	max-width: 720px;
+	padding-top: 30px;
+	padding-left: 15%;
+	padding-right: 15%;
+	background-color: #00FF91; 
+}
+
+.masthead .menu {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	height: 0px;
+	margin-left: auto;
+}
+
+
+.masthead .utility .item {
+	float: none!important;
+	height: 30px;
+	border-left: none;
+	width: 100px;
+	position: relative;
+	display: inline-block;
+	text-align: center;
+}
+
+.masthead .utility .link {
+	position: relative;
+	padding: 0px 0px 0px 0px;
+	text-decoration: none;
+	color: #00d062;
+	text-align: center;
+	z-index: 3;
+}
+
+.masthead .utility .link:hover {
+	font-family: "Caxton W01 Bold";
+	font-size: 12px;
+	line-height: 19px;
+	color: #00d062;
+}
+
+.masthead .utility .link:active {
+	font-family: "Caxton W01 Bold";
+	font-size: 12px;
+	line-height: 19px;
+	color: black;
+}
 
 
 
 
 
 
+/* main navigation */
 
+.masthead .navigation {
+	font-family: 'BLOKKNeue-Regular', "Caxton W01 Bold";
+	font-weight: bold; 
+	position: relative;
+	max-width: 960px;
+	margin: 0 auto;
+	height: auto;
+	background: #212121;
+}
+
+.masthead .menu.level-1 {
+	margin: 0 auto;
+	padding-left: 0;
+}
+
+/*
+.masthead .navigation .item {
+	font-size: 22px;
+	padding: 0px 0px 0px 0px;
+	width: 191px;
+	text-align: center;
+	border-left: solid 1px black;
+	list-style: none;
+}
+
+.masthead .navigation .link {
+	text-decoration: none;
+	line-height: 45px;
+	color: #00FF91;
+}
+
+.masthead .navigation .item:hover {
+	background-color: #1d1d1d;
+	font-family: Balto;
+	box-shadow: inset 5px 0px 15px #161616, inset -5px 0px 15px #161616;
+}
+
+.masthead .navigation .link:active {
+	font-family: Balto;
+}
+*/
+	
+/*
+	.masthead {
+		display: none;
+	}
+*/
+	
+	.item .heading {
+		position: absolute;
+		
+	}
+	.side {
+		display: none;
+	}
+	
+	.main {
+/* 		max-width: 720px; */
+	}
+}
+
+
+
+
+
+@media screen and (max-width: 960px) {
+
+.collapse-toggle {
+	display: none;
+}
+
+.navigation {
+	font-family: 'BLOKKNeue-Regular', "Caxton W01 Bold";
+	font-weight: bold; 
+}
+
+.masthead .navigation {
+	display: inline-block;
+	position: relative;
+	max-width: 960px;
+	padding-left: 5%;
+	padding-right: 5%;
+/* 	margin: 0 auto; */
+	text-align: center;
+	height: 90px;
+	background: #212121;
+}
+
+
+.masthead .menu.level-1 {
+	margin: 0 auto;
+	padding-left: 0;
+}
+
+.navigation .item {
+	font-size: 22px;
+	padding: 0px;
+	width: 191px;
+	text-align: center;
+	display: inline-block; 
+	border-left: solid 1px black;
+/* 	border-right: solid 1px black; */
+	list-style: none;
+	float: none;
+}
+
+.navigation .link:active {
+	font-family: Balto;
+}
+
+.enter {
+	margin-top: 121px;
+}
+
+.masthead {
+	max-width: 960px;
+	width: 100%;
+}
+
+
+
+/*
+.item .attach {
+	max-width: 576px;
+	height: 30%;
+	overflow: hidden;
+}
+
+.item .attach .permalink {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	background: url(../img/mica_gd_img.svg) left top no-repeat;
+	background-size: 100%;
+}
+*/
 
 
 
