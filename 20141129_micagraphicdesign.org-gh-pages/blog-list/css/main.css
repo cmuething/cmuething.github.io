@@ -1,5 +1,3 @@
-@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=21050b4c-8775-435f-a741-5730a38467f7");
-
 /*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
 
 /*
@@ -92,7 +90,7 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
+@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=21050b4c-8775-435f-a741-5730a38467f7");
 @font-face{
 font-family:"Caxton W01 Light";
 src:url("Fonts/191669dc-6429-45a2-9ff1-600a15595081.eot?#iefix");

@@ -1241,7 +1241,7 @@ figcaption.caption a{
 }
 
 
-.main.content.ui .enter-attach .permalink {
+.detail .main.content.ui .enter-attach .permalink {
 	display: block;
 	max-width: 100%;
 	height: auto;
