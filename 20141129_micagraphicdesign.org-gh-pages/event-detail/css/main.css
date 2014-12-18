@@ -445,14 +445,91 @@ Added to test dropdown menu
 	color: #ababab;
 }
 
+/*  
+Set .attach and .permalink to relative, to contain
+the absolutely positioned .src that we'll specify below.
+*/
+.main .enter-attach ,
+.main .enter-attach .permalink {
+  position: relative;
+  margin: 75px 0 0 0;
+}
+
+
+/*  
+.permalink is the link around the image. This is the element we add padding-top to, in order to keep the ratio consistent.
+Padding, when expressed as a percentage, is calculated based on the width of the parent.
+In the case of your site, if you want to keep the image 576x360, that ends up being a ratio of 1.6, or 62.5%.
+We set the height to 0, since we'll be "creating" height using padding.
+Overflow hidden allows us to "crop" the image.
+*/
+.main .enter-attach .permalink {
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-top: 62.5%;
+  overflow: hidden;
+  background: url(../img/mica_gd_img_enter.svg) left top no-repeat;
+  background-size: cover;
+}
+
+/*  
+Nothing special here, except the height is set to auto, and the opacity to 0.
+*/
+.main .enter-attach  img.src {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+
+
+/*  
+Set the opacity to 1, to show our image.
+*/
+.main .enter-attach:focus .src, .main .enter-attach:hover .src {
+  opacity: 1;
+}
+
+/*
 .main.content.ui .enter-attach {
 	width: 100%;
-	max-height: 600px;
+	height: auto;
 	overflow: hidden;
 	margin-bottom: 0px;
 	margin-left: 0px;
 	margin-top: 75px;
 }
+
+.main.content.ui .enter-attach img {
+	height: auto;
+	overflow: hidden;
+}
+
+.main.content.ui .enter-attach .permalink {
+	display: block;
+	max-width: 100%;
+	max-height: 600px;
+	background: url(../img/mica_gd_img_enter.svg) left top no-repeat;
+	background-size: 100%;
+}
+
+.main.content.ui .enter-attach .permalink img{
+	opacity: 0;
+	height: auto;
+	text-align: center;
+	margin: 0 auto;
+	display: block;
+}
+
+.main.content.ui .enter-attach .permalink img:hover{
+	opacity: 1;
+}
+*/
 
 figcaption.caption {
 	margin-bottom: 20px;
@@ -467,37 +544,28 @@ figcaption.caption a{
 }
 
 
-.main.content.ui .enter-attach .permalink {
-	display: block;
-	max-width: 100%;
-	height: auto;
-	background: url(../img/mica_gd_img_enter.svg) left top no-repeat;
-	background-size: 100%;
-}
-
-.main.content.ui .enter-attach .permalink img{
-	opacity: 0;
-}
-
-.main.content.ui .enter-attach .permalink img:hover{
-	opacity: 1;
-}
-
 .main .content {
 	
 }
 
 .main .content .header {
+	font-family: 'BLOKKNeue-Regular';
+	line-height: inherit;
+/* 	line-height: 12px; */
+	position: relative;
 	width: 100%;
-	height: 100px;
+	height: auto;
 	color: white;
+	margin-bottom: 20px;
 }
 
-.main .content .header h1{
-	font-family: "Caxton W01 Bold";
+.main .content .header:hover {
+	font-family: "Caxton W01 Book";
+}
+
+.main .content .header .p-name.heading{
 	display: block;
-	position: absolute;
-	width: 100%;
+	max-width: 650px;
 	text-align: center;
 	margin: 0 auto;
 /*
@@ -515,19 +583,22 @@ figcaption.caption a{
 }
 */
 
-.main .content .date{
+.main .content .header .meta .date{
+	position: absolute;
 	color: white;
-	float: left;
 	text-align: left;
 	top: 0px;
-	max-width: 115px;
+	left: 0px;
+	max-width: 135px;
 	margin: 0;
 }
 
 .main .content .location {
-	float: right;
-	max-width: 100px;
+	position: absolute;
 	text-align: right;
+	max-width: 100px;
+	top: 0px;
+	right: 0px;
 	margin: 0;
 }
 
@@ -567,6 +638,27 @@ figcaption.caption a{
 }
 
 
+@media screen and (max-width: 720px) {
+
+.main .content .header .meta .date{
+	display: block;
+	position: relative;
+	text-align: center;
+	max-width: 400px;
+	color: white;
+	margin: 0 auto;
+}
+
+.main .content .header .location {
+	display: block;
+	position: relative;
+	text-align: center;
+	max-width: 400px;
+	color: white;
+	margin: 0 auto;
+}
+
+}
 
 
 

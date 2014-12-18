@@ -113,13 +113,13 @@ src:url("Fonts/b9b86cb2-0b21-4f48-8df0-40b1e03d4a04.eot?#iefix") format("eot"),u
 }
 
 @font-face {
-    font-family: 'BLOKKNeue-Regular';
-    src: url('BLOKKNeue-Regular.eot');
-    src: url('BLOKKNeue-Regular.eot?#iefix') format('embedded-opentype'),
-         url('BLOKKNeue-Regular.woff') format('woff'),
-         url('BLOKKNeue-Regular.svg#BLOKKNeue-Regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+font-family: 'BLOKKNeue-Regular';
+src: url('BLOKKNeue-Regular.eot');
+src: url('BLOKKNeue-Regular.eot?#iefix') format('embedded-opentype'),
+     url('BLOKKNeue-Regular.woff') format('woff'),
+     url('BLOKKNeue-Regular.svg#BLOKKNeue-Regular') format('svg');
+font-weight: normal;
+font-style: normal;
 }
 
 @font-face{
@@ -134,21 +134,16 @@ src:url("Fonts/02c46bc9-b252-4936-9788-4d7a7dab5011.eot?#iefix");
 src:url("Fonts/02c46bc9-b252-4936-9788-4d7a7dab5011.eot?#iefix") format("eot"),url("Fonts/6c1059a5-93a4-4c07-8464-8ee5df381c36.woff") format("woff"),url("Fonts/baf80ba3-29ee-4bd1-af03-28d25bd3beeb.ttf") format("truetype"),url("Fonts/329fefa7-d703-49cf-b2cf-00063765c30f.svg#329fefa7-d703-49cf-b2cf-00063765c30f") format("svg");
 }
 
-/* ********HOME******** */
+/* ******HEADER****** */
 
-.social,
-.sub,
-.item .footer,
-.events .footer,
-.gallery .footer,
-.lede .footer
-
-{
-	display: none;
+li {
+	list-style: none;
+	text-decoration: none;
 }
 
 body {
 	background: black;
+	margin: 0 20px 0 20px;
 }
 
 .shim {
@@ -260,17 +255,11 @@ a.mark {
 	color: black;
 }
 
-
-
-
-
-
 /* main navigation */
 
 .navigation {
 	font-family: 'BLOKKNeue-Regular', "Caxton W01 Bold";
 	font-weight: bold; 
-	color: #00FF91;
 }
 
 .masthead .navigation {
@@ -315,6 +304,153 @@ a.mark {
 	font-family: "ITCFranklinGothicW01-Dm_812668";
 }
 
+
+.enter {
+	margin-top: 76px;
+	}
+
+/*
+Added to test dropdown menu
+*/
+.masthead .utility {
+	position: relative;
+	z-index: 2;
+}
+
+.page {
+	position: relative;
+	z-index: 1;
+}
+
+.cbp-spmenu {
+	font-family: "Caxton W01 Book";
+	color: darkgray;
+	text-align: center;
+	font-size: 12px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 2;
+	width: 300px;
+	height: 0;
+	padding: 39px 15px 15px;
+	max-height: 0;
+	overflow: hidden;
+	opacity: 0;
+	background: #333333;
+	transition: all .3s linear;
+	-webkit-transform: translateY(-100px);
+	transform: translateY(-100px);
+    -webkit-box-shadow: 5px 0px 15px 0px black;
+}
+
+/* ABOUT */
+ 
+.js-about-active #cbp-spmenu-s3 {
+	padding: 39px 15px 15px;
+	height: auto;
+	max-height: 1000px;
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.js-about-active .masthead .utility .link[href*="#About"] {
+	font-family: "Caxton W01 Bold";
+	font-size: 12px;
+}
+
+/* CONTACT */
+
+.js-contact-active #cbp-spmenu-s4 {
+	padding: 39px 15px 15px;
+	height: auto;
+	max-height: 1000px;
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.js-contact-active .masthead .utility .link[href*="#Contact"] {
+	font-family: "Caxton W01 Bold";
+	font-size: 12px;
+}
+
+/* SUBSCRIBE */
+
+.js-subscribe-active #cbp-spmenu-s5 {
+	padding: 39px 15px 15px;
+	height: auto;
+	max-height: 1000px;
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.js-subscribe-active .masthead .utility .link[href*="#Subscribe"] {
+	font-family: "Caxton W01 Bold";
+	font-size: 12px;
+	}
+
+/* ARCHIVES */
+
+.js-archives-active #cbp-spmenu-s6 {
+	padding: 39px 15px 15px;
+	height: auto;
+	max-height: 1000px;
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.js-archives-active .masthead .utility .link[href*="#Archives"] {
+	font-family: "Caxton W01 Bold";
+	font-size: 12px;
+	}
+
+/* LOGIN */
+
+.js-login-active #cbp-spmenu-s7 {
+	padding: 39px 15px 15px;
+	height: auto;
+	max-height: 1000px;
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.js-login-active .masthead .utility .link[href*="#Login"] {
+	font-family: "Caxton W01 Bold";
+	font-size: 12px;
+	}
+
+/* SEARCH */
+
+.js-search-active #cbp-spmenu-s8 {
+	padding: 39px 15px 15px;
+	height: auto;
+	max-height: 1000px;
+	opacity: 1;
+	-webkit-transform: translateY(0%);
+	transform: translateY(0%);
+}
+
+.js-search-active .masthead .utility .link[href*="#Search"] {
+	font-family: "Caxton W01 Bold";
+	font-size: 12px;
+	}
+
+/* ********HOME******** */
+
+.sub,
+.item .footer,
+.events .footer,
+.gallery .footer,
+.lede .footer
+
+{
+	display: none;
+}
 
 .enter {
 	margin-top: 76px;
@@ -378,7 +514,7 @@ a.mark {
 
 /* main content */
 
-.main {
+.home .main {
 	font-family: "Caxton W01 Book";
 	max-width: 576px;
 	margin-left: 20px;
@@ -709,142 +845,6 @@ h2.heading {
 }
 
 
-
-
-
-/*
-Added to test dropdown menu
-*/
-.masthead .utility {
-	position: relative;
-	z-index: 2;
-}
-
-.page {
-	position: relative;
-	z-index: 1;
-}
-
-.cbp-spmenu {
-	font-family: "Caxton W01 Book";
-	color: darkgray;
-	text-align: center;
-	font-size: 12px;
-	position: absolute;
-	top: 0;
-	right: 0;
-	z-index: 2;
-	width: 300px;
-	height: 0;
-	padding: 39px 15px 15px;
-	max-height: 0;
-	overflow: hidden;
-	opacity: 0;
-	background: #333333;
-	transition: all .3s linear;
-	-webkit-transform: translateY(-100px);
-	transform: translateY(-100px);
-    -webkit-box-shadow: 5px 0px 15px 0px black;
-}
-
-/* ABOUT */
- 
-.js-about-active #cbp-spmenu-s3 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-about-active .masthead .utility .link[href*="#About"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-}
-
-/* CONTACT */
-
-.js-contact-active #cbp-spmenu-s4 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-contact-active .masthead .utility .link[href*="#Contact"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-}
-
-/* SUBSCRIBE */
-
-.js-subscribe-active #cbp-spmenu-s5 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-subscribe-active .masthead .utility .link[href*="#Subscribe"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-	}
-
-/* ARCHIVES */
-
-.js-archives-active #cbp-spmenu-s6 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-archives-active .masthead .utility .link[href*="#Archives"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-	}
-
-/* LOGIN */
-
-.js-login-active #cbp-spmenu-s7 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-login-active .masthead .utility .link[href*="#Login"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-	}
-
-/* SEARCH */
-
-.js-search-active #cbp-spmenu-s8 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-search-active .masthead .utility .link[href*="#Search"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-	}
-
-
-
 /* list pagination */
 
 .menu.paginate .item {
@@ -897,320 +897,23 @@ Added to test dropdown menu
 /* *********BLOG DETAIL********  */
 /* *******EVENT DETAIL******** */
 
-.button.archive,
-.rss,
-.content .byline,
-.categories.menus.ui,
-.tags.menus.ui,
-.masthead .social,
-.sub,
-.item .footer
+.detail .button.archive,
+.detail .rss,
+.detail .content .byline,
+.detail .categories.menus.ui,
+.detail .tags.menus.ui,
+.detail .masthead .social,
+.detail .sub,
+.detail .page .footer.footer,
+.detail .item .footer
 {
 	display: none;
 }
-
-body {
-	background: black;
-}
-
-.shim {
-	height: 100%;
-	max-width: 960px;
-	margin: 0 auto;
-	background-color: black;
-	overflow: hidden;
-}
-
-.page {
-	height: auto; /* MUST BE A PX VALUE IN ORDER FOR SIDE TO BE HEIGHT:100% */
-}
-
-.container {
-	position: relative;
-	width: 100%;
-	max-width: 960px;
-}
-
-.masthead {
-	position: fixed;
-	width: 960px;
-	z-index: 2;
-}
-
-
-
-/* mica brand */
-
-.masthead .brand {
-	float: left;
-	background-image: url(../img/mica_logo.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-color: black;
-	padding-left: 5px;
-	position: absolute;
-	left: 5px;
-	width: 80px;
-	height: 20px;
-	top: 3px;
-	z-index: 1000;
-	vertical-align: center;
-	overflow: hidden;
-}
-
-/*
-a.mark {
-	width: 8px;
-}
-*/
-
-.masthead .brand:hover {
-	background-color: #00FF91;
-	width: 80px;
-}
-
-
-
-/* utility navigation */
-
-
-.masthead .utility {
-	font-family: 'BLOKKNeue-Regular';
-	height: 30px;
-	max-width: 960px;
-	margin: 0 auto;	
-	background-color: #00FF91; 
-}
-
-.masthead .menu {
-	margin-top: 0px;
-	margin-bottom: 0px;
-	height: 0px;
-}
-
-
-.masthead .utility .item {
-	float: right;
-	height: 30px;
-	border-left: 1px solid black;
-	width: 100px;
-	position: relative;
-	display: inline-block;
-	text-align: center;
-}
-
-.masthead .utility .link {
-	position: relative;
-	padding: 0px 0px 0px 0px;
-	text-decoration: none;
-	color: #00d062;
-	text-align: center;
-	z-index: 3;
-}
-
-.masthead .utility .link:hover {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-	line-height: 19px;
-	color: #00d062;
-}
-
-.masthead .utility .link:active {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-	line-height: 19px;
-	color: black;
-}
-
-
-
-
-
-
-/* main navigation */
-
-.navigation {
-	font-family: 'BLOKKNeue-Regular', "Caxton W01 Bold";
-	font-weight: bold; 
-}
-
-.masthead .navigation {
-	position: relative;
-	max-width: 960px;
-	margin: 0 auto;
-	height: 45px;
-	background: #212121;
-}
-
-.navigation .item + .item { 
-}
-
-.masthead .menu.level-1 {
-	margin: 0 auto;
-	padding-left: 0;
-}
-
-.navigation .item {
-	font-size: 22px;
-	padding: 0px 0px 0px 0px;
-	width: 191px;
-	text-align: center;
-	border-left: solid 1px black;
-	list-style: none;
-	float: left;
-}
-
-.navigation .link {
-	text-decoration: none;
-	line-height: 45px;
-	color: #00FF91;
-}
-
-.navigation .item:hover {
-	background-color: #1d1d1d;
-	font-family: "ITCFranklinGothicW01-Dm_812668";
-	box-shadow: inset 5px 0px 15px #161616, inset -5px 0px 15px #161616;
-}
-
-.navigation .link:active {
-	font-family: "ITCFranklinGothicW01-Dm_812668";
-}
-
 
 .enter {
 	margin-top: 76px;
 	}
 
-/*
-Added to test dropdown menu
-*/
-.masthead .utility {
-	position: relative;
-	z-index: 2;
-}
-
-.page {
-	position: relative;
-	z-index: 1;
-}
-
-.cbp-spmenu {
-	font-family: "Caxton W01 Book";
-	color: darkgray;
-	text-align: center;
-	font-size: 12px;
-	position: absolute;
-	top: 0;
-	right: 0;
-	z-index: 2;
-	width: 300px;
-	height: 0;
-	padding: 39px 15px 15px;
-	max-height: 0;
-	overflow: hidden;
-	opacity: 0;
-	background: #333333;
-	transition: all .3s linear;
-	-webkit-transform: translateY(-100px);
-	transform: translateY(-100px);
-    -webkit-box-shadow: 5px 0px 15px 0px black;
-}
-
-/* ABOUT */
- 
-.js-about-active #cbp-spmenu-s3 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-about-active .masthead .utility .link[href*="#About"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-}
-
-/* CONTACT */
-
-.js-contact-active #cbp-spmenu-s4 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-contact-active .masthead .utility .link[href*="#Contact"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-}
-
-/* SUBSCRIBE */
-
-.js-subscribe-active #cbp-spmenu-s5 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-subscribe-active .masthead .utility .link[href*="#Subscribe"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-	}
-
-/* ARCHIVES */
-
-.js-archives-active #cbp-spmenu-s6 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-archives-active .masthead .utility .link[href*="#Archives"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-	}
-
-/* LOGIN */
-
-.js-login-active #cbp-spmenu-s7 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-login-active .masthead .utility .link[href*="#Login"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-	}
-
-/* SEARCH */
-
-.js-search-active #cbp-spmenu-s8 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-search-active .masthead .utility .link[href*="#Search"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-	}
 
 /* MAIN CONTENT */
 
@@ -1311,10 +1014,6 @@ figcaption.caption a{
 	color: white;
 }
 
-
-
-
-
 .social {
 	position: fixed;
 	right: 0px;
@@ -1344,327 +1043,16 @@ figcaption.caption a{
 /* *********BLOG DETAIL********* */
 /* *******PROFILE DETAIL********* */
 
-.profile.detail .page .side,
-.profile.detail.social.sub,
-.profile.detail.social.menus,
+.detail .page .side,
+.detail.social.sub,
+.detail.social.menus,
 .profile.detail.categories,
 .profile.detail.tags,
-.profile.detail.footer.profile,
-.profile.detail.item.footer
+.detail.footer.profile,
+.detail.item.footer
 {
 display: none;
 }
-
-li {
-	list-style: none;
-	text-decoration: none;
-}
-
-body {
-	background: black;
-	margin: 0 20px 0 20px;
-}
-
-.shim {
-	height: 100%;
-	max-width: 960px;
-	margin: 0 auto;
-	background-color: black;
-	overflow: hidden;
-}
-
-.page {
-	height: auto; /* MUST BE A PX VALUE IN ORDER FOR SIDE TO BE HEIGHT:100% */
-}
-
-.container {
-	position: relative;
-	width: 100%;
-	max-width: 960px;
-}
-
-.masthead {
-	position: fixed;
-	width: 960px;
-	z-index: 2;
-}
-
-
-
-/* mica brand */
-
-.masthead .brand {
-	float: left;
-	background-image: url(../img/mica_logo.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-color: black;
-	padding-left: 5px;
-	position: absolute;
-	left: 5px;
-	width: 80px;
-	height: 20px;
-	top: 3px;
-	z-index: 1000;
-	vertical-align: center;
-	overflow: hidden;
-}
-
-/*
-a.mark {
-	width: 8px;
-}
-*/
-
-.masthead .brand:hover {
-	background-color: #00FF91;
-	width: 80px;
-}
-
-
-
-/* utility navigation */
-
-
-.masthead .utility {
-	font-family: 'BLOKKNeue-Regular';
-	height: 30px;
-	max-width: 960px;
-	margin: 0 auto;	
-	background-color: #00FF91; 
-}
-
-.masthead .menu {
-	margin-top: 0px;
-	margin-bottom: 0px;
-	height: 0px;
-}
-
-
-.masthead .utility .item {
-	float: right;
-	height: 30px;
-	border-left: 1px solid black;
-	width: 100px;
-	position: relative;
-	display: inline-block;
-	text-align: center;
-}
-
-.masthead .utility .link {
-	position: relative;
-	padding: 0px 0px 0px 0px;
-	text-decoration: none;
-	color: #00d062;
-	text-align: center;
-	z-index: 3;
-}
-
-.masthead .utility .link:hover {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-	line-height: 19px;
-	color: #00d062;
-}
-
-.masthead .utility .link:active {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-	line-height: 19px;
-	color: black;
-}
-
-
-
-
-
-
-/* main navigation */
-
-.navigation {
-	font-family: 'BLOKKNeue-Regular', "Caxton W01 Bold";
-	font-weight: bold; 
-}
-
-.masthead .navigation {
-	position: relative;
-	max-width: 960px;
-	margin: 0 auto;
-	height: 45px;
-	background: #212121;
-}
-
-.navigation .item + .item { 
-}
-
-.masthead .menu.level-1 {
-	margin: 0 auto;
-	padding-left: 0;
-}
-
-.navigation .item {
-	font-size: 22px;
-	padding: 0px 0px 0px 0px;
-	width: 191px;
-	text-align: center;
-	border-left: solid 1px black;
-	list-style: none;
-	float: left;
-}
-
-.navigation .link {
-	text-decoration: none;
-	line-height: 45px;
-	color: #00FF91;
-}
-
-.navigation .item:hover {
-	background-color: #1d1d1d;
-	font-family: "ITCFranklinGothicW01-Dm_812668";
-	box-shadow: inset 5px 0px 15px #161616, inset -5px 0px 15px #161616;
-}
-
-.navigation .link:active {
-	font-family: "ITCFranklinGothicW01-Dm_812668";
-}
-
-
-.enter {
-	margin-top: 76px;
-	}
-
-/*
-Added to test dropdown menu
-*/
-.masthead .utility {
-	position: relative;
-	z-index: 2;
-}
-
-.page {
-	position: relative;
-	z-index: 1;
-}
-
-.cbp-spmenu {
-	font-family: "Caxton W01 Book";
-	color: darkgray;
-	text-align: center;
-	font-size: 12px;
-	position: absolute;
-	top: 0;
-	right: 0;
-	z-index: 2;
-	width: 300px;
-	height: 0;
-	padding: 39px 15px 15px;
-	max-height: 0;
-	overflow: hidden;
-	opacity: 0;
-	background: #333333;
-	transition: all .3s linear;
-	-webkit-transform: translateY(-100px);
-	transform: translateY(-100px);
-    -webkit-box-shadow: 5px 0px 15px 0px black;
-}
-
-/* ABOUT */
- 
-.js-about-active #cbp-spmenu-s3 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-about-active .masthead .utility .link[href*="#About"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-}
-
-/* CONTACT */
-
-.js-contact-active #cbp-spmenu-s4 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-contact-active .masthead .utility .link[href*="#Contact"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-}
-
-/* SUBSCRIBE */
-
-.js-subscribe-active #cbp-spmenu-s5 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-subscribe-active .masthead .utility .link[href*="#Subscribe"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-	}
-
-/* ARCHIVES */
-
-.js-archives-active #cbp-spmenu-s6 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-archives-active .masthead .utility .link[href*="#Archives"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-	}
-
-/* LOGIN */
-
-.js-login-active #cbp-spmenu-s7 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-login-active .masthead .utility .link[href*="#Login"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-	}
-
-/* SEARCH */
-
-.js-search-active #cbp-spmenu-s8 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-search-active .masthead .utility .link[href*="#Search"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-	}
-
-
 
 /* main content */
 
@@ -1704,6 +1092,10 @@ figcaption.caption {
 	text-align: center;
 	margin: 0 auto;
 	display: block;
+}
+
+.main.content.ui .enter-attach .permalink img {
+	opacity: 0;
 }
 
 .main.content.ui .enter-attach .permalink img:hover{
@@ -1771,6 +1163,7 @@ figcaption.caption {
 }
 
 
+
 /* profiles */
 
 
@@ -1790,6 +1183,7 @@ figcaption.caption {
 	max-height: 350px;
 	display: inline-block;
 	overflow: hidden;
+	position: relative;
 }
 
 .profile.card .attach .permalink {
@@ -1804,9 +1198,19 @@ figcaption.caption {
 	opacity: 0;
 }
 
+.profile.card .attach:hover img{
+	opacity: 1;
+}
+
+.profile.card .attach:hover .social.list {
+	opacity: 1;
+}
+
+/*
 .profile.card .attach .permalink img:hover{
 	opacity: 1;
 }
+*/
 
 .profile.card {
 	display: inline-block;
@@ -1824,6 +1228,7 @@ figcaption.caption {
 	float: none;
 	margin: 0 auto;
 	padding: 0;
+	opacity: 0;
 }
 
 .profile.card .social.list .link {
@@ -1932,7 +1337,8 @@ footer.footer.profile {
 	color: black;
 }
 
-
+/* ******BLOG LIST****** */
+/* ******NEWS LIST****** */
 /* *******EVENT LIST********* */
 
 .event.list .masthead .social,
@@ -1944,186 +1350,12 @@ footer.footer.profile {
 	display: none;
 }
 
-li {
-	list-style: none;
-	text-decoration: none;
-}
-
-body {
-	background: black;
-}
-
-.shim {
-	height: 100%;
-	max-width: 960px;
-	margin: 0 auto;
-	background-color: black;
-	overflow: hidden;
-}
-
-.page {
-	height: auto; /* MUST BE A PX VALUE IN ORDER FOR SIDE TO BE HEIGHT:100% */
-}
-
-.container {
-	position: relative;
-	width: 100%;
-	max-width: 960px;
-}
-
-.masthead {
-	position: fixed;
-	width: 960px;
-	z-index: 2;
-}
-
-
-
-/* mica brand */
-
-.masthead .brand {
-	float: left;
-	background-image: url(../img/mica_logo.svg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-color: black;
-	padding-left: 5px;
-	position: absolute;
-	left: 5px;
-	width: 80px;
-	height: 20px;
-	top: 3px;
-	z-index: 1000;
-	vertical-align: center;
-	overflow: hidden;
-}
-
-/*
-a.mark {
-	width: 8px;
-}
-*/
-
-.masthead .brand:hover {
-	background-color: #00FF91;
-	width: 80px;
-}
-
-
-
-/* utility navigation */
-
-
-.masthead .utility {
-	font-family: 'BLOKKNeue-Regular';
-	height: 30px;
-	max-width: 960px;
-	margin: 0 auto;	
-	background-color: #00FF91; 
-}
-
-.masthead .menu {
-	margin-top: 0px;
-	margin-bottom: 0px;
-	height: 0px;
-}
-
-
-.masthead .utility .item {
-	float: right;
-	height: 30px;
-	border-left: 1px solid black;
-	width: 100px;
-	position: relative;
-	display: inline-block;
-	text-align: center;
-}
-
-.masthead .utility .link {
-	position: relative;
-	padding: 0px 0px 0px 0px;
-	text-decoration: none;
-	color: #00d062;
-	text-align: center;
-	z-index: 3;
-}
-
-.masthead .utility .link:hover {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-	line-height: 19px;
-	color: #00d062;
-}
-
-.masthead .utility .link:active {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-	line-height: 19px;
-	color: black;
-}
-
-
-
-
-
-
-/* main navigation */
-
-.navigation {
-	font-family: 'BLOKKNeue-Regular', "Caxton W01 Bold";
-	font-weight: bold; 
-}
-
-.masthead .navigation {
-	position: relative;
-	max-width: 960px;
-	margin: 0 auto;
-	height: 45px;
-	background: #212121;
-}
-
-.navigation .item + .item { 
-}
-
-.masthead .menu.level-1 {
-	margin: 0 auto;
-	padding-left: 0;
-}
-
-.navigation .item {
-	font-size: 22px;
-	padding: 0px 0px 0px 0px;
-	width: 191px;
-	text-align: center;
-	border-left: solid 1px black;
-	list-style: none;
-	float: left;
-}
-
-.navigation .link {
-	text-decoration: none;
-	line-height: 45px;
-	color: #00FF91;
-}
-
-.navigation .item:hover {
-	background-color: #1d1d1d;
-	font-family: "ITCFranklinGothicW01-Dm_812668";
-	box-shadow: inset 5px 0px 15px #161616, inset -5px 0px 15px #161616;
-}
-
-.navigation .link:active {
-	font-family: "ITCFranklinGothicW01-Dm_812668";
-}
-
 
 .enter {
 	margin-top: 76px;
 }
 
 /* social icons/links */
-
-
 
 .scroll .social.menus .link {
 	color: black;
@@ -2218,10 +1450,6 @@ a.mark {
 	font-family: "Caxton W01 Book";
 	color: #7d7d7d;
 }
-
-
-
-
 
 /* main content */
 
@@ -2394,141 +1622,6 @@ h2.heading {
 	opacity: 1;
 }
 
-
-
-/*
-Added to test dropdown menu
-*/
-.masthead .utility {
-	position: relative;
-	z-index: 2;
-}
-
-.page {
-	position: relative;
-	z-index: 1;
-}
-
-.cbp-spmenu {
-	font-family: "Caxton W01 Book";
-	color: darkgray;
-	text-align: center;
-	font-size: 12px;
-	position: absolute;
-	top: 0;
-	right: 0;
-	z-index: 2;
-	width: 300px;
-	height: 0;
-	padding: 39px 15px 15px;
-	max-height: 0;
-	overflow: hidden;
-	opacity: 0;
-	background: #333333;
-	transition: all .3s linear;
-	-webkit-transform: translateY(-100px);
-	transform: translateY(-100px);
-    -webkit-box-shadow: 5px 0px 15px 0px black;
-}
-
-/* ABOUT */
- 
-.js-about-active #cbp-spmenu-s3 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-about-active .masthead .utility .link[href*="#About"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-}
-
-/* CONTACT */
-
-.js-contact-active #cbp-spmenu-s4 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-contact-active .masthead .utility .link[href*="#Contact"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-}
-
-/* SUBSCRIBE */
-
-.js-subscribe-active #cbp-spmenu-s5 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-subscribe-active .masthead .utility .link[href*="#Subscribe"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-	}
-
-/* ARCHIVES */
-
-.js-archives-active #cbp-spmenu-s6 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-archives-active .masthead .utility .link[href*="#Archives"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-	}
-
-/* LOGIN */
-
-.js-login-active #cbp-spmenu-s7 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-login-active .masthead .utility .link[href*="#Login"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-	}
-
-/* SEARCH */
-
-.js-search-active #cbp-spmenu-s8 {
-	padding: 39px 15px 15px;
-	height: auto;
-	max-height: 1000px;
-	opacity: 1;
-	-webkit-transform: translateY(0%);
-	transform: translateY(0%);
-}
-
-.js-search-active .masthead .utility .link[href*="#Search"] {
-	font-family: "Caxton W01 Bold";
-	font-size: 12px;
-	}
-
-
-
 /* list pagination */
 
 .menus.paging {
@@ -2548,7 +1641,7 @@ ul.menu.paginate {
 	text-align: center;
 }
 
-/* page footer */
+/* ******FOOTER******* */
 
 .footer {
 	font-family: "Caxton W01 Bold";

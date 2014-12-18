@@ -118,6 +118,7 @@ src:url("Fonts/b9b86cb2-0b21-4f48-8df0-40b1e03d4a04.eot?#iefix") format("eot"),u
     src: url('BLOKKNeue-Regular.eot?#iefix') format('embedded-opentype'),
          url('BLOKKNeue-Regular.woff') format('woff'),
          url('BLOKKNeue-Regular.svg#BLOKKNeue-Regular') format('svg');
+    line-height: 12em;
     font-weight: normal;
     font-style: normal;
 }
@@ -139,7 +140,7 @@ li {
 
 body {
 	background: black;
-	margin: 0 20px 0 20px;
+/* 	margin: 0 20px 0 20px; */
 }
 
 .shim {
@@ -454,30 +455,84 @@ Added to test dropdown menu
 	margin: 0 20px 0 20px;
 }
 
+/*  
+Set .attach and .permalink to relative, to contain
+the absolutely positioned .src that we'll specify below.
+*/
+.main .enter-attach ,
+.main .enter-attach .permalink {
+  position: relative;
+  margin: 75px 0 0 0;
+}
+
+
+/*  
+.permalink is the link around the image. This is the element we add padding-top to, in order to keep the ratio consistent.
+Padding, when expressed as a percentage, is calculated based on the width of the parent.
+In the case of your site, if you want to keep the image 576x360, that ends up being a ratio of 1.6, or 62.5%.
+We set the height to 0, since we'll be "creating" height using padding.
+Overflow hidden allows us to "crop" the image.
+*/
+.main .enter-attach .permalink {
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-top: 62.5%;
+  overflow: hidden;
+  background: url(../img/mica_gd_img_enter.svg) left top no-repeat;
+  background-size: cover;
+}
+
+/*  
+Nothing special here, except the height is set to auto, and the opacity to 0.
+*/
+.main .enter-attach  img.src {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+}
+
+
+/*  
+Set the opacity to 1, to show our image.
+*/
+.main .enter-attach:focus .src, .main .enter-attach:hover .src {
+  opacity: 1;
+}
+
+/*
+
 .main.content.ui .enter-attach {
 	width: 100%;
-	max-height: 600px;
+	height: auto;
 	overflow: hidden;
 	margin-bottom: 0px;
 	margin-left: 0px;
 	margin-top: 75px;
 }
 
-figcaption.caption {
-	margin-bottom: 20px;
-	font-size: 12px;
+.main.content.ui .enter-attach img {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
 }
 
 .main.content.ui .enter-attach .permalink {
 	display: block;
 	max-width: 100%;
-	height: auto;
-	background: url(../img/mica_gd_img.svg) left top no-repeat;
+	max-height: 600px;
+	background: url(../img/mica_gd_img_enter.svg) left top no-repeat;
 	background-size: 100%;
 }
 
 .main.content.ui .enter-attach .permalink img{
 	opacity: 0;
+	height: auto;
 	text-align: center;
 	margin: 0 auto;
 	display: block;
@@ -486,8 +541,12 @@ figcaption.caption {
 .main.content.ui .enter-attach .permalink img:hover{
 	opacity: 1;
 }
+*/
 
-
+figcaption.caption {
+	margin-bottom: 20px;
+	font-size: 12px;
+}
 
 /* STYLE INLINE LINK */
 
@@ -498,17 +557,25 @@ figcaption.caption {
 }
 */
 
+
 .main .content .header {
+	font-family: 'BLOKKNeue-Regular';
+	line-height: inherit;
+/* 	line-height: 12px; */
+	position: relative;
 	width: 100%;
-	height: 100px;
+	height: auto;
 	color: white;
+	margin-bottom: 20px;
 }
 
-.main .content .header h1{
-	font-family: "Caxton W01 Bold";
+.main .content .header:hover {
+	font-family: "Caxton W01 Book";
+}
+
+.main .content .header .p-name.heading{
 	display: block;
-	position: absolute;
-	width: 100%;
+	max-width: 650px;
 	text-align: center;
 	margin: 0 auto;
 /*
@@ -526,22 +593,25 @@ figcaption.caption {
 }
 */
 
-.main .content .date{
+.main .content .header .meta .date{
+	position: absolute;
 	color: white;
-	float: left;
 	text-align: left;
 	top: 0px;
+	left: 0px;
 	max-width: 135px;
 	margin: 0;
 }
 
-.main .content .byline {
-	float: right;
+.main .content .header .byline {
+	position: absolute;
+	right: 0px;
+	top: 0px;
 	max-width: 150px;
 	text-align: right;
 }
 
-.main .content .byline .link {
+.main .content .header .byline .link {
 	list-style: none;
 	text-decoration: none;
 	color: white;
@@ -562,11 +632,18 @@ figcaption.caption {
 	text-align: center;
 }
 
+p.heading {
+	margin-top: 0px;
+}
+
 .profile.card .attach {
 	max-width: 350px;
 	max-height: 350px;
+	margin-bottom: 0px;
+	margin-top: 0px;
 	display: inline-block;
 	overflow: hidden;
+	position: relative;
 }
 
 .profile.card .attach .permalink {
@@ -581,9 +658,19 @@ figcaption.caption {
 	opacity: 0;
 }
 
+.profile.card .attach:hover img{
+	opacity: 1;
+}
+
+.profile.card .attach:hover .social.list {
+	opacity: 1;
+}
+
+/*
 .profile.card .attach .permalink img:hover{
 	opacity: 1;
 }
+*/
 
 .profile.card {
 	display: inline-block;
@@ -601,6 +688,7 @@ figcaption.caption {
 	float: none;
 	margin: 0 auto;
 	padding: 0;
+	opacity: 0;
 }
 
 .profile.card .social.list .link {
@@ -609,6 +697,7 @@ figcaption.caption {
 	text-align: center;
 	margin: 0 auto;
 }
+
 
 /*
 .attach .profile.card .social.list ul{
@@ -729,24 +818,78 @@ footer.footer.profile {
 }
 
 .main .content .header {
-	margin: 0 auto;
-	text-align: center;
+	font-family: 'BLOKKNeue-Regular';
+	line-height: inherit;
+/* 	line-height: 12px; */
+	position: relative;
 	width: 100%;
+	height: auto;
+	color: white;
 }
 
-.main .content .header h1{
-	font-family: "Caxton W01 Bold";
-	display: block;
-	position: absolute;
-	max-width: 500px;
-	text-align: center;
+.main .content .header:hover {
+	font-family: "Caxton W01 Book";
+}
+
+.main .content .header .p-name.heading{
+	max-width: 450px;
+}
+
+.main .content .header .meta .date{
+	max-width: 100px;
+}
+
+.main .content .header .byline {
+	max-width: 100px;
+}
+
+}
+
+@media screen and (max-width: 720px) {
+
+.profiles {
+	float: none;
+	display: inline-block;
+	position: relative;
 	margin: 0 auto;
-/*
-	margin-left: 280px;
-	margin-right: 280px;
-*/
+	width: 100%;
+	padding: 0;
 }
 
+.profiles .attach {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.main .content .header .meta .date{
+	display: block;
+	position: relative;
+	text-align: center;
+	max-width: 400px;
+	color: white;
+	margin: 0 auto;
+}
+
+.main .content .header .byline {
+	display: block;
+	position: relative;
+	text-align: center;
+	max-width: 400px;
+	color: white;
+	margin: 0 auto;
+}
+
+}
+
+@media screen and (max-width: 400px) {
+
+.enter {
+	margin-top: 100px;
+}
+
+.profile.card {
+	display: none;
+}
 
 }
 

@@ -1,0 +1,140 @@
+@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=12040d6f-5fb3-4f05-8e86-d4cdc717a49e");
+
+@font-face{
+font-family:"Proxima N W01 Reg";
+src:url("Fonts/7e90123f-e4a7-4689-b41f-6bcfe331c00a.eot?#iefix");
+src:url("Fonts/7e90123f-e4a7-4689-b41f-6bcfe331c00a.eot?#iefix") format("eot"),url("Fonts/e56ecb6d-da41-4bd9-982d-2d295bec9ab0.woff") format("woff"),url("Fonts/2aff4f81-3e97-4a83-9e6c-45e33c024796.ttf") format("truetype"),url("Fonts/ab9cd062-380f-4b53-b1a7-c0bec7402235.svg#ab9cd062-380f-4b53-b1a7-c0bec7402235") format("svg");
+}
+@font-face{
+font-family:"Proxima N W01 Bold";
+src:url("Fonts/fbc6b03a-b3a1-427c-a884-053deca3a53c.eot?#iefix");
+src:url("Fonts/fbc6b03a-b3a1-427c-a884-053deca3a53c.eot?#iefix") format("eot"),url("Fonts/d999c07b-a049-4eb5-b8a6-4f36ae25e67e.woff") format("woff"),url("Fonts/4d4a75f5-d32a-4a09-8665-133afd39cc37.ttf") format("truetype"),url("Fonts/8152bc4e-d700-4c78-b6be-326893e6f53f.svg#8152bc4e-d700-4c78-b6be-326893e6f53f") format("svg");
+}
+
+.container {
+ 
+}
+
+.masthead {
+	font-family:"Proxima N W01 Bold";
+}
+
+.brand {
+	display: inline-block;
+	width: 100%;
+	margin: 20 auto;
+	text-align: center;
+	position: fixed;
+	z-index: 1;
+	font-size: 25px;
+	line-height: 25px;
+	padding: 0 auto;
+	margin: 20px 0 0 0;
+}
+
+a.mark {
+	font-size: 1.2em;
+	list-style: none;
+	text-decoration: none;
+	color: black;
+	text-align: center;
+}
+
+.corners {
+	list-style-type: none;
+	font-size: 22px;
+	position: fixed;
+	width: 100%;
+	z-index: 1;	
+}
+
+.top-left {
+	position: fixed;
+	top: 50px;
+	left: 40px;
+}
+
+.top-right {
+	position: fixed;
+	top: 50px;
+	right: 40px;
+}
+
+.bottom-left {
+	position: fixed;
+	bottom: 50px;
+	left: 40px;
+}
+
+.main {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	padding: 100px 0 0 0;
+}
+
+.main h1 {
+	font-family: "Proxima N W01 Bold" 
+}
+
+.content {
+	font-family: "Proxima N W01 Reg";
+	line-height: 20px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	padding: 20px 45px 20px 45px;
+	width: 800px;
+	text-decoration: none;
+}
+
+.content p {
+	font-size: 16px;
+	padding-bottom: 50px;
+	padding-top: 10px;
+}
+
+.content h1 {
+	font-size: 20px;
+	padding-top: 20px;
+}
+
+.content a {
+	font-family: "Proxima N W01 Bold";
+	list-style: none;
+	text-decoration: none;
+	color: black;
+}
+
+.centered {
+	text-align: center;
+	font-family: "Proxima N W01 Reg"!important;
+}
+
+.subhead {
+	font-family: "Proxima N W01 Reg";
+	text-align: center;
+}
+
+.photo {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	box-sizing: border-box;
+	position: relative;
+	max-width: 800px;
+	max-height: 400px;
+	overflow: hidden;
+	text-align: center;
+	border: 1px solid black;
+	margin-bottom: 20px;
+}
+
+.photo.inset { 
+	float: right;  
+	max-width: 400px;
+	max-height: 400px;
+	margin-top: 80px;
+	margin-left: 20px;
+}

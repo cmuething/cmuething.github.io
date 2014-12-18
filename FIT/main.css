@@ -1,0 +1,59 @@
+
+		<title>CONNOR MUETHING</title>
+			
+				.container {
+					font-family: Proxima Nova Bold;
+					
+				}
+				
+				.masthead {
+					
+					
+				}
+				
+				.brand {
+					display: inline-block;
+					width: 100%;
+					margin: 0 auto;
+					text-align: center;
+					position: fixed;
+					z-index: 1;
+					font-size: 25px;
+					line-height: 25px;
+					padding: 0 auto;
+				}
+				
+				.corners {
+					list-style-type: none;
+					font-size: 22px;
+					position: fixed;
+					width: 100%;
+					z-index: 1;	
+				}
+			
+				.top-left {
+					position: fixed;
+					top: 50px;
+					left: 40px;
+				}
+				
+				.top-right {
+					position: fixed;
+					top: 50px;
+					right: 40px;
+				}
+				
+				.bottom-left {
+					position: fixed;
+					bottom: 50px;
+					left: 40px;
+				}
+				
+				.photo1 {
+					box-sizing: border-box;
+					float: left;
+					position: relative;
+					padding-top: 190px;
+					padding-left: 300px;
+				}
+

@@ -94,11 +94,6 @@ textarea {
    ========================================================================== */
 
 @font-face{
-font-family:"Caxton W01 Light";
-src:url("Fonts/191669dc-6429-45a2-9ff1-600a15595081.eot?#iefix");
-src:url("Fonts/191669dc-6429-45a2-9ff1-600a15595081.eot?#iefix") format("eot"),url("Fonts/6271cd63-26eb-4136-9c1c-733fa5171117.woff") format("woff"),url("Fonts/5b8f49d8-5775-486e-90d2-de0dcc0f2633.ttf") format("truetype"),url("Fonts/50350ba8-5ad6-474d-9f98-e9260e38b009.svg#50350ba8-5ad6-474d-9f98-e9260e38b009") format("svg");
-}
-@font-face{
 font-family:"Caxton W01 Book";
 src:url("Fonts/b142b246-1061-4b93-a864-d43f348a3078.eot?#iefix");
 src:url("Fonts/b142b246-1061-4b93-a864-d43f348a3078.eot?#iefix") format("eot"),url("Fonts/8b340ad4-fc37-4e27-becf-98b7ae3e1792.woff") format("woff"),url("Fonts/d1476c79-de90-4422-9db7-05ef5e6139b8.ttf") format("truetype"),url("Fonts/0b13bb0b-7430-4047-90b3-bde037651a0f.svg#0b13bb0b-7430-4047-90b3-bde037651a0f") format("svg");
@@ -108,10 +103,11 @@ font-family:"Caxton W01 Bold";
 src:url("Fonts/54b132dd-a75b-432e-9ef6-0ea793d63beb.eot?#iefix");
 src:url("Fonts/54b132dd-a75b-432e-9ef6-0ea793d63beb.eot?#iefix") format("eot"),url("Fonts/22b275f7-6cad-4159-b944-baec2b3c08e2.woff") format("woff"),url("Fonts/726accf3-f02e-4e0b-a861-e5296683985f.ttf") format("truetype"),url("Fonts/05c34b27-5bf7-41ef-a106-64740abae194.svg#05c34b27-5bf7-41ef-a106-64740abae194") format("svg");
 }
+
 @font-face{
-font-family:"Caxton W01 Bold Italic";
-src:url("Fonts/b9b86cb2-0b21-4f48-8df0-40b1e03d4a04.eot?#iefix");
-src:url("Fonts/b9b86cb2-0b21-4f48-8df0-40b1e03d4a04.eot?#iefix") format("eot"),url("Fonts/213bd7eb-1eed-48e3-ba04-a6ed68a7ca8e.woff") format("woff"),url("Fonts/422d134d-663e-4c31-934c-011806894e28.ttf") format("truetype"),url("Fonts/dd2f55b6-852f-4d29-a588-3aea8839d1f6.svg#dd2f55b6-852f-4d29-a588-3aea8839d1f6") format("svg");
+font-family:"ITCFranklinGothicW01-Dm_812668";
+src:url("Fonts/498d8f5c-6dfe-4a07-9fdf-321bcc11909c.eot?#iefix");
+src:url("Fonts/498d8f5c-6dfe-4a07-9fdf-321bcc11909c.eot?#iefix") format("eot"),url("Fonts/08fe22ab-0517-4203-bcc9-1ba2ca45f40c.woff") format("woff"),url("Fonts/6adc2e3a-d0c4-4c48-ba68-91b4107515d7.ttf") format("truetype"),url("Fonts/426ce955-d5bd-4a77-b077-402088f77e65.svg#426ce955-d5bd-4a77-b077-402088f77e65") format("svg");
 }
 
 @font-face {
@@ -434,7 +430,7 @@ a.mark {
 .main .content {
 	font-family: 'BLOKKNeue-Regular';
 	background-color: black;
-	margin-bottom: 25px;
+	margin: 10px 0 25px 0;
 }
 
 .main .content:hover {
@@ -448,9 +444,10 @@ a.mark {
 
 .item.event .heading {
 	display: block;
-	position: absolute;
-	width: 100%;
+/* 	position: absolute; */
+	width: 300px;
 	text-align: center;
+	margin: 0 auto;
 }
 
 
@@ -473,22 +470,26 @@ a.mark {
 
 
 .main .date {
-	color: white;
-	float: left;
+	position: absolute;
+	color: white;	
 	text-align: left;
+	left: 0px;
 	top: 0px;
 	max-width: 135px;
-	margin-bottom: 0px;
+	margin: 0px;
 }
 
 .main .location {
-	float: right;
+	position: absolute;
+	right: 0px;
+	top: 0px;
 	max-width: 100px;
 	text-align: right;
-	margin-bottom: 0px;
+	margin: 0px;
 }
 
 .main .copy {
+	margin-top: 20px;
 	list-style: none;
 	width: 100%;
 	font-size: 12px;
@@ -539,21 +540,94 @@ h2.heading {
 
 /* image styling */
 
-.item .attach {
-	max-width: 576px;
-	max-height: 360px;
-	overflow: hidden;
+/*  
+Set .attach and .permalink to relative, to contain
+the absolutely positioned .src that we'll specify below.
+*/
+.item .attach,
+.item .permalink {
+  position: relative;
 }
 
+
+/*  
+.permalink is the link around the image. This is the element we add padding-top to, in order to keep the ratio consistent.
+Padding, when expressed as a percentage, is calculated based on the width of the parent.
+In the case of your site, if you want to keep the image 576x360, that ends up being a ratio of 1.6, or 62.5%.
+We set the height to 0, since we'll be "creating" height using padding.
+Overflow hidden allows us to "crop" the image.
+*/
 .item .attach .permalink {
-	display: block;
-	max-width: 100%;
-	height: auto;
+  display: block;
+  width: 100%;
+  height: 0;
+  padding-top: 62.5%;
+  overflow: hidden;
+  background: url(../img/mica_gd_img.svg) left top no-repeat;
+  background-size: cover;
+}
+
+/*  
+Nothing special here, except the height is set to auto, and the opacity to 0.
+*/
+.item .attach img.src {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+/*   transition: opacity .3s ease-in-out; */
+}
+
+
+/*  
+Set the opacity to 1, to show our image.
+*/
+.item .attach:focus .src, .item .attach:hover .src {
+  opacity: 1;
+}
+
+
+/*
+.item .attach {
+	width: 100%;
+	overflow: hidden;
 	background: url(../img/mica_gd_img.svg) left top no-repeat;
 	background-size: 100%;
 }
 
-/* TOGGLE THESE CLASSES */
+.item .attach img {
+	height: auto;
+	overflow: hidden;
+}
+
+.item .attach {
+	width: 100%;
+	background: url(../img/mica_gd_img.svg) left top no-repeat;
+	background-size: 100%;
+}
+
+.item .attach .permalink {
+	display: block;
+}
+
+.item .attach .src {
+	visibility: hidden;
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+.item .attach .permalink {
+	display: block;
+	width: 100%;
+	height: auto;
+	background: url(../img/mica_gd_img.svg) left top no-repeat;
+	background-size: 100%;
+	overflow: hidden;
+}
 
 .item .attach .permalink img {
 	opacity: 0;
@@ -562,8 +636,7 @@ h2.heading {
 .item .attach .permalink:hover img {
 	opacity: 1;
 }
-
-
+*/
 
 /*
 Added to test dropdown menu
@@ -759,21 +832,110 @@ ul.menu.paginate {
 /* ==========================================================================
    Author's custom media queries
    ========================================================================== */
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 960px) {
+
+.collapse-toggle {
+	display: none;
+}
+
+.navigation {
+	font-family: 'BLOKKNeue-Regular', "Caxton W01 Bold";
+	font-weight: bold; 
+}
+
+.masthead .navigation {
+	display: inline-block;
+	position: relative;
+	max-width: 960px;
+	padding-left: 5%;
+	padding-right: 5%;
+	text-align: center;
+	height: 90px;
+	background: #212121;
+}
+
+.navigation .menus {
+	
+}
+
+.masthead .menu.level-1 {
+	margin: 0 auto;
+	padding-left: 0;
+}
+
+.navigation .item {
+	font-size: 22px;
+	padding: 0px;
+	width: 191px;
+	text-align: center;
+	display: inline-block; 
+	border-left: solid 1px black;
+	list-style: none;
+	float: none;
+}
+
+.navigation .link:active {
+	font-family: Balto;
+}
 
 .enter {
-	margin-top: 100px;
+	margin-top: 121px;
 }
 
+.masthead {
+	max-width: 960px;
+	width: 100%;
 }
 
 
 
-	
+/*
+.item .attach {
+	max-width: 576px;
+	height: 30%;
+	overflow: hidden;
+}
+
+.item .attach .permalink {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	background: url(../img/mica_gd_img.svg) left top no-repeat;
+	background-size: 100%;
+}
+*/
+}
+
 @media screen and (max-width: 720px) {
 
+.side {
+	display: none;
+	}
+	
+.item .attach {
+	max-width: 100%;
+}
+
+.main {
+	max-width: 576px;
+	/* margin: 0 auto; */
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.content {
+	max-width: 576px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
 .enter {
-	margin-top: 100px;
+	margin-top: 30px;
+}
+
+.scroll .social {
+	float:right;
+	z-index: 10000;
 }
 
 
@@ -784,10 +946,15 @@ ul.menu.paginate {
 }
 */
 
-.brand 
-
 /* --------- COLLAPSIBLE MENU ----------*/
  
+
+.top-bar {
+	width: 100%;
+	background-color: #00FF91;
+	height: 30px;
+}
+
 .collapse {
   height: 0;
   max-height: 0;
@@ -797,15 +964,17 @@ ul.menu.paginate {
   transition: all .3s linear;
 }
 
-
 .collapse-toggle {
-	display: block!important;	
+  display: block!important;	
   padding: 0;
   border: 0;
   background: none;
-  background-color: red;
-  
+  background-color: none;
+  width: 20px;
+  height: 20px;
+  margin: 5px 5px 0px 0px;
   position: absolute;
+  top: 0;
   right:0;
   z-index: 99999;
 }
@@ -823,50 +992,32 @@ ul.menu.paginate {
 	right: 0px;
 }
 
+.masthead .utility.menus {
+	height: 30px;
+	text-align: center;
+}
+
+.masthead .utility.menus ul.menu {
+	height: 100%;
+	text-align: center;
+}
+
+.masthead .utility .item {
+	float: none;
+
+}
+
+.masthead .utility ul.menu {
+	padding-left: 0px;
+}
+
+
 /* mica brand */
-
-/*
-.mobile .brand {
-	float: left;
-	position: absolute;
-	left: 5px;
-	width: 80px;
-	height: 20px;
-	top: 3px;
-	z-index: 1000;
-	vertical-align: center;
-	overflow: hidden;
-}
-
-a.mobile.mark {
-	background-color: black;
-}
-
-.mobile .brand a:hover {
-	background-color: #00FF91;
-	width: 98px;
-}
-*/
-
-
-
-/*
-.icon-close-open {
-    width:20px;
-    height:20px;
-    position:absolute;
-    background-image: url(../img/icon-close-open.png);
-    background-color: red;
-    right:15px;
-    z-index: 99999;
-}
-*/
-
-
 
 /* utility navigation */
 
 
+/*
 .masthead .utility {
 	font-family: 'BLOKKNeue-Regular';
 	text-align: center;
@@ -918,14 +1069,11 @@ a.mobile.mark {
 	line-height: 19px;
 	color: black;
 }
-
-
-
-
-
+*/
 
 /* main navigation */
 
+/*
 .masthead .navigation {
 	font-family: 'BLOKKNeue-Regular', "Caxton W01 Bold";
 	font-weight: bold; 
@@ -940,6 +1088,7 @@ a.mobile.mark {
 	margin: 0 auto;
 	padding-left: 0;
 }
+*/
 
 /*
 .masthead .navigation .item {
@@ -973,98 +1122,108 @@ a.mobile.mark {
 		display: none;
 	}
 */
-	
-	.item .heading {
-		position: absolute;
-		
-	}
-	.side {
-		display: none;
-	}
-	
-	.main {
-/* 		max-width: 720px; */
-	}
+
+/* page footer */
+
+.footer {
+	font-family: "Caxton W01 Bold";
+	font-size: 12px; 
+	background-color: #00FF91;
+	max-width: 960px;
+	height: auto;
+	padding-top: 5px;
+	list-style: square;
+	text-align: center;
 }
 
-
-
-
-
-@media screen and (max-width: 960px) {
-
-.collapse-toggle {
-	display: none;
-}
-
-.navigation {
-	font-family: 'BLOKKNeue-Regular', "Caxton W01 Bold";
-	font-weight: bold; 
-}
-
-.masthead .navigation {
+.footer .departments.menus.ui {
 	display: inline-block;
+}
+
+.footer .menu.ui {
+	padding-left: 0px;
+}
+
+.footer .legal {
+	display: block;
 	position: relative;
-	max-width: 960px;
-	padding-left: 5%;
-	padding-right: 5%;
-/* 	margin: 0 auto; */
-	text-align: center;
-	height: 90px;
-	background: #212121;
-}
-
-
-.masthead .menu.level-1 {
-	margin: 0 auto;
-	padding-left: 0;
-}
-
-.navigation .item {
-	font-size: 22px;
-	padding: 0px;
-	width: 191px;
-	text-align: center;
-	display: inline-block; 
-	border-left: solid 1px black;
-/* 	border-right: solid 1px black; */
-	list-style: none;
 	float: none;
+	max-width: 720px;
+	margin: 0 auto;
+	text-align: center;
+	padding-bottom: 10px;
 }
 
-.navigation .link:active {
-	font-family: Balto;
-}
-
-.enter {
-	margin-top: 121px;
-}
-
-.masthead {
-	max-width: 960px;
+/*
+.footer .departments .menu .link {
+	text-decoration: none;
+	color: black;
 	width: 100%;
 }
 
-
-
-/*
-.item .attach {
-	max-width: 576px;
-	height: 30%;
-	overflow: hidden;
+nav.departments.menus.ui {
+	float: none;
+	height: 15px;
+	text-align: center;
+	margin: 0 auto;
+	background-color: #00FF91;
 }
 
-.item .attach .permalink {
-	display: block;
-	max-width: 100%;
+.footer ul.menu.ui {
+	float: none;
+	padding: 0;
+	margin: 0 auto;
+}
+
+.footer .menu.ui .item + .item {
+	margin-left: 30px;
+}
+
+.footer .menu.ui li.item {
+	display: inline-block;
+	float: left;
+}
+
+.footer .legal {
+	position: relative;
+	width: 100%;
 	height: auto;
-	background: url(../img/mica_gd_img.svg) left top no-repeat;
-	background-size: 100%;
+	margin: 0 auto;
+	color: #00d062;
+	float: none;	
 }
 */
 
+}
 
+@media screen and (max-width: 701px) {
+	
+.masthead .utility.menus {
+	height: 60px;
+	text-align: center;
+}
 
+.masthead .navigation.menus {
+	height: 135px;
+}
+
+}
+
+@media screen and (max-width: 463px) {
+
+.masthead .navigation.menus {
+	height: 225px;
+}
+
+}
+
+@media screen and (max-width: 320px) {
+
+.enter {
+	margin-top: 100px;
+}
+
+}
 
 /* ==========================================================================
    Helper classes
