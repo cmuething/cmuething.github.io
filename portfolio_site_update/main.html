@@ -5,24 +5,141 @@
 		<title>Connor Muething</title>
 		
 		<link rel="stylesheet" href="css/main.css">
+        
+		<!--When do I need to add in meta tags?-->
+		
+		<meta name="description" content="Designer from Cincinnati">
+		
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
 
 	</head>
 	
 	<body>
+	
+		<div id="limit-t"></div>
 		
-		<p> Connor Muething </p>
+		<div id="limit-r"></div>
+		
+		<div id="limit-b"></div>
+		
+		<div id="limit-l"></div>
+		
+		<section id="overview">
+		
+			<!--This section comes in from the top and features an overview with thumbnails-->
+			
+		</section>
+			
+		<div id="move" class="i curr">
+			
+				<!--MB preloads 4 projects to act as next projects -->
+			
+				<section id="box1" class="image">
+                    
+                    <article>
+					   <img class="images" src="img/photo_1.jpg">
+					</article>
+                    
+					</section>
+				
+				<section id="box2" class="image">
+					
+					<article >
+					<img class="images" src="img/photo_2.jpg">
+					</article>
+					
+				</section>
+				
+				<section id="box3" class="image">
+					
+					<article>
+					<img class="images" src="img/photo_3.jpg">
+					</article>
+					
+				</section>
+				
+				<section id="project_4">
+					
+					<article>
+					
+					</article>
+					
+				</section>
+				
+				<section id="project_5">
+					
+					<article>
+					
+					</article>
+					
+				</section>
+			
+		</div>
+        
+<!--
+TO DO:
+    
+    -create divs on top to act as buttons for everything, hoverstates
+    -figure out how to have the project pages go left and right
+    -figure out how to get images within each project page to go up and down
+-->
+        
+<!--TO GET EVERYTHING TO BE SCALED AND CENTERED-->
+
+<!--
+					<article id="move" class="i curr">
+					   <img id="box1" class="image"src="img/photo_1.jpg">
+					</article>
+					
+                    <article id="move" class="i curr">
+					   <img id="box2" class="image" src="img/photo_2.jpg">
+					</article>
+                    
+                    <article id="move" class="i curr">
+					   <img id="box3" class="image"src="img/photo_3.jpg">
+					</article>
+-->
+                    
+<!--TO TRY THE SLIDE, EACH IMAGE IN A DIV UNDER THE SAME ARTICLE-->
+             
+<!--
+        <article id="move">
+    
+    <div id="box1" class="image"><img class="images" src=""></div>
+    <div id="box2" class="image"><img class="images" src=""></div>
+    <div id="box3" class="image"><img class="images" src=""></div>
+    
+        </article>
+-->
+                    
+		<section id="connor-info"> 
+		
+			<!-- this comes in from the left and contains my contact information -->
+		
+		</section>
+		
+		<p id="connor" title="Connor Muething"> Connor Muething </p>
 		
 		<nav>
 		
-			<div class="r" title="Next project"> <img class="normal" src="" width="11" height="11" alt="Next project"> </div>
+			<div class="r" title="Next project"> 
+			
+				<img class="normal" src="" width="11" height="11" alt="Next project" style="display: block;">
+				<img class="hover" src="" width="11" height="11" alt="Next project" style="display: none;"> 
+				
+			</div>
 			
 			<div class="l" title="Previous project"> left </div>
 			
 			<div class="t" title="Overview"> top </div>
 			
 			<div class="b" title="Info"> bottom </div>
-			
+						
 		</nav>
+        
+        <script language="javascript" type="text/javascript" src="js/jquery-1.11.3.js"></script>
+        
+        <script type="text/javascript" src="js/index.js"></script>
 	
 	</body>
 	
