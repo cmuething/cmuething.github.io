@@ -1,8 +1,87 @@
 #connor {
+    position: absolute;
     font-size: 10pt;
+    background-color: aqua;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+.connor-info {
+    position: absolute;
+    left: -500;
+    top: 0;
+    width: 500px;
+    height: 100%;
+    border-right: 1px solid #000;
+    background-color: white;
+    z-index: 999;
+}
+
+.connor-info .connor-info-toggle {
+    position: absolute;
+	top: 12px;
+	right: 10px;
+}
+
+#tops {
+    position: absolute;
+    font-size: 10pt;
+    color: aqua;
+    margin: 0 auto;
+    top: 5;
+    left: 50%;
+    right: 50%;
+    z-index: 9999;
+    cursor: pointer;
+}
+.overview {
+    position: absolute;
+    top: -200px;
+    width: 100%;
+    height: 200px;
+    border-bottom: 1px solid #000;
+    background-color: white;
+    z-index: 999;
+    box-sizing: border-box;
+}
+
+.overview .overview-toggle {
+    position: absolute;
+	top: 12px;
+	right: 10px;
+}
+
+
+#bottoms {
+    position: absolute;
+    font-size: 10pt;
+    color: aqua;
+    margin: 0 auto;
+    bottom: 5;
+    left: 50%;
+    right: 50%;
+    z-index: 9999;
+    cursor: pointer;
+}
+.project-details {
+    position: absolute;
+    bottom: -200px;
+    width: 100%;
+    height: 200px;
+    border-top: 1px solid #000;
+    background-color: white;
+    z-index: 999;
+    box-sizing: border-box;
+}
+
+.project-details .project-details-toggle {
+    position: absolute;
+	top: 12px;
+	right: 10px;
 }
 
 .r {
+    display: none;
 	background-color: red;
 	opacity: .5;
 	position: absolute;
@@ -12,9 +91,11 @@
 	min-width: 110px;
 	height: 100%;
 	cursor: pointer;
+    z-index: 999;
 }
 
 .l {
+    display: none;
 	background-color: red;
 	opacity: .5;
 	position: absolute;
@@ -24,9 +105,11 @@
 	min-width: 110px;
 	height: 100%;
 	cursor: pointer;
+    z-index: 999;
 }
 
 .t {
+    display: none;
 	background-color: red;
 	opacity: .5;
 	position: absolute;
@@ -36,9 +119,11 @@
 	min-height: 50px;
 	height: 8%;
 	cursor: pointer;
+    z-index: 999;
 }
 
 .b {
+    display: none;
 	background-color: red;
 	opacity: .5;
 	position: absolute;
@@ -48,6 +133,7 @@
 	min-height: 50px;
 	height: 8%;
 	cursor: pointer;
+    z-index: 999;
 }
 
 .normal {
@@ -172,6 +258,7 @@ article img {
 }
 
 #limit-t {
+    cursor: n-resize;
 	display: none;
     position: absolute;
     left: 0;
@@ -182,16 +269,18 @@ article img {
 }
 
 #limit-r {
+    cursor: e-resize;
     position: absolute;
     right: 0;
     top: 0;
-    width: 50%;
+    width: 40%;
     height: 100%;
 /*    background-color: rgb(0,230,0);*/
     z-index: 999;
 }
 
 #limit-b {
+    cursor: s-resize;
     display: none;
     position: absolute;
     left: 0;
@@ -202,10 +291,11 @@ article img {
 }
 
 #limit-l {
+    cursor: w-resize;
     position: absolute;
     left: 0;
     top: 0;
-    width: 50%;
+    width: 40%;
     height: 100%;
 /*    background-color: rgb(255,45,0);*/
     z-index: 999;
