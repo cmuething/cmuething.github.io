@@ -29,8 +29,6 @@
 		<section class="overview">
 		
 			<!--This section comes in from the top and features an overview with thumbnails-->
-            
-        <article class="overview-toggle"> <p>this is a description</p> </article>
 			
 		</section>
         
@@ -139,8 +137,17 @@ TO DO:
 		<section class="connor-info"> 
 		
 			<!-- this comes in from the left and contains my contact information -->
-            <article class="connor-info-toggle"> <p>this is a description</p> </article>
-		
+            
+        <script id="myname" type="text/x-mustache-template">
+            {{#user}}
+                <article class="connor-info-toggle">
+                    <h1>{{first_name}} {{last_name}}</h1>
+                    <p>{{city}},{{state}}</p>
+    <!--            <p>this is a description</p>-->
+                </article>
+            {{/user}}
+        </script>
+            		
 		</section>
 		
 		<p class="connor-info-toggle" id="connor" title="Connor Muething"> Connor Muething </p>
@@ -165,6 +172,30 @@ TO DO:
         <script language="javascript" type="text/javascript" src="js/jquery-1.11.3.js"></script>
         
         <script type="text/javascript" src="js/index.js"></script>
+        
+        
+        
+<!--FROM KRISTIAN'S EXAMPLE-->
+        
+        <script src="js/behance.js"></script>
+        
+        <script src="js/mustache.min.js"></script>
+        
+        <script>
+        
+            var url = 'https://api.behance.net/v2/users/' + userName + '/?api_key=' + apiKey +'&callback=?';
+      /* some issue where no more than 25 can be returned at a time, there are ways to ask for more? https://help.behance.net/hc/communities/public/questions/202357274-Number-of-Behance-API-request-results-limited-to-25- */
+      console.log('connected to ' + url + '.');
+            
+            $.getJSON(url, function(data) {
+            
+            var template = $('#myname').html();
+            var info = Mustache.to_html(template, data);
+            $('.connor-info').html(info);
+                
+            });
+            
+        </script>
 	
 	</body>
 	
