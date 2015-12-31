@@ -4,7 +4,8 @@
 	
 		<title>Connor Muething</title>
 		
-		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         
 		<!--When do I need to add in meta tags?-->
 		
@@ -15,7 +16,7 @@
 	</head>
 	
 	<body>
-	
+            
 		<div id="limit-t"></div>
 		
 		<div id="limit-r"></div>
@@ -23,16 +24,28 @@
 		<div id="limit-b"></div>
 		
 		<div id="limit-l"></div>
-        
+            
 <!--OVERVIEW-->
         
 		<section class="overview">
 		
 			<!--This section comes in from the top and features an overview with thumbnails-->
-			
+            
+            
+            <div class="thumbnail">
+                <a>
+                    <div class="thumbnail-text">
+                        <p>Project Title</p>
+                    </div>
+                    <div class="thumbnail-img">
+                        <img src="img/test/five.jpg">
+                    </div>
+                </a>
+            </div>
+            			
 		</section>
         
-        <p class="overview-toggle" id="tops"> $$$ </p>
+        <p class="overview-toggle" id="tops"><i class="fa fa-th-large"></i></p>
         
 <!--PROJECT DETAILS-->
         
@@ -44,11 +57,13 @@
 			
 		</section>
         
-        <p class="project-details-toggle" id="bottoms"> $$$ </p>
+        <p class="project-details-toggle" id="bottoms"> Project </p>
         
 <!--PROJECT PAGES-->
-			
-		<div id="move" class="i curr">
+                
+        <div class="test"> </div>
+        
+		<div>
 			
 				<!--MB preloads 4 projects to act as next projects -->
 			
@@ -94,16 +109,21 @@
 				</section>
 			
 		</div>
-        
+                                        
 <!--
 TO DO:
     
     -create divs on top to act as buttons for everything, hoverstates
     -figure out how to prevent the click twice from breaking it
-    -read up on the behance api stuff
-    -design how the type in the drawers, the thumb nails, and buttons will look.
     -figure out how thumbnails link to project "pages
     -upload everything to behance
+
+    -fix the scroll activated navigation
+    -bring back the cursor hovers on limit r and l
+    -click off of drawer to close???
+    -make the images scroll to the edges of the screen rather than overflow:hidden
+    -arrows on left and right???
+    -center aligning project title and tile icon
 -->
         
 <!--TO GET EVERYTHING TO BE SCALED AND CENTERED-->
@@ -150,7 +170,7 @@ TO DO:
             		
 		</section>
 		
-		<p class="connor-info-toggle" id="connor" title="Connor Muething"> Connor Muething </p>
+		<p class="connor-info-toggle" id="connor" title="Connor Muething"> Connor<br>Muething </p>
 		
 		<nav>
 		
