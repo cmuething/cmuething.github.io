@@ -1,34 +1,87 @@
-$('#limit-l').click(function () {
-    $('.image').each(function () {
-        if ($(this).offset().left < 0) {
-            $(this).css("left", "150%");
-        } else if ($(this).offset().left > $('#move').width()) {
-            $(this).animate({
-                left: '0'
-            }, 500);
-        } else {
-            $(this).animate({
-                left: '-150%'
-            }, 500);
-        }
-    });
-});
+//$('#limit-l').click(function () {
+//    $('.image').each(function () {
+//        if ($(this).offset().left < 0) {
+//            $(this).css("left", "150%");
+//        } else if ($(this).offset().left > $('#move').width()) {
+//            $(this).animate({
+//                left: '0'
+//            }, 500);
+//        } else {
+//            $(this).animate({
+//                left: '-150%'
+//            }, 500);
+//        }
+//    });
+//});
+//
+//$('#limit-r').click(function () {
+//    $('.image').each(function () {
+//        if ($(this).offset().left < 0) {
+//            $(this).animate({
+//                left: '0'
+//            }, 500);
+//        } else if ($(this).offset().left > $('#move').width()) {
+//            $(this).css("left", "-150%");
+//        } else {
+//            $(this).animate({
+//                left: '150%'
+//            }, 500);
+//        }
+//    });
+//});
 
-$('#limit-r').click(function () {
-    $('.image').each(function () {
-        if ($(this).offset().left < 0) {
-            $(this).animate({
-                left: '0'
-            }, 500);
-        } else if ($(this).offset().left > $('#move').width()) {
-            $(this).css("left", "-150%");
-        } else {
-            $(this).animate({
-                left: '150%'
-            }, 500);
-        }
-    });
-});
+
+			$("#limit-l").click(function() {
+				console.log("Left");
+				var obj = $(".curr");
+				$(obj).animate({
+					left: '-50%'
+				}, 500, function() {
+					$(this).css('left', '+150%');
+    				$(this).appendTo('#container');
+				});
+				$(obj).next().animate({
+					left: '+50%'
+				}, 500, function() {
+					$(this).addClass('curr');
+					$(obj).removeClass('curr');
+				});
+			});
+
+			$("#limit-r").click(function() {
+				console.log("Right");
+				var obj = $(".curr");
+				var prox = $(obj).siblings(":last");
+				$(obj).animate({
+					left: '+150%'
+				}, 500, function() {
+					$(prox).prependTo('#container');
+				});
+				$(prox).css('left', '-50%');
+				$(prox).animate({
+					left: '+50%'
+				}, 500, function() {
+					$(this).addClass('curr');
+					$(obj).removeClass('curr');
+				});
+			});
+
+//			var hammertime = new Hammer( document.getElementById("container") );
+//			hammertime.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL });
+//			hammertime.on('swipeleft', function() {
+//				$("#esq").trigger("click");
+//			});
+//			hammertime.on('swiperight', function() {
+//				$("#dir").trigger("click");
+//			});
+//		});
+
+
+
+
+
+
+
 
 //INFO
 

@@ -27,25 +27,24 @@
             
 <!--OVERVIEW-->
         
+        <p class="overview-toggle" id="tops"><i class="fa fa-th-large"></i></p>
+
 		<section class="overview">
 		
 			<!--This section comes in from the top and features an overview with thumbnails-->
-            
-            
-            <div class="thumbnail">
-                <a>
-                    <div class="thumbnail-text">
-                        <p>Project Title</p>
-                    </div>
-                    <div class="thumbnail-img">
-                        <img src="img/test/five.jpg">
-                    </div>
-                </a>
+                
+        <script id="project-cards" type="text/x-mustache-template">
+            {{#projects}}
+            <div class="thumbnail" id="b{{id}}">
+              <a class="wrapping" href="#{{id}}" data-project-id="{{id}}">
+                <div class="thumbnail-text"><p>{{name}}</p></div>
+                <div class="thumbnail-image"><img src="{{covers.404}}" alt="{{name}}" /></div>    
+              </a>
             </div>
-            			
-		</section>
+            {{/projects}}
+       </script>
         
-        <p class="overview-toggle" id="tops"><i class="fa fa-th-large"></i></p>
+       </section>
         
 <!--PROJECT DETAILS-->
         
@@ -63,18 +62,20 @@
                 
         <div class="test"> </div>
         
-		<div>
+		<div id=container>
 			
 				<!--MB preloads 4 projects to act as next projects -->
 			
-				<section id="box1" class="image">
+				<section href="" id="box1" class="image curr">
+                    
+                    <a href="/project1"></a>
                     
                     <article class="scroll">
                        <img class="images" src="img/photo_4.jpg">
                        <img class="images" src="img/photo_1.jpg">
 					</article>
-                    
-					</section>
+                                
+				</section>
 				
 				<section id="box2" class="image">
 					
@@ -112,10 +113,12 @@
 					
 				</section>
 				
-				<section id="project_5">
+				<section id="box5" class="image">
 					
-					<article>
-					
+					<article class="scroll">
+					   <img class="images" src="img/test/one.jpg">
+                       <img class="images" src="img/test/two.jpg">
+                       <img class="images" src="img/test/three.jpg">
 					</article>
 					
 				</section>
@@ -125,52 +128,25 @@
 <!--
 TO DO:
     
+    -style thumbnails
+
     -figure out how thumbnails link to project "pages
 
     -create divs on top to act as buttons for everything, hoverstates
     -figure out how to prevent the click twice from breaking it
 
-    -fix the scroll activated navigation
+    -fix the scroll activated navigation (does this need to be fixed)
     -bring back the cursor hovers on limit r and l
     -click off of drawer to close???
     -make the images scroll to the edges of the screen rather than overflow:hidden
     -arrows on left and right???
     -center aligning project title and tile icon
-    -white gap in between projects?
 
 QUESTIONS FOR KRISTIAN
-
-    -how to put more than three projects?
     -
 -->
         
 <!--TO GET EVERYTHING TO BE SCALED AND CENTERED-->
-
-<!--
-					<article id="move" class="i curr">
-					   <img id="box1" class="image"src="img/photo_1.jpg">
-					</article>
-					
-                    <article id="move" class="i curr">
-					   <img id="box2" class="image" src="img/photo_2.jpg">
-					</article>
-                    
-                    <article id="move" class="i curr">
-					   <img id="box3" class="image"src="img/photo_3.jpg">
-					</article>
--->
-                    
-<!--TO TRY THE SLIDE, EACH IMAGE IN A DIV UNDER THE SAME ARTICLE-->
-             
-<!--
-        <article id="move">
-    
-    <div id="box1" class="image"><img class="images" src=""></div>
-    <div id="box2" class="image"><img class="images" src=""></div>
-    <div id="box3" class="image"><img class="images" src=""></div>
-    
-        </article>
--->
                     
 		<section class="connor-info"> 
 		
@@ -221,8 +197,10 @@ QUESTIONS FOR KRISTIAN
         
         <script>
         
+//            Calling user specific information
+            
             var url = 'https://api.behance.net/v2/users/' + userName + '/?api_key=' + apiKey +'&callback=?';
-      /* some issue where no more than 25 can be returned at a time, there are ways to ask for more? https://help.behance.net/hc/communities/public/questions/202357274-Number-of-Behance-API-request-results-limited-to-25- */
+      
       console.log('connected to ' + url + '.');
             
             $.getJSON(url, function(data) {
@@ -232,6 +210,40 @@ QUESTIONS FOR KRISTIAN
             $('.connor-info').html(info);
                 
             });
+            
+//            Calling project specific information
+            
+         var url = 'https://api.behance.net/v2/users/' + userName + '/projects/?api_key=' + apiKey +'&per_page=25&callback=?';
+     
+      console.log('connected to ' + url + '.');
+            
+//            Just trying to make them the same height?
+            
+      var matchingHeights = function() {
+      var pHeight = 0;
+          
+        $('.thumbnail').each(function() {
+          var projectID  = $(this).find('a.wrapping').attr('data-project-id');
+          pHeight = pHeight > $(this).height() ? pHeight : $(this).height();
+          console.log('Number ' + projectID + ' is ' + pHeight + ' px tall!');
+        });
+        $('.thumbnail').each(function() {
+          $(this).height(pHeight);
+        });
+      }
+      
+      $.getJSON(url, function(data) {
+        //mustache for projects
+          
+        var template = $('#project-cards').html();
+        var info = Mustache.to_html(template, data);
+        $('.overview').html(info);
+          
+        // try to get all the things printing out @ the same height.
+        $('.thumbnail img').load(function() {
+          matchingHeights();
+        });
+        });
             
         </script>
 	
