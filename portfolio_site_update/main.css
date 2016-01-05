@@ -15,8 +15,8 @@ body {
 #connor {
     position: absolute;
     font-size: 14pt;
-    z-index: 9999;
-    left: 3%;
+    z-index: 10000;
+    left: 50px;
     top: 1%;
 }
 
@@ -33,7 +33,13 @@ body {
     width: 500px;
     height: 100%;
     background-color: white;
-    z-index: 999;
+    z-index: 9999;
+}
+
+.connor-info .connor-info-toggle p {
+    margin-left: 50px;
+    margin-top: 80px;
+    padding-right: 50px;
 }
 
 .connor-info .connor-info-toggle {
