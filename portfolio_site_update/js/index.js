@@ -232,6 +232,17 @@ $(document).ready(function(){
     });
 });
 
+//THUMBNAIL HOVER TO SHOW TEXT
+
+$(document).ready(function(){
+    var textHover = $('.thumbnail-image');
+    var textAppear = $('.thumbnail-text');
+    
+    textHover.hover(function() {
+        textAppear.toggleClass('show');
+    });
+});
+
 //CLOSE OVERVIEW TEST
 
 //$(document).ready(function(){
