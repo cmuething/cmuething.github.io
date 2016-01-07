@@ -49,14 +49,30 @@
 <!--PROJECT DETAILS-->
         
         <section class="project-details">
-		
-			<!--This section comes in from the top and features an overview with thumbnails-->
+		  
+            <script id="project-pages" type="text/x-mustache-template">
+            {{#project}}
+
+                <!--
+                <div class="project-page" id="project-{{project.id}}">
+        <div class="container">
+          <img src="{{project.covers.original}}" alt="{{project.name}}" />
+          <h1>{{project.name}}</h1>
+          <p>{{project.description}}</p>
+        </div>
+        <button class="close">X</button>
+      </div>
+-->
+            <article class="project-details-toggle"><p>{{project.description}}</p></article>
             
-        <article class="project-details-toggle"> <p>this is a description</p> </article>
+            {{/project}}
+            </script>
+            
+<!--        <article class="project-details-toggle"> <p>this is a description</p> </article>-->
 			
 		</section>
         
-        <p class="project-details-toggle" id="bottoms"> Project </p>
+        <p class="project-details-toggle" id="bottoms">PROJECT NAME</p>
         
 <!--PROJECT PAGES-->
                 
@@ -68,12 +84,20 @@
 			
 				<section href="" id="box1" class="image curr">
                     
+                    <script id="project-page" type="text/x-mustache-template">
+                       <article class="scroll">
+                            <img src="{{project.modules.sizes.1400}}" alt="{{project.name}}"/>
+					   </article>  
+                    </script>
+                    
                     <a href="/project1"></a>
                     
+<!--
                     <article class="scroll">
                        <img class="images" src="img/photo_4.jpg">
                        <img class="images" src="img/photo_1.jpg">
 					</article>
+-->
                                 
 				</section>
 				
@@ -128,18 +152,22 @@
 <!--
 TO DO:
     
-    -toggle text on thumbnails
     -style thumbnails
+    -fix left click problem???
 
-    -link to project pages
+    -how do I link a click on a thumbnail, with a specific project page??
 
-    -figure out how thumbnails link to project "pages
+    -MOBILE VIEW
+
+    -percentages and ems
 
     -fix the scroll activated navigation (does this need to be fixed)
     -click off of drawer to close???
     -make the images scroll to the edges of the screen rather than overflow:hidden
     -arrows on left and right???
     -center aligning project title and tile icon
+
+    -match up background colors with behance
 
 QUESTIONS FOR KRISTIAN
     -how to solve too many requests 
@@ -196,7 +224,7 @@ QUESTIONS FOR KRISTIAN
         
         <script>
         
-//            Calling user specific information
+//       CALLING USER SPECIFIC INFORMATION
             
             var url = 'https://api.behance.net/v2/users/' + userName + '/?api_key=' + apiKey +'&callback=?';
       
@@ -210,14 +238,12 @@ QUESTIONS FOR KRISTIAN
                 
             });
             
-//            Calling project specific information
+//        CALLING PROJECT SPECIFIC INFORMATION
             
          var url = 'https://api.behance.net/v2/users/' + userName + '/projects/?api_key=' + apiKey +'&per_page=25&callback=?';
      
       console.log('connected to ' + url + '.');
-            
-//            Just trying to make them the same height?
-            
+                        
       var matchingHeights = function() {
       var pHeight = 0;
           
@@ -243,6 +269,30 @@ QUESTIONS FOR KRISTIAN
           matchingHeights();
         });
         });
+            
+//        CALLING SPECIFIC PROJECTS
+            
+         var projectID  = $(this).attr('data-project-id');
+         var projectUrl = 'https://api.behance.net/v2/projects/32397281/?api_key=' + apiKey +'&callback=?';
+            
+         console.log('trying to show ' + projectUrl + '.');
+            
+          $.getJSON(projectUrl, function(data) {
+            //mustache for projects
+              
+            var template = $('#project-pages').html();
+            var info = Mustache.to_html(template, data);
+            $('.project-details').html(info);
+              
+            var template = $('#project-page').html();
+            var info = Mustache.to_html(template, data);
+            $('.curr').html(info);
+              
+//            $('.project-page button.close').click(function() {
+//              $(this).parent().hide();
+//            });
+              
+          });
             
         </script>
 	

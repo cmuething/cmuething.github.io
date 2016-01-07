@@ -127,7 +127,7 @@ $(document).ready(function () {
 	    	});	
     	} else {
 	    	overviewTop.animate({
-		    	top: -overviewTopHeight
+		    	top: "-400px"
 	    	}, 250);	
     	}
     });
@@ -229,17 +229,6 @@ $(document).ready(function(){
     
     gradientButton.click(function() {       
         gradientMove.toggleClass('gradient');
-    });
-});
-
-//THUMBNAIL HOVER TO SHOW TEXT
-
-$(document).ready(function(){
-    var textHover = $('.thumbnail-image');
-    var textAppear = $('.thumbnail-text');
-    
-    textHover.hover(function() {
-        textAppear.toggleClass('show');
     });
 });
 
