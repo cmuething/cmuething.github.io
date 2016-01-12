@@ -76,13 +76,6 @@
 //			});
 //		});
 
-
-
-
-
-
-
-
 //INFO
 
 $(document).ready(function () {
@@ -127,7 +120,7 @@ $(document).ready(function () {
 	    	});	
     	} else {
 	    	overviewTop.animate({
-		    	top: "-400px"
+		    	top: "-600px"
 	    	}, 250);	
     	}
     });
@@ -136,7 +129,7 @@ $(document).ready(function () {
 //PROJECT DETAILS
 
 $(document).ready(function () {
-    $('.project-details-toggle').on('click', function(event){
+    $('.project-label').on('click', function(event){
     	event.preventDefault();
     	// create menu variables
     	var projectBottom = $('.project-details');
@@ -224,12 +217,34 @@ setInterval(updateGradient,10);
 //BUTTONS
 
 $(document).ready(function(){
-    var gradientButton = $('.overview-toggle, .project-details-toggle, .connor-info-toggle');
+    var gradientButton = $('.overview-toggle, .project-label, .connor-info-toggle');
     var gradientMove = $('.test');
     
     gradientButton.click(function() {       
         gradientMove.toggleClass('gradient');
     });
+});
+
+//LOADING SCREEN 
+
+function onReady(callback) {
+    var intervalID = window.setInterval(checkReady, 1000);
+
+    function checkReady() {
+        if (document.getElementsByTagName('body')[0] !== undefined) {
+            window.clearInterval(intervalID);
+            callback.call(this);
+        }
+    }
+}
+
+function show(id, value) {
+    document.getElementById(id).style.display = value ? 'block' : 'none';
+}
+
+onReady(function () {
+    show('whole-page', true);
+    show('loading', false);
 });
 
 //CLOSE OVERVIEW TEST

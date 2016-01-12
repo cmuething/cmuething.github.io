@@ -1,12 +1,18 @@
-/*FIRST SHIFT*/
-
-@media (min-width: 1300px) {
+@media (min-width: 1400px) {
 
 .overview {
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
     top: -300px;
+    width: 100%;
     height: 300px;
+    background-color: white;
+    z-index: 9998;
+    box-sizing: border-box;
+    padding: 75px 10% 2% 10%;
 }
-
+    
 .thumbnail {
     cursor: pointer;
     position: relative;
@@ -19,16 +25,14 @@
   
 }
 
-/*END OF FIRST SHIFT*/
-
-@media (min-width: 1150px) {
+@media (min-width: 1150px) and (max-width: 1399px) {
     
 .overview {
     overflow: hidden;
     position: absolute;
-    top: -600px;
+    top: -500px;
     width: 100%;
-    height: 600px;
+    height: 500px;
     background-color: white;
     z-index: 9998;
     box-sizing: border-box;
@@ -48,9 +52,23 @@
 }
 
 body {
-/*    background-color: beige;*/
     margin: 0;
     font-family: UniversLTStd-Light
+}
+
+#whole-page {
+    display: none;
+}
+
+#loading {
+    position: absolute;
+    z-index: 99999999;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+/*add whatever you want the loading screen to be here*/
+    background-color: red;
 }
 
 .gradient {
@@ -112,9 +130,9 @@ body {
 .overview {
     overflow: hidden;
     position: absolute;
-    top: -300px;
+    top: -500px;
     width: 100%;
-    height: 300px;
+    height: 500px;
     background-color: white;
     z-index: 9998;
     box-sizing: border-box;
@@ -173,15 +191,19 @@ body {
     display: none; 
 }
 
-#bottoms {
+.project-label {
     position: absolute;
-    font-size: 10pt;
-    text-align: center;
-    margin: 0 auto;
-    bottom: 2%;
     left: 50%;
     right: 50%;
+    bottom: 2%;
+    left: 45%;
     z-index: 9998;
+}
+
+#bottoms {
+    position: relative;
+    font-size: 10pt;
+    text-align: center;
 }
 
 .project-details {
@@ -393,6 +415,7 @@ article img {
 */
 
 .scroll {
+    cursor: row-resize;
     width: 80%;
     position: absolute;
     top: 50%;
