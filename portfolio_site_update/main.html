@@ -168,8 +168,10 @@ TO DO:
     -MOBILE VIEW!!!!
 
     -percentages and ems
+    
+    -loading screen for entire site while waiting for behance API
 
-    -store the json file after initial load to avoid limit
+    -SESSION STORAGE...store the json file after initial load to avoid limit
 
     -disable all buttons when one of the drawers 
 
@@ -235,6 +237,28 @@ QUESTIONS FOR KRISTIAN
         <script src="js/mustache.min.js"></script>
         
         <script>
+     
+//         SESSION STORAGE
+
+//        (function() {
+//    var behanceUserAPI = 'http://www.behance.net/v2/users/'+ userName +'?callback=?&api_key='+ apiKey;
+//    function setUserTemplate() {
+//        var userData    = JSON.parse(sessionStorage.getItem('behanceUser')),
+//        getTemplate = $('#profile-template').html(),
+//        template    = Handlebars.compile(getTemplate),
+//        result      = template(userData);
+//        $('#header').html(result);
+//    };
+//    if(sessionStorage.getItem('behanceUser')) {
+//        setUserTemplate();
+//    } else {
+//        $.getJSON(behanceUserAPI, function(user) {
+//            var data = JSON.stringify(user);
+//            sessionStorage.setItem('behanceUser', data);
+//            setUserTemplate();
+//        });
+//    };
+//})();    
         
 //       CALLING USER SPECIFIC INFORMATION
             
