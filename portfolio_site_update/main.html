@@ -40,8 +40,8 @@
         <script id="project-cards" type="text/x-mustache-template">
             {{#projects}}
             <div class="thumbnail" id="b{{id}}">
-              <a class="wrapping" href="#{{id}}" data-project-id="{{id}}">
                 <div class="thumbnail-text"><p>{{name}}</p></div>
+              <a class="wrapping" href="#{{id}}" data-project-id="{{id}}">
                 <div class="thumbnail-image"><img src="{{covers.202}}" alt="{{name}}" /></div>
               </a>
             </div>
@@ -52,7 +52,7 @@
         
 <!--PROJECT DETAILS-->
         
-        <section class="project-details">
+        <section class="project-details" id="menu">
 		  
             <script id="project-pages" type="text/x-mustache-template">
             {{#project}}
@@ -197,6 +197,8 @@ QUESTIONS FOR KRISTIAN
 
     -show behance if nothing loads
 
+    -why isn't this click outside plugin working?
+
 -->
                             
 		<section class="connor-info"> 
@@ -207,6 +209,8 @@ QUESTIONS FOR KRISTIAN
             {{#user}}
                 <article class="connor-info-toggle">
                     <p>{{sections.About Me}}</p>
+                    <p>{{location}}</p>
+<!--                    <p>{{social_links.url}}</p>-->
                 </article>
             {{/user}}
         </script>
@@ -239,6 +243,8 @@ QUESTIONS FOR KRISTIAN
         <script src="js/behance.js"></script>
         
         <script src="js/mustache.min.js"></script>
+            
+        <script src="js/jquery.ba-outside-events.min.js"></script>
         
         <script>
      
@@ -340,36 +346,36 @@ QUESTIONS FOR KRISTIAN
           
 //LOADING THE PROJECT IMAGES            
 
-$(document).ready(function() {          
-    var $this = $(this),
-        projectID = $this.data('project-id'),
-        beProjectContentAPI = 'http://www.behance.net/v2/projects/'+ projectID +'?callback=?&api_key=' + apiKey,
-        keyName = 'behanceProjectImages-' + projectID;
-     
-    function showGallery(dataSource) {  
-        $this.magnificPopup({
-            items: dataSource,
-            type: 'image'
-        }).magnificPopup('open');
-    };
- 
-    if(localStorage.getItem(keyName)) {
-        var srcItems = JSON.parse(localStorage.getItem(keyName));
-        showGallery(srcItems);
-    } else {
-        $.getJSON(beProjectContentAPI, function(projectContent) {
-            var src = [];
-            $.each(projectContent.project.modules, function(index, mod) {
-                if(mod.src != undefined) {
-                    src.push({ src: mod.src }); 
-                }
-            });
-            showGallery(src);
-            var data = JSON.stringify(src);
-            localStorage.setItem(keyName, data);
-        });
-    };
-});
+//$(document).ready(function() {          
+//    var $this = $(this),
+//        projectID = $this.data('project-id'),
+//        beProjectContentAPI = 'http://www.behance.net/v2/projects/'+ projectID +'?callback=?&api_key=' + apiKey,
+//        keyName = 'behanceProjectImages-' + projectID;
+//     
+//    function showGallery(dataSource) {  
+//        $this.magnificPopup({
+//            items: dataSource,
+//            type: 'image'
+//        }).magnificPopup('open');
+//    };
+// 
+//    if(localStorage.getItem(keyName)) {
+//        var srcItems = JSON.parse(localStorage.getItem(keyName));
+//        showGallery(srcItems);
+//    } else {
+//        $.getJSON(beProjectContentAPI, function(projectContent) {
+//            var src = [];
+//            $.each(projectContent.project.modules, function(index, mod) {
+//                if(mod.src != undefined) {
+//                    src.push({ src: mod.src }); 
+//                }
+//            });
+//            showGallery(src);
+//            var data = JSON.stringify(src);
+//            localStorage.setItem(keyName, data);
+//        });
+//    };
+//});
             
         </script>
             

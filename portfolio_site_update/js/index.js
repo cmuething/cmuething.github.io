@@ -152,8 +152,33 @@ $(document).ready(function () {
 		    	bottom: -projectBottomHeight
 	    	}, 250);	
     	}
+        
     });
 });
+
+//$('#menu').bind('clickoutside', function (event) {
+//    var projectBottom = $('.project-details');
+//    
+//    projectBottom.animate({
+//        bottom: "-300px"
+//    });
+//    
+//});
+
+//$(function () {
+//    //stop bubbling the event
+//    $('.open').click(function (e) {
+//        e.stopPropagation();
+//    });
+//    //catch the event and check if element clicked is not the toggle label
+//    $('html').click(function (e) {
+//        if (!$('.gradient').is($(e.target))) {
+//            $('.open').prop("checked", false);
+//        }
+//    });
+//});
+
+
 
 //GRADIENT
 
@@ -226,6 +251,7 @@ $(document).ready(function(){
     
     gradientButton.click(function() {       
         gradientMove.toggleClass('gradient');
+                
     });
 });
 

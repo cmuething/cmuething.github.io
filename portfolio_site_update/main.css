@@ -1,3 +1,4 @@
+/*
 @media (min-width: 1400px) {
 
 .overview {
@@ -17,6 +18,7 @@
     cursor: pointer;
     position: relative;
     width: calc(600px / 3);
+
     height: 158px;
     display: block;
     float: left;
@@ -25,8 +27,9 @@
 }
   
 }
+*/
 
-@media (min-width: 1150px) and (max-width: 1399px) {
+@media (max-width: 1440px) {
     
 .overview {
     overflow: hidden;
@@ -44,6 +47,7 @@
     cursor: pointer;
     position: relative;
     width: calc(600px / 3);
+    height: 158px;
     display: block;
     float: left;
     margin: 15px;
@@ -159,18 +163,31 @@ body {
 }
 */
 
+.thumbnail-text {
+    position: absolute;
+    display: none; 
+}
+
 .thumbnail:hover .thumbnail-text {
     display:block;
 }
 
-.thumbnail .thumbnail-text p {
-    color: white;
-    text-align: center;
+/*Beginning to look at large text overtop of the thumbnails*/
+
+.thumbnail .thumbnail-text {
+    font-size: 96px;
+    color: black;
     position: absolute;
-    z-index: 999;
-    left: 70px;
+    z-index: 99999;
+    left: 50%;
     top: 50px;
 }
+
+.thumbnail {
+    overflow: visible;
+}
+
+/*transparent overlay*/
 
 .thumbnail:hover:after {
     opacity:1;
@@ -186,16 +203,11 @@ body {
     opacity:0;
 }
 
-
-.thumbnail-text {
-    position: absolute;
-    display: none; 
-}
-
 .project-label {
     position: absolute;
+/*How do I make this just be one line of text???*/
+    width: 150px;
     left: 50%;
-    right: 50%;
     bottom: 2%;
     left: 45%;
     z-index: 9998;
@@ -204,7 +216,6 @@ body {
 #bottoms {
     position: relative;
     font-size: 10pt;
-    text-align: center;
 }
 
 .project-details {
