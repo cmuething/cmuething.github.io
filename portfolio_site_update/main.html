@@ -168,6 +168,8 @@
                                         
 <!--
 TO DO:
+
+    -Hosting on Github so that I can stop paying cargo
     
     -CLEAN UP ALL CODE
     -percentages and ems
@@ -190,9 +192,10 @@ QUESTIONS FOR KRISTIAN
 
     -fix the scroll activated navigation of the project details
 
-    -how to solve too many requests 
     -center text on thumbnails
     -how to link the images from the modules?
+
+    -show behance if nothing loads
 
 -->
                             
@@ -239,7 +242,7 @@ QUESTIONS FOR KRISTIAN
         
         <script>
      
-//         SESSION STORAGE
+//SESSION STORAGE
 
 //        (function() {
 //    var behanceUserAPI = 'http://www.behance.net/v2/users/'+ userName +'?callback=?&api_key='+ apiKey;
@@ -261,7 +264,7 @@ QUESTIONS FOR KRISTIAN
 //    };
 //})();    
         
-//       CALLING USER SPECIFIC INFORMATION
+//CALLING USER SPECIFIC INFORMATION
             
             var url = 'https://api.behance.net/v2/users/' + userName + '/?api_key=' + apiKey +'&callback=?';
       
@@ -275,7 +278,7 @@ QUESTIONS FOR KRISTIAN
                 
             });
             
-//        CALLING PROJECT SPECIFIC INFORMATION
+//CALLING PROJECT SPECIFIC INFORMATION
             
          var url = 'https://api.behance.net/v2/users/' + userName + '/projects/?api_key=' + apiKey +'&per_page=25&callback=?';
      
@@ -307,7 +310,7 @@ QUESTIONS FOR KRISTIAN
         });
         });
             
-//        CALLING SPECIFIC PROJECTS
+//CALLING SPECIFIC PROJECTS
             
          var projectID  = $(this).attr('data-project-id');
          var projectUrl = 'https://api.behance.net/v2/projects/32397281/?api_key=' + apiKey +'&callback=?';
@@ -334,6 +337,39 @@ QUESTIONS FOR KRISTIAN
 //            });
               
           });
+          
+//LOADING THE PROJECT IMAGES            
+
+$(document).ready(function() {          
+    var $this = $(this),
+        projectID = $this.data('project-id'),
+        beProjectContentAPI = 'http://www.behance.net/v2/projects/'+ projectID +'?callback=?&api_key=' + apiKey,
+        keyName = 'behanceProjectImages-' + projectID;
+     
+    function showGallery(dataSource) {  
+        $this.magnificPopup({
+            items: dataSource,
+            type: 'image'
+        }).magnificPopup('open');
+    };
+ 
+    if(localStorage.getItem(keyName)) {
+        var srcItems = JSON.parse(localStorage.getItem(keyName));
+        showGallery(srcItems);
+    } else {
+        $.getJSON(beProjectContentAPI, function(projectContent) {
+            var src = [];
+            $.each(projectContent.project.modules, function(index, mod) {
+                if(mod.src != undefined) {
+                    src.push({ src: mod.src }); 
+                }
+            });
+            showGallery(src);
+            var data = JSON.stringify(src);
+            localStorage.setItem(keyName, data);
+        });
+    };
+});
             
         </script>
             

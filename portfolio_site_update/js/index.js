@@ -66,6 +66,8 @@
 				});
 			});
 
+//Am I going to have to use this to enable swipe left swipe right on mobile
+
 //			var hammertime = new Hammer( document.getElementById("container") );
 //			hammertime.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL });
 //			hammertime.on('swipeleft', function() {
@@ -75,6 +77,8 @@
 //				$("#dir").trigger("click");
 //			});
 //		});
+
+//click on a thumbnail to add the class curr to the project box with the corresponding href
 
 //INFO
 

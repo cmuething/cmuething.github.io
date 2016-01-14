@@ -17,6 +17,7 @@
     cursor: pointer;
     position: relative;
     width: calc(600px / 3);
+    height: 158px;
     display: block;
     float: left;
     margin: 15px;
