@@ -66,7 +66,7 @@
 				});
 			});
 
-//Am I going to have to use this to enable swipe left swipe right on mobile
+//Am I going to have to use this to enable swipe left swipe right on mobile???
 
 //			var hammertime = new Hammer( document.getElementById("container") );
 //			hammertime.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL });
@@ -78,7 +78,7 @@
 //			});
 //		});
 
-//click on a thumbnail to add the class curr to the project box with the corresponding href
+//What is the script of changing the href and linking the thumbnails going to say?? click on a thumbnail to add the class curr to the project box with the corresponding href
 
 //INFO
 
@@ -95,7 +95,8 @@ $(document).ready(function () {
     	// slide menu
     	if (connorInfo.hasClass("open")) {
 	    	connorInfo.animate({
-		    	left: "0px"
+		    	left: "0px",
+                zIndex: "999999"
 	    	});	
     	} else {
 	    	connorInfo.animate({
@@ -120,7 +121,8 @@ $(document).ready(function () {
     	// slide menu
     	if (overviewTop.hasClass("open")) {
 	    	overviewTop.animate({
-		    	top: "0px"
+		    	top: "0px",
+                zIndex: "999999"
 	    	});	
     	} else {
 	    	overviewTop.animate({
@@ -132,6 +134,8 @@ $(document).ready(function () {
 
 //PROJECT DETAILS
 
+//Testing an idea for opening and closing the drawers without toggling a class but rather changing the z-index and using the gradient as the button
+
 $(document).ready(function () {
     $('.project-label').on('click', function(event){
     	event.preventDefault();
@@ -139,22 +143,30 @@ $(document).ready(function () {
     	var projectBottom = $('.project-details');
     	var projectBottomHeight = $('.project-details').height();
     	
-    	// toggle open class
-    	projectBottom.toggleClass("open");
     	
-    	// slide menu
-    	if (projectBottom.hasClass("open")) {
-	    	projectBottom.animate({
-		    	bottom: "0px"
+	   projectBottom.animate({
+		    	bottom: "0px",
+                zIndex: "999999"
 	    	});	
-    	} else {
-	    	projectBottom.animate({
-		    	bottom: -projectBottomHeight
-	    	}, 250);	
-    	}
+    	}); 
+    });
+
+
+$(document).ready(function () {
+    $('.test').on('click', function(event){
+        event.preventDefault();
+
+    	var projectBottom = $('.project-details');
+        var gradientMove = $('.test');
+
+        projectBottom.animate({
+		    	bottom: "-300px"
+	    	}, 250);
+        
+        gradientMove.toggleClass('gradient');
         
     });
-});
+});   
 
 //$('#menu').bind('clickoutside', function (event) {
 //    var projectBottom = $('.project-details');
@@ -164,21 +176,6 @@ $(document).ready(function () {
 //    });
 //    
 //});
-
-//$(function () {
-//    //stop bubbling the event
-//    $('.open').click(function (e) {
-//        e.stopPropagation();
-//    });
-//    //catch the event and check if element clicked is not the toggle label
-//    $('html').click(function (e) {
-//        if (!$('.gradient').is($(e.target))) {
-//            $('.open').prop("checked", false);
-//        }
-//    });
-//});
-
-
 
 //GRADIENT
 
