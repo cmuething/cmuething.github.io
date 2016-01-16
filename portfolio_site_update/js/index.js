@@ -86,23 +86,37 @@ $(document).ready(function () {
     $('.connor-info-toggle').on('click', function(event){
     	event.preventDefault();
     	// create menu variables
+        var connorTitle = $('.connor-info-toggle');
     	var connorInfo = $('.connor-info');
     	var connorInfoWidth = $('.connor-info').width();
-    	
-    	// toggle open class
-    	connorInfo.toggleClass("open");
-    	
-    	// slide menu
-    	if (connorInfo.hasClass("open")) {
+        var gradientMove = $('.test');
+    	    	
 	    	connorInfo.animate({
 		    	left: "0px",
                 zIndex: "999999"
-	    	});	
-    	} else {
+	    	});
+        
+            connorTitle.animate({
+                zIndex: "999999" 
+            });	
+        
+            gradientMove.addClass('gradient');
+    });
+});
+    
+    $(document).ready(function () {
+    $('.test').on('click', function(event){
+        event.preventDefault();
+
+    	var connorInfo = $('.connor-info');
+        var gradientMove = $('.test');
+        
 	    	connorInfo.animate({
-		    	left: -connorInfoWidth
-	    	}, 250);	
-    	}
+		    	left: "-500px"
+	    	}, 250);
+        
+        gradientMove.removeClass('gradient');
+        
     });
 });
 
@@ -114,21 +128,27 @@ $(document).ready(function () {
     	// create menu variables
     	var overviewTop = $('.overview');
     	var overviewTopHeight = $('.overview').height();
-    	
-    	// toggle open class
-    	overviewTop.toggleClass("open");
-    	
-    	// slide menu
-    	if (overviewTop.hasClass("open")) {
+    	    	
 	    	overviewTop.animate({
 		    	top: "0px",
                 zIndex: "999999"
-	    	});	
-    	} else {
+	    	});		
+    });
+});
+    
+    $(document).ready(function () {
+    $('.test').on('click', function(event){
+        event.preventDefault();
+
+    	var overviewTop = $('.overview');
+        var gradientMove = $('.test');
+        
 	    	overviewTop.animate({
 		    	top: "-600px"
-	    	}, 250);	
-    	}
+	    	}, 250);
+        
+        gradientMove.toggleClass('gradient');
+        
     });
 });
 
@@ -136,18 +156,25 @@ $(document).ready(function () {
 
 //Testing an idea for opening and closing the drawers without toggling a class but rather changing the z-index and using the gradient as the button
 
+//Could use the hide-details to change the name to an X but might just use the gradient as the button an upload a custom cursor
+
 $(document).ready(function () {
     $('.project-label').on('click', function(event){
     	event.preventDefault();
     	// create menu variables
+//        var projectClose = $('.hide-details');
+        var projectTitle = $('.project-label');
     	var projectBottom = $('.project-details');
     	var projectBottomHeight = $('.project-details').height();
-    	
-    	
+        
 	   projectBottom.animate({
-		    	bottom: "0px",
-                zIndex: "999999"
+                zIndex: "999999",
+		    	bottom: "0px"
 	    	});	
+        
+//        projectTitle.toggleClass("hide-details");
+//        projectClose.toggleClass("close");
+        
     	}); 
     });
 
@@ -156,8 +183,11 @@ $(document).ready(function () {
     $('.test').on('click', function(event){
         event.preventDefault();
 
+//        var projectClose = $('.hide-details');
     	var projectBottom = $('.project-details');
         var gradientMove = $('.test');
+        
+//        projectClose.toggleClass("close");
 
         projectBottom.animate({
 		    	bottom: "-300px"
@@ -243,11 +273,15 @@ setInterval(updateGradient,10);
 //BUTTONS
 
 $(document).ready(function(){
-    var gradientButton = $('.overview-toggle, .project-label, .connor-info-toggle');
+    var gradientButton = $('.overview-toggle, .project-label');
     var gradientMove = $('.test');
     
     gradientButton.click(function() {       
         gradientMove.toggleClass('gradient');
+        
+        gradientMove.animate({
+                zIndex: "999998",
+	    	});	
                 
     });
 });
