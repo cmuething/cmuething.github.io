@@ -110,12 +110,16 @@
 			
 				<!--MB preloads 4 projects to act as next projects -->
 			
-				<section href="" id="box1" class="image curr">
+				<section href="" id="box1" class="image curr" id="project-{{id}}" data-drawer-title="{{name}}" data-drawer-description="{{description}}">
                     
                     <script id="project-page" type="text/x-mustache-template">
                     
-                       <article class="scroll">
-                        <img src="{{project.modules.[206432755].sizes.1400}}" alt="{{project.name}}"/>
+                       <article class="scroll" >
+                           <div class="modules-list list-reset">
+                                {{#project.modules}}
+                                <img class="images" src="{{#sizes.max_1200}}{{sizes.max_1200}}{{/sizes.max_1200}}{{^sizes.max_1200}}{{sizes.original}}{{/sizes.max_1200}}" />
+                                {{/project.modules}}
+                            </div>
 					   </article> 
                         
 <!--When I change the background color on the behance project, use this to style on the overall container style="background-color:{{project.styles.background.color}};"                        -->
@@ -124,23 +128,23 @@
                                 
 				</section>
 				
-				<section id="box2" class="image">
+				<section id="box2" class="image" data-drawer-title="Some title" data-drawer-description="{{description}} what an amazing and excellent description!"> 
 					
 					<article class="scroll">
-					<img class="images" src="img/photo_2.jpg">
+					   <img class="images" src="img/photo_2.jpg">
 					</article>
 					
 				</section>
 				
-				<section id="box3" class="image">
+				<section id="box3" class="image" data-drawer-title="another title" data-drawer-description="{{description}} another amazing and excellent description! we are amazing.">
 					
 					<article class="scroll">
-					<img class="images" src="img/photo_3.jpg">
+					   <img class="images" src="img/photo_3.jpg">
 					</article>
 					
 				</section>
 				
-				<section id="box4" class="image">
+				<section id="box4" class="image" data-drawer-title="yet a different title">
                     
                     <script id="project1" type="text/x-mustache-template">
                     
@@ -186,9 +190,6 @@ TO DO:
 
     -how do I link a click on a thumbnail, with a specific project page??
 
-    -disable all buttons when one of the drawers, organizing z-index?
-
-    -click off of drawer to close???
     -make the images scroll to the edges of the screen rather than overflow:hidden???
     -arrows on left and right???
     -center aligning project title and tile icon
@@ -196,14 +197,12 @@ TO DO:
 QUESTIONS FOR KRISTIAN
     -SESSION STORAGE...store the json file after initial load to avoid limit
 
-    -fix the scroll activated navigation of the project details
+    -center text on screen
+        width: 100%, text-align: center
 
-    -center text on thumbnails
-    -how to link the images from the modules?
+    -jarring transistion of drawers infront of gradient
 
-    -show behance if nothing loads
-
-    -why isn't this click outside plugin working?
+    -enable image to resize on mobile
 
 -->
                             
@@ -241,19 +240,16 @@ QUESTIONS FOR KRISTIAN
 			<div class="b" title="Info"> bottom </div>
 						
 		</nav>
-        
+    </div>
+
+        <!-- JS -->
         <script language="javascript" type="text/javascript" src="js/jquery-1.11.3.js"></script>
-        
         <script type="text/javascript" src="js/index.js"></script>
-                
         <script src="js/behance.js"></script>
-        
         <script src="js/mustache.min.js"></script>
-            
         <script src="js/jquery.ba-outside-events.min.js"></script>
         
         <script>
-     
 //SESSION STORAGE
 
 //        (function() {
@@ -277,79 +273,58 @@ QUESTIONS FOR KRISTIAN
 //})();    
         
 //CALLING USER SPECIFIC INFORMATION
-            
+
             var url = 'https://api.behance.net/v2/users/' + userName + '/?api_key=' + apiKey +'&callback=?';
-      
-      console.log('connected to ' + url + '.');
-            
+            console.log('connected to ' + url + '.');
+
             $.getJSON(url, function(data) {
-            
-            var template = $('#myname').html();
-            var info = Mustache.to_html(template, data);
-            $('.connor-info').html(info);
-                
+                var template = $('#myname').html();
+                var info = Mustache.to_html(template, data);
+                $('.connor-info').html(info);
             });
-            
+
 //CALLING PROJECT SPECIFIC INFORMATION
-            
-         var url = 'https://api.behance.net/v2/users/' + userName + '/projects/?api_key=' + apiKey +'&per_page=25&callback=?';
-     
-      console.log('connected to ' + url + '.');
-                        
-      var matchingHeights = function() {
-      var pHeight = 0;
-          
-        $('.thumbnail').each(function() {
-          var projectID  = $(this).find('a.wrapping').attr('data-project-id');
-          pHeight = pHeight > $(this).height() ? pHeight : $(this).height();
-          console.log('Number ' + projectID + ' is ' + pHeight + ' px tall!');
-        });
-        $('.thumbnail').each(function() {
-          $(this).height(pHeight);
-        });
-      }
-      
-      $.getJSON(url, function(data) {
-        //mustache for projects
-          
-        var template = $('#project-cards').html();
-        var info = Mustache.to_html(template, data);
-        $('.overview').html(info);
-          
-        // try to get all the things printing out @ the same height.
-        $('.thumbnail img').load(function() {
-          matchingHeights();
-        });
-        });
-            
-//CALLING SPECIFIC PROJECTS
-            
-         var projectID  = $(this).attr('data-project-id');
-         var projectUrl = 'https://api.behance.net/v2/projects/32397281/?api_key=' + apiKey +'&callback=?';
-            
-         console.log('trying to show ' + projectUrl + '.');
-            
-          $.getJSON(projectUrl, function(data) {
-            //mustache for projects
-              
-            var template = $('#project-pages').html();
-            var info = Mustache.to_html(template, data);
-            $('.project-details').html(info);
-              
-            var template = $('#project-page').html();
-            var info = Mustache.to_html(template, data);
-            $('.curr').html(info);
-              
-            var template = $('#project-pages').html();
-            var info = Mustache.to_html(template, data);
-            $('.project-label').html(info);
-              
-//            $('.project-page button.close').click(function() {
-//              $(this).parent().hide();
-//            });
-              
-          });
-          
+
+            var url = 'https://api.behance.net/v2/users/' + userName + '/projects/?api_key=' + apiKey +'&per_page=8&callback=?';
+            console.log('connected to ' + url + '.');
+
+            $.getJSON(url, function(data) {
+                //mustache for projects
+
+                var template = $('#project-cards').html();
+                var info = Mustache.to_html(template, data);
+                $('.overview').html(info);
+
+            });
+
+            //CALLING SPECIFIC PROJECTS
+
+            var projectID  = $(this).attr('data-project-id');
+            var projectUrl = 'https://api.behance.net/v2/projects/32397281/?api_key=' + apiKey +'&callback=?';
+
+            console.log('trying to show ' + projectUrl + '.');
+
+            $.getJSON(projectUrl, function(data) {
+                //mustache for projects
+
+                var template = $('#project-pages').html();
+                var info = Mustache.to_html(template, data);
+                $('.project-details').html(info);
+
+                var template = $('#project-page').html();
+                var info = Mustache.to_html(template, data);
+                $('.curr').html(info);
+
+                var template = $('#project-pages').html();
+                var info = Mustache.to_html(template, data);
+                $('.project-label').html(info);
+
+                // $('.project-page button.close').click(function() {
+                //     $(this).parent().hide();
+                // });
+
+            });
+
 //LOADING THE PROJECT IMAGES            
 
 //$(document).ready(function() {          
@@ -382,11 +357,9 @@ QUESTIONS FOR KRISTIAN
 //        });
 //    };
 //});
-            
+
         </script>
-            
-        </div>
-        	
+                    	
 	</body>
 	
 </html>

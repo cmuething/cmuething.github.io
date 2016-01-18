@@ -40,12 +40,18 @@
 					$(this).css('left', '+150%');
     				$(this).appendTo('#container');
 				});
+                var newTitle = $(obj).next().attr('data-drawer-title');
+                var newDesc = $(obj).next().attr('data-drawer-description');
+                console.log(newTitle);
 				$(obj).next().animate({
 					left: '+50%'
 				}, 500, function() {
 					$(this).addClass('curr');
 					$(obj).removeClass('curr');
 				});
+                $('#bottoms').html(newTitle);
+                $('.project-details-toggle h1').html(newTitle);
+                $('.project-details-toggle p').html(newDesc);
 			});
 
 			$("#limit-r").click(function() {
@@ -57,6 +63,8 @@
 				}, 500, function() {
 					$(prox).prependTo('#container');
 				});
+                var newTitle = $(prox).attr('data-drawer-title');
+                var newDesc = $(prox).attr('data-drawer-description');
 				$(prox).css('left', '-50%');
 				$(prox).animate({
 					left: '+50%'
@@ -64,6 +72,9 @@
 					$(this).addClass('curr');
 					$(obj).removeClass('curr');
 				});
+                $('#bottoms').html(newTitle);
+                $('.project-details-toggle h1').html(newTitle);
+                $('.project-details-toggle p').html(newDesc);
 			});
 
 //Am I going to have to use this to enable swipe left swipe right on mobile???
@@ -98,7 +109,7 @@ $(document).ready(function () {
         
             connorTitle.animate({
                 zIndex: "999999" 
-            });	
+            }, 250);	
         
             gradientMove.addClass('gradient');
     });
@@ -132,7 +143,7 @@ $(document).ready(function () {
 	    	overviewTop.animate({
 		    	top: "0px",
                 zIndex: "999999"
-	    	});		
+	    	}, 250);		
     });
 });
     
@@ -170,7 +181,7 @@ $(document).ready(function () {
 	   projectBottom.animate({
                 zIndex: "999999",
 		    	bottom: "0px"
-	    	});	
+	    	}, 250);	
         
 //        projectTitle.toggleClass("hide-details");
 //        projectClose.toggleClass("close");

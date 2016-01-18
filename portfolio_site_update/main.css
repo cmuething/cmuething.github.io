@@ -58,7 +58,7 @@
 
 body {
     margin: 0;
-    font-family: UniversLTStd-Light
+    font-family: UniversLTStd-Light;
 }
 
 #whole-page {
@@ -78,7 +78,7 @@ body {
 
 .gradient {
     opacity: .4;
-    z-index: 9997;
+    z-index: 999;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -124,11 +124,9 @@ body {
 #tops {
     position: absolute;
     text-align: center;
+    width: 100%;
     font-size: 10pt;
-    margin: 0 auto;
-    top: 5%;
-    left: 50%;
-    right: 50%;
+    top: 3%;
     z-index: 9999;
 }
 
@@ -207,14 +205,14 @@ body {
 .project-label {
     position: absolute;
 /*How do I make this just be one line of text???*/
-    width: 150px;
-    left: 50%;
+    width: 100%;
+    text-align: center;
     bottom: 2%;
-    left: 45%;
     z-index: 9998;
 }
 
-.hide {
+/*
+.hide-details {
     display: none;
 }
 
@@ -223,13 +221,13 @@ body {
     position: absolute;
     font-size: 24px;
     cursor: pointer;
-/*How do I make this just be one line of text???*/
     width: 150px;
     left: 50%;
     bottom: 2%;
     left: 45%;
     z-index: 999999;
 }
+*/
 
 #bottoms {
     position: relative;
@@ -237,7 +235,7 @@ body {
 }
 
 .project-details {
-    position: absolute;
+    position: fixed;
     bottom: -300px;
     width: 100%;
     height: 300px;
