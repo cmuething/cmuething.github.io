@@ -56,10 +56,9 @@
         
         <section class="project-details" id="menu">
 		  
-            <script id="project-pages" type="text/x-mustache-template">
+            <script id="project-desc" type="text/x-mustache-template">
             {{#project}}
 
-                
 <!--The dynamic pages code from Kristian's example-->
                 
                 <!--
@@ -90,7 +89,7 @@
             
         <div class="project-label">
         
-        <script id="project-pages" type="text/x-mustache-template">
+        <script id="project-title" type="text/x-mustache-template">
         
         {{#project}}
             
@@ -107,9 +106,32 @@
         <div class="test"> </div>
         
 		<div id=container>
+            
+            
 			
-				<!--MB preloads 4 projects to act as next projects -->
-			
+<!--Writing the script to load each project as a section-->
+            
+            <script id="project-pages" type="text/x-mustache-template">
+                <section href="" id="dynamic-pages" class="image curr" id="project-{{id}}" data-drawer-title="{{name}}" data-drawer-description="{{description}}">
+                    
+                </section>
+            </script> 
+            
+            <script id="project-page" type="text/x-mustache-template">
+                    
+                       <article class="scroll" >
+                           <div class="modules-list list-reset">
+                                {{#project.modules}}
+                                <img class="images" src="{{#sizes.max_1200}}{{sizes.max_1200}}{{/sizes.max_1200}}{{^sizes.max_1200}}{{sizes.original}}{{/sizes.max_1200}}" />
+                                {{/project.modules}}
+                            </div>
+					   </article> 
+            </script>
+            
+<!--End of the test script-->
+            
+            
+            
 				<section href="" id="box1" class="image curr" id="project-{{id}}" data-drawer-title="{{name}}" data-drawer-description="{{description}}">
                     
                     <script id="project-page" type="text/x-mustache-template">
@@ -271,6 +293,50 @@ QUESTIONS FOR KRISTIAN
 //        });
 //    };
 //})();    
+            
+//COMPILING EVERYTHING
+            
+        var initialUrl = 'https://api.behance.net/v2/users/' + userName + '/projects/?api_key=' + apiKey +'&per_page=8&callback=?';
+      console.log('connected to ' + initialUrl + ' for main feed of projects. If you can click on the url it says you have connected to and it takes you to a JSON data feed, you are in business. Double check that the data looks like you!');
+
+      var userUrl = 'https://api.behance.net/v2/users/' + userName + '/?api_key=' + apiKey +'&callback=?';
+      console.log('connected to ' + userUrl + ' for user info. Click on this, if it looks like you, you are all set.');
+            
+        $.getJSON(initialUrl, function(data) {
+
+        //mustache for projects
+        //this prints the project thumbnails
+            
+//        var template = $('#project-cards').html();
+//        var info = Mustache.to_html(template, data);
+//        $('#behance-magix').html(info);
+
+        // this allows for the "page" to be created
+        // for each project when you click its thumbnail
+        $('.thumbnail a').each(function() {
+          var projectID  = $(this).attr('data-project-id');
+          var projectUrl = 'https://api.behance.net/v2/projects/' + projectID + '/?api_key=' + apiKey +'&callback=?';
+          console.log('trying to show a lot of projects:' + projectUrl + '.');
+
+          $.getJSON(projectUrl, function(data) {
+            //mustache for project page overlay
+            var template = $('#project-pages').html();
+            var info = Mustache.to_html(template, data);
+            $('#dynamic-pages').append(info);
+
+          });
+        });
+
+        // this should allow for making a project active
+        $('.thumbnail a').click(function() {
+          var projectID  = $(this).attr('data-project-id');
+          var findThis = '#project-' + projectID;
+          console.log(findThis);
+          $('.project-page').removeClass('curr');
+          $(findThis).addClass('curr');
+        });
+      });
+     
         
 //CALLING USER SPECIFIC INFORMATION
 
@@ -307,7 +373,7 @@ QUESTIONS FOR KRISTIAN
             $.getJSON(projectUrl, function(data) {
                 //mustache for projects
 
-                var template = $('#project-pages').html();
+                var template = $('#project-desc').html();
                 var info = Mustache.to_html(template, data);
                 $('.project-details').html(info);
 
@@ -315,7 +381,7 @@ QUESTIONS FOR KRISTIAN
                 var info = Mustache.to_html(template, data);
                 $('.curr').html(info);
 
-                var template = $('#project-pages').html();
+                var template = $('#project-title').html();
                 var info = Mustache.to_html(template, data);
                 $('.project-label').html(info);
 
