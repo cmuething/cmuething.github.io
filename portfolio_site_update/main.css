@@ -1,60 +1,96 @@
-/*
-@media (min-width: 1400px) {
+@media (min-width: 400px) {
 
 .overview {
-    overflow: hidden;
-    position: absolute;
+    overflow: scroll;
+    position: fixed;
     text-align: center;
-    top: -300px;
+    top: 100%;
     width: 100%;
-    height: 300px;
+    height: 100%;
     background-color: white;
     z-index: 9998;
     box-sizing: border-box;
-    padding: 75px 10% 2% 10%;
+    padding: 75px 8% 2% 8%;
 }
     
 .thumbnail {
     cursor: pointer;
     position: relative;
-    width: calc(600px / 3);
-
     height: 158px;
     display: block;
     float: left;
-    margin: 15px;
+    margin: 10px;
     overflow: hidden;
 }
-  
+    
+.images {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1em;
 }
-*/
+    
+.thumbnail-icon {
+    position: absolute;
+    width: 100%;
+    top: 3%;
+    text-align: right;
+}
+    
+#tops {
+    margin-right: 50px;    
+}
 
-@media (max-width: 1440px) {
+}
+
+@media (min-width: 795px) {
     
 .overview {
     overflow: hidden;
     position: absolute;
-    top: -500px;
+    top: -60%;
     width: 100%;
-    height: 500px;
+    height: 60%;
     background-color: white;
+    text-align: center;
     z-index: 9998;
     box-sizing: border-box;
-    padding: 75px 10% 2% 10%;
+    padding: 75px 8% 2% 8%;
 }
 
 .thumbnail {
     cursor: pointer;
     position: relative;
-    width: calc(600px / 3);
     height: 158px;
     display: block;
     float: left;
-    margin: 15px;
+    margin: 10px;
     overflow: hidden;
 }
+    
+.thumbnail-icon {
+    position: absolute;
+    width: 100%;
+    top: 3%;
+    text-align: center;
+}
+    
+}
+
+@media (min-width: 1200px) {
+
+.images {
+    position: relative;
+    width: auto;
+    height: 100%;
+    display: block;
+    margin: 0 auto 1em;
+}    
 
 }
+
+/*END MEDIA QUERIES*/
 
 body {
     margin: 0;
@@ -121,12 +157,18 @@ body {
 	right: 10px;
 }
 
-#tops {
+/*
+.thumbnail-icon {
     position: absolute;
-    text-align: center;
     width: 100%;
-    font-size: 10pt;
     top: 3%;
+    text-align: center;
+}
+*/
+
+#tops {
+    position: relative;
+    font-size: 10pt;
     z-index: 9999;
 }
 
@@ -144,11 +186,13 @@ body {
 }
 */
 
+/*
 .overview .overview-toggle {
     position: absolute;
 	top: 12px;
 	right: 10px;
 }
+*/
 
 /*
 .thumbnail {
@@ -171,15 +215,15 @@ body {
     display:block;
 }
 
-/*Beginning to look at large text overtop of the thumbnails*/
-
-.thumbnail .thumbnail-text {
+.thumbnail-text {
+    width: 100%;
+    text-align: center;
+    position: fixed;
     font-size: 96px;
     color: black;
-    position: absolute;
     z-index: 99999;
-    left: 50%;
-    top: 50px;
+    top: 200px;
+    left: 0;
 }
 
 .thumbnail {
@@ -195,8 +239,10 @@ body {
 .thumbnail:after {
     content:'\A';
     position:absolute;
-    width:100%; height:100%;
-    top:0; left:0;
+    width:100%; 
+    height:100%;
+    top:0; 
+    left:0;
     background:rgba(0,0,0,0.25);
 /*Should I transition this???*/
     opacity:0;
@@ -391,6 +437,7 @@ body {
     top: 0;
 }
 
+/*
 .images {
     position: relative;
     width: auto;
@@ -398,6 +445,7 @@ body {
     display: block;
     margin: 0 auto 1em;
 }
+*/
 
 .images:last-child {
     margin-bottom: 0;
