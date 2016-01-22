@@ -1,44 +1,48 @@
 <html>
 
-	<head>
-	
-		<title>Connor Muething</title>
-		
-		<link rel="stylesheet" href="main.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        
-		<!--When do I need to add in meta tags?-->
-		
-		<meta name="description" content="Designer from Cincinnati">
-		
-		<link rel="icon" href="favicon.ico" type="image/x-icon">
+  <head>
 
-	</head>
-	
-	<body>
-        
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Connor Muething</title>
+
+    <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!--When do I need to add in meta tags?-->
+    <!-- do you mean like what order should they be in? -->
+
+    <meta name="description" content="Designer from Cincinnati">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  </head>
+
+  <body>
+
         <div id="loading"></div>
-        
+
         <div id="whole-page">
-            
-		<div id="limit-t"></div>
-		
-		<div id="limit-r"></div>
-		
-		<div id="limit-b"></div>
-		
-		<div id="limit-l"></div>
-            
+
+    <div id="limit-t"></div>
+
+    <div id="limit-r"></div>
+
+    <div id="limit-b"></div>
+
+    <div id="limit-l"></div>
+
 <!--OVERVIEW-->
-        
+
 <!--        <div class="hide-overview"><p>X</p></div>-->
-        
-        <div class="thumbnail-icon">    
+
+        <div class="thumbnail-icon">
             <p class="overview-toggle" id="tops"><i class="fa fa-th-large"></i></p>
         </div>
-            
-		<section class="overview">
-                
+
+    <section class="overview">
+
 <!--
         <script id="project-cards" type="text/x-mustache-template">
             {{#projects}}
@@ -51,53 +55,53 @@
             {{/projects}}
        </script>
 -->
-            
-            
-        
+
+
+
        </section>
-        
+
 <!--PROJECT DETAILS-->
-        
+
         <section class="project-details" id="menu">
-		  
+
             <script id="project-desc" type="text/x-mustache-template">
             {{#project}}
             <article class="project-details-toggle">
                 <h1>{{name}}</h1>
                 <p>{{project.description}}</p>
-            </article>      
+            </article>
             {{/project}}
             </script>
-            			
-		</section>
-        
+
+    </section>
+
 <!--        <div class="hide-details"><p>X</p></div>    -->
-            
+
 <!--        Should this be the project name or just something that says project details, an icon???-->
-            
+
         <div class="project-label">
-        
+
         <script id="project-title" type="text/x-mustache-template">
-        {{#project}}      
-        <p class="project-details-toggle" id="bottoms">{{name}}</p>  
+        {{#project}}
+        <p class="project-details-toggle" id="bottoms">{{name}}</p>
         {{/project}}
         </script>
-            
-        </div>
-        
-<!--PROJECT PAGES-->
-                
-        <div class="test"> </div>
-        
-		<div id=container>	
-            
+
         </div>
 
-		
+<!--PROJECT PAGES-->
+
+        <div class="test"> </div>
+
+    <div id=container>
+
+        </div>
+
+
 <!--Writing the script to load each project as a section-->
-            
+
 <!--I need to know what all the projects are with their project IDs...then you can build the project URLS-->
-      
+
             <script id="project-pages" type="text/x-mustache-template">
                 {{#projects}}
                     <div class="thumbnail" id="b{{id}}">
@@ -115,21 +119,21 @@
                                 <img class="images" src="{{#sizes.max_1200}}{{sizes.max_1200}}{{/sizes.max_1200}}{{^sizes.max_1200}}{{sizes.original}}{{/sizes.max_1200}}" />
                                {{/project.modules}}
                             </div>
-				    </article>
+            </article>
                 </section>
                 {{/projects}}
             </script>
-                  
+
 <!--End of the test script-->
-                                                                
+
 <!--
 TO DO:
 
     -Hosting on Github so that I can stop paying cargo
-    
+
     -CLEAN UP ALL CODE
     -percentages and ems
-    -MOBILE VIEW!!!!    
+    -MOBILE VIEW!!!!
 
     -fix left click problem???
         -something with .next and .previous
@@ -151,11 +155,11 @@ QUESTIONS FOR KRISTIAN
     -selecting only images from the json modules
 
 -->
-                            
-		<section class="connor-info"> 
-		
-			<!-- this comes in from the left and contains my contact information -->
-            
+
+    <section class="connor-info">
+
+      <!-- this comes in from the left and contains my contact information -->
+
         <script id="myname" type="text/x-mustache-template">
             {{#user}}
                 <article class="connor-info-toggle">
@@ -165,27 +169,27 @@ QUESTIONS FOR KRISTIAN
                 </article>
             {{/user}}
         </script>
-            		
-		</section>
-		
-		<p class="connor-info-toggle" id="connor" title="Connor Muething"> Connor<br>Muething </p>
-		
-		<nav>
-		
-			<div class="r" title="Next project"> 
-			
-				<img class="normal" src="" width="11" height="11" alt="Next project" style="display: block;">
-				<img class="hover" src="" width="11" height="11" alt="Next project" style="display: none;"> 
-				
-			</div>
-			
-			<div class="l" title="Previous project"> left </div>
-			
-			<div class="t" title="Overview"> top </div>
-			
-			<div class="b" title="Info"> bottom </div>
-						
-		</nav>
+
+    </section>
+
+    <p class="connor-info-toggle" id="connor" title="Connor Muething"> Connor<br>Muething </p>
+
+    <nav>
+
+      <div class="r" title="Next project">
+
+        <img class="normal" src="" width="11" height="11" alt="Next project" style="display: block;">
+        <img class="hover" src="" width="11" height="11" alt="Next project" style="display: none;">
+
+      </div>
+
+      <div class="l" title="Previous project"> left </div>
+
+      <div class="t" title="Overview"> top </div>
+
+      <div class="b" title="Info"> bottom </div>
+
+    </nav>
     </div>
 
         <!-- JS -->
@@ -193,7 +197,7 @@ QUESTIONS FOR KRISTIAN
         <script type="text/javascript" src="js/index.js"></script>
         <script src="js/behance.js"></script>
         <script src="js/mustache.min.js"></script>
-        
+
         <script>
 //SESSION STORAGE
 
@@ -215,23 +219,23 @@ QUESTIONS FOR KRISTIAN
 //            setUserTemplate();
 //        });
 //    };
-//})();    
-            
+//})();
+
 //COMPILING EVERYTHING
-            
+
         var initialUrl = 'https://api.behance.net/v2/users/' + userName + '/projects/?api_key=' + apiKey +'&per_page=8&callback=?';
-            
+
       console.log('connected to ' + initialUrl + ' for main feed of projects. If you can click on the url it says you have connected to and it takes you to a JSON data feed, you are in business. Double check that the data looks like you!');
 
       var userUrl = 'https://api.behance.net/v2/users/' + userName + '/?api_key=' + apiKey +'&callback=?';
-            
+
       console.log('connected to ' + userUrl + ' for user info. Click on this, if it looks like you, you are all set.');
-            
+
         $.getJSON(initialUrl, function(data) {
 
         //mustache for projects
         //this prints the project thumbnails
-            
+
         var template = $('#project-pages').html();
         var info = Mustache.to_html(template, data);
         $('.overview').html(info);
@@ -241,7 +245,7 @@ QUESTIONS FOR KRISTIAN
         $('.thumbnail a').each(function() {
           var projectID  = $(this).attr('data-project-id');
           var projectUrl = 'https://api.behance.net/v2/projects/' + projectID + '/?api_key=' + apiKey +'&callback=?';
-            
+
           console.log('trying to show a lot of projects:' + projectUrl + '.');
 
           $.getJSON(projectUrl, function(data) {
@@ -262,8 +266,8 @@ QUESTIONS FOR KRISTIAN
           $(findThis).addClass('curr');
         });
       });
-     
-        
+
+
 //CALLING USER SPECIFIC INFORMATION
 
             var url = 'https://api.behance.net/v2/users/' + userName + '/?api_key=' + apiKey +'&callback=?';
@@ -317,21 +321,21 @@ QUESTIONS FOR KRISTIAN
 
 //            });
 
-//LOADING THE PROJECT IMAGES            
+//LOADING THE PROJECT IMAGES
 
-//$(document).ready(function() {          
+//$(document).ready(function() {
 //    var $this = $(this),
 //        projectID = $this.data('project-id'),
 //        beProjectContentAPI = 'http://www.behance.net/v2/projects/'+ projectID +'?callback=?&api_key=' + apiKey,
 //        keyName = 'behanceProjectImages-' + projectID;
-//     
-//    function showGallery(dataSource) {  
+//
+//    function showGallery(dataSource) {
 //        $this.magnificPopup({
 //            items: dataSource,
 //            type: 'image'
 //        }).magnificPopup('open');
 //    };
-// 
+//
 //    if(localStorage.getItem(keyName)) {
 //        var srcItems = JSON.parse(localStorage.getItem(keyName));
 //        showGallery(srcItems);
@@ -340,7 +344,7 @@ QUESTIONS FOR KRISTIAN
 //            var src = [];
 //            $.each(projectContent.project.modules, function(index, mod) {
 //                if(mod.src != undefined) {
-//                    src.push({ src: mod.src }); 
+//                    src.push({ src: mod.src });
 //                }
 //            });
 //            showGallery(src);
@@ -351,7 +355,7 @@ QUESTIONS FOR KRISTIAN
 //});
 
         </script>
-                    	
-	</body>
-	
+
+  </body>
+
 </html>
