@@ -105,40 +105,41 @@
 
         // this allows for the "page" to be created
         // for each project when you click its thumbnail
+        var thumbNum = $('.thumbnail').length;
+        console.log('there are ' + thumbNum + ' project thumbnails...');
+
         $('.thumbnail a').each(function() {
           var projectID  = $(this).attr('data-project-id');
           var projectUrl = 'https://api.behance.net/v2/projects/' + projectID + '/?api_key=' + apiKey +'&callback=?';
           console.log('trying to show a lot of projects:' + projectUrl + '.');
 
-          var printProjects = $('#full-projects').append(info);
-          var initialSetup  = function() {
-            var numberOfProjs = $('.project-item').length;
-            console.log('There are now ' + numberOfProjs + ' projects!');
-            $('.project-item').first().addClass('curr');
-            $('project-item').first().next().addClass('next');
-            $('project-item').last().addClass('prev');
-          };
-
           $.getJSON(projectUrl, function(data) {
             //mustache for project page overlay
             var template = $('#project-item').html();
             var info = Mustache.to_html(template, data);
+            $('#full-projects').append(info);
 
-            printProjects;
-            initialSetup;
+            var projectNum = $('.project-item').length;
+            console.log('and there are now ' + projectNum + ' projects...');
+
+            if (projectNum === thumbNum) {
+              $('.project-item').first().addClass('curr');
+              $('.project-item').first().next().addClass('next');
+              $('.project-item').last().addClass('prev');
+            };
           });
-        });
+        })
 
         // this should allow for making a project active
-        $('.project a').click(function() {
+        $('.thumbnail a').click(function() {
           var projectID    = $(this).attr('data-project-id');
           var findThis     = '#project-' + projectID;
-          var projectTitle = $(findThis);
-          var projectDesc  = '#project-' + projectID;
           console.log(findThis);
-          $('.project-item').removeClass('curr');
+
+          $('.project-item').removeClass('curr next prev');
           $(findThis).addClass('curr');
-          $('.')
+          $(findThis).next().addClass('next');
+          $(findThis).prev().addClass('prev');
         });
       });
 
