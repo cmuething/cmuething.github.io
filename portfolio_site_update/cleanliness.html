@@ -45,16 +45,17 @@
     </div>
 
     <div id="description-drawer">
-      <h1 class="project-name">{{project.name}}</h1>
-      <p class="project-description">{{project.description}}</p>
+      <h1 class="project-name">Name/Title to be inserted</h1>
+      <p class="project-description">Description to be dynamically inserted as well</p>
     </div>
 
     <!-- this will print in the above "dynamic-pages" area -->
     <script id="project-item" type="text/x-mustache-template">
+      {{#project.id}}
       <div class="project-item" id="project-{{project.id}}">
 
-        <h1 class="project-name">{{project.name}}</h1>
-        <p class="project-description">{{project.description}}</p>
+        {{#project.name}}<h1 class="project-name">{{project.name}}</h1>{{/project.name}}
+        {{#project.description}}<p class="project-description">{{project.description}}</p>{{/project.description}}
 
         <ul class="modules-list list-reset">
           {{#project.modules}}
@@ -68,6 +69,7 @@
         </ul>
 
       </div>
+      {{/project.id}}
     </script>
 
     <!-- All your javascript (other than typekit related stuff) -->
@@ -82,73 +84,80 @@
     <!-- this loads mustache.js, required for the templating to happen -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.2/mustache.min.js"></script>
 
-    <!-- This actually takes your behance data and prints it into the site -->
+    <!-- Take your behance data and prints it into the site -->
     <script>
-      var userName = 'connormuething'
-      var apiKey   = '5T8WWYiQqGy7sJV1sEQIdO2k8CDNDQS7'
-
+      var userName = 'connormuething';
+      var apiKey   = 'yJ3G6XhgD6Ofb14Rx0Evosxo6bpCnKfY';
       var initialUrl = 'https://api.behance.net/v2/users/' + userName + '/projects/?api_key=' + apiKey +'&per_page=8&callback=?';
-      console.log('connected to ' + initialUrl + ' for main feed of projects. If you can click on the url it says you have connected to and it takes you to a JSON data feed, you are in business. Double check that the data looks like you!');
-
-      var userUrl = 'https://api.behance.net/v2/users/' + userName + '/?api_key=' + apiKey +'&callback=?';
-      console.log('connected to ' + userUrl + ' for user info. Click on this, if it looks like you, you are all set.');
 
       /** the stuff for printing things out **/
       $.getJSON(initialUrl, function(data) {
 
-        //mustache for projects
-        //this prints the project thumbnails
+        // print out initial thumbnails
         var template = $('#thumbnail-card').html();
         var info = Mustache.to_html(template, data);
         $('#thumbnails').html(info);
         console.log('I printed your thumbnails out sir');
 
-        // this allows for the "page" to be created
-        // for each project when you click its thumbnail
-        var thumbNum = $('.thumbnail').length;
-        console.log('there are ' + thumbNum + ' project thumbnails...');
-
+        // create an array of all the project IDs
+        var idArray  = [];
         $('.thumbnail a').each(function() {
           var projectID  = $(this).attr('data-project-id');
-          var projectUrl = 'https://api.behance.net/v2/projects/' + projectID + '/?api_key=' + apiKey +'&callback=?';
-          console.log('trying to show a lot of projects:' + projectUrl + '.');
+          idArray.push(projectID);
+        });
+        console.log(idArray);
+
+        // for each project ID create a project url and save a new array
+        var thumbNum = $('.thumbnail').length;
+        var urlArray = []
+        for (var i = 0; i < thumbNum; i++) {
+          var projectUrl = 'https://api.behance.net/v2/projects/' + idArray[i] + '/?api_key=' + apiKey +'&callback=?';
+          urlArray.push(projectUrl);
+        };
+        console.log(urlArray);
+
+        for (var j = 0; j < thumbNum; j++) {
+          var projectUrl = urlArray[j]
+          console.log('this works right, heres a link: ' + projectUrl);
 
           $.getJSON(projectUrl, function(data) {
-            //mustache for project page overlay
+            // print out project by project images
             var template = $('#project-item').html();
             var info = Mustache.to_html(template, data);
             $('#full-projects').append(info);
-
-            var projectNum = $('.project-item').length;
-            console.log('and there are now ' + projectNum + ' projects...');
-
-            if (projectNum === thumbNum) {
-              $('.project-item').first().addClass('curr');
-              $('.project-item').first().next().addClass('next');
-              $('.project-item').last().addClass('prev');
-            };
+            $('.project-item').first().addClass('curr');
           });
-        })
 
-        // this should allow for making a project active
+          console.log('I printed your projects out sir. I also made ' + idArray[0] + ' active.');
+        };
+
+        // When you click a thumbnail, make that project active
         $('.thumbnail a').click(function() {
-          var projectID    = $(this).attr('data-project-id');
-          var findThis     = '#project-' + projectID;
+          var projectID  = $(this).attr('data-project-id');
+          var findThis = '#project-' + projectID;
           console.log(findThis);
-
-          $('.project-item').removeClass('curr next prev');
+          $('.project-item').removeClass('curr');
           $(findThis).addClass('curr');
-          $(findThis).next().addClass('next');
-          $(findThis).prev().addClass('prev');
         });
       });
 
     </script>
 
     <style>
-      .curr { background: red;   }
-      .next { background: blue;  }
-      .prev { background: green; }
+      .project-item {
+        width: 32%;
+        box-sizing: border-box;
+        float: left;
+        display: none;
+        position: absolute;
+      }
+      .curr { background: red;   left: 50%; transform: translate(-50%,0);}
+      .next { background: blue;  right: 0}
+      .prev { background: green; left: 0 }
+      .prev, .curr, .next {
+        display: block;
+      }
+      img { width: 100%; height: auto; }
     </style>
   </body>
 </html>
