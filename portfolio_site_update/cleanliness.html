@@ -118,8 +118,6 @@
 
         for (var j = 0; j < thumbNum; j++) {
           var projectUrl = urlArray[j]
-          console.log('this works right, heres a link: ' + projectUrl);
-
           $.getJSON(projectUrl, function(data) {
             // print out project by project images
             var template = $('#project-item').html();
@@ -127,8 +125,7 @@
             $('#full-projects').append(info);
             $('.project-item').first().addClass('curr');
           });
-
-          console.log('I printed your projects out sir. I also made ' + idArray[0] + ' active.');
+          console.log('I printed your projects out sir. I also made ' + idArray[0] + ' active. However, I appear unable to print these in the desired order');
         };
 
         // When you click a thumbnail, make that project active
@@ -145,15 +142,13 @@
 
     <style>
       .project-item {
-        width: 32%;
+        width: 20%;
         box-sizing: border-box;
         float: left;
-        display: none;
-        position: absolute;
       }
-      .curr { background: red;   left: 50%; transform: translate(-50%,0);}
-      .next { background: blue;  right: 0}
-      .prev { background: green; left: 0 }
+      .curr { background: red; }
+      .next { background: blue; }
+      .prev { background: green; }
       .prev, .curr, .next {
         display: block;
       }
