@@ -1,0 +1,110 @@
+<html>
+    <body>
+        <section class="overview">
+          <script id="thumbnail-card" type="text/x-mustache-template">
+            {{#projects}}
+              <div class="thumbnail" id="b{{id}}">
+                <a class="wrapping" href="#{{id}}" data-project-id="{{id}}">
+                  <p class="thumbnail-text">{{name}}</p>
+                  <div class="thumbnail-image">
+                    <img src="{{covers.202}}" alt="{{name}}" />
+                  </div>
+                </a>
+              </div>
+            {{/projects}}
+          </script> 
+       </section>
+        
+       <section class="project-details" id="menu">
+            <h1 class="project-name">Name/Title to be inserted</h1>
+            <p class="project-description">Description to be dynamically inserted as well</p>
+        </section>
+        
+         <div id="full-projects">
+
+        </div>
+
+            <script id="project-item" type="text/x-mustache-template">
+                {{#project.id}}
+                <div class="project-item" id="project-{{project.id}}"> 
+                {{#project.name}}<h1 class="project-name">{{project.name}}</h1>{{/project.name}}
+        {{#project.description}}<p class="project-description">{{project.description}}</p>{{/project.description}}
+                
+                <section class="image">    
+                    <article class="scroll" >
+                        <div class="modules-list list-reset">
+                            {{#project.modules}}
+                                <img class="images module {{type}}" src="{{#sizes.max_1200}}{{sizes.max_1200}}{{/sizes.max_1200}}{{^sizes.max_1200}}{{sizes.original}}{{/sizes.max_1200}}
+               " />
+                            {{/project.modules}}
+                        </div>
+                    </article>
+                </section>
+                </div>
+                {{/project.id}}
+            </script>
+        
+        <script language="javascript" type="text/javascript" src="js/jquery-1.11.3.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script src="js/behance.js"></script>
+        <script src="js/mustache.min.js"></script>
+
+        <script>
+
+//COMPILING EVERYTHING
+
+        var initialUrl = 'https://api.behance.net/v2/users/' + userName + '/projects/?api_key=' + apiKey +'&per_page=8&callback=?';
+      var userUrl = 'https://api.behance.net/v2/users/' + userName + '/?api_key=' + apiKey +'&callback=?';
+
+        $.getJSON(initialUrl, function(data) {
+
+        //mustache for projects
+        //this prints the project thumbnails
+
+        var template = $('#thumbnail-card').html();
+        var info = Mustache.to_html(template, data);
+        $('.overview').html(info);
+        console.log('I printed your thumbnails out sir');
+
+        // create an array of all the project IDs
+        var idArray  = [];
+        $('.thumbnail a').each(function() {
+          var projectID  = $(this).attr('data-project-id');
+          idArray.push(projectID);
+        });
+        console.log(idArray);
+            
+        var thumbNum = $('.thumbnail').length;
+        var urlArray = []
+        for (var i = 0; i < thumbNum; i++) {
+          var projectUrl = 'https://api.behance.net/v2/projects/' + idArray[i] + '/?api_key=' + apiKey +'&callback=?';
+          urlArray.push(projectUrl);
+        };
+        console.log(urlArray);
+
+        for (var j = 0; j < thumbNum; j++) {
+          var projectUrl = urlArray[j]
+          $.getJSON(projectUrl, function(data) {
+            // print out project by project images
+            var template = $('#project-item').html();
+            var info = Mustache.to_html(template, data);
+            $('#full-projects').append(info);
+            $('.project-item').first().addClass('curr');
+          });
+          console.log('I printed your projects out sir. I also made ' + idArray[0] + ' active. However, I appear unable to print these in the desired order');
+        };
+
+        // this should allow for making a project active
+        $('.thumbnail a').click(function() {
+          var projectID  = $(this).attr('data-project-id');
+          var findThis = '#project-' + projectID;
+          console.log(findThis);
+          console.log('a thumbnail has been clicked');
+          $('.project-item').removeClass('curr');
+          $(findThis).addClass('curr');
+        });
+      });
+
+        </script> 
+    </body>
+</html>

@@ -1,3 +1,32 @@
+<!--
+TO DO:
+
+    -restyle the image pages so that they scroll properly
+    -add in project name at the bottom
+    -dynamically add the description and title to the drawer
+
+    -Rename classes and id's so that they make sense
+    -percentages and ems
+    -MOBILE VIEW!!!!
+
+    -fix left click problem???
+        -something with .next and .previous
+
+    -make the images scroll to the edges of the screen rather than overflow:hidden???
+    -arrows on left and right???
+
+    -FAVICON
+
+QUESTIONS FOR KRISTIAN
+    -SESSION STORAGE...store the json file after initial load to avoid limit
+
+    -center text on screen
+        width: 100%, text-align: center
+
+    -jarring transistion of drawers infront of gradient
+
+-->
+
 <html>
 
   <head>
@@ -21,9 +50,9 @@
 
   <body>
 
-        <div id="loading"></div>
+    <div id="loading"></div>
 
-        <div id="whole-page">
+    <div id="whole-page">
 
     <div id="limit-t"></div>
 
@@ -35,57 +64,41 @@
 
 <!--OVERVIEW-->
 
-<!--        <div class="hide-overview"><p>X</p></div>-->
-
         <div class="thumbnail-icon">
             <p class="overview-toggle" id="tops"><i class="fa fa-th-large"></i></p>
         </div>
 
-    <section class="overview">
-
-<!--
-        <script id="project-cards" type="text/x-mustache-template">
+        <section class="overview">
+          <script id="thumbnail-card" type="text/x-mustache-template">
             {{#projects}}
-            <div class="thumbnail" id="b{{id}}">
-                <div class="thumbnail-text"><p>{{name}}</p></div>
-              <a class="wrapping" href="#{{id}}" data-project-id="{{id}}">
-                <div class="thumbnail-image"><img src="{{covers.202}}" alt="{{name}}" /></div>
-              </a>
-            </div>
+              <div class="thumbnail" id="b{{id}}">
+                <a class="wrapping" href="#{{id}}" data-project-id="{{id}}">
+                  <p class="thumbnail-text">{{name}}</p>
+                  <div class="thumbnail-image">
+                    <img src="{{covers.202}}" alt="{{name}}" />
+                  </div>
+                </a>
+              </div>
             {{/projects}}
-       </script>
--->
-
-
-
+          </script> 
        </section>
 
 <!--PROJECT DETAILS-->
 
         <section class="project-details" id="menu">
-
-            <script id="project-desc" type="text/x-mustache-template">
-            {{#project}}
-            <article class="project-details-toggle">
-                <h1>{{name}}</h1>
-                <p>{{project.description}}</p>
-            </article>
-            {{/project}}
-            </script>
-
-    </section>
-
-<!--        <div class="hide-details"><p>X</p></div>    -->
-
-<!--        Should this be the project name or just something that says project details, an icon???-->
+            <h1 class="project-name">Name/Title to be inserted</h1>
+            <p class="project-description">Description to be dynamically inserted as well</p>
+        </section>
 
         <div class="project-label">
 
+<!--
         <script id="project-title" type="text/x-mustache-template">
         {{#project}}
         <p class="project-details-toggle" id="bottoms">{{name}}</p>
         {{/project}}
         </script>
+-->
 
         </div>
 
@@ -93,72 +106,33 @@
 
         <div class="test"> </div>
 
-    <div id=container>
+        <div id="full-projects">
 
         </div>
-
 
 <!--Writing the script to load each project as a section-->
 
 <!--I need to know what all the projects are with their project IDs...then you can build the project URLS-->
 
-            <script id="project-pages" type="text/x-mustache-template">
-                {{#projects}}
-                    <div class="thumbnail" id="b{{id}}">
-                        <div class="thumbnail-text"><p>{{name}}</p></div>
-                        <a class="wrapping" href="#{{id}}" data-project-id="{{id}}">
-                            <div class="thumbnail-image">
-                                <img src="{{covers.202}}" alt="{{name}}" />
-                            </div>
-                        </a>
-                    </div>
-                <section href="" class="project-page image" id="project-{{id}}" data-drawer-title="{{project.name}}" data-drawer-description="{{project.description}}">
-                    <article class="scroll" >
-                           <div class="modules-list list-reset">
-                                {{#project.modules}}
-                                <img class="images" src="{{#sizes.max_1200}}{{sizes.max_1200}}{{/sizes.max_1200}}{{^sizes.max_1200}}{{sizes.original}}{{/sizes.max_1200}}" />
-                               {{/project.modules}}
-                            </div>
-            </article>
-                </section>
-                {{/projects}}
+            <script id="project-item" type="text/x-mustache-template">
+                {{#project.id}}
+                <div class="project-item" id="project-{{project.id}}"> 
+                {{#project.name}}<h1 class="project-name">{{project.name}}</h1>{{/project.name}}
+        {{#project.description}}<p class="project-description">{{project.description}}</p>{{/project.description}}
+                
+                    <article class="scroll">
+                        <div class="modules-list list-reset">
+                            {{#project.modules}}
+                                <img class="{{type}}" src="{{#sizes.max_1200}}{{sizes.max_1200}}{{/sizes.max_1200}}{{^sizes.max_1200}}{{sizes.original}}{{/sizes.max_1200}}
+               " />
+                            {{/project.modules}}
+                        </div>
+                    </article>
+                </div>
+                {{/project.id}}
             </script>
 
-<!--End of the test script-->
-
-<!--
-TO DO:
-
-    -Hosting on Github so that I can stop paying cargo
-
-    -CLEAN UP ALL CODE
-    -percentages and ems
-    -MOBILE VIEW!!!!
-
-    -fix left click problem???
-        -something with .next and .previous
-
-    -how do I link a click on a thumbnail, with a specific project page??
-
-    -make the images scroll to the edges of the screen rather than overflow:hidden???
-    -arrows on left and right???
-    -center aligning project title and tile icon
-
-QUESTIONS FOR KRISTIAN
-    -SESSION STORAGE...store the json file after initial load to avoid limit
-
-    -center text on screen
-        width: 100%, text-align: center
-
-    -jarring transistion of drawers infront of gradient
-
-    -selecting only images from the json modules
-
--->
-
     <section class="connor-info">
-
-      <!-- this comes in from the left and contains my contact information -->
 
         <script id="myname" type="text/x-mustache-template">
             {{#user}}
@@ -176,12 +150,7 @@ QUESTIONS FOR KRISTIAN
 
     <nav>
 
-      <div class="r" title="Next project">
-
-        <img class="normal" src="" width="11" height="11" alt="Next project" style="display: block;">
-        <img class="hover" src="" width="11" height="11" alt="Next project" style="display: none;">
-
-      </div>
+      <div class="r" title="Next project"> </div>
 
       <div class="l" title="Previous project"> left </div>
 
@@ -199,70 +168,57 @@ QUESTIONS FOR KRISTIAN
         <script src="js/mustache.min.js"></script>
 
         <script>
-//SESSION STORAGE
-
-//        (function() {
-//    var behanceUserAPI = 'http://www.behance.net/v2/users/'+ userName +'?callback=?&api_key='+ apiKey;
-//    function setUserTemplate() {
-//        var userData    = JSON.parse(sessionStorage.getItem('behanceUser')),
-//        getTemplate = $('#profile-template').html(),
-//        template    = Handlebars.compile(getTemplate),
-//        result      = template(userData);
-//        $('#header').html(result);
-//    };
-//    if(sessionStorage.getItem('behanceUser')) {
-//        setUserTemplate();
-//    } else {
-//        $.getJSON(behanceUserAPI, function(user) {
-//            var data = JSON.stringify(user);
-//            sessionStorage.setItem('behanceUser', data);
-//            setUserTemplate();
-//        });
-//    };
-//})();
 
 //COMPILING EVERYTHING
 
         var initialUrl = 'https://api.behance.net/v2/users/' + userName + '/projects/?api_key=' + apiKey +'&per_page=8&callback=?';
-
-      console.log('connected to ' + initialUrl + ' for main feed of projects. If you can click on the url it says you have connected to and it takes you to a JSON data feed, you are in business. Double check that the data looks like you!');
-
       var userUrl = 'https://api.behance.net/v2/users/' + userName + '/?api_key=' + apiKey +'&callback=?';
-
-      console.log('connected to ' + userUrl + ' for user info. Click on this, if it looks like you, you are all set.');
 
         $.getJSON(initialUrl, function(data) {
 
         //mustache for projects
         //this prints the project thumbnails
 
-        var template = $('#project-pages').html();
+        var template = $('#thumbnail-card').html();
         var info = Mustache.to_html(template, data);
         $('.overview').html(info);
+        console.log('I printed your thumbnails out sir');
 
-        // this allows for the "page" to be created
-        // for each project when you click its thumbnail
+        // create an array of all the project IDs
+        var idArray  = [];
         $('.thumbnail a').each(function() {
           var projectID  = $(this).attr('data-project-id');
-          var projectUrl = 'https://api.behance.net/v2/projects/' + projectID + '/?api_key=' + apiKey +'&callback=?';
-
-          console.log('trying to show a lot of projects:' + projectUrl + '.');
-
-          $.getJSON(projectUrl, function(data) {
-            //mustache for project page overlay
-            var template = $('#project-pages').html();
-            var info = Mustache.to_html(template, data);
-            $('#container').append(info);
-
-          });
+          idArray.push(projectID);
         });
+        console.log(idArray);
+            
+        var thumbNum = $('.thumbnail').length;
+        var urlArray = []
+        for (var i = 0; i < thumbNum; i++) {
+          var projectUrl = 'https://api.behance.net/v2/projects/' + idArray[i] + '/?api_key=' + apiKey +'&callback=?';
+          urlArray.push(projectUrl);
+        };
+        console.log(urlArray);
+
+        for (var j = 0; j < thumbNum; j++) {
+          var projectUrl = urlArray[j]
+          $.getJSON(projectUrl, function(data) {
+            // print out project by project images
+            var template = $('#project-item').html();
+            var info = Mustache.to_html(template, data);
+            $('#full-projects').append(info);
+            $('.project-item').first().addClass('curr');
+          });
+          console.log('I printed your projects out sir. I also made ' + idArray[0] + ' active. However, I appear unable to print these in the desired order');
+        };
 
         // this should allow for making a project active
         $('.thumbnail a').click(function() {
           var projectID  = $(this).attr('data-project-id');
           var findThis = '#project-' + projectID;
           console.log(findThis);
-          $('.project-page').removeClass('curr');
+          console.log('a thumbnail has been clicked');
+          $('.project-item').removeClass('curr');
           $(findThis).addClass('curr');
         });
       });
