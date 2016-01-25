@@ -147,13 +147,14 @@ $(document).ready(function () {
     });
 });
     
-    $(document).ready(function () {
-    $('.test').on('click', function(event){
+$(document).ready(function () {
+    $('.test, .thumbnail a').on('click', function(event){
         event.preventDefault();
 
     	var overviewTop = $('.overview');
         var gradientMove = $('.test');
-        
+        console.log('a thumbnail has been clicked');
+
 	    	overviewTop.animate({
 		    	top: "-600px"
 	    	}, 250);
