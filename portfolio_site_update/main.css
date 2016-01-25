@@ -23,7 +23,7 @@
     overflow: hidden;
 }
     
-.images {
+#image {
     position: relative;
     width: 100%;
     height: auto;
@@ -80,7 +80,7 @@
 
 @media (min-width: 1200px) {
 
-.images {
+#image {
     position: relative;
     width: auto;
     height: 100%;
@@ -230,8 +230,9 @@ body {
     overflow: visible;
 }
 
-/*transparent overlay*/
+/*transparent overlay, causing a problem with the link*/
 
+/*
 .thumbnail:hover:after {
     opacity:1;
 }
@@ -244,9 +245,11 @@ body {
     top:0; 
     left:0;
     background:rgba(0,0,0,0.25);
-/*Should I transition this???*/
     opacity:0;
 }
+*/
+
+/*^^Should I transition this???*/
 
 .project-label {
     position: absolute;
@@ -290,6 +293,8 @@ body {
     z-index: 9998;
     box-sizing: border-box;
 }
+
+/*This needs to be adjusted for smaller screens*/
 
 .project-details .project-details-toggle p {
     font-size: 14px;
@@ -369,74 +374,30 @@ body {
 	margin-top: -5px;
 }
 
-/*USED TO TEST THE SLIDE LEFT*/
-
-/*
-#move {
-    position: absolute;
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;  
+.project-item {
+    display: none;
 }
-
-.image {
-    position: absolute;
-    width: 50%;
-    height: 300px;
-    line-height: 300px;
-    font-size: 50px;
-    text-align: center;
-    border: 2px solid black;
-    left: 50%;
-    top: 100px;
-    margin-left: -25%;
-}
-
-#box1 {
-    background-color: green;
-    left: -150%;
-    overflow:hidden;
-}
-
-#box2 {
-    background-color: yellow;
-    overflow:hidden;
-}
-
-#box3 {
-    background-color: red;
-    left: 150%;
-    overflow:hidden;
-}
-*/
-
-
-/*USED FOR THE REGULAR CENTER AND SCALE OF IMAGES*/
-
 
 .curr {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 999999999;
-    top: 0;
-    left: 0;
+    display: block;
 }
 
-.image {
+/*This is just used to slide the element*/
+
+/*
+.module {
     position: absolute;
     width: 100%;
     height: 100%;
     text-align: center;
     margin-left: -50%;
-    left: -50%;
+    left: -150%;
     top: 0;
 }
+*/
 
 /*
-.images {
+#image {
     position: relative;
     width: auto;
     height: 100%;
@@ -445,7 +406,7 @@ body {
 }
 */
 
-.images:last-child {
+.module:last-child {
     margin-bottom: 0;
 }
 
