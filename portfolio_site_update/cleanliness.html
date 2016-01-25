@@ -15,24 +15,27 @@
     <main>
       <div>
         <div id="thumbnails">
-          <!-- this is the template that each behance thing with use to print to the browser -->
-          <script id="thumbnail-card" type="text/x-mustache-template">
-            {{#projects}}
-              <div class="thumbnail" id="b{{id}}">
-                <a class="wrapping" href="#{{id}}" data-project-id="{{id}}">
-                  <p class="thumbnail-text">{{name}}</p>
-                  <div class="thumbnail-image">
-                    <img src="{{covers.202}}" alt="{{name}}" />
-                  </div>
-                </a>
-              </div>
-            {{/projects}}
-          </script>
-
+          <div class="list">
+            <!-- this is the template that each behance thing with use to print to the browser -->
+            <script id="thumbnail-card" type="text/x-mustache-template">
+              {{#projects}}
+                <div class="thumbnail" id="b{{id}}">
+                  <div class="projectName" style="display:none;">{{name}}</div>
+                  <a class="wrapping" href="#{{id}}" data-project-id="{{id}}">
+                    <p class="thumbnail-text">{{name}}</p>
+                    <div class="thumbnail-image">
+                      <img src="{{covers.202}}" alt="{{name}}" />
+                    </div>
+                  </a>
+                </div>
+              {{/projects}}
+            </script>
+          </div>
         </div>
       </div>
 
       <style>
+        .text { display: none; }
         #thumbnails .thumbnail {
           display: inline-block;
         }
@@ -53,6 +56,7 @@
     <script id="project-item" type="text/x-mustache-template">
       {{#project.id}}
       <div class="project-item" id="project-{{project.id}}">
+        <div class="projectName" style="display:none;">{{name}}</div>
 
         {{#project.name}}<h1 class="project-name">{{project.name}}</h1>{{/project.name}}
         {{#project.description}}<p class="project-description">{{project.description}}</p>{{/project.description}}
@@ -86,8 +90,7 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- this loads mustache.js, required for the templating to happen -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.2/mustache.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js
-Copy"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js"></script>
 
     <!-- Take your behance data and prints it into the site -->
     <script>
@@ -104,18 +107,24 @@ Copy"></script>
         $('#thumbnails').html(info);
         console.log('I printed your thumbnails out sir');
 
-
-
         // create an array of all the project IDs
-        var idArray  = [];
+        var idArray      = [];
+        var projectNames = [];
         $('.thumbnail a').each(function() {
-          var projectID  = $(this).attr('data-project-id');
+          var projectID   = $(this).attr('data-project-id');
+          var projectName = $(this).find('.thumbnail-text').html();
           idArray.push(projectID);
+          projectNames.push(projectName);
         });
         console.log(idArray);
+        console.log(projectNames);
+        var alpha = projectNames.sort();
+        console.log(alpha);
+
+
 
         // for each project ID create a project url and save a new array
-        var thumbNum = $('.thumbnail').length;
+        var thumbNum = idArray.length;
         var urlArray = []
         for (var i = 0; i < thumbNum; i++) {
           var projectUrl = 'https://api.behance.net/v2/projects/' + idArray[i] + '/?api_key=' + apiKey +'&callback=?';
