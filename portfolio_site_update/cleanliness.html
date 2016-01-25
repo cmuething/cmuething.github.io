@@ -60,10 +60,13 @@
         <ul class="modules-list list-reset">
           {{#project.modules}}
             <li class="module {{type}}">
+              {{#embed}}<div class="embed-wrapper">{{{embed}}}</div>{{/embed}}
+              {{^embed}}
               <img src="
                 {{#sizes.max_1200}}{{sizes.max_1200}}{{/sizes.max_1200}}
                 {{^sizes.max_1200}}{{sizes.original}}{{/sizes.max_1200}}
                " />
+              {{/embed}}
             </li>
           {{/project.modules}}
         </ul>
@@ -83,6 +86,8 @@
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <!-- this loads mustache.js, required for the templating to happen -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.2/mustache.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js
+Copy"></script>
 
     <!-- Take your behance data and prints it into the site -->
     <script>
@@ -98,6 +103,8 @@
         var info = Mustache.to_html(template, data);
         $('#thumbnails').html(info);
         console.log('I printed your thumbnails out sir');
+
+
 
         // create an array of all the project IDs
         var idArray  = [];
