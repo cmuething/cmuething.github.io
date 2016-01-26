@@ -30,6 +30,14 @@
     display: block;
     margin: 0 auto 1em;
 }
+
+.embed-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1em;     
+}
     
 .thumbnail-icon {
     position: absolute;
@@ -40,6 +48,25 @@
     
 #tops {
     margin-right: 50px;    
+}
+
+.project-details p {
+    font-size: 14px;
+    line-height: 18px;
+    position: relative;
+    width: 85%;
+    padding-left: 50px;
+	top: 12px;
+}
+
+.project-details h1 {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    position: relative;
+    width: 100%;
+    padding-left: 50px;
+	top: 12px;
 }
 
 }
@@ -76,6 +103,28 @@
     text-align: center;
 }
     
+.project-details p {
+    font-size: 14px;
+    line-height: 18px;
+    position: absolute;
+    width: 70%;
+    padding-left: 0;
+    padding-right: 0;
+	top: 12px;
+	left: 200px;  
+}
+
+.project-details h1 {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    position: absolute;
+    padding-left: 0;
+    width: 30%;
+	top: 12px;
+	left: 50px;  
+}
+    
 }
 
 @media (min-width: 1200px) {
@@ -86,7 +135,15 @@
     height: 100%;
     display: block;
     margin: 0 auto 1em;
-}    
+}
+    
+.embed-wrapper {
+    position: relative;
+    width: auto;
+    height: 100%;
+    display: block;
+    margin: 0 auto 1em;
+}
 
 }
 
@@ -253,30 +310,11 @@ body {
 
 .project-label {
     position: absolute;
-/*How do I make this just be one line of text???*/
     width: 100%;
     text-align: center;
     bottom: 2%;
     z-index: 9998;
 }
-
-/*
-.hide-details {
-    display: none;
-}
-
-.close {
-    display: block;
-    position: absolute;
-    font-size: 24px;
-    cursor: pointer;
-    width: 150px;
-    left: 50%;
-    bottom: 2%;
-    left: 45%;
-    z-index: 999999;
-}
-*/
 
 #bottoms {
     position: relative;
@@ -296,7 +334,8 @@ body {
 
 /*This needs to be adjusted for smaller screens*/
 
-.project-details .project-details-toggle p {
+/*
+.project-details p {
     font-size: 14px;
     line-height: 18px;
     position: absolute;
@@ -305,15 +344,16 @@ body {
 	right: 50px;  
 }
 
-.project-details .project-details-toggle h1 {
+.project-details h1 {
     font-size: 14px;
     font-weight: 300;
     line-height: 18px;
     position: absolute;
-    width: 70%;
+    width: 3x0%;
 	top: 12px;
 	left: 50px;  
 }
+*/
 
 .r {
     display: none;
@@ -380,6 +420,10 @@ body {
 
 .curr {
     display: block;
+}
+
+.text {
+    display: none !important;
 }
 
 /*This is just used to slide the element*/

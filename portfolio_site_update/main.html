@@ -3,8 +3,6 @@ TO DO:
 
     -add in project name at the bottom
 
-    -only grabbing images
-
     -Rename classes and id's so that they make sense
     -percentages and ems
     -MOBILE VIEW!!!!
@@ -16,6 +14,8 @@ TO DO:
     -arrows on left and right???
 
     -FAVICON
+    
+    -making the text take up the entire container, but not within the z-index
 
 QUESTIONS FOR KRISTIAN
     -SESSION STORAGE...store the json file after initial load to avoid limit
@@ -86,14 +86,14 @@ QUESTIONS FOR KRISTIAN
 <!--PROJECT DETAILS-->
 
         <section class="project-details" id="menu">
-<!--
+            
             <h1 class="project-name">Name/Title to be inserted</h1>
             <p class="project-description">Description to be dynamically inserted as well</p>
--->
+            
         </section>
 
         <div class="project-label">
-            <h1>Name/Title to be inserted</h1>
+            <h1 class="project-name">Name/Title to be inserted</h1>
         </div>
 
 <!--PROJECT PAGES-->
@@ -112,13 +112,17 @@ QUESTIONS FOR KRISTIAN
                 {{#project.id}}
                 <div class="project-item" id="project-{{project.id}}"> 
                 {{#project.name}}<h1 class="project-name">{{project.name}}</h1>{{/project.name}}
+                {{#project.name}}<h1 class="project-toggle">{{project.name}}</h1>{{/project.name}}
         {{#project.description}}<p class="project-description">{{project.description}}</p>{{/project.description}}
                 
                 <section class="module">    
                     <article class="scroll">
                             {{#project.modules}}
+                            {{#embed}}<div class="embed-wrapper">{{{embed}}}</div>{{/embed}}
+              {{^embed}}
                                 <img id="image" class="{{type}}" src="{{#sizes.max_1200}}{{sizes.max_1200}}{{/sizes.max_1200}}{{^sizes.max_1200}}{{sizes.original}}{{/sizes.max_1200}}
-               " />
+               " />              {{/embed}}
+
                             {{/project.modules}}
                     </article>
                 </div>
@@ -160,6 +164,8 @@ QUESTIONS FOR KRISTIAN
         <script type="text/javascript" src="js/index.js"></script>
         <script src="js/behance.js"></script>
         <script src="js/mustache.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js
+Copy"></script>
 
         <script>
 
@@ -202,12 +208,12 @@ QUESTIONS FOR KRISTIAN
             var info = Mustache.to_html(template, data);
             $('#full-projects').append(info);
             $('.project-item').first().addClass('curr');
-            $(document).ready(function() {
-                if ($('.project-item').hasClass('curr') ) {
-                    $('.project-details').append($('.project-name, .project-description'));
-                }
-            });
+              
+            $('.project-details .project-description').replaceWith($('.project-item .project-description'));
+            $('.project-details .project-name').replaceWith($('.project-item .project-name')); 
+            $('.project-label .project-name').replaceWith($('.project-item .project-toggle'));              
           });
+            
           console.log('I printed your projects out sir. I also made ' + idArray[0] + ' active. However, I appear unable to print these in the desired order');
         };
 
@@ -219,11 +225,10 @@ QUESTIONS FOR KRISTIAN
           console.log(findThis);
           $('.project-item').removeClass('curr');
           $(findThis).addClass('curr');
-            
-//          $('.project-label').append($('.project-name'));
-//          $('.project-details').append($('.project-name, .project-description'));
             });
         });
+            
+        
             
 
 //CALLING USER SPECIFIC INFORMATION
