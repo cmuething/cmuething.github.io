@@ -14,16 +14,28 @@ TO DO:
     -arrows on left and right???
 
     -FAVICON
-    
-    -making the text take up the entire container, but not within the z-index
+        
+    -web font
 
 QUESTIONS FOR KRISTIAN
     -SESSION STORAGE...store the json file after initial load to avoid limit
 
-    -center text on screen
-        width: 100%, text-align: center
-
     -jarring transistion of drawers infront of gradient
+
+    -making the text take up the entire container, but not within the z-index
+
+    -media queries explanation
+
+    -using replaceWith
+
+    -Using the transparent overlay
+
+    -slide left and slide right
+
+    -styling the videos
+
+    -click next, return every to top of the scroll
+
 
 -->
 
@@ -112,7 +124,6 @@ QUESTIONS FOR KRISTIAN
                 {{#project.id}}
                 <div class="project-item" id="project-{{project.id}}"> 
                 {{#project.name}}<h1 class="project-name">{{project.name}}</h1>{{/project.name}}
-                {{#project.name}}<h1 class="project-toggle">{{project.name}}</h1>{{/project.name}}
         {{#project.description}}<p class="project-description">{{project.description}}</p>{{/project.description}}
                 
                 <section class="module">    
@@ -209,18 +220,27 @@ Copy"></script>
             $('#full-projects').append(info);
             $('.project-item').first().addClass('curr');
               
-            $('.project-details .project-description').replaceWith($('.project-item .project-description'));
-            $('.project-details .project-name').replaceWith($('.project-item .project-name')); 
-            $('.project-label .project-name').replaceWith($('.project-item .project-toggle'));              
+            var projectname = $('.curr h1').html();
+            var projectdesc = $('.curr p').html();
+
+            $('.project-name').html(projectname);
+            $('.project-description').html(projectdesc);
+                           
           });
             
           console.log('I printed your projects out sir. I also made ' + idArray[0] + ' active. However, I appear unable to print these in the desired order');
         };
 
+
         // this should allow for making a project active
         $('.thumbnail a').click(function() {
           var projectID  = $(this).attr('data-project-id');
-          var findThis = '#project-' + projectID;   
+          var findThis = '#project-' + projectID;
+          var projectname = $('.curr h1').html();
+          var projectdesc = $('.curr p').html();
+
+          $('.project-name').html(projectname);
+          $('.project-description').html(projectdesc);
             
           console.log(findThis);
           $('.project-item').removeClass('curr');

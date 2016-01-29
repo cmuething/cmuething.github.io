@@ -1,154 +1,3 @@
-@media (min-width: 400px) {
-
-.overview {
-    overflow: scroll;
-    position: fixed;
-    text-align: center;
-    top: 100%;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    z-index: 9998;
-    box-sizing: border-box;
-    padding: 75px 8% 2% 8%;
-}
-    
-.thumbnail {
-    cursor: pointer;
-    position: relative;
-    height: 158px;
-    display: block;
-    float: left;
-    margin: 10px;
-    overflow: hidden;
-}
-    
-#image {
-    position: relative;
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 1em;
-}
-
-.embed-wrapper {
-    position: relative;
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 1em;     
-}
-    
-.thumbnail-icon {
-    position: absolute;
-    width: 100%;
-    top: 3%;
-    text-align: right;
-}
-    
-#tops {
-    margin-right: 50px;    
-}
-
-.project-details p {
-    font-size: 14px;
-    line-height: 18px;
-    position: relative;
-    width: 85%;
-    padding-left: 50px;
-	top: 12px;
-}
-
-.project-details h1 {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 18px;
-    position: relative;
-    width: 100%;
-    padding-left: 50px;
-	top: 12px;
-}
-
-}
-
-@media (min-width: 795px) {
-    
-.overview {
-    overflow: hidden;
-    position: absolute;
-    top: -60%;
-    width: 100%;
-    height: 60%;
-    background-color: white;
-    text-align: center;
-    z-index: 9998;
-    box-sizing: border-box;
-    padding: 75px 8% 2% 8%;
-}
-
-.thumbnail {
-    cursor: pointer;
-    position: relative;
-    height: 158px;
-    display: block;
-    float: left;
-    margin: 10px;
-    overflow: hidden;
-}
-    
-.thumbnail-icon {
-    position: absolute;
-    width: 100%;
-    top: 3%;
-    text-align: center;
-}
-    
-.project-details p {
-    font-size: 14px;
-    line-height: 18px;
-    position: absolute;
-    width: 70%;
-    padding-left: 0;
-    padding-right: 0;
-	top: 12px;
-	left: 200px;  
-}
-
-.project-details h1 {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 18px;
-    position: absolute;
-    padding-left: 0;
-    width: 30%;
-	top: 12px;
-	left: 50px;  
-}
-    
-}
-
-@media (min-width: 1200px) {
-
-#image {
-    position: relative;
-    width: auto;
-    height: 100%;
-    display: block;
-    margin: 0 auto 1em;
-}
-    
-.embed-wrapper {
-    position: relative;
-    width: auto;
-    height: 100%;
-    display: block;
-    margin: 0 auto 1em;
-}
-
-}
-
-/*END MEDIA QUERIES*/
-
 body {
     margin: 0;
     font-family: UniversLTStd-Light;
@@ -166,7 +15,7 @@ body {
     top: 0;
     left: 0;
 /*add whatever you want the loading screen to be here*/
-    background-color: red;
+    background-color: white;
 }
 
 .gradient {
@@ -214,14 +63,12 @@ body {
 	right: 10px;
 }
 
-/*
 .thumbnail-icon {
     position: absolute;
     width: 100%;
     top: 3%;
     text-align: center;
 }
-*/
 
 #tops {
     position: relative;
@@ -229,7 +76,6 @@ body {
     z-index: 9999;
 }
 
-/*
 .overview {
     overflow: hidden;
     position: absolute;
@@ -241,17 +87,13 @@ body {
     box-sizing: border-box;
     padding: 75px 10% 2% 10%;
 }
-*/
 
-/*
 .overview .overview-toggle {
     position: absolute;
 	top: 12px;
 	right: 10px;
 }
-*/
 
-/*
 .thumbnail {
     cursor: pointer;
     position: relative;
@@ -261,7 +103,6 @@ body {
     margin: 15px;
     overflow: hidden;
 }
-*/
 
 .thumbnail-text {
     position: absolute;
@@ -281,6 +122,11 @@ body {
     z-index: 99999;
     top: 200px;
     left: 0;
+    pointer-events: none;
+}
+
+.thumbnail p {
+    color: red;
 }
 
 .thumbnail {
@@ -309,11 +155,25 @@ body {
 /*^^Should I transition this???*/
 
 .project-label {
+    cursor: pointer;
     position: absolute;
     width: 100%;
     text-align: center;
     bottom: 2%;
     z-index: 9998;
+}
+
+.project-label h1 {
+    font-size: 14px;
+    font-weight: 300;   
+}
+
+.project-item .project-name {
+    display: none;
+}
+
+.project-item .project-description {
+    display: none;
 }
 
 #bottoms {
@@ -334,7 +194,6 @@ body {
 
 /*This needs to be adjusted for smaller screens*/
 
-/*
 .project-details p {
     font-size: 14px;
     line-height: 18px;
@@ -353,7 +212,6 @@ body {
 	top: 12px;
 	left: 50px;  
 }
-*/
 
 .r {
     display: none;
@@ -440,7 +298,6 @@ body {
 }
 */
 
-/*
 #image {
     position: relative;
     width: auto;
@@ -448,7 +305,14 @@ body {
     display: block;
     margin: 0 auto 1em;
 }
-*/
+    
+.embed-wrapper {
+    position: relative;
+    width: auto;
+    height: 100%;
+    display: block;
+    margin: 0 auto 1em;
+}
 
 .module:last-child {
     margin-bottom: 0;
@@ -546,4 +410,138 @@ article img {
     height: 100%;
 /*    background-color: rgb(255,45,0);*/
     z-index: 9997;
+}
+
+/*MEDIA QUERIES*/
+
+@media (max-width: 795px) {
+
+.overview {
+    overflow: scroll;
+    position: fixed;
+    text-align: center;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 9998;
+    box-sizing: border-box;
+    padding: 75px 8% 2% 8%;
+}
+    
+.thumbnail {
+    cursor: pointer;
+    position: relative;
+    height: 158px;
+    display: block;
+    float: left;
+    margin: 10px;
+    overflow: hidden;
+}
+    
+#image {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1em;
+}
+    
+.thumbnail-icon {
+    position: absolute;
+    width: 100%;
+    top: 3%;
+    text-align: right;
+}
+    
+#tops {
+    margin-right: 50px;    
+}
+
+.project-details p {
+    font-size: 14px;
+    line-height: 18px;
+    position: relative;
+    width: 85%;
+    padding-left: 50px;
+	top: 12px;
+}
+
+.project-details h1 {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 300;
+    position: relative;
+    width: 100%;
+    padding-left: 50px;
+	top: 12px;
+}
+    
+.connor-info {
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 9998;
+}
+
+}
+
+@media (max-width: 1200px) {
+    
+#image {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1em;
+}
+    
+.overview {
+    overflow: hidden;
+    position: absolute;
+    top: -60%;
+    width: 100%;
+    height: 60%;
+    background-color: white;
+    text-align: center;
+    z-index: 9998;
+    box-sizing: border-box;
+    padding: 75px 8% 2% 8%;
+}
+
+.thumbnail {
+    cursor: pointer;
+    position: relative;
+    height: 158px;
+    display: block;
+    float: left;
+    margin: 10px;
+    overflow: hidden;
+}
+    
+.project-details p {
+    font-size: 14px;
+    line-height: 18px;
+    position: absolute;
+    width: 70%;
+    padding-left: 0;
+    padding-right: 0;
+	top: 12px;
+	left: 200px;  
+}
+
+.project-details h1 {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 300;
+    position: absolute;
+    padding-left: 0;
+    width: 30%;
+	top: 12px;
+	left: 50px;  
+}
+    
 }
