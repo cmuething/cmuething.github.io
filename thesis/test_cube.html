@@ -5,25 +5,73 @@
 </head>
 <body>
 <script src="js/three.min.js"></script>
+<script src="three.js-master/examples/js/controls/OrbitControls.js"></script>
+    
+<script src="three.js-master/src/extras/ImageUtils.js"></script>
+<script src="three.js-master/src/materials/Material.js"></script>
+<script src="three.js-master/src/materials/MeshBasicMaterial.js"></script>
+<script src="js/objects/Mesh.js"></script>
+    
 <script>
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 1, 10000);
+    
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
+    
+var orbit = new THREE.OrbitControls( camera, renderer.domElement );
+orbit.enableZoom = false;
+    
+    
+//TRYING TO ADD AN ONE IMAGE TO ONE CUBE    
+    
+//var geometry = new THREE.BoxGeometry(500, 500, 500, 10, 10, 10);
+//
+//var dictionaryEntry = new THREE.TextureLoader( 'images/1.jpg' );
+//    
+//var dictionaryMaterial = new THREE.MeshBasicMaterial( { map: dictionaryEntry });
+//    
+//var dictionary = new THREE.Mesh(geometry, dictionaryMaterial);
+//scene.add( dictionary );
+    
+    
+var materialArray = [];
+materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/1.jpg' ) }));
+    
+materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/2.jpg' ) }));
+    
+materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/3.jpg' ) }));
+    
+materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/4.jpg' ) }));
+    
+materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/5.jpg' ) }));
+    
+materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/6.jpg' ) }));
+
+var dictionary = new THREE.MeshFaceMaterial( materialArray );
+    
+       
 var geometry = new THREE.BoxGeometry(500, 500, 500, 10, 10, 10);
+    
 var material = new THREE.MeshBasicMaterial({color: 0xfffff});
-var cube = new THREE.Mesh(geometry, material);   
-scene.add(cube);
+    
+var dictionary = new THREE.Mesh(geometry, dictionary);
+var dictionary = new THREE.Mesh(geometry, material);   
+
+    
+scene.add(dictionary);
+    
 camera.position.z = 1000;        
 function render() {
 requestAnimationFrame(render);
-cube.rotation.x += 0.01;
-cube.rotation.y += 0.01;
+dictionary.rotation.x += 0.01;
+dictionary.rotation.y += 0.01;
 renderer.render(scene, camera);
 };
 render();
 </script>
+    
 </body>
 </html>
 
