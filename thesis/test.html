@@ -8,7 +8,7 @@
     .border {
        border: 5px solid blue; 
        pointer-events: none;
-       z-index: 99999999;
+       z-index: 9999999;
        overflow: hidden;
     }
     
@@ -57,6 +57,28 @@
         padding: 5px 0 5px 0;
     }
     
+    .schedule {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        margin-top: 15%;
+        z-index: 9999999;
+    }
+    
+    .schedule ul {
+        text-align: left;
+        color: red;
+        font-family: Univers LT Std;
+        margin-left: 25%;
+        margin-right: 25%;
+    }
+    
+    input[type=checkbox] {
+        margin-right: 20px;
+    }
+    
     .manifesto {
         display: none;
         position: absolute;
@@ -64,14 +86,14 @@
         height: auto;
         text-align: center;
         margin-top: 10%;
+        z-index: 9999999;
     }
     
     .manifesto p {
-        color: yellow;
-        font-family: Times;
-        text-transform: uppercase;
-        font-size: 24px;
-        line-height: 32px;
+        color: red;
+        font-family: Ogg;
+        font-size: 28px;
+        line-height: 36px;
         margin-left: 20%;
         margin-right: 20%;
     }
@@ -115,6 +137,80 @@
     </div>
     
     <div class="schedule">
+        
+        <ul>
+            <li><input type="checkbox">Week 1
+                <ul>
+                    <li></li>
+                </ul>
+            </li>
+            <li><input type="checkbox">Week 2
+                <ul>
+                    <li></li>
+                </ul>
+            </li>
+            <li><input type="checkbox">Week 3
+                <ul>
+                    <li></li>
+                </ul>
+            </li>
+            <li><input type="checkbox">Week 4
+                <ul>
+                    <li></li>
+                </ul>
+            </li>
+            <li><input type="checkbox">Week 5
+                <ul>
+                    <li></li>
+                </ul>
+            </li>
+            <li><input type="checkbox">Week 6
+                <ul>
+                    <li></li>
+                </ul>
+            </li>
+            <li><input type="checkbox">Week 7
+                <ul>
+                    <li></li>
+                </ul>
+            </li>
+            <li><input type="checkbox">Week 8
+                <ul>
+                    <li></li>
+                </ul>
+            </li>
+            <li><input type="checkbox">Week 9
+                <ul>
+                    <li></li>
+                </ul>
+            </li>
+            <li><input type="checkbox">Week 10
+                <ul>
+                    <li></li>
+                </ul>
+            </li>
+            <li><input type="checkbox">Week 11
+                <ul>
+                    <li></li>
+                </ul>
+            </li>
+            <li><input type="checkbox">Week 12
+                <ul>
+                    <li></li>
+                </ul>
+            </li>
+            <li><input type="checkbox">Week 13
+                <ul>
+                    <li></li>
+                </ul>
+            </li>
+            <li><input type="checkbox">Week 14
+                <ul>
+                    <li></li>
+                </ul>
+            </li>
+        </ul>
+        
     </div>
     
 </div>
@@ -130,8 +226,20 @@
     $('.manifesto-toggle').on('click', function(event){
     	event.preventDefault();
     	var manifestoTop = $('.manifesto');
+        var scheduleTop = $('.schedule')
                 
         manifestoTop.toggleClass('appear');
+        
+    });
+    });
+    
+    $(document).ready(function () {
+    $('.schedule-toggle').on('click', function(event){
+    	event.preventDefault();
+    	var manifestoTop = $('.manifesto');
+        var scheduleTop = $('.schedule')
+            
+        scheduleTop.toggleClass('appear');
         
     });
     });
@@ -169,17 +277,17 @@
         
         var materialArray = [];
         
-            materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/1.jpg' ) }));
+            materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/dictionary5.jpg' ) }));
     
-            materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/2.jpg' ) }));
+            materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/dictionary2.jpg' ) }));
 
-            materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/3.jpg' ) }));
+            materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/dictionary3.jpg' ) }));
 
-            materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/4.jpg' ) }));
+            materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/dictionary4.jpg' ) }));
 
-            materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/5.jpg' ) }));
+            materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/dictionary1.jpg' ) }));
 
-            materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/6.jpg' ) }));
+            materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/dictionary6.jpg' ) }));
 
         var dictionary = new THREE.MeshFaceMaterial( materialArray );
         
@@ -201,6 +309,17 @@
 
         renderer.render(scene, camera);
         };
+    
+    window.addEventListener( 'resize', onWindowResize, false );
+
+    function onWindowResize(){
+
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+
+    renderer.setSize( window.innerWidth, window.innerHeight );
+
+    }
     
     init();
     animate();
