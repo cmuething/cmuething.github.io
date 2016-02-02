@@ -34,10 +34,11 @@ orbit.enableZoom = false;
 //    
 //var dictionary = new THREE.Mesh(geometry, dictionaryMaterial);
 //scene.add( dictionary );
-    
+  
+var face1 = THREE.ImageUtils.loadTexture( 'images/1.jpg' ); 
     
 var materialArray = [];
-materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/1.jpg' ) }));
+materialArray.push(new THREE.MeshBasicMaterial( { map: face1 }));
     
 materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/2.jpg' ) }));
     
