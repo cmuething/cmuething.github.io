@@ -254,7 +254,7 @@
     
 <script>
 
-    var camera, scenes, renderer, raycaster;
+    var camera, scene, renderer, raycaster;
     
     var container = document.getElementById( 'container' );
     
@@ -267,10 +267,14 @@
 
         var cameraControls;
         
+        raycaster = new THREE.Raycaster();
+
         renderer = new THREE.WebGLRenderer({alpha:true});
         renderer.setSize( window.innerWidth, window.innerHeight );
         container.appendChild( renderer.domElement );
         
+        document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+
         cameraControls = new THREE.OrbitControls(camera, renderer.domElement);
         cameraControls.target.set( 0, -15, 0);
         cameraControls.maxDistance = 400;
@@ -278,6 +282,8 @@
         cameraControls.update();
         
         var geometry = new THREE.BoxGeometry( 50, 50, 50 );
+        
+        var wallMaterial = new THREE.MeshBasicMaterial( { color: 0xffffff, map:THREE.ImageUtils.loadTexture('images/1.jpg') } );
         
         var materialArray = [];
         
@@ -323,6 +329,14 @@
 
         renderer.setSize( window.innerWidth, window.innerHeight );
 
+    }
+    
+    function onDocumentMouseMove( event ) {
+
+				event.preventDefault();
+
+				mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+				mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
     }
     
     init();

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style>
+    
+    #content {
+        position: absolute;
+        top: 0px; width: 100%;
+        z-index: 1;
+        padding: 3em 0 0 0;
+        text-align: center;
+    }
+
+    a {
+        color: #0080ff;
+    }
+
+    #c {
+        position: fixed;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .list-item {
+        display: inline-block;
+        margin: 1em;
+        padding: 1em;
+        border: 1px solid blue;
+    }
+
+    .list-item .scene {
+        width: 300px;
+        height: 300px;
+    }
+
+    .list-item .description {
+        color: #888;
+        font-family: sans-serif;
+        font-size: large;
+        width: 200px;
+        margin-top: 0.5em;
+    }
+    
+    #container {
+        background: url(images/wavy.jpg) no-repeat 50% 50% fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+  
+</style> 
+    
+<link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+    
+<canvas id="c"></canvas>
+    
+<div id="content"></div>
+    
+<div id="container">
+    
+<!--
+    <div class="title-left">
+        <h1>FUTURE</h1>
+    </div>
+    
+    <div class="title-right">
+         <h1>SPACES</h2>
+    </div>
+    
+    <div id="bottom">
+        <div class="manifesto-toggle">
+            <p>Manifesto</p>
+        </div>
+        <div class="schedule-toggle">
+            <p>Schedule</p>
+        </div>
+    </div>
+-->
+    
+</div>
+    
+<script src="js/three.min.js"></script>
+<script src="three.js-master/examples/js/controls/OrbitControls.js"></script>
+    
+<script language="javascript" type="text/javascript" src="js/jquery-1.11.3.js"></script>
+
+<script>
+    
+//    $(document).ready(function () {
+//    $('.manifesto-toggle').on('click', function(event){
+//    	event.preventDefault();
+//    	var manifestoTop = $('.manifesto');
+//        var scheduleOff = $('.schedule-toggle')
+//                
+//        manifestoTop.toggleClass('appear');
+//        scheduleOff.toggleClass('disable');
+//        
+//    });
+//    });
+//    
+//    $(document).ready(function () {
+//    $('.schedule-toggle').on('click', function(event){
+//    	event.preventDefault();
+//    	var manifestoOff = $('.manifesto-toggle');
+//        var scheduleTop = $('.schedule')
+//            
+//        scheduleTop.toggleClass('appear');
+//        manifestoOff.toggleClass('disable');
+//        
+//    });
+//    });
+        
+</script>
+    
+<script id="template" type="notjs">
+			<div class="scene"></div>
+</script>
+    
+<script>
+    
+    var scenes = [], camera, renderer, emptyScene;
+    
+    var container = document.getElementById( 'container' );
+    
+    var cameraControls;
+    
+    function init() {
+
+        canvas = document.getElementById( "c" );
+
+        camera = new THREE.PerspectiveCamera( 50, 1, 0.1, 100 );
+        camera.position.z = 2;
+
+        var geometries = [
+            new THREE.BoxGeometry( 1, 1, 1 ),
+    //        new THREE.SphereGeometry( 0.5, 12, 12 ),
+    //        new THREE.DodecahedronGeometry( 0.5 ),
+    //        new THREE.CylinderGeometry( 0.5, 0.5, 1, 12 ),
+        ];
+
+        var template = document.getElementById("template").text;
+        var content = document.getElementById("content");
+
+        var emptyScene = new THREE.Scene();
+
+        for ( var i =  0; i < 3; i ++ ) {
+
+            scene = new THREE.Scene();
+
+            // make a list item
+            var element = document.createElement( "div" );
+            element.className = "list-item";
+            element.innerHTML = template.replace('$', i + 1 );
+
+            // Look up the element that represents the area
+            // we want to render the scene
+            scene.element = element.querySelector(".scene");
+            content.appendChild( element );
+
+            // add one random mesh to each scene
+            var geometry = geometries[ geometries.length * Math.random() | 0 ];
+            
+            var materialArray = [];
+        
+            materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/dictionary5.jpg' ) }));
+    
+            materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/dictionary2.jpg' ) }));
+
+            materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/dictionary3.jpg' ) }));
+
+            materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/dictionary4.jpg' ) }));
+
+            materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/dictionary1.jpg' ) }));
+
+            materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/dictionary6.jpg' ) }));
+
+            var dictionary = new THREE.MeshFaceMaterial( materialArray );
+            
+//          this allows for a randomized color
+//            var material = new THREE.MeshLambertMaterial( { color: 0xffffff * Math.random() } );
+
+            scene.add( new THREE.Mesh( geometry, dictionary ) );
+
+            light = new THREE.HemisphereLight( 0xffbbbb, 0x444488 );
+            light.position.set( - 0.5, 0.8, 1 );
+            scene.add( light );
+
+            scenes.push( scene );
+
+        }
+
+
+        renderer = new THREE.WebGLRenderer( { canvas: canvas, antialias: true } );
+        renderer.setClearColor( 00000 );
+
+    }
+    
+    function updateSize() {
+
+        var width = canvas.clientWidth;
+        var height = canvas.clientHeight;
+
+        if ( canvas.width !== width || canvas.height != height ) {
+
+            renderer.setSize ( width, height, false );
+
+        }
+
+    }
+
+    
+    function animate() {
+
+        requestAnimationFrame( animate );
+        render();
+
+    }
+
+    function render() {
+        
+        updateSize();
+
+        renderer.render(scene, camera);
+        };
+    
+        window.addEventListener( 'resize', onWindowResize, false );
+
+    function onWindowResize(){
+
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+
+        renderer.setSize( window.innerWidth, window.innerHeight );
+
+    }
+    
+    function render() {
+
+        renderer.setClearColor( 0xFFFFFF );
+        renderer.clear( true );
+        renderer.setClearColor( 0xFFFFFF );
+
+        renderer.enableScissorTest( true );
+        scenes.forEach( function( scene ) {
+            // so something moves
+        scene.children[0].rotation.x = Date.now() * 0.00111;
+        scene.children[0].rotation.z = Date.now() * 0.001;
+
+        // get the element that is a place holder for where we want to
+        // draw the scene
+        var element = scene.element;
+
+        // get its position relative to the page's viewport
+        var rect = element.getBoundingClientRect();
+
+        // check if it's offscreen. If so skip it
+        if ( rect.bottom < 0 || rect.top  > renderer.domElement.clientHeight ||
+             rect.right  < 0 || rect.left > renderer.domElement.clientWidth ) {
+          return;  // it's off screen
+        }
+
+        // set the viewport
+        var width  = rect.right - rect.left;
+        var height = rect.bottom - rect.top;
+        var left   = rect.left;
+        var bottom = renderer.domElement.clientHeight - rect.bottom;
+
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+        renderer.setViewport( left, bottom, width, height );
+        renderer.setScissor( left, bottom, width, height );
+        renderer.render( scene, camera );
+
+        } );
+        renderer.enableScissorTest( false );
+
+    }
+    
+    init();
+    animate();
+    
+</script>
+    
+</body>
+
+</html>
