@@ -1,8 +1,6 @@
 <!--
 TO DO:
 
-    -add in project name at the bottom
-
     -Rename classes and id's so that they make sense
     -percentages and ems
     -MOBILE VIEW!!!!
@@ -10,27 +8,26 @@ TO DO:
     -fix left click problem???
         -something with .next and .previous
 
-    -make the images scroll to the edges of the screen rather than overflow:hidden???
-    -arrows on left and right???
-
     -FAVICON
         
     -web font
 
+    -social media links
+
+    -mobile view, finalize
+
 QUESTIONS FOR KRISTIAN
+
     -SESSION STORAGE...store the json file after initial load to avoid limit
 
     -jarring transistion of drawers infront of gradient
 
-    -making the text take up the entire container, but not within the z-index
-
-    -media queries explanation
-
-    -using replaceWith
-
     -Using the transparent overlay
 
     -slide left and slide right
+        *right now I am just changing the display to block when curr is added
+
+    -appending new html when a new project comes in
 
     -styling the videos
 
@@ -236,17 +233,21 @@ Copy"></script>
         $('.thumbnail a').click(function() {
           var projectID  = $(this).attr('data-project-id');
           var findThis = '#project-' + projectID;
-          var projectname = $('.curr h1').html();
-          var projectdesc = $('.curr p').html();
-
-          $('.project-name').html(projectname);
-          $('.project-description').html(projectdesc);
-            
+          var overviewTop = $('.overview');
+          var gradientMove = $('.test');
+          
           console.log(findThis);
           $('.project-item').removeClass('curr');
           $(findThis).addClass('curr');
-            });
+            
+	      overviewTop.animate({
+		    	top: "-600px"
+	    	}, 250);
+        
+          gradientMove.toggleClass('gradient');  
+            
         });
+    });
             
         
             

@@ -38,7 +38,7 @@
 					left: '-50%'
 				}, 500, function() {
 					$(this).css('left', '+150%');
-    				$(this).appendTo('#container');
+    				$(this).appendTo('#full-projects');
 				});
                 var newTitle = $(obj).next().attr('data-drawer-title');
                 var newDesc = $(obj).next().attr('data-drawer-description');
@@ -61,7 +61,7 @@
 				$(obj).animate({
 					left: '+150%'
 				}, 500, function() {
-					$(prox).prependTo('#container');
+					$(prox).prependTo('#full-projects');
 				});
                 var newTitle = $(prox).attr('data-drawer-title');
                 var newDesc = $(prox).attr('data-drawer-description');
@@ -148,12 +148,11 @@ $(document).ready(function () {
 });
     
 $(document).ready(function () {
-    $('.test, .thumbnail a').on('click', function(event){
+    $('.test').on('click', function(event){
         event.preventDefault();
 
     	var overviewTop = $('.overview');
         var gradientMove = $('.test');
-        console.log('a thumbnail has been clicked');
 
 	    	overviewTop.animate({
 		    	top: "-600px"
