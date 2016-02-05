@@ -272,6 +272,8 @@ body {
 }
 
 .project-item {
+    display: none;
+/*
     position: absolute;
     width: 100%;
     height: 100%;
@@ -279,10 +281,11 @@ body {
     margin-left: -50%;
     left: -150%;
     top: 0;
+*/
 }
 
 .curr {
-/*    display: block;*/
+    display: block;
 }
 
 .text {

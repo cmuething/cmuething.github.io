@@ -319,15 +319,15 @@ onReady(function () {
     show('loading', false);
 });
 
-//CLOSE OVERVIEW TEST
+//RETURN .scroll TO THE TOP
 
-//$(document).ready(function(){
-//    var open = $('fa-the-large');
-//    var button = $('fa');
-//    
-//    open.click(function() {
-//        button.toggleClass('fa-times');
-//    });
-//});
-   
+$(document).ready(function () {
+
+$('.overview-toggle').click(function () {
+        $(".scroll").animate({
+            scrollTop: 0
+        }, 600);
+        return false;
+});
+});
     
