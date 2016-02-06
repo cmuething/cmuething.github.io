@@ -43,7 +43,7 @@ body {
 
 .connor-info {
     position: absolute;
-    left: -500;
+    left: -500px;
     top: 0;
     width: 500px;
     height: 100%;
@@ -105,7 +105,6 @@ body {
 }
 
 .thumbnail-text {
-    position: absolute;
     display: none; 
 }
 
@@ -118,40 +117,20 @@ body {
     text-align: center;
     position: fixed;
     font-size: 96px;
-    color: black;
     z-index: 99999;
-    top: 200px;
+    top: 75px;
     left: 0;
     pointer-events: none;
 }
 
 .thumbnail p {
-    color: black;
-    text-shadow: 0 0 .25rem rgba(255,255,255,1);
+    color: white;
+    text-shadow: 0 0 .15rem rgba(0,0,0,1);
 }
 
 .thumbnail {
     overflow: visible;
 }
-
-/*transparent overlay, causing a problem with the link*/
-
-/*
-.thumbnail:hover:after {
-    opacity:1;
-}
-
-.thumbnail:after {
-    content:'\A';
-    position:absolute;
-    width:100%; 
-    height:100%;
-    top:0; 
-    left:0;
-    background:rgba(0,0,0,0.25);
-    opacity:0;
-}
-*/
 
 .project-label {
     cursor: pointer;
@@ -271,6 +250,8 @@ body {
 	margin-top: -5px;
 }
 
+/*This is just used to slide the element*/
+
 .project-item {
     display: none;
 /*
@@ -291,20 +272,6 @@ body {
 .text {
     display: none !important;
 }
-
-/*This is just used to slide the element*/
-
-/*
-.module {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    margin-left: -50%;
-    left: -150%;
-    top: 0;
-}
-*/
 
 #image {
     position: relative;
@@ -422,6 +389,54 @@ article img {
 
 /*MEDIA QUERIES*/
 
+
+
+@media (max-width: 670px) {
+  
+.overview {
+    text-align: center;
+    padding-top: 200px;
+}
+    
+.thumbnail {
+    margin-top: 25px;
+    overflow: auto;
+}
+
+.thumbnail-text {
+    position: absolute;
+    display: inline-block;
+    width: 158px;
+    text-align: left;
+    font-size: 16px;
+    top: 200px;
+    z-index: 99999;
+}
+
+.thumbnail p {
+    color: black;
+    text-shadow: 0 0 0rem rgba(0,0,0,0);
+}
+    
+.thumbnail:hover:after {
+    opacity:1;
+}
+
+.thumbnail:after {
+    content:'\A';
+    position:absolute;
+    width:100%; 
+    height:100%;
+    top:0; 
+    left:0;
+    background:rgba(0,0,0,0.25);
+    opacity:0;
+}
+    
+}
+
+
+
 @media (max-width: 795px) {
 
 .overview {
@@ -497,6 +512,8 @@ article img {
 
 }
 
+
+
 @media (max-width: 1200px) {
     
 #image {
@@ -508,16 +525,16 @@ article img {
 }
     
 .overview {
-    overflow: hidden;
+    overflow: scroll;
     position: absolute;
-    top: -60%;
+    top: -600px;
     width: 100%;
-    height: 60%;
+    height: 600px;
     background-color: white;
     text-align: center;
     z-index: 9998;
     box-sizing: border-box;
-    padding: 75px 8% 2% 8%;
+    padding: 3% 17% 3% 17%;
 }
 
 .thumbnail {
