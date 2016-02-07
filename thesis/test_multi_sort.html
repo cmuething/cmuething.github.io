@@ -24,32 +24,24 @@
         height: 100%;
     }
 
-/*
     .list-item {
         display: inline-block;
         margin: 1em;
         padding: 1em;
         border: 1px solid blue;
     }
-*/
 
-    .random .scene {
+    .list-item .scene {
         width: 300px;
         height: 300px;
     }
 
-    .random .description {
+    .list-item .description {
         color: #888;
         font-family: sans-serif;
         font-size: large;
         width: 200px;
         margin-top: 0.5em;
-    }
-    
-    .random {
-        position: absolute;
-        border: 1px solid blue;
-
     }
     
     #container {
@@ -58,91 +50,6 @@
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
-    }
-    
-    div h1 {
-        font-size: 2em;
-        font-family: Druk Wide;
-        color: white;
-    }
-    
-    div p {
-        font-size: .75em;
-        font-family: Univers LT Std;
-        color: white;
-    }
-    
-    .title-left {
-        float: left;
-        margin: 30px 0 0 30px;
-    }
-    
-    .title-right {
-        float: right;
-        margin: 30px 30px 0 0;
-    }
-    
-    #bottom {
-        position: absolute;
-        width: 100%;
-        text-align: center;
-        bottom: 0;
-        margin: 0 0 30px 0;
-    }
-    
-    .manifesto-toggle,
-    .schedule-toggle {
-        cursor: pointer;
-        padding: 5px 0 5px 0;
-    }
-    
-    .schedule {
-        display: none;
-        position: absolute;
-        width: 100%;
-        height: auto;
-        text-align: center;
-        margin-top: 15%;
-        z-index: 9999999;
-    }
-    
-    .schedule ul {
-        text-align: left;
-        color: red;
-        font-family: Univers LT Std;
-        margin-left: 25%;
-        margin-right: 25%;
-    }
-    
-    input[type=checkbox] {
-        margin-right: 20px;
-    }
-    
-    .manifesto {
-        display: none;
-        position: absolute;
-        width: 100%;
-        height: auto;
-        text-align: center;
-        margin-top: 10%;
-        z-index: 9999999;
-    }
-    
-    .manifesto p {
-        color: red;
-        font-family: Ogg;
-        font-size: 28px;
-        line-height: 36px;
-        margin-left: 20%;
-        margin-right: 20%;
-    }
-    
-    .appear {
-        display: block; 
-    }
-    
-    .disable {
-        pointer-events: none;
     }
 
   
@@ -154,8 +61,13 @@
 
 <body>
     
+<canvas id="c"></canvas>
+    
+<div id="content"></div>
+    
 <div id="container">
     
+<!--
     <div class="title-left">
         <h1>FUTURE</h1>
     </div>
@@ -172,57 +84,46 @@
             <p>Schedule</p>
         </div>
     </div>
+-->
     
-    <div class="manifesto">
-        
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum interdum tincidunt quam, id venenatis risus eleifend in. Aliquam vitae arcu lectus. Etiam porta et mi in dapibus. Ut sed ex sit amet purus feugiat facilisis vitae semper quam. Curabitur scelerisque, neque non tincidunt congue, nibh risus vulputate quam, vel vehicula turpis nulla consectetur est. Aenean pellentesque malesuada neque, vel varius velit ultrices convallis. Aliquam erat volutpat. Nunc sed tortor arcu. In convallis non urna pulvinar egestas. Nunc gravida, risus ac suscipit facilisis, purus mi vestibulum lectus, nec euismod felis dolor ut odio. Nunc nisl ligula, ullamcorper quis venenatis id, tincidunt ac ex. Morbi vitae venenatis elit.
-
-        </p>
-    
-    </div>
-    
-<canvas id="c"></canvas>
-    
-<div id="content"></div>
+</div>
     
 <script src="js/three.min.js"></script>
 <script src="three.js-master/examples/js/controls/OrbitControls.js"></script>
     
 <script language="javascript" type="text/javascript" src="js/jquery-1.11.3.js"></script>
-<script language="javascript" type="text/javascript" src="js/jquery-ui.js"></script>
-
 
 <script>
     
-    $(document).ready(function () {
-    $('.manifesto-toggle').on('click', function(event){
-    	event.preventDefault();
-    	var manifestoTop = $('.manifesto');
-        var scheduleOff = $('.schedule-toggle')
-                
-        manifestoTop.toggleClass('appear');
-        scheduleOff.toggleClass('disable');
-        
-    });
-    });
-    
-    $(document).ready(function () {
-    $('.schedule-toggle').on('click', function(event){
-    	event.preventDefault();
-    	var manifestoOff = $('.manifesto-toggle');
-        var scheduleTop = $('.schedule')
-            
-        scheduleTop.toggleClass('appear');
-        manifestoOff.toggleClass('disable');
-        
-    });
-    });
+//    $(document).ready(function () {
+//    $('.manifesto-toggle').on('click', function(event){
+//    	event.preventDefault();
+//    	var manifestoTop = $('.manifesto');
+//        var scheduleOff = $('.schedule-toggle')
+//                
+//        manifestoTop.toggleClass('appear');
+//        scheduleOff.toggleClass('disable');
+//        
+//    });
+//    });
+//    
+//    $(document).ready(function () {
+//    $('.schedule-toggle').on('click', function(event){
+//    	event.preventDefault();
+//    	var manifestoOff = $('.manifesto-toggle');
+//        var scheduleTop = $('.schedule')
+//            
+//        scheduleTop.toggleClass('appear');
+//        manifestoOff.toggleClass('disable');
+//        
+//    });
+//    });
         
 </script>
     
 <script id="template" type="notjs">
 			<div class="scene"></div>
-</script>    
+</script>
     
 <script>
     
@@ -258,7 +159,6 @@
             // make a list item
             var element = document.createElement( "div" );
             element.className = "list-item";
-            element.className = "random";
             element.innerHTML = template.replace('$', i + 1 );
 
             // Look up the element that represents the area
@@ -288,6 +188,21 @@
                 
 //          this allows for a randomized color
 //            var material = new THREE.MeshLambertMaterial( { color: 0xffffff * Math.random() } );            
+            
+            for ( var i = 0, 1 = geometry.faces.length; i < 1; i ++ ) {
+                var face = geometry.faces[ i ];
+                face.materialIndex = Math.floor( Math. random()* materialArray.length );
+            }
+            
+            geometry.sortFacesByMaterialIndex();
+            
+            objects = [];
+            
+            for ( var i = 0, 1 = materialArray.length; i < 1; i ++ ) {
+                addMesh( geometry, materialArray[ i ] );
+            }
+            
+            addMesh( geometry, new THREE.MultiMaterial( materialArray) );
 
             scene.add( new THREE.Mesh( geometry, dictionary ) );
 
@@ -345,7 +260,7 @@
     }
     
     function render() {
-                
+
         renderer.setClearColor( 0xFFFFFF );
         renderer.clear( true );
         renderer.setClearColor( 0x000000 );
@@ -389,26 +304,6 @@
     init();
     animate();
     
-</script>
-    
-<script>
-    
-    $('.random').each(function(i){
-    // list the one you are working on
-    //alert(i);
-    
-    // store a random number in a variable
-    var t = Math.round(Math.random() * 300);
-    var l = Math.round(Math.random() * 1000);
-
-    // use that to position the elements
-    $(this).css('top', t);
-    $(this).css('left', l);
-});
-    $(document).ready(function() {
-        $(".random").draggable();
-    });
-
 </script>
     
 </body>
