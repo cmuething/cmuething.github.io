@@ -18,13 +18,13 @@ TO DO:
 
     -add in backgrounds from Behance
 
+    -if behance doesn't load, what should it show?
+
 QUESTIONS FOR KRISTIAN
 
     -SESSION STORAGE...store the json file after initial load to avoid limit
 
     -jarring transistion of drawers infront of gradient
-
-    -Using the transparent overlay
 
     -slide left and slide right
         *right now I am just changing the display to block when curr is added
@@ -34,6 +34,14 @@ QUESTIONS FOR KRISTIAN
     -styling the videos
 
     -click next, return every to top of the scroll
+
+    -the creep in when drawers are 100%
+
+    -overview flying in from the bottom
+
+    -the cropping off of the description
+
+    -Line 160 of index.js not moving the drawer all the way off screen
 
 
 -->
@@ -147,7 +155,9 @@ QUESTIONS FOR KRISTIAN
                 <article class="connor-info-toggle">
                     <p>{{sections.About Me}}</p>
                     <p>{{location}}</p>
-<!--                    <p>{{social_links.url}}</p>-->
+                    <a>
+                    <p>{{social_links.url}}</p>
+                    </a>
                 </article>
             {{/user}}
         </script>

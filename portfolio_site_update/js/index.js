@@ -101,6 +101,7 @@ $(document).ready(function () {
     	var connorInfo = $('.connor-info');
     	var connorInfoWidth = $('.connor-info').width();
         var gradientMove = $('.test');
+        
     	    	
 	    	connorInfo.animate({
 		    	left: "0px",
@@ -121,13 +122,15 @@ $(document).ready(function () {
 
     	var connorInfo = $('.connor-info');
         var gradientMove = $('.test');
+    	var connorInfoWidth = $('.connor-info').width();
+        
+        var myName = $('#connor');
         
 	    	connorInfo.animate({
-		    	left: "-500px"
+		    	left: -connorInfoWidth
 	    	}, 250);
         
         gradientMove.removeClass('gradient');
-        
     });
 });
 
@@ -139,11 +142,15 @@ $(document).ready(function () {
     	// create menu variables
     	var overviewTop = $('.overview');
     	var overviewTopHeight = $('.overview').height();
+        
+        var myName = $('#connor');
     	    	
 	    	overviewTop.animate({
 		    	top: "0px",
                 zIndex: "999999"
-	    	}, 250);		
+	    	}, 250);
+        
+            myName.addClass('keep-name');
     });
 });
     
@@ -153,13 +160,17 @@ $(document).ready(function () {
 
     	var overviewTop = $('.overview');
         var gradientMove = $('.test');
+    	var overviewTopHeight = $('.overview').height();
+        
+        var myName = $('#connor');
 
 	    	overviewTop.animate({
-		    	top: "-600px"
+		    	top: -overviewTopHeight
 	    	}, 250);
         
-        gradientMove.toggleClass('gradient');
+            gradientMove.toggleClass('gradient');
         
+            myName.removeClass('keep-name');        
     });
 });
 
@@ -173,18 +184,18 @@ $(document).ready(function () {
     $('.project-label').on('click', function(event){
     	event.preventDefault();
     	// create menu variables
-//        var projectClose = $('.hide-details');
         var projectTitle = $('.project-label');
     	var projectBottom = $('.project-details');
     	var projectBottomHeight = $('.project-details').height();
         
-	   projectBottom.animate({
-                zIndex: "999999",
-		    	bottom: "0px"
-	    	}, 250);	
+        var myName = $('#connor');
         
-//        projectTitle.toggleClass("hide-details");
-//        projectClose.toggleClass("close");
+           projectBottom.animate({
+                    zIndex: "999999",
+                    bottom: "0px"
+                }, 250);
+        
+            myName.addClass('keep-name');
         
     	}); 
     });
@@ -194,29 +205,21 @@ $(document).ready(function () {
     $('.test').on('click', function(event){
         event.preventDefault();
 
-//        var projectClose = $('.hide-details');
     	var projectBottom = $('.project-details');
+    	var projectBottomHeight = $('.project-details').height();
         var gradientMove = $('.test');
         
-//        projectClose.toggleClass("close");
-
+        var myName = $('#connor');
+        
         projectBottom.animate({
-		    	bottom: "-300px"
+		    	bottom: -projectBottomHeight
 	    	}, 250);
         
         gradientMove.toggleClass('gradient');
         
+        myName.removeClass('keep-name'); 
     });
 });   
-
-//$('#menu').bind('clickoutside', function (event) {
-//    var projectBottom = $('.project-details');
-//    
-//    projectBottom.animate({
-//        bottom: "-300px"
-//    });
-//    
-//});
 
 //GRADIENT
 
