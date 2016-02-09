@@ -20,20 +20,22 @@ TO DO:
 
     -if behance doesn't load, what should it show?
 
+    -loading image
+
+    -hover on test = x
+
 QUESTIONS FOR KRISTIAN
 
     -SESSION STORAGE...store the json file after initial load to avoid limit
 
     -jarring transistion of drawers infront of gradient
 
-    -slide left and slide right
-        *right now I am just changing the display to block when curr is added
-
-    -appending new html when a new project comes in
-
     -styling the videos
+        *find iframes, find style tag, make style attr to nothing
 
     -click next, return every to top of the scroll
+
+    MOBILE VIEW
 
     -the creep in when drawers are 100%
 
@@ -155,9 +157,7 @@ QUESTIONS FOR KRISTIAN
                 <article class="connor-info-toggle">
                     <p>{{sections.About Me}}</p>
                     <p>{{location}}</p>
-                    <a>
                     <p>{{social_links.url}}</p>
-                    </a>
                 </article>
             {{/user}}
         </script>
@@ -202,7 +202,6 @@ Copy"></script>
         var template = $('#thumbnail-card').html();
         var info = Mustache.to_html(template, data);
         $('.overview').html(info);
-        console.log('I printed your thumbnails out sir');
 
         // create an array of all the project IDs
         var idArray  = [];
@@ -232,12 +231,11 @@ Copy"></script>
             var projectname = $('.curr h1').html();
             var projectdesc = $('.curr p').html();
 
-            $('.project-name').html(projectname);
-            $('.project-description').html(projectdesc);
+            $('.project-details .project-name').html(projectname);
+            $('.project-label .project-name').html(projectname);
+            $('.project-details .project-description').html(projectdesc);
                            
           });
-            
-          console.log('I printed your projects out sir. I also made ' + idArray[0] + ' active. However, I appear unable to print these in the desired order');
         };
 
 
@@ -251,13 +249,20 @@ Copy"></script>
           console.log(findThis);
           $('.project-item').removeClass('curr');
           $(findThis).addClass('curr');
-            
+
+          var projectname = $('.curr h1').html();
+          var projectdesc = $('.curr p').html();
+
+          $('.project-details .project-name').html(projectname);
+          $('.project-label .project-name').html(projectname);
+          $('.project-details .project-description').html(projectdesc);
+
 	      overviewTop.animate({
 		    	top: "-600px"
 	    	}, 250);
         
           gradientMove.toggleClass('gradient');
-            
+    
         });
     });
             

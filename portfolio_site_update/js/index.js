@@ -1,36 +1,3 @@
-//$('#limit-l').click(function () {
-//    $('.image').each(function () {
-//        if ($(this).offset().left < 0) {
-//            $(this).css("left", "150%");
-//        } else if ($(this).offset().left > $('#move').width()) {
-//            $(this).animate({
-//                left: '0'
-//            }, 500);
-//        } else {
-//            $(this).animate({
-//                left: '-150%'
-//            }, 500);
-//        }
-//    });
-//});
-//
-//$('#limit-r').click(function () {
-//    $('.image').each(function () {
-//        if ($(this).offset().left < 0) {
-//            $(this).animate({
-//                left: '0'
-//            }, 500);
-//        } else if ($(this).offset().left > $('#move').width()) {
-//            $(this).css("left", "-150%");
-//        } else {
-//            $(this).animate({
-//                left: '150%'
-//            }, 500);
-//        }
-//    });
-//});
-
-
 			$("#limit-l").click(function() {
 				console.log("Left");
 				var obj = $(".curr");
@@ -40,18 +7,17 @@
 					$(this).css('left', '+150%');
     				$(this).appendTo('#full-projects');
 				});
-                var newTitle = $(obj).next().attr('data-drawer-title');
-                var newDesc = $(obj).next().attr('data-drawer-description');
-                console.log(newTitle);
+                var newTitle = $(obj).next().find('h1').html();
+                var newDesc = $(obj).next().find('p').html();                
 				$(obj).next().animate({
 					left: '+50%'
 				}, 500, function() {
 					$(this).addClass('curr');
 					$(obj).removeClass('curr');
 				});
-                $('#bottoms').html(newTitle);
-                $('.project-details-toggle h1').html(newTitle);
-                $('.project-details-toggle p').html(newDesc);
+                $('.project-label .project-name').html(newTitle);
+                $('.project-details .project-name').html(newTitle);
+                $('.project-details .project-description').html(newDesc);
 			});
 
 			$("#limit-r").click(function() {
@@ -63,8 +29,8 @@
 				}, 500, function() {
 					$(prox).prependTo('#full-projects');
 				});
-                var newTitle = $(prox).attr('data-drawer-title');
-                var newDesc = $(prox).attr('data-drawer-description');
+                var newTitle = $(prox).find('h1').html();
+                var newDesc = $(prox).find('p').html();
 				$(prox).css('left', '-50%');
 				$(prox).animate({
 					left: '+50%'
@@ -72,9 +38,9 @@
 					$(this).addClass('curr');
 					$(obj).removeClass('curr');
 				});
-                $('#bottoms').html(newTitle);
-                $('.project-details-toggle h1').html(newTitle);
-                $('.project-details-toggle p').html(newDesc);
+                $('.project-label .project-name').html(newTitle);
+                $('.project-details .project-name').html(newTitle);
+                $('.project-details .project-description').html(newDesc);
 			});
 
 //Am I going to have to use this to enable swipe left swipe right on mobile???
@@ -152,9 +118,7 @@ $(document).ready(function () {
         
             myName.addClass('keep-name');
     });
-});
-    
-$(document).ready(function () {
+
     $('.test').on('click', function(event){
         event.preventDefault();
 
@@ -165,7 +129,7 @@ $(document).ready(function () {
         var myName = $('#connor');
 
 	    	overviewTop.animate({
-		    	top: -overviewTopHeight
+		    	top: "-500px"
 	    	}, 250);
         
             gradientMove.toggleClass('gradient');
