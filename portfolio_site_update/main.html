@@ -87,11 +87,11 @@ QUESTIONS FOR KRISTIAN
     
         <script id="myname" type="text/x-mustache-template">
             {{#user}}
-                <article class="connor-info-toggle">
+                <article>
                     <p>{{sections.About Me}}</p>
                     <p>{{location}}</p>
                     {{#user.social_links}}
-                    <a class="{{service_name}}" href="{{url}}"></a>
+                    <a class="{{service_name}}" href="{{url}}"><p>link</p></a>
                     {{/user.social_links}}
                 </article>
             {{/user}}
