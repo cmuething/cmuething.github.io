@@ -80,6 +80,26 @@ QUESTIONS FOR KRISTIAN
     <div id="limit-b"></div>
 
     <div id="limit-l"></div>
+        
+<!--PERSONAL INFO-->
+        
+<section class="connor-info">
+    
+        <script id="myname" type="text/x-mustache-template">
+            {{#user}}
+                <article class="connor-info-toggle">
+                    <p>{{sections.About Me}}</p>
+                    <p>{{location}}</p>
+                    {{#user.social_links}}
+                    <a class="{{service_name}}" href="{{url}}"></a>
+                    {{/user.social_links}}
+                </article>
+            {{/user}}
+        </script>
+
+    </section>
+
+    <p class="connor-info-toggle" id="connor" title="Connor Muething"> Connor<br>Muething </p>
 
 <!--OVERVIEW-->
 
@@ -147,24 +167,6 @@ QUESTIONS FOR KRISTIAN
                 </section>
                 {{/project.id}}
             </script>
-
-    <section class="connor-info">
-
-        <script id="myname" type="text/x-mustache-template">
-            {{#user}}
-                <article class="connor-info-toggle">
-                    <p>{{sections.About Me}}</p>
-                    <p>{{location}}</p>
-                    {{#user.social_links}}
-                    <a class="{{service_name}}" href="{{url}}"></a>
-                    {{/user.social_links}}
-                </article>
-            {{/user}}
-        </script>
-
-    </section>
-
-    <p class="connor-info-toggle" id="connor" title="Connor Muething"> Connor<br>Muething </p>
 
     <nav>
 
