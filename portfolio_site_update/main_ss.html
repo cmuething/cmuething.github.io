@@ -3,25 +3,26 @@ TO DO:
 
     -Rename classes and id's so that they make sense
     -percentages and ems
+    -MOBILE VIEW!!!!
+
+    -fix left click problem???
+        -something with .next and .previous
 
     -FAVICON
         
     -web font
 
+    -social media links
+
     -mobile view, finalize
 
     -add in backgrounds from Behance
 
-    -if behance.api doesn't load, what should it show?
-        *the gradient
+    -if behance doesn't load, what should it show?
 
     -loading image
-        *the gradient?
 
-    -styling the videos
-    *find iframes, find style tag, make style attr to nothing
-
-    -clean up
+    -hover on test = x
 
 QUESTIONS FOR KRISTIAN
 
@@ -29,9 +30,10 @@ QUESTIONS FOR KRISTIAN
 
     -jarring transistion of drawers infront of gradient
 
-    -no scroll after clicking on overview or project details???
+    -styling the videos
+        *find iframes, find style tag, make style attr to nothing
 
-    -how do I get it to only load the rest IF the API is called?
+    -click next, return every to top of the scroll
 
     MOBILE VIEW
 
@@ -56,7 +58,7 @@ QUESTIONS FOR KRISTIAN
     <title>Connor Muething</title>
 
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <!--When do I need to add in meta tags?-->
     <!-- do you mean like what order should they be in? -->
@@ -69,7 +71,7 @@ QUESTIONS FOR KRISTIAN
 
   <body>
 
-    <div class="gradient" id="loading"></div>
+    <div id="loading"></div>
 
     <div id="whole-page">
 
@@ -155,9 +157,7 @@ QUESTIONS FOR KRISTIAN
                 <article class="connor-info-toggle">
                     <p>{{sections.About Me}}</p>
                     <p>{{location}}</p>
-                    {{#user.social_links}}
-                    <a class="{{service_name}}" href="{{url}}"></a>
-                    {{/user.social_links}}
+                    <p>{{social_links.url}}</p>
                 </article>
             {{/user}}
         </script>
@@ -191,24 +191,39 @@ Copy"></script>
 
 //COMPILING EVERYTHING
 
+(function() {
+    
         var initialUrl = 'https://api.behance.net/v2/users/' + userName + '/projects/?api_key=' + apiKey +'&per_page=8&callback=?';
       var userUrl = 'https://api.behance.net/v2/users/' + userName + '/?api_key=' + apiKey +'&callback=?';
+    
+        function setUserTemplate() {
+          var userData = JSON.parse(sessionStorage.getItem('initialUrl, userUrl')),
+            template = $('#thumbnail-card, #myname').html();
+        };
             
+if(sessionStorage.getItem('initialUrl, userUrl')) {
+    setUserTemplate();
+} 
+    else {
+        $.getJSON(initialUrl, function(user) {
+        var data = JSON.stringify(user);
+            sessionStorage.setItem('initialUrl', data);
+            setUserTemplate();
+
         $.getJSON(userUrl, function(data) {
                 var template = $('#myname').html();
                 var info = Mustache.to_html(template, data);
                 $('.connor-info').html(info);
-            });
-
-        $.getJSON(initialUrl, function(data) {
-
+            });    
+            
         //mustache for projects
         //this prints the project thumbnails
-
+            
         var template = $('#thumbnail-card').html();
         var info = Mustache.to_html(template, data);
         $('.overview').html(info);
 
+            
         // create an array of all the project IDs
         var idArray  = [];
         $('.thumbnail a').each(function() {
@@ -221,6 +236,8 @@ Copy"></script>
         var urlArray = []
         for (var i = 0; i < thumbNum; i++) {
           var projectUrl = 'https://api.behance.net/v2/projects/' + idArray[i] + '/?api_key=' + apiKey +'&callback=?';
+            
+        
           urlArray.push(projectUrl);
         };
         console.log(urlArray);
@@ -243,7 +260,6 @@ Copy"></script>
                            
           });
         };
-
 
         // this should allow for making a project active
         $('.thumbnail a').click(function() {
@@ -271,8 +287,9 @@ Copy"></script>
     
         });
     });
+};
+})();
             
-
         </script>
 
   </body>
