@@ -68,6 +68,7 @@ $(document).ready(function () {
     	var connorInfoWidth = $('.connor-info').width();
         var gradientMove = $('.test');
         
+        var myName = $('#connor');
     	    	
 	    	connorInfo.animate({
 		    	left: "0px",
@@ -75,10 +76,12 @@ $(document).ready(function () {
 	    	});
         
             connorTitle.animate({
-                zIndex: "999999" 
+                zIndex: "99999999" 
             }, 250);	
         
             gradientMove.addClass('gradient');
+        
+            myName.addClass('keep-name');
     });
 });
     
@@ -96,7 +99,9 @@ $(document).ready(function () {
 		    	left: -connorInfoWidth
 	    	}, 250);
         
-        gradientMove.removeClass('gradient');
+            gradientMove.removeClass('gradient');
+        
+            myName.removeClass('keep-name');
     });
 });
 
@@ -227,7 +232,7 @@ var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
 var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
 var color2 = "rgb("+r2+","+g2+","+b2+")";
 
- $('.gradient').css({
+ $('.gradient, .no_api').css({
    background: "-webkit-gradient(linear, left top, right top, from("+color1+"), to("+color2+"))"}).css({
     background: "-moz-linear-gradient(left, "+color1+" 0%, "+color2+" 100%)"});
   
@@ -297,4 +302,14 @@ $('.overview-toggle').click(function () {
         return false;
 });
 });
+
+//STYLING THE SOCIAL MEDIA LINKS
+
+//$(document).ready(function () {
+//    
+//    $('.linkedin #icon').addClass("fa-linkedin-square");
+//    $('.instagram #icon').addClass("fa-instagram");
+//    $('.tumblr #icon').addClass("fa-tumblr-square");
+//    
+//});
     
