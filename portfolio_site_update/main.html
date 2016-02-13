@@ -21,6 +21,8 @@ TO DO:
 
     -media queries with javascript
 
+    -getting the webfont linked
+
 QUESTIONS FOR KRISTIAN
 
     -SESSION STORAGE...store the json file after initial load to avoid limit
@@ -90,6 +92,7 @@ QUESTIONS FOR KRISTIAN
             {{#user}}
                 <article>
                     <p class="description">{{sections.About Me}}</p>
+                    <p class="email"><a href="mailto:{{sections.Contact}}">Say Hello!</a></p>
                     <div class="social-media">
                     {{#user.social_links}}
                         <a class="{{service_name}}" href="{{url}}"><i id="icon"></i></a>

@@ -97,6 +97,16 @@ body {
     padding-right: 50px;
 }
 
+.connor-info .email {
+    top: 285px;
+    left: 50px;
+}
+
+.connor-info .email a {
+    text-decoration: none;
+    color: black;
+}
+
 .connor-info .description {
     top: 125px;
     left: 50px;
