@@ -6,8 +6,6 @@ TO DO:
 
     -FAVICON
         
-    -web font
-
     -mobile view, finalize
 
     -add in backgrounds from Behance
@@ -19,9 +17,12 @@ TO DO:
 
     -moving the vimeo bar above left and right click
 
-    -media queries with javascript
+    -styling the drawers width/height/position as media queries are activated
+        *media queries with javascript
 
-    -getting the webfont linked
+    -best way to style the padding on OVERVIEW
+
+    -is the -500px problem because I am changing the size of the drawer with media queries
 
 QUESTIONS FOR KRISTIAN
 
@@ -29,7 +30,6 @@ QUESTIONS FOR KRISTIAN
 
     -jarring transistion of drawers infront of gradient
 
-    -no scroll after clicking on overview or project details???
 
     -how do I get it to only load the rest IF the API is called?
 
@@ -60,13 +60,10 @@ QUESTIONS FOR KRISTIAN
     <link href='http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
       
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:thin|Open+Sans">
-
-    <!--When do I need to add in meta tags?-->
-    <!-- do you mean like what order should they be in? -->
-
-    <meta name="description" content="Designer from Cincinnati">
-
+      
     <link rel="icon" href="favicon.ico" type="image/x-icon">
+      
+    <base target="_blank">
 
   </head>
 
@@ -76,11 +73,7 @@ QUESTIONS FOR KRISTIAN
 
     <div id="whole-page">
 
-    <div id="limit-t"></div>
-
     <div id="limit-r"></div>
-
-    <div id="limit-b"></div>
 
     <div id="limit-l"></div>
         
@@ -91,8 +84,7 @@ QUESTIONS FOR KRISTIAN
         <script id="myname" type="text/x-mustache-template">
             {{#user}}
                 <article>
-                    <p class="description">{{sections.About Me}}</p>
-                    <p class="email"><a href="mailto:{{sections.Contact}}">Say Hello!</a></p>
+                    <p class="description">{{sections.About Me}}<br><a href="mailto:{{sections.Contact}}">Say Hello!</a></p>
                     <div class="social-media">
                     {{#user.social_links}}
                         <a class="{{service_name}}" href="{{url}}"><i id="icon"></i></a>
@@ -147,13 +139,9 @@ QUESTIONS FOR KRISTIAN
 
         <div id="full-projects">
 
-<!--            <div class="no_api"><a href="https://www.behance.net/connormuething">Too much action this hour</a></div>-->
+<!--            <div class="no_api"><a href="https://www.behance.net/connormuething" class="too-much">Too much action</a></div>-->
             
         </div>
-
-<!--Writing the script to load each project as a section-->
-
-<!--I need to know what all the projects are with their project IDs...then you can build the project URLS-->
 
             <script id="project-item" type="text/x-mustache-template">
                 {{#project.id}}
@@ -176,17 +164,6 @@ QUESTIONS FOR KRISTIAN
                 {{/project.id}}
             </script>
 
-    <nav>
-
-      <div class="r" title="Next project"> </div>
-
-      <div class="l" title="Previous project"> left </div>
-
-      <div class="t" title="Overview"> top </div>
-
-      <div class="b" title="Info"> bottom </div>
-
-    </nav>
     </div>
 
         <!-- JS -->
@@ -291,7 +268,6 @@ Copy"></script>
             
     });
             
-
         </script>
 
   </body>

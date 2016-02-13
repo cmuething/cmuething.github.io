@@ -43,19 +43,17 @@
                 $('.project-details .project-description').html(newDesc);
 			});
 
-//Am I going to have to use this to enable swipe left swipe right on mobile???
+//BUTTONS
 
-//			var hammertime = new Hammer( document.getElementById("container") );
-//			hammertime.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL });
-//			hammertime.on('swipeleft', function() {
-//				$("#esq").trigger("click");
-//			});
-//			hammertime.on('swiperight', function() {
-//				$("#dir").trigger("click");
-//			});
-//		});
-
-//What is the script of changing the href and linking the thumbnails going to say?? click on a thumbnail to add the class curr to the project box with the corresponding href
+$(document).ready(function(){
+    var gradientButton = $('.overview-toggle, .project-label, .connor-info-toggle');
+    var gradientMove = $('.test');
+    
+    gradientButton.click(function() {       
+        gradientMove.toggleClass('gradient');
+                
+    });
+});
 
 //INFO
 
@@ -66,33 +64,22 @@ $(document).ready(function () {
         var connorTitle = $('.connor-info-toggle');
     	var connorInfo = $('.connor-info');
     	var connorInfoWidth = $('.connor-info').width();
-        var gradientMove = $('.test');
-        
+        var gradientMove = $('.test'); 
         var myName = $('#connor');
     	    	
 	    	connorInfo.animate({
-		    	left: "0px",
-                zIndex: "999999"
-	    	});
-        
-            connorTitle.animate({
-                zIndex: "99999999" 
-            }, 250);	
-        
-            gradientMove.addClass('gradient');
-        
+		    	left: "0px"
+	    	});	
+            
             myName.addClass('keep-name');
     });
-});
     
-    $(document).ready(function () {
     $('.test').on('click', function(event){
         event.preventDefault();
 
     	var connorInfo = $('.connor-info');
         var gradientMove = $('.test');
     	var connorInfoWidth = $('.connor-info').width();
-        
         var myName = $('#connor');
         
 	    	connorInfo.animate({
@@ -113,15 +100,16 @@ $(document).ready(function () {
     	// create menu variables
     	var overviewTop = $('.overview');
     	var overviewTopHeight = $('.overview').height();
+        var gradientMove = $('.test');
         
         var myName = $('#connor');
     	    	
 	    	overviewTop.animate({
-		    	top: "0px",
-                zIndex: "999999"
+		    	top: "0px"
 	    	}, 250);
-        
+                
             myName.addClass('keep-name');
+        
     });
 
     $('.test').on('click', function(event){
@@ -137,17 +125,13 @@ $(document).ready(function () {
 		    	top: "-500px"
 	    	}, 250);
         
-            gradientMove.toggleClass('gradient');
+            gradientMove.removeClass('gradient');
         
             myName.removeClass('keep-name');        
     });
 });
 
 //PROJECT DETAILS
-
-//Testing an idea for opening and closing the drawers without toggling a class but rather changing the z-index and using the gradient as the button
-
-//Could use the hide-details to change the name to an X but might just use the gradient as the button an upload a custom cursor
 
 $(document).ready(function () {
     $('.project-label').on('click', function(event){
@@ -160,31 +144,27 @@ $(document).ready(function () {
         var myName = $('#connor');
         
            projectBottom.animate({
-                    zIndex: "999999",
                     bottom: "0px"
                 }, 250);
         
             myName.addClass('keep-name');
         
     	}); 
-    });
 
-
-$(document).ready(function () {
     $('.test').on('click', function(event){
         event.preventDefault();
 
     	var projectBottom = $('.project-details');
     	var projectBottomHeight = $('.project-details').height();
         var gradientMove = $('.test');
-        
+                
         var myName = $('#connor');
         
         projectBottom.animate({
 		    	bottom: -projectBottomHeight
 	    	}, 250);
         
-        gradientMove.toggleClass('gradient');
+        gradientMove.removeClass('gradient');
         
         myName.removeClass('keep-name'); 
     });
@@ -252,22 +232,6 @@ var color2 = "rgb("+r2+","+g2+","+b2+")";
 }
 
 setInterval(updateGradient,10);
-
-//BUTTONS
-
-$(document).ready(function(){
-    var gradientButton = $('.overview-toggle, .project-label');
-    var gradientMove = $('.test');
-    
-    gradientButton.click(function() {       
-        gradientMove.toggleClass('gradient');
-        
-        gradientMove.animate({
-                zIndex: "999998",
-	    	});	
-                
-    });
-});
 
 //LOADING SCREEN 
 
