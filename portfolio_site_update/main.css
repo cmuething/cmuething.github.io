@@ -358,6 +358,7 @@ body {
     height: 100%;
     overflow: hidden; 
 }
+
 .scroll {
     cursor: row-resize;
     width: 80%;
@@ -536,30 +537,15 @@ body {
         top: 12px;
         left: 0;
     }
-    
-/*
-    .skinny-view {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: white;
-    }
-*/
 
     .connor-info {
         position: absolute;
         left: -100%;
         top: 0;
         width: 100%;
-        height: 100%;
+        height: 75%;
         background-color: white;
     }
-    
-    .connor-info:hover {
-    cursor: url('cursor_black.cur'), auto;
-}
 
 }
 
