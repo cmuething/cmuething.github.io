@@ -32,8 +32,8 @@ body {
     height: 100%;
     z-index: 9999999;
     text-align: center;
-    padding-top: 15%;
-    padding-bottom: 15%;
+    padding-top: 20%;
+    padding-bottom: 20%;
 }
 
 .too-much {
@@ -278,6 +278,10 @@ body {
     margin-bottom: 16px;
 }
 
+.embed-wrapper:hover {
+    cursor: crosshair;
+}
+
 .embed-wrapper iframe, 
 .embed-wrapper object, 
 .embed-wrapper embed { 
@@ -317,9 +321,9 @@ body {
     position: absolute;
     right: 0;
     top: 0;
-    width: 40%;
+    width: 30%;
     height: 100%;
-    z-index: 9997;
+    z-index: 999999;
 }
 
 #limit-l {
@@ -327,9 +331,9 @@ body {
     position: absolute;
     left: 0;
     top: 0;
-    width: 40%;
+    width: 30%;
     height: 100%;
-    z-index: 9997;
+    z-index: 999999;
 }
 
 /*MEDIA QUERIES*/
