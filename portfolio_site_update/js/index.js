@@ -58,7 +58,95 @@ $(document).ready(function(){
 //INFO
 
 $(document).ready(function () {
-    $('.connor-info-toggle').on('click', function(event){
+    
+    checkSize();
+    
+    $(window).resize(checkSize);
+    
+    var ww = $(window).width();
+
+    function checkSize(){
+        
+     if ($(".connor-info").css("width") == "500px" ){
+         
+        $('.connor-info-toggle').on('click', function(event){
+            event.preventDefault();
+            // create menu variables
+            var connorTitle = $('.connor-info-toggle');
+            var connorInfo = $('.connor-info');
+            var connorInfoWidth = $('.connor-info').width();
+            var gradientMove = $('.test'); 
+            var myName = $('#connor');
+
+                connorInfo.animate({
+                    left: "0px"
+                });	
+
+                myName.addClass('keep-name');
+        });
+
+        $('.test').on('click', function(event){
+            event.preventDefault();
+
+            var connorInfo = $('.connor-info');
+            var gradientMove = $('.test');
+            var connorInfoWidth = $('.connor-info').width();
+            var myName = $('#connor');
+
+                connorInfo.animate({
+                    left: "-800px"
+                }, 250);
+
+                gradientMove.removeClass('gradient');
+
+                myName.removeClass('keep-name');
+            });
+     }
+        
+    else {
+        
+        $('.connor-info-toggle').on('click', function(event){
+            event.preventDefault();
+            // create menu variables
+            var connorTitle = $('.connor-info-toggle');
+            var connorInfo = $('.connor-info');
+            var connorInfoWidth = $('.connor-info').width();
+            var gradientMove = $('.test');
+            var myName = $('#connor');
+
+                connorInfo.animate({
+                    left: "0px"
+                });	
+
+                myName.addClass('keep-name');
+
+        });
+
+        $('.connor-info').on('click', function(event){
+            event.preventDefault();
+
+            var connorInfo = $('.connor-info');
+            var gradientMove = $('.test');
+            var connorInfoWidth = $('.connor-info').width();
+            var myName = $('#connor');
+
+                connorInfo.animate({
+                    left: "-800px"
+                }, 250);
+
+                gradientMove.removeClass('gradient');
+
+                myName.removeClass('keep-name');
+
+            });
+        }    
+    };
+    
+    function checkSize(){
+        
+     if ($(".connor-info").css("width") == "500px" ){
+         
+       $('.connor-info-toggle').on('click', function(event){
     	event.preventDefault();
     	// create menu variables
         var connorTitle = $('.connor-info-toggle');
@@ -89,7 +177,48 @@ $(document).ready(function () {
             gradientMove.removeClass('gradient');
         
             myName.removeClass('keep-name');
+        });
+         
+     } 
+        
+    else {
+         
+     $('.connor-info-toggle').on('click', function(event){
+    	event.preventDefault();
+    	// create menu variables
+        var connorTitle = $('.connor-info-toggle');
+    	var connorInfo = $('.connor-info');
+    	var connorInfoWidth = $('.connor-info').width();
+        var gradientMove = $('.test');
+        var myName = $('#connor');
+    	    	
+	    	connorInfo.animate({
+		    	left: "0px"
+	    	});	
+         
+            myName.addClass('keep-name');
+            
     });
+    
+    $('.connor-info').on('click', function(event){
+        event.preventDefault();
+
+    	var connorInfo = $('.connor-info');
+        var gradientMove = $('.test');
+    	var connorInfoWidth = $('.connor-info').width();
+        var myName = $('#connor');
+        
+	    	connorInfo.animate({
+		    	left: "-800px"
+	    	}, 250);
+        
+            gradientMove.removeClass('gradient');
+        
+            myName.removeClass('keep-name');
+        
+        });
+     }
+    };
 });
 
 //OVERVIEW

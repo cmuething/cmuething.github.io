@@ -24,17 +24,16 @@ TO DO:
 
 QUESTIONS FOR KRISTIAN
 
-    -SESSION STORAGE...store the json file after initial load to avoid limit
-
     -browser support
+        *any transitions, translate, or animation, add -webkit, -moz, -ms, etc. 
+
+    -add in swipes left/right, or buttons left/right
+        *need new library for swipe
 
     -best way to style the padding on OVERVIEW
-
-    -only one getJSON ???
-
-    -javascript media queries
-
-    -how do I get it to only load the rest IF the API is called?
+        *style thumbs, inline-block, not float-left
+        *declare width with media queries width: calc(100%/3);
+        *use the math to define the spacing, 
 
     MOBILE VIEW
 
@@ -145,10 +144,10 @@ QUESTIONS FOR KRISTIAN
 
         <div id="full-projects">
 
-<!--
-            <div class="no_api"><a href="https://www.behance.net/connormuething" class="too-much">Come back later!</a></div>
-            <div class="background"></div>
--->
+            <div class="delete">
+                <div class="no_api"><a target="_blank" href="https://www.behance.net/connormuething" class="too-much">Come back later!</a></div>
+                <div class="background"></div>
+            </div>
             
         </div>
 
@@ -180,8 +179,6 @@ QUESTIONS FOR KRISTIAN
         <script type="text/javascript" src="js/index.js"></script>
         <script src="js/behance.js"></script>
         <script src="js/mustache.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js
-Copy"></script>
 
         <script>
 
@@ -200,6 +197,7 @@ Copy"></script>
 
         //mustache for projects
         //this prints the project thumbnails
+        $('.delete').hide();
 
         var template = $('#thumbnail-card').html();
         var info = Mustache.to_html(template, data);
