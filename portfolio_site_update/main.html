@@ -6,8 +6,6 @@ TO DO:
 
     -FAVICON
         
-    -mobile view, finalize
-
     -add in backgrounds from Behance
 
     -loading image
@@ -20,32 +18,27 @@ TO DO:
     -styling the drawers width/height/position as media queries are activated
         *media queries with javascript
 
-    -best way to style the padding on OVERVIEW
-
     -is the -500px problem because I am changing the size of the drawer with media queries
 
     -hover event on videos, play from click on center, remove toggle bar (from vimeo)
-
-    -only certain links open in new tab
-
-    -ideal for all browsers
 
 QUESTIONS FOR KRISTIAN
 
     -SESSION STORAGE...store the json file after initial load to avoid limit
 
-    -jarring transistion of drawers infront of gradient
+    -browser support
 
+    -best way to style the padding on OVERVIEW
+
+    -only one get.JSON ???
+
+    -javascript media queries
 
     -how do I get it to only load the rest IF the API is called?
 
     MOBILE VIEW
 
-    -the creep in when drawers are 100%
-
     -overview flying in from the bottom
-
-    -the cropping off of the description
 
     -Line 160 of index.js not moving the drawer all the way off screen
 
@@ -90,13 +83,20 @@ QUESTIONS FOR KRISTIAN
         <script id="myname" type="text/x-mustache-template">
             {{#user}}
                 <article>
-                    <p class="description">{{sections.About Me}}<br><a href="mailto:{{sections.Contact}}">Say Hello!</a></p>
+                    <p class="description">{{sections.About Me}}</p>
+                    <div class="experience">
+                        <ul>
+                    {{#user.links}}
+                            <li><a target="_blank" href="{{url}}">{{title}}</a></li>   
+                    {{/user.links}}
+                        </ul>
+                    </div>
                     <div class="social-media">
                     {{#user.social_links}}
-                        <a class="{{service_name}}" href="{{url}}"><i id="icon"></i></a>
+                        <a target="_blank" class="{{service_name}}" href="{{url}}"><i id="icon"></i></a>
                     {{/user.social_links}}
                     </div>
-                    <p class="location">{{location}}</p>
+                    <p class="contact"><a href="mailto:{{sections.Contact}}">{{sections.Contact}}</a></p>
                 </article>
             {{/user}}
         </script>
@@ -145,7 +145,10 @@ QUESTIONS FOR KRISTIAN
 
         <div id="full-projects">
 
-<!--            <div class="no_api"><a href="https://www.behance.net/connormuething" class="too-much">Too much action!</a></div>-->
+<!--
+            <div class="no_api"><a href="https://www.behance.net/connormuething" class="too-much">Come back later!</a></div>
+            <div class="background"></div>
+-->
             
         </div>
 

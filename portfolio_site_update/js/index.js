@@ -83,7 +83,7 @@ $(document).ready(function () {
         var myName = $('#connor');
         
 	    	connorInfo.animate({
-		    	left: -connorInfoWidth
+		    	left: "-800px"
 	    	}, 250);
         
             gradientMove.removeClass('gradient');
@@ -122,7 +122,7 @@ $(document).ready(function () {
         var myName = $('#connor');
 
 	    	overviewTop.animate({
-		    	top: "-500px"
+		    	top: "-800px"
 	    	}, 250);
         
             gradientMove.removeClass('gradient');
@@ -161,7 +161,7 @@ $(document).ready(function () {
         var myName = $('#connor');
         
         projectBottom.animate({
-		    	bottom: -projectBottomHeight
+		    	bottom: "-800px"
 	    	}, 250);
         
         gradientMove.removeClass('gradient');

@@ -1,11 +1,30 @@
 @font-face {
-    font-family: Graphik;
-    src: url(graphik_light.ttf);
+    font-family: 'Graphik Web';
+    src: url('Graphik-Regular-Web.eot');
+    src: url('Graphik-Regular-Web.eot?#iefix') format('embedded-opentype'),
+    url('Graphik-Regular-Web.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: 'Graphik Light';
+    src: url('graphik_light.ttf');
 }
 
 body {
     margin: 0;
-    font-family: 'Graphik', Helvetica, sans;
+    font-family: 'Graphik Web', Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    -moz-font-feature-settings: "liga", "kern";
+    -moz-font-feature-settings:"liga=1, kern=1";
+    -ms-font-feature-settings:"liga", "kern";
+    -o-font-feature-settings:"liga", "kern";
+    -webkit-font-feature-settings:"liga", "kern";
+    font-feature-settings: "liga", "kern";
 }
 
 #whole-page {
@@ -24,25 +43,31 @@ body {
 }
 
 .no_api {
+    opacity: .4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999;
+    text-align: center;
+    padding-top: 15%;
+}
+
+.background {
     position: absolute;
     top: 0;
     left: 0;
     background-color: white;
     width: 100%;
     height: 100%;
-    z-index: 9999999;
-    text-align: center;
-    padding-top: 20%;
-    padding-bottom: 20%;
+    z-index: 9999998;
 }
 
 .too-much {
     text-decoration: none;
     color: white;
-    font-size: 9em;
-}
-
-.test {
+    font-size: 7em;
 }
 
 .gradient {
@@ -57,13 +82,12 @@ body {
     cursor: url('cursor.cur'), auto;
 }
 
-
 #connor {
     position: absolute;
     font-size: 20px;
-    line-height: 20px;
+    line-height: 22px;
     z-index: 99999999;
-    left: 50px;
+    left: 40px;
     top: 1%;
 }
 
@@ -87,41 +111,59 @@ body {
     z-index: 9999999;
 }
 
+.connor-info .social-media {
+    position: absolute;
+    font-size: 14px;
+    line-height: 20px;
+    bottom: 40px;
+    right: 40px;
+}
+
 .connor-info .social-media a {
     text-decoration: none;
     color: black;
     padding-left: 8px;
 }
 
-.connor-info .social-media {
-    position: absolute;
-    font-size: 14px;
-    line-height: 20px;
-    bottom: 50px;
-    right: 50px;
+.connor-info .description {
+    top: 125px;
+    left: 40px;
 }
 
 .connor-info p {
     position: absolute;
     font-size: 14px;
     line-height: 20px;
-    padding-right: 50px;
+    padding-right: 40px;
 }
 
-.connor-info .description a {
-    text-decoration: none;
+.connor-info .contact {
+    bottom: 40px;
+    left: 40px;
+    margin-bottom: 0;
+}
+
+.connor-info .contact a {
+    text-decoration: underline;
     color: black;
 }
 
-.connor-info .description {
-    top: 125px;
-    left: 50px;
+.connor-info .experience {
+    position: absolute;
+    line-height: 20px;
+    font-size: 14px;
+    left: 40px;
+    top: 220px;
 }
 
-.connor-info .location {
-    bottom: 50px;
-    left: 50px;
-    margin-bottom: 0;
+.connor-info .experience ul {
+    list-style: none;
+    padding: 0;
+}
+
+.connor-info .experience a {
+    text-decoration: underline;
+    color: black;
 }
 
 .thumbnail-icon {
@@ -129,6 +171,7 @@ body {
     width: 100%;
     top: 3%;
     text-align: center;
+    z-index: 999999; 
 }
 
 #tops {
@@ -244,7 +287,7 @@ body {
     position: absolute;
     width: 250px;
 	top: 12px;
-	left: 50px;  
+	left: 40px;  
 }
 .project-item {
     z-index: 0;
@@ -312,7 +355,7 @@ body {
     left: 50%;
     transform: translate(-50%,-50%);
     overflow: scroll;
-    height: 80%;
+    height: 75%;
     z-index: 999998;
 }
 
@@ -341,200 +384,208 @@ body {
 
 @media (max-width: 1200px) {
     
-#image {
-    position: relative;
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 1em;
-}
+    #image {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto 1em;
+    }
 
-.embed-wrapper {
-    position: relative; 
-    padding-bottom: 56.25%; 
-    height: 0; 
-    overflow: hidden; 
-    max-width: 100%;
-    margin: auto;
-    margin-bottom: 16px;    
-}
-    
-.overview {
-    overflow: scroll;
-    position: absolute;
-    top: -600px;
-    width: 100%;
-    height: 600px;
-    background-color: white;
-    text-align: center;
-    z-index: 9998;
-    box-sizing: border-box;
-    padding: 3% 17% 3% 17%;
-}
+    .embed-wrapper {
+        position: relative; 
+        padding-bottom: 56.25%; 
+        height: 0; 
+        overflow: hidden; 
+        max-width: 100%;
+        margin: auto;
+        margin-bottom: 16px;    
+    }
 
-.thumbnail {
-    cursor: pointer;
-    position: relative;
-    height: 158px;
-    display: block;
-    float: left;
-    margin: 10px;
-    overflow: hidden;
-}
-    
-.project-details p {
-    font-size: 14px;
-    line-height: 18px;
-    position: absolute;
-    max-width: 800px;
-    padding-left: 0;
-    padding-right: 50px;
-	top: 12px;
-	left: 250px;  
-}
+    .overview {
+        overflow: scroll;
+        position: absolute;
+        top: -600px;
+        width: 100%;
+        height: 600px;
+        background-color: white;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 3% 17% 3% 17%;
+    }
 
-.project-details h1 {
-    font-size: 14px;
-    line-height: 18px;
-    position: absolute;
-    padding-left: 0;
-    width: 30%;
-	top: 12px;
-	left: 50px;  
-}
+    .thumbnail {
+        cursor: pointer;
+        position: relative;
+        height: 158px;
+        display: block;
+        float: left;
+        margin: 10px;
+        overflow: hidden;
+    }
+
+    .project-details p {
+        font-size: 14px;
+        line-height: 18px;
+        position: absolute;
+        max-width: 800px;
+        padding-left: 0;
+        padding-right: 40px;
+        top: 12px;
+        left: 250px;  
+    }
+
+    .project-details h1 {
+        font-size: 14px;
+        line-height: 18px;
+        position: absolute;
+        padding-left: 0;
+        width: 30%;
+        top: 12px;
+        left: 40px;  
+    }
     
 }
 
 
 @media (max-width: 795px) {
+    
+    .scroll {
+        height: 75%;
+    }
 
-.overview {
-    display: none;
-/*temporary for initial launch without mobile*/    
-    overflow: scroll;
-    position: fixed;
-    text-align: center;
-    top: -100%;
-/*temporary because the creep error is coming from the js*/
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    z-index: 9998;
-    box-sizing: border-box;
-    padding: 75px 8% 2% 8%;
-}
-    
-.thumbnail {
-    cursor: pointer;
-    position: relative;
-    height: 158px;
-    display: block;
-    float: left;
-    margin: 10px;
-    overflow: hidden;
-}
-    
-#image {
-    position: relative;
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto 1em;
-}
-    
-.thumbnail-icon {
-    display: none;
-/*temporary for initial launch without mobile*/
-    position: absolute;
-    width: 100%;
-    top: 3%;
-    text-align: right;
-}
-    
-#tops {
-    margin-right: 50px;    
-}
-    
-.project-details {
+    .overview {
+        display: none;
+    /*temporary for initial launch without mobile*/    
+        overflow: scroll;
+        position: fixed;
+        text-align: center;
+        top: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        box-sizing: border-box;
+        padding: 75px 8% 2% 8%;
+    }
 
-}
+    .thumbnail {
+        cursor: pointer;
+        position: relative;
+        height: 158px;
+        display: block;
+        float: left;
+        margin: 10px;
+        overflow: hidden;
+    }
 
-.project-details p {
-    font-size: 14px;
-    line-height: 18px;
-    position: relative;
-    width: 85%;
-    padding-left: 50px;
-    padding-right: 50px;
-	top: 12px;
-    left: 0;
-}
+    #image {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto 1em;
+    }
 
-.project-details h1 {
-    font-size: 14px;
-    line-height: 18px;
-    font-weight: 300;
-    position: relative;
-    width: 100%;
-    padding-left: 50px;
-	top: 12px;
-    left: 0;
-}
-    
-.connor-info {
-    position: absolute;
-    left: -100%;
-/*temporary because the creep error is coming from the js*/
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    z-index: 9998;
-}
+    .thumbnail-icon {
+        display: none;
+    /*temporary for initial launch without mobile*/
+        position: absolute;
+        width: 100%;
+        top: 3%;
+        text-align: right;
+    }
+
+    #tops {
+        margin-right: 40px;    
+    }
+
+    .project-details {
+
+    }
+
+    .project-details p {
+        font-size: 14px;
+        line-height: 18px;
+        position: relative;
+        padding-left: 40px;
+        padding-right: 40px;
+        top: 12px;
+        left: 0;
+    }
+
+    .project-details h1 {
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 300;
+        position: relative;
+        width: 100%;
+        padding-left: 40px;
+        top: 12px;
+        left: 0;
+    }
+
+    .connor-info {
+        position: absolute;
+        left: -100%;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+    }
 
 }
 
 
 @media (max-width: 670px) {
+    
+    .no_api {
+        padding-top: 45%;
+    }
   
-.overview {
- 
-}
-    
-.thumbnail {
-    margin-top: 25px;
-    overflow: auto;
-}
+    .overview {
 
-.thumbnail-text {
-    position: absolute;
-    display: inline-block;
-    width: 158px;
-    text-align: left;
-    font-size: 16px;
-    top: 200px;
-    z-index: 99999;
-}
+    }
 
-.thumbnail p {
-    color: black;
-    text-shadow: 0 0 0rem rgba(0,0,0,0);
-}
-    
-.thumbnail:hover:after {
-    opacity:1;
-}
+    .project-details {
+        bottom: -100%;
+        width: 100%;
+        height: 75%;
+    }
 
-.thumbnail:after {
-    content:'\A';
-    position:absolute;
-    width:100%; 
-    height:100%;
-    top:0; 
-    left:0;
-    background:rgba(0,0,0,0.25);
-    opacity:0;
-}
+    .thumbnail {
+        margin-top: 25px;
+        overflow: auto;
+    }
+
+    .thumbnail-text {
+        position: absolute;
+        display: inline-block;
+        width: 158px;
+        text-align: left;
+        font-size: 16px;
+        top: 200px;
+        z-index: 99999;
+    }
+
+    .thumbnail p {
+        color: black;
+        text-shadow: 0 0 0rem rgba(0,0,0,0);
+    }
+
+    .thumbnail:hover:after {
+        opacity:1;
+    }
+
+    .thumbnail:after {
+        content:'\A';
+        position:absolute;
+        width:100%; 
+        height:100%;
+        top:0; 
+        left:0;
+        background:rgba(0,0,0,0.25);
+        opacity:0;
+    }
     
 }
 
