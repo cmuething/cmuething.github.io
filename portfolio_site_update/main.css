@@ -153,7 +153,7 @@ body {
     line-height: 20px;
     font-size: 14px;
     left: 40px;
-    top: 220px;
+    top: 230px;
 }
 
 .connor-info .experience ul {
@@ -282,6 +282,10 @@ body {
 }
 
 .project-details h1 {
+    font-family: 'Graphik Web', Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
     font-size: 14px;
     line-height: 18px;
     position: absolute;
