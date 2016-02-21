@@ -242,6 +242,7 @@ body {
 
 .project-label {
     cursor: pointer;
+    text-decoration: underline;
     position: absolute;
     width: 100%;
     text-align: center;
@@ -322,6 +323,11 @@ body {
     display: block;
     margin: 0 auto 1em;
 }
+
+.video:hover {
+    opacity: .5;
+    background-color: red;
+}
     
 .embed-wrapper {
     position: relative; 
@@ -333,7 +339,7 @@ body {
 }
 
 .embed-wrapper:hover {
-    cursor: crosshair;
+    cursor: url('cursor_white.cur'), auto;
 }
 
 .embed-wrapper iframe, 
@@ -536,6 +542,10 @@ body {
         padding-left: 40px;
         top: 12px;
         left: 0;
+    }
+    
+    .connor-info-toggle {
+        pointer-events: none;
     }
 
     .connor-info {
