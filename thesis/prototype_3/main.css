@@ -214,7 +214,8 @@ border-spacing: 0;
 }
 
 .list ul {
-    font-family: Univers LT Std; 
+    font-family: New Rail Alphabet;
+    font-weight: 200; 
     position: absolute;
     overflow: scroll;
 }
@@ -225,9 +226,14 @@ div h1 {
     color: white;
 }
 
+a:link {
+        text-decoration: none;
+}
+
 div p {
     font-size: .75em;
-    font-family: Univers LT Std;
+    font-family: New Rail Alphabet;
+    font-weight: 200;
     color: white;
 }
 
@@ -244,7 +250,7 @@ div p {
 
 #bottom {
     box-sizing: border-box;
-    background-color: rgba(255,255,255,.35);
+    background-color: rgba(0,0,0,1);
     padding-left: 30px;
     padding-right: 30px;
     position: absolute;
