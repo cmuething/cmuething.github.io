@@ -205,6 +205,7 @@ border-spacing: 0;
 }
 
 .list {
+    overflow: scroll;
     margin: auto;
     margin-top: 90px;
     width: 80%;
@@ -213,11 +214,26 @@ border-spacing: 0;
     padding: 35px;
 }
 
+.list .description {
+    display: none;
+    position: absolute;
+    right: 20%;
+    top: 20%;
+}
+
+.list img {
+    border: 1px solid black;
+    height: 200px;
+    width: 200px;
+}
+
 .list ul {
     font-family: New Rail Alphabet;
     font-weight: 200; 
-    position: absolute;
-    overflow: scroll;
+}
+
+.active {
+    display: block !important; 
 }
 
 div h1 {
@@ -318,7 +334,7 @@ input[type=checkbox] {
 }
 
 .appear {
-    display: block; 
+    display: block !important; 
 }
 
 .disable {

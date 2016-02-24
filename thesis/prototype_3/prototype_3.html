@@ -105,23 +105,23 @@
         <div class="list">
             <ul>
                 <li class="material"> Plaster 001
-                    <dl>
+                    <dl id="entries">
                         <dt class="entry">Overview</dt>
                         <dd class="description"></dd>
                         <dt class="entry">LOCATION 003</dt>
-                        <dd class="description"></dd>
+                        <dd class="description current"><img src="images/themes/form/_1.png"></dd>
                         <dt class="entry">LOCATION 002</dt>
-                        <dd class="description"></dd>
+                        <dd class="description"><img src="images/themes/form/_2.png"></dd>
                         <dt class="entry">CONTENT 024</dt>
-                        <dd class="description"></dd>
+                        <dd class="description"><img src="images/themes/form/_3.png"></dd>
                         <dt class="entry">MEDIA 014</dt>
-                        <dd class="description"></dd>
+                        <dd class="description"><img src="images/themes/form/_4.png"></dd>
                         <dt class="entry">LOCATION 013</dt>
-                        <dd class="description"></dd>
+                        <dd class="description"><img src="images/themes/form/_5.png"></dd>
                     </dl>
                 </li>
                 <li class="material"> Plaster 002
-                    <dl>
+                    <dl id="entries">
                         <dt class="entry">Overview</dt>
                         <dd class="description"></dd>
                         <dt class="entry">M1</dt>
@@ -137,7 +137,7 @@
                     </dl>
                 </li>
                 <li class="material"> Plaster 003
-                    <dl>
+                    <dl id="entries">
                         <dt class="entry">Overview</dt>
                         <dd class="description"></dd>
                         <dt class="entry">M1</dt>
@@ -363,28 +363,36 @@
 <script>
     
     $(document).ready(function () {
-    $('.manifesto-toggle').on('click', function(event){
-    	event.preventDefault();
-    	var manifestoTop = $('.manifesto');
-        var scheduleOff = $('.schedule-toggle')
-                
-        manifestoTop.toggleClass('appear');
-        scheduleOff.toggleClass('disable');
+        $('.manifesto-toggle').on('click', function(event){
+            event.preventDefault();
+            var manifestoTop = $('.manifesto');
+            var scheduleOff = $('.schedule-toggle')
+
+            manifestoTop.toggleClass('appear');
+            scheduleOff.toggleClass('disable');
+
+        });
+        $('.schedule-toggle').on('click', function(event){
+            event.preventDefault();
+            var manifestoOff = $('.manifesto-toggle');
+            var scheduleTop = $('.schedule')
+
+            scheduleTop.toggleClass('appear');
+            manifestoOff.toggleClass('disable');
+
+        });
         
-    });
+        $('#entries dt').on('mouseover', function() {
+            var dd$ = $('dd.current');
+            dd$.parent('dl').find('dd').removeClass('active');
+            dd$.addClass('active');
+        }).on('mouseout', function() {
+            var dd$ = $('dd.current');
+            dd$.removeClass('active');
+            dd$.parent('dl').find('dd.current').addClass('active');
+        });
     });
     
-    $(document).ready(function () {
-    $('.schedule-toggle').on('click', function(event){
-    	event.preventDefault();
-    	var manifestoOff = $('.manifesto-toggle');
-        var scheduleTop = $('.schedule')
-            
-        scheduleTop.toggleClass('appear');
-        manifestoOff.toggleClass('disable');
-        
-    });
-    });
         
 </script>    
     
