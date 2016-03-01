@@ -8,6 +8,7 @@
         <script src="js/Plane.js"></script>
         <script src="js/Three.Legacy.js"></script>
         <script src="js/CanvasRenderer.js"></script>
+        <script src="js/LineSegments.js"></script>
         
         <script>
             var container, camera, scene, renderer, projector, plane, cube, linesMaterial, radious = 1600, theta = 45, phi = 60;
@@ -31,49 +32,48 @@
                 
             //GRID TEST
                 
-                //creating the grid size
+              var size = 500, step = 50;
+
+                var geometry = new THREE.Geometry();
+
+				for ( var i = - size; i <= size; i += step ) {
+
+					geometry.vertices.push( new THREE.Vector3( - size, 0, i ) );
+					geometry.vertices.push( new THREE.Vector3(   size, 0, i ) );
+
+					geometry.vertices.push( new THREE.Vector3( i, 0, - size ) );
+					geometry.vertices.push( new THREE.Vector3( i, 0,   size ) );
+
+				}
+
+				var material = new THREE.LineBasicMaterial( { color: 0x000000, opacity: 0.2, transparent: true } );
+
+				var line = new THREE.LineSegments( geometry, material );
+				scene.add( line );
                 
-            var geometry = new THREE.Geometry();
-            geometry.vertices.push( new THREE.Vertex( new THREE.Vector3( - 500, 0, 0 ) ) );
-            geometry.vertices.push( new THREE.Vertex( new THREE.Vector3( 500, 0, 0 ) ) );
-                
-                //making the lines show up, setting the color
-                
-            linesMaterial = new THREE.LineColorMaterial( 0x000000, 0.2);
-                
-                //don't really understand what is going on here
-                
-            for ( var i = 0; i <= 20; i ++ ) {
-
-					var line = new THREE.Line( geometry, linesMaterial );
-					line.position.z = ( i * 50 ) - 500;
-					scene.addObject( line );
-
-					var line = new THREE.Line( geometry, linesMaterial );
-					line.position.x = ( i * 50 ) - 500;
-					line.rotation.y = 90 * Math.PI / 180;
-					scene.addObject( line );
-
-            }
-                
-            projector = new THREE.Projector();
-
-            plane = new THREE.Mesh( new Plane( 1000, 1000 ) );
-            plane.rotation.x = - 90 * Math.PI / 180;
-            scene.addObject( plane );
-
-            cube = new Cube( 50, 50, 50 );
-
-            ray = new THREE.Ray( camera.position, null );
-
-            brush = new THREE.Mesh( cube, new THREE.MeshColorFillMaterial( colors[ color ], 0.4 ) );
-            brush.position.y = 2000;
-            brush.overdraw = true;
-            scene.addObject( brush );
-
-            onMouseDownPosition = new THREE.Vector2();
+//            projector = new THREE.Projector();
+//
+//            plane = new THREE.Mesh( new Plane( 1000, 1000 ) );
+//            plane.rotation.x = - 90 * Math.PI / 180;
+//            scene.addObject( plane );
+//
+//            cube = new Cube( 50, 50, 50 );
+//
+//            ray = new THREE.Ray( camera.position, null );
+//
+//            brush = new THREE.Mesh( cube, new THREE.MeshColorFillMaterial( colors[ color ], 0.4 ) );
+//            brush.position.y = 2000;
+//            brush.overdraw = true;
+//            scene.addObject( brush );
+//
+//            onMouseDownPosition = new THREE.Vector2();
                 
             }
+        function render() {
+
+				renderer.render( scene, camera );
+
+			}
         
         </script>
         
