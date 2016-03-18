@@ -1,0 +1,104 @@
+{
+    "everything": [
+        {
+            "icons": [
+                {
+                    "content": "content.svg",
+                    "hover": [
+                        {
+                        "prop1": "content_prop1.svg",
+                        "prop2": "content_prop2.svg",
+                        "prop3": "content_prop3.svg",
+                        "prop4": "content_prop4.svg",
+                        }
+                    ]
+                },
+                {
+                    "location": "location.svg",
+                    "hover": [
+                        {
+                        "prop1": "location_prop1.svg",
+                        "prop2": "location_prop2.svg",
+                        "prop3": "location_prop3.svg",
+                        "prop4": "location_prop4.svg",
+                        }
+                    ]
+                },
+                {
+                    "media": "media.svg",
+                    "hover": [
+                        {
+                        "prop1": "media_prop1.svg",
+                        "prop2": "media_prop2.svg",
+                        "prop3": "media_prop3.svg",
+                        "prop4": "media_prop4.svg",
+                        }
+                    ]
+                },
+                {
+                    "visual": "visual.svg",
+                    "hover": [
+                        {
+                        "prop1": "visual_prop1.svg",
+                        "prop2": "visual_prop2.svg",
+                        "prop3": "visual_prop3.svg",
+                        "prop4": "visual_prop4.svg",
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "manifesto": [
+                {
+                    "title": "Version 1",
+                    "text": ""
+                },
+                {
+                    "title": "Version 2",
+                    "text": "" 
+                },
+                {
+                    "title": "Version 3",
+                    "text": "" 
+                },
+                {
+                    "title": "Version 4",
+                    "text": "" 
+                },
+            ]
+        },
+        {
+            "space": "material1",
+            "url": "/plaster001/",
+            "property": "surface",
+            "theme": "form",
+            "cube": [
+                {
+                "title": "Location 003",
+                "face1": "_1.png",
+                },
+                {
+                "title": "Location 002",
+                "face2": "_2.png",
+                },
+                {
+                "title": "Content 024",
+                "face3": "_3.png",
+                },
+                {
+                "title": "Media 014",
+                "face4": "_4.png",
+                },
+                {
+                "title": "Plaster 001",
+                "face5": "_1.png",
+                },
+                {
+                "title": "Location 013",
+                "face6": "_5.png",
+                },
+            ]
+        },
+    ]
+}
