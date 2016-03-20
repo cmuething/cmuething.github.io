@@ -1,71 +1,27 @@
 {
     "everything": [
         {
-            "icons": [
-                {
-                    "content": "content.svg",
-                    "hover": [
-                        {
-                        "prop1": "content_prop1.svg",
-                        "prop2": "content_prop2.svg",
-                        "prop3": "content_prop3.svg",
-                        "prop4": "content_prop4.svg",
-                        }
-                    ]
-                },
-                {
-                    "location": "location.svg",
-                    "hover": [
-                        {
-                        "prop1": "location_prop1.svg",
-                        "prop2": "location_prop2.svg",
-                        "prop3": "location_prop3.svg",
-                        "prop4": "location_prop4.svg",
-                        }
-                    ]
-                },
-                {
-                    "media": "media.svg",
-                    "hover": [
-                        {
-                        "prop1": "media_prop1.svg",
-                        "prop2": "media_prop2.svg",
-                        "prop3": "media_prop3.svg",
-                        "prop4": "media_prop4.svg",
-                        }
-                    ]
-                },
-                {
-                    "visual": "visual.svg",
-                    "hover": [
-                        {
-                        "prop1": "visual_prop1.svg",
-                        "prop2": "visual_prop2.svg",
-                        "prop3": "visual_prop3.svg",
-                        "prop4": "visual_prop4.svg",
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "manifesto": [
                 {
-                    "title": "Version 1",
+                    "title": "Manifesto",
+                    "number": "001",
                     "text": "Public space is by nature a participatory and collaborative experience. People come to connect with people and by using the space, it is made all the better. At this time, however, with the proliferation of VR environments and Google Street View, spatial understanding is rarely comprised of the pure first person experience of a space. Tools for the design of public spaces have traditionally been high-level, viewing an urban space from William H. Whyte’s perspective — known for his birds-eye analytical footage of urban public spaces in the film The Social Life of Small Urban Spaces — and making decisions accordingly. Now that our understanding of ____ is changing, why hasn’t the design system / process changed too? Olafur Eliasson says that “[If] I have a sense of the space, if I feel that the space is tangible, if I feel there is time…I also feel that I can change the space.” By incorporating various design tools that play between the worlds of user input, designer control, and automation, I hope to present a system that is more in tune with how we experience public space. Allowing crucial entry points into a spaces design by way of the environmental conditions, materials, form, etc. will only assist in making these future spaces more participatory / collaborative / flexible."
                 },
                 {
-                    "title": "Version 2",
+                    "title": "Manifesto",
+                    "number": "002",
                     "text": "" 
                 },
                 {
-                    "title": "Version 3",
+                    "title": "Manifesto",
+                    "number": "003",
                     "text": "" 
                 },
                 {
-                    "title": "Version 4",
+                    "title": "Manifesto",
+                    "number": "004",
                     "text": "" 
-                },
+                }
             ]
         }
     ]

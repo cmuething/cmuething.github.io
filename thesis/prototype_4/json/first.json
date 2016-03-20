@@ -9,7 +9,7 @@
                         "prop1": "content_prop1.svg",
                         "prop2": "content_prop2.svg",
                         "prop3": "content_prop3.svg",
-                        "prop4": "content_prop4.svg",
+                        "prop4": "content_prop4.svg"
                         }
                     ]
                 },
@@ -20,7 +20,7 @@
                         "prop1": "location_prop1.svg",
                         "prop2": "location_prop2.svg",
                         "prop3": "location_prop3.svg",
-                        "prop4": "location_prop4.svg",
+                        "prop4": "location_prop4.svg"
                         }
                     ]
                 },
@@ -31,7 +31,7 @@
                         "prop1": "media_prop1.svg",
                         "prop2": "media_prop2.svg",
                         "prop3": "media_prop3.svg",
-                        "prop4": "media_prop4.svg",
+                        "prop4": "media_prop4.svg"
                         }
                     ]
                 },
@@ -42,7 +42,7 @@
                         "prop1": "visual_prop1.svg",
                         "prop2": "visual_prop2.svg",
                         "prop3": "visual_prop3.svg",
-                        "prop4": "visual_prop4.svg",
+                        "prop4": "visual_prop4.svg"
                         }
                     ]
                 }

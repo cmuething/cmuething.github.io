@@ -21,8 +21,18 @@ MAIN.CSS
 }
 
 @font-face {
+    font-family: 'Graphik Semibold';
+    src: url('Graphik-Semibold.otf');
+}
+
+@font-face {
     font-family: 'Fugue';
     src: url('Fugue-Regular.otf');
+}
+
+@font-face {
+    font-family: 'Ogg';
+    src: url('Ogg-Roman.otf')
 }
 
 html, body, div, span, applet, object, iframe,
@@ -341,23 +351,41 @@ input[type=checkbox] {
     margin-right: 20px;
 }
 
+.versions h1 {
+    display: inline-block;
+    font-family: "Ogg";
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.versions .number {
+    float: right;
+    margin-left: 10px;
+    font-family: 'Graphik Semibold';
+    letter-spacing: 2px;
+}
+
+.versions p {
+    color: white;
+    font-family: "Ogg";
+    font-size: 20px;
+    line-height: 24px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.versions li {
+    margin-bottom: 50px;
+}
+
 .manifesto {
     display: none;
     position: absolute;
     width: 100%;
     height: auto;
     text-align: center;
-    margin-top: 12%;
+    margin-top: 10%;
     z-index: 9999999;
-}
-
-.manifesto p {
-    color: white;
-    font-family: Ogg;
-    font-size: 28px;
-    line-height: 36px;
-    margin-left: 20%;
-    margin-right: 20%;
 }
 
 .appear {
