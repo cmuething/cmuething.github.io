@@ -267,7 +267,7 @@ div h1 {
 }
 
 a:link {
-        text-decoration: none;
+    text-decoration: none;
 }
 
 div p {
@@ -279,6 +279,7 @@ div p {
 
 .title-left {
     font-family: 'Fugue';
+    font-size: 2em;
     float: left;
     margin: 30px 0 0 30px;
 
@@ -286,19 +287,9 @@ div p {
 
 .title-right {
     font-family: 'Fugue';
+    font-size: 2em;
     float: right;
     margin: 30px 30px 0 0;
-}
-
-.title-center {
-    display: none;
-    position: absolute;
-    margin: auto;
-    margin-top: 30px;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
 }
 
 #bottom {
@@ -330,25 +321,31 @@ div p {
 }
 
 .schedule {
+    overflow: scroll;
     display: none;
     position: absolute;
     width: 100%;
-    height: auto;
+    height: 100%;
     text-align: center;
-    margin-top: 15%;
+    margin-top: 100px;
     z-index: 9999999;
 }
 
-.schedule ul {
-    text-align: left;
-    color: #29C171;
-    font-family: Univers LT Std;
-    margin-left: 25%;
-    margin-right: 25%;
+.schedule li {
+    margin-bottom: 20px;
+    font-size: 40px;
+    letter-spacing: 2px;
+    font-family: "Ogg";
+    color: white;
+    text-transform: uppercase;
 }
 
-input[type=checkbox] {
-    margin-right: 20px;
+.schedule ul:last-child {
+    margin-bottom: 200px;
+}
+
+.schedule .complete {
+    text-decoration: line-through;
 }
 
 .versions h1 {
@@ -356,6 +353,7 @@ input[type=checkbox] {
     font-family: "Ogg";
     text-transform: uppercase;
     letter-spacing: 3px;
+    margin-bottom: 20px;
 }
 
 .versions .number {
@@ -363,6 +361,10 @@ input[type=checkbox] {
     margin-left: 10px;
     font-family: 'Graphik Semibold';
     letter-spacing: 2px;
+}
+
+.versions:last-child {
+    margin-bottom: 200px;
 }
 
 .versions p {
@@ -379,12 +381,13 @@ input[type=checkbox] {
 }
 
 .manifesto {
+    overflow: scroll;
     display: none;
     position: absolute;
     width: 100%;
-    height: auto;
+    height: 100%;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 100px;
     z-index: 9999999;
 }
 

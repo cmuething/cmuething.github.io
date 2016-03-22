@@ -65,7 +65,7 @@
                 {
                     "title": "Version 4",
                     "text": "" 
-                },
+                }
             ]
         },
         {
@@ -76,29 +76,29 @@
             "cube": [
                 {
                 "title": "Location 003",
-                "face1": "_1.png",
+                "face1": "_1.png"
                 },
                 {
                 "title": "Location 002",
-                "face2": "_2.png",
+                "face2": "_2.png"
                 },
                 {
                 "title": "Content 024",
-                "face3": "_3.png",
+                "face3": "_3.png"
                 },
                 {
                 "title": "Media 014",
-                "face4": "_4.png",
+                "face4": "_4.png"
                 },
                 {
                 "title": "Plaster 001",
-                "face5": "_1.png",
+                "face5": "_1.png"
                 },
                 {
                 "title": "Location 013",
-                "face6": "_5.png",
-                },
+                "face6": "_5.png"
+                }
             ]
-        },
+        }
     ]
 }
