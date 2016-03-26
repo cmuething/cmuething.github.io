@@ -19,8 +19,8 @@
          <h1>SPACES</h2>
     </div>
     
-    <div id="dictionary">
-    
+    <div class="dictionary">
+        
     <div class="limit" id="limit">
         <script id="icons" type="text/x-mustache-template">
         {{#everything}}
@@ -36,9 +36,9 @@
         {{/everything}}
         </script>
     </div>
-
+        
     </div>
-    
+
     <div id="manifesto" class="manifesto">
         
         <script id="manifesto-versions" type="text/x-mustache-template">
@@ -83,21 +83,24 @@
         <script id="list" type="text/x-mustache-template">
             {{#everything}}
                 {{#floaters}}
-                    <div>
-                        <h1>{{theme}}</h1>
-                        <h1>{{property}}</h1>
+                    <div class="allcontent">
+                        <div class="icon">
+                            <h1>{{theme}}</h1>
+                            <h1>{{property}}</h1>
+                            <div id="{{mat}}"></div>
+                        </div>
+                        <ul>
+                            {{#entry}}
+                            <li>{{title}}</li>
+                            {{/entry}}
+                        </ul>
                     </div>
-                    <ul>
-                        {{#entry}}
-                        <li>{{title}}</li>
-                        {{/entry}}
-                    </ul>
                 {{/floaters}}
             {{/everything}}
         </script>
         </div>
     </div>
-    
+        
     <div class="sort">
         <div id="properties">
             <div id="prop1"></div>
@@ -118,6 +121,9 @@
         </div>
         <div class="schedule-toggle">
             <p>Schedule</p>
+        </div>
+        <div class="build">
+            <a href="/build.html"><p>Build</p></a>
         </div>
         <div class="list-toggle">
             <p>List</p>
@@ -207,9 +213,110 @@
         
         $('.list-toggle').on('click', function (){
            
-            var listView = $('.list-view');
+            var listView = $('.list-view');            
             
             listView.toggleClass("appear");
+            
+            if( $('.mat1').parent().attr("class") == "limit"){
+                $('.mat1').appendTo('.list #mat1');
+            }
+            
+            if( $('.mat2').parent().attr("class") == "limit"){
+                $('.mat2').appendTo('.list #mat2'); 
+            }
+            
+            if( $('.mat3').parent().attr("class") == "limit"){
+                $('.mat3').appendTo('.list #mat3'); 
+            }
+            
+            if( $('.mat4').parent().attr("class") == "limit"){
+                $('.mat4').appendTo('.list #mat4'); 
+            }
+            
+            if( $('.mat5').parent().attr("class") == "limit"){
+                $('.mat5').appendTo('.list #mat5'); 
+            }
+            
+            if( $('.mat6').parent().attr("class") == "limit"){
+                $('.mat6').appendTo('.list #mat6'); 
+            }
+            
+            if( $('.mat7').parent().attr("class") == "limit"){
+                $('.mat7').appendTo('.list #mat7'); 
+            }
+            
+            if( $('.mat8').parent().attr("class") == "limit"){
+                $('.mat8').appendTo('.list #mat8'); 
+            }
+            
+            if( $('.mat9').parent().attr("class") == "limit"){
+                $('.mat9').appendTo('.list #mat9'); 
+            }
+            
+            if( $('.mat10').parent().attr("class") == "limit"){
+                $('.mat10').appendTo('.list #mat10'); 
+            }
+            
+            if( $('.mat11').parent().attr("class") == "limit"){
+                $('.mat11').appendTo('.list #mat11'); 
+            }
+            
+            if( $('.mat12').parent().attr("class") == "limit"){
+                $('.mat12').appendTo('.list #mat12'); 
+            }
+            
+            if( $('.mat13').parent().attr("class") == "limit"){
+                $('.mat13').appendTo('.list #mat13'); 
+            }
+            
+            if( $('.mat14').parent().attr("class") == "limit"){
+                $('.mat14').appendTo('.list #mat14'); 
+            }
+            
+            if( $('.mat15').parent().attr("class") == "limit"){
+                $('.mat15').appendTo('.list #mat15'); 
+            }
+            
+            if( $('.mat16').parent().attr("class") == "limit"){
+                $('.mat16').appendTo('.list #mat16'); 
+            }
+            
+            if( $('.mat17').parent().attr("class") == "limit"){
+                $('.mat17').appendTo('.list #mat17'); 
+            }
+            
+            if( $('.mat18').parent().attr("class") == "limit"){
+                $('.mat18').appendTo('.list #mat18'); 
+            }
+            
+            if( $('.mat19').parent().attr("class") == "limit"){
+                $('.mat19').appendTo('.list #mat19'); 
+            }
+            
+            if( $('.mat20').parent().attr("class") == "limit"){
+                $('.mat20').appendTo('.list #mat20'); 
+            }
+            
+            if( $('.mat21').parent().attr("class") == "limit"){
+                $('.mat21').appendTo('.list #mat21'); 
+            }
+            
+            else{
+                $('.mat1, .mat2, .mat3, .mat4, .mat5, .mat6, mat7, .mat8, .mat9, .mat10, .mat11, .mat12, .mat13, .mat14, .mat15, .mat16, .mat17, .mat18, .mat19, .mat20, .mat21').appendTo(".limit")
+                
+                $('.mat1, .mat2, .mat3, .mat4, .mat5, .mat6, mat7, .mat8, .mat9, .mat10, .mat11, .mat12, .mat13, .mat14, .mat15, .mat16, .mat17, .mat18, .mat19, .mat20, .mat21').each(function(i){
+                    // list the one you are working on
+                    //alert(i);
+
+                    // store a random number in a variable
+                    var t = Math.round(Math.random() * 800);
+                    var l = Math.round(Math.random() * 1400);
+
+                    // use that to position the elements
+                    $(this).css('top', t);
+                    $(this).css('left', l);
+                });
+            }
             
         });
         
@@ -246,11 +353,6 @@
         $(this).css('top', randPosY);
         
         $(this).css('transform', 'rotate(' + a + 'deg) scale(.75)');
-        });
-        
-        $("#cube001").on("click", function() {
-            $("#dictionary").remove();
-            $("#container").load("plaster005.html");
         });
         
     });
@@ -297,21 +399,13 @@
     
 <script>
     
-
-//    {{#everything}}
-//    
-//    var face
-//    
-//    {{/everything}}
-
-
     var camera, scenes, renderer, raycaster;
     
     var container = document.getElementById( 'container' );
     
     var cameraControls;
     
-    var cube;
+//    var cube;
     
     function init() {
         scene = new THREE.Scene();
