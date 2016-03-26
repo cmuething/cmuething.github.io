@@ -54,7 +54,7 @@
                     "id": "cube001",
                     "title": "Plaster 001",
                     "theme": "Form",
-                    "property": "",
+                    "property": "Surface",
                     "prop": "prop1",
                     "mat": "mat1",
                     "vx": "1",
@@ -68,26 +68,31 @@
                         },
                         {
                             "title": "Location 003",
+                            "type": "concept",
                             "icon": "location",
                             "face": "/plaster001/_2.png"
                         },
                         {
                             "title": "Location 002",
+                            "type": "concept",
                             "icon": "location",
                             "face": "/plaster001/_3.png"
                         },
                         {
                             "title": "Content 024",
+                            "type": "concept",
                             "icon": "content",
                             "face": "/plaster001/_4.png"
                         },
                         {
                             "title": "Media 014",
+                            "type": "concept",
                             "icon": "media",
                             "face": "/plaster001/_5.png"
                         },
                         {
                             "title": "Location 013",
+                            "type": "concept",
                             "icon": "location",
                             "face": "/plaster001/_6.png"
                         }
@@ -105,24 +110,39 @@
                     "url": "/plaster002",
                     "entry": [
                         {
+                            "title": "Plaster 002",
+                            "type": "material",
+                            "face": "/plaster002/_1.png"
+                        },
+                        {
                             "title": "Visual 001",
-                            "icon": "visual"
+                            "type": "concept",
+                            "icon": "visual",
+                            "face": "/plaster002/_2.png"
                         },
                         {
                             "title": "Media 005",
-                            "icon": "media"
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/plaster002/_3.png"
                         },
                         {
                             "title": "Location 006",
-                            "icon": "location"
+                            "type": "concept",
+                            "icon": "location",
+                            "face": "/plaster002/_4.png"
                         },
                         {
                             "title": "Location 005",
-                            "icon": "location"
+                            "type": "concept",
+                            "icon": "location",
+                            "face": "/plaster002/_5.png"
                         },
                         {
                             "title": "Media 013",
-                            "icon": "media"
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/plaster002/_6.png"
                         }
                     ]
                 },
@@ -138,19 +158,39 @@
                     "url": "/plaster003",
                     "entry": [
                         {
-                            "icon": "content"
+                            "title": "Plaster 003",
+                            "type": "material",
+                            "face": "/plaster003/_1.png"
                         },
                         {
-                            "icon": "media"
+                            "title": "Content 020",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/plaster003/_2.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Media 019",
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/plaster003/_3.png"
                         },
                         {
-                            "icon": "visual"
+                            "title": "Content 010",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/plaster003/_4.png"
                         },
                         {
-                            "icon": "location"
+                            "title": "Visual 007",
+                            "type": "concept",
+                            "icon": "visual",
+                            "face": "/plaster003/_5.png"
+                        },
+                        {
+                            "title": "Location 010",
+                            "type": "concept",
+                            "icon": "location",
+                            "face": "/plaster003/_6.png"
                         }
                     ]
                 },
@@ -166,19 +206,39 @@
                     "url": "/plaster004",
                     "entry": [
                         {
-                            "icon": "visual"
+                            "title": "Plaster 004",
+                            "type": "material",
+                            "face": "/plaster004/_1.png"
                         },
                         {
-                            "icon": "location"
+                            "title": "Visual 008",
+                            "type": "concept",
+                            "icon": "visual",
+                            "face": "/plaster004/_2.png"
                         },
                         {
-                            "icon": "location"
+                            "title": "Location 009",
+                            "type": "concept",
+                            "icon": "location",
+                            "face": "/plaster004/_3.png"
                         },
                         {
-                            "icon": "location"
+                            "title": "Location 004",
+                            "type": "concept",
+                            "icon": "location",
+                            "face": "/plaster004/_4.png"
                         },
                         {
-                            "icon": "visual"
+                            "title": "Location 001",
+                            "type": "concept",
+                            "icon": "location",
+                            "face": "/plaster004/_5.png"
+                        },
+                        {
+                            "title": "Visual 010",
+                            "type": "concept",
+                            "icon": "visual",
+                            "face": "/plaster004/_6.png"
                         }
                     ]
                 },
@@ -194,19 +254,39 @@
                     "url": "/concrete001",
                     "entry": [
                         {
-                            "icon": "media"
+                            "title": "Concrete 001",
+                            "type": "material",
+                            "face": "/concrete001/_1.png"
                         },
                         {
-                            "icon": "visual"
+                            "title": "Media 015",
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/concrete001/_2.png"
                         },
                         {
-                            "icon": "visual"
+                            "title": "Visual 004",
+                            "type": "concept",
+                            "icon": "visual",
+                            "face": "/concrete001/_3.png"
                         },
                         {
-                            "icon": "location"
+                            "title": "Visual 009",
+                            "type": "concept",
+                            "icon": "visual",
+                            "face": "/concrete001/_4.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Location 008",
+                            "type": "concept",
+                            "icon": "location",
+                            "face": "/concrete001/_5.png"
+                        },
+                        {
+                            "title": "Content 001",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/concrete001/_6.png"
                         }
                     ]
                 },
@@ -222,19 +302,39 @@
                     "url": "/fiberglassresin001",
                     "entry": [
                         {
-                            "icon": "media"
+                            "title": "Fiberglass Resin 001",
+                            "type": "material",
+                            "face": "/fiberglassresin001/_1.png"
                         },
                         {
-                            "icon": "media"
+                            "title": "Media 021",
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/fiberglassresin001/_2.png"
                         },
                         {
-                            "icon": "location"
+                            "title": "Media 011",
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/fiberglassresin001/_3.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Location 007",
+                            "type": "concept",
+                            "icon": "location",
+                            "face": "/fiberglassresin001/_4.png"
                         },
                         {
-                            "icon": "location"
+                            "title": "Content 005",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/fiberglassresin001/_5.png"
+                        },
+                        {
+                            "title": "Location 011",
+                            "type": "concept",
+                            "icon": "location",
+                            "face": "/fiberglassresin001/_6.png"
                         }
                     ]
                 },
@@ -250,19 +350,39 @@
                     "url": "/concrete002",
                     "entry": [
                         {
-                            "icon": "location"
+                            "title": "Concrete 002",
+                            "type": "material",
+                            "face": "/concrete002/_1.png"
                         },
                         {
-                            "icon": "visual"
+                            "title": "Location 012",
+                            "type": "concept",
+                            "icon": "location",
+                            "face": "/concrete002/_2.png"
                         },
                         {
-                            "icon": "visual"
+                            "title": "Visual 002",
+                            "type": "concept",
+                            "icon": "visual",
+                            "face": "/concrete002/_3.png"
                         },
                         {
-                            "icon": "visual"
+                            "title": "Visual 012",
+                            "type": "concept",
+                            "icon": "visual",
+                            "face": "/concrete002/_4.png"
                         },
                         {
-                            "icon": "visual"
+                            "title": "Visual 013",
+                            "type": "concept",
+                            "icon": "visual",
+                            "face": "/concrete002/_5.png"
+                        },
+                        {
+                            "title": "Visual 014",
+                            "type": "concept",
+                            "icon": "visual",
+                            "face": "/concrete002/_6.png"
                         }
                     ]
                 },
@@ -278,19 +398,38 @@
                     "url": "/hydrocal001",
                     "entry": [
                         {
-                            "icon": "visual"
+                            "title": "Hydrocal 001",
+                            "type": "concept",
+                            "type": "material",
+                            "face": "/hyrdocal001/_1.png"
                         },
                         {
-                            "icon": "visual"
+                            "title": "Visual 015",
+                            "type": "concept",
+                            "icon": "visual",
+                            "face": "/hydrocal001/_2.png"
                         },
                         {
-                            "icon": "location"
+                            "title": "Visual 017",
+                            "type": "concept",
+                            "icon": "visual",
+                            "face": "/hydrocal001/_3.png"
                         },
                         {
-                            "icon": ""
+                            "title": "Location 014",
+                            "type": "concept",
+                            "icon": "location",
+                            "face": "/hydrocal001/_4.png"
+                        },
+                        {   
+                            "type": "concept",
+                            "icon": "",
+                            "face": "/hydrocal001/_5.png"
                         },
                         {
-                            "icon": ""
+                            "type": "concept",
+                            "icon": "",
+                            "face": "/hydrocal001/_6.png"
                         }
                     ]
                 },
@@ -306,184 +445,321 @@
                     "url": "/hydrostone001",
                     "entry": [
                         {
-                            "icon": "content"
+                            "title": "Hydro Stone 001",
+                            "type": "material",
+                            "face": "/hyrdostone001/_1.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Content 015",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/hydrostone001/_2.png"
                         },
                         {
-                            "icon": "media"
+                            "title": "Content 031",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/hydrostone001/_3.png"
                         },
                         {
-                            "icon": "visual"
+                            "title": "Media 023",
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/hydrostone001/_4.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Visual 005",
+                            "type": "concept",
+                            "icon": "visual",
+                            "face": "/hydrostone001/_5.png"
+                        },
+                        {
+                            "title": "Content 030",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/hydrostone001/_6.png"
                         }
                     ]
                 },
                 {
                     "id": "cube010",
-                    "title": "Drystone 001",
+                    "title": "Winterstone 001",
                     "theme": "Participation / Functionality",
                     "property": "",
                     "prop": "prop2",
                     "mat": "mat10",
                     "vx": "1",
                     "vy": "-1",
-                    "url": "/drystone001",
+                    "url": "/winterstone001",
                     "entry": [
                         {
-                            "icon": "content"
+                            "title": "Drystone 001",
+                            "type": "material",
+                            "face": "/winterstone001/_1.png"
                         },
                         {
-                            "icon": "media"
+                            "title": "Content 002",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/winterstone001/_2.png"
                         },
                         {
-                            "icon": "media"
+                            "title": "Media 002",
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/winterstone001/_3.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Media 022",
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/winterstone001/_4.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Content 007",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/winterstone001/_5.png"
+                        },
+                        {
+                            "title": "Content 009",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/winterstone001/_6.png"
                         }
                     ]
                 },
                 {
                     "id": "cube011",
-                    "title": "Feather Lite 001",
+                    "title": "Drystone 001",
                     "theme": "Participation / Functionality",
                     "property": "",
                     "prop": "prop3",
                     "mat": "mat11",
                     "vx": "1",
                     "vy": "1",
-                    "url": "/featherlite001",
+                    "url": "/drystone001",
                     "entry": [
                         {
-                            "icon": "content"
+                            "title": "Drystone 001",
+                            "type": "material",
+                            "face": "/drystone001/_1.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Content 016",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/drystone001/_2.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Content 021",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/drystone001/_3.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Content 006",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/drystone001/_4.png"
                         },
                         {
-                            "icon": "media"
+                            "title": "Content 012",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/drystone001/_5.png"
+                        },
+                        {
+                            "title": "Media 004",
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/drystone001/_6.png"
                         }
                     ]
                 },
                 {
                     "id": "cube012",
-                    "title": "New Material 001",
+                    "title": "Feather Lite 001",
                     "theme": "Participation / Functionality",
                     "property": "",
                     "prop": "prop3",
                     "mat": "mat12",
                     "vx": "-1",
                     "vy": "1",
-                    "url": "/newmaterial001",
+                    "url": "/featherlite001",
                     "entry": [
                         {
-                            "icon": "visual"
+                            "title": "Feather Lite 001",
+                            "type": "material",
+                            "face": "/featherlite001/_1.png"
                         },
                         {
-                            "icon": "visual"
+                            "title": "Visual 003",
+                            "type": "concept",
+                            "icon": "visual",
+                            "face": "/featherlite001/_2.png"
                         },
                         {
-                            "icon": "media"
+                            "title": "Visual 006",
+                            "type": "concept",
+                            "icon": "visual",
+                            "face": "/featherlite001/_3.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Media 003",
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/featherlite001/_4.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Content 019",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/featherlite001/_5.png"
+                        },
+                        {
+                            "title": "Content 013",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/featherlite001/_6.png"
                         }
                     ]
                 },
                 {
                     "id": "cube013",
-                    "title": "New Material 002",
+                    "title": "Aquaresin 001",
                     "theme": "Participation / Functionality",
                     "property": "",
                     "prop": "prop3",
                     "mat": "mat13",
                     "vx": "1",
                     "vy": "-1",
-                    "url": "/newmaterial002",
+                    "url": "/aquaresin001",
                     "entry": [
                         {
-                            "icon": "media"
+                            "title": "Aquaresin 001",
+                            "type": "material",
+                            "face": "/aquaresin001/_1.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Media 002",
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/aquaresin001/_2.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Content 023",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/aquaresin001/_2.png"
                         },
                         {
-                            "icon": "media"
+                            "title": "Content 003",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/aquaresin001/_2.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Media 009",
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/aquaresin001/_2.png"
+                        },
+                        {
+                            "title": "Content 004",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/aquaresin001/_2.png"
                         }
                     ]
                 },
                 {
                     "id": "cube014",
-                    "title": "New Material 003",
+                    "title": "New Material 001",
                     "theme": "Participation / Functionality",
                     "property": "",
                     "prop": "prop3",
                     "mat": "mat14",
                     "vx": "1",
                     "vy": "1",
-                    "url": "/newmaterial003",
+                    "url": "/newmaterial001",
                     "entry": [
                         {
-                            "icon": "media"
+                            "title": "New Material 001",
+                            "type": "material",
+                            "face": "/newmaterial001/_1.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Media 020",
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/newmaterial001/_2.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Content 033",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial001/_3.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Content 035",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial001/_4.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Content 036",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial001/_5.png"
+                        },
+                        {
+                            "title": "Content 038",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial001/_6.png"
                         }
                     ]
                 },
                 {
                     "id": "cube015",
-                    "title": "New Material 004",
+                    "title": "New Material 002",
                     "theme": "Participation / Functionality",
                     "property": "",
                     "prop": "prop3",
                     "mat": "mat15",
                     "vx": "-1",
                     "vy": "1",
-                    "url": "/newmaterial004",
+                    "url": "/newmaterial002",
                     "entry": [
                         {
-                            "icon": "content"
+                            "title": "New Material 002",
+                            "type": "material",
+                            "face": "/newmaterial002/_1.png"
                         },
                         {
-                            "icon": "visual"
+                            "title": "Content 039",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial002/_2.png"
                         },
                         {
-                            "icon": "visual"
+                            "title": "Visual 011",
+                            "type": "concept",
+                            "icon": "visual",
+                            "face": "/newmaterial002/_3.png"
                         },
                         {
-                            "icon": "media"
+                            "title": "Visual 016",
+                            "type": "concept",
+                            "icon": "visual",
+                            "face": "/newmaterial002/_4.png"
+                        },
+                        {
+                            "title": "Media 024",
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/newmaterial002/_5.png"
                         },
                         {
                             "icon": ""
@@ -492,160 +768,271 @@
                 },
                 {
                     "id": "cube016",
-                    "title": "New Material 005",
+                    "title": "New Material 003",
                     "theme": "Perception / Altered View",
                     "property": "",
                     "prop": "prop4",
                     "mat": "mat16",
                     "vx": "1",
                     "vy": "-1",
-                    "url": "/newmaterial005",
+                    "url": "/newmaterial003",
                     "entry": [
                         {
-                            "icon": "media"
+                            "title": "New Material 003",
+                            "type": "material",
+                            "face": "/newmaterial003/_1.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Media 016",
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/newmaterial003/_2.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Content 027",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial003/_3.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Content 026",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial003/_4.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Content 028",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial003/_5.png"
+                        },
+                        {
+                            "title": "Content 025",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial003/_6.png"
                         }
                     ]
                 },
                 {
                     "id": "cube017",
-                    "title": "New Material 006",
+                    "title": "New Material 004",
                     "theme": "Perception / Altered View",
                     "property": "",
                     "prop": "prop4",
                     "mat": "mat17",
                     "vx": "1",
                     "vy": "1",
-                    "url": "/newmaterial008",
+                    "url": "/newmaterial004",
                     "entry": [
                         {
-                            "icon": "content"
+                            "title": "New Material 004",
+                            "type": "material",
+                            "face": "/newmaterial004/_1.png"
                         },
                         {
-                            "icon": "media"
+                            "title": "Content 018",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial004/_2.png"
                         },
                         {
-                            "icon": "media"
+                            "title": "Media 006",
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/newmaterial004/_3.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Media 001",
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/newmaterial004/_4.png"
                         },
                         {
-                            "icon": "media"
+                            "title": "Content 017",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial004/_5.png"
+                        },
+                        {
+                            "title": "Media 018",
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/newmaterial004/_6.png"
                         }
                     ]
                 },
                 {
                     "id": "cube018",
-                    "title": "New Material 007",
+                    "title": "New Material 005",
                     "theme": "Perception / Altered View",
                     "property": "",
                     "prop": "prop4",
                     "mat": "mat18",
                     "vx": "-1",
                     "vy": "1",
-                    "url": "/newmaterial007",
+                    "url": "/newmaterial005",
                     "entry": [
                         {
-                            "icon": "content"
+                            "title": "New Material 005",
+                            "type": "material",
+                            "face": "/newmaterial005/_1.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Content 008",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial005/_2.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Content 011",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial005/_3.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Content 014",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial005/_4.png"
                         },
                         {
-                            "icon": "media"
+                            "title": "Content 022",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial005/_5.png"
+                        },
+                        {
+                            "title": "Media 010",
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/newmaterial005/_6.png"
                         }
                     ]
                 },
                 {
                     "id": "cube019",
-                    "title": "New Material 008",
+                    "title": "New Material 006",
                     "theme": "Perception / Altered View",
                     "property": "",
                     "prop": "prop4",
                     "mat": "mat19",
                     "vx": "1",
                     "vy": "-1",
-                    "url": "/newmaterial008",
+                    "url": "/newmaterial006",
                     "entry": [
                         {
-                            "icon": "media"
+                            "title": "New Material 006",
+                            "type": "material",
+                            "face": "/newmaterial006/_1.png"
                         },
                         {
-                            "icon": "media"
+                            "title": "Media 017",
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/newmaterial006/_2.png"
                         },
                         {
-                            "icon": "media"
+                            "title": "Media 012",
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/newmaterial006/_3.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Media 008",
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/newmaterial006/_4.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Content 029",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial006/_5.png"
+                        },
+                        {
+                            "title": "Content 032",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial006/_6.png"
                         }
                     ]
                 },
                 {
                     "id": "cube020",
-                    "title": "New Material 009",
+                    "title": "New Material 007",
                     "theme": "Perception / Altered View",
                     "property": "",
                     "prop": "prop4",
                     "mat": "mat20",
                     "vx": "1",
                     "vy": "1",
-                    "url": "/newmaterial009",
+                    "url": "/newmaterial007",
                     "entry": [
                         {
-                            "icon": "content"
+                            "title": "New Material 007",
+                            "type": "material",
+                            "face": "/newmaterial007/_1.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Content 034",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial007/_2.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Content 037",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial007/_3.png"
                         },
                         {
-                            "icon": "media"
+                            "title": "Content 040",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial007/_4.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Media 025",
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/newmaterial007/_5.png"
+                        },
+                        {
+                            "title": "Content 041",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial007/_6.png"
                         }
                     ]
                 },
                 {
                     "id": "cube021",
-                    "title": "New Material 010",
+                    "title": "New Material 008",
                     "theme": "Perception / Altered View",
                     "property": "",
                     "prop": "prop4",
                     "mat": "mat21",
                     "vx": "-1",
                     "vy": "1",
-                    "url": "/newmaterial010",
+                    "url": "/newmaterial008",
                     "entry": [
                         {
-                            "icon": "content"
+                            "title": "New Material 008",
+                            "type": "material",
+                            "face": "/newmaterial008/_1.png"
                         },
                         {
-                            "icon": "content"
+                            "title": "Content 042",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial008/_2.png"
+                        },
+                        {
+                            "title": "Content 043",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial008/_3.png"
                         },
                         {
                             "icon": ""
