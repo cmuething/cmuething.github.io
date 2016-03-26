@@ -49,8 +49,8 @@
             ]
         },
         {
-            "floaters": {
-                "cube001": {
+            "floaters": [
+                {
                     "id": "cube001",
                     "title": "Plaster 001",
                     "theme": "Form",
@@ -93,7 +93,7 @@
                         }
                     ]
                 },
-                "cube002": {
+                {
                     "id": "cube002",
                     "title": "Plaster 002",
                     "theme": "Form",
@@ -126,7 +126,7 @@
                         }
                     ]
                 },
-                "cube003": {
+                {
                     "id": "cube003",
                     "title": "Plaster 003",
                     "theme": "Form",
@@ -154,7 +154,7 @@
                         }
                     ]
                 },
-                "cube004": {
+                {
                     "id": "cube004",
                     "title": "Plaster 004",
                     "theme": "Form",
@@ -182,7 +182,7 @@
                         }
                     ]
                 },
-                "cube005": {
+                {
                     "id": "cube005",
                     "title": "Concrete 001",
                     "theme": "Form",
@@ -210,7 +210,7 @@
                         }
                     ]
                 },
-                "cube006": {
+                {
                     "id": "cube006",
                     "title": "Fiberglass Resin 001",
                     "theme": "Form",
@@ -238,7 +238,7 @@
                         }
                     ]
                 },
-                "cube007": {
+                {
                     "id": "cube007",
                     "title": "Concrete 002",
                     "theme": "Form",
@@ -266,7 +266,7 @@
                         }
                     ]
                 },
-                "cube008": {
+                {
                     "id": "cube008",
                     "title": "Hydrocal 001",
                     "theme": "Form",
@@ -294,7 +294,7 @@
                         }
                     ]
                 },
-                "cube009": {
+                {
                     "id": "cube009",
                     "title": "Hydro Stone 001",
                     "theme": "Participation / Functionality",
@@ -322,7 +322,7 @@
                         }
                     ]
                 },
-                "cube010": {
+                {
                     "id": "cube010",
                     "title": "Drystone 001",
                     "theme": "Participation / Functionality",
@@ -350,7 +350,7 @@
                         }
                     ]
                 },
-                "cube011": {
+                {
                     "id": "cube011",
                     "title": "Feather Lite 001",
                     "theme": "Participation / Functionality",
@@ -378,7 +378,7 @@
                         }
                     ]
                 },
-                "cube012": {
+                {
                     "id": "cube012",
                     "title": "New Material 001",
                     "theme": "Participation / Functionality",
@@ -406,7 +406,7 @@
                         }
                     ]
                 },
-                "cube013": {
+                {
                     "id": "cube013",
                     "title": "New Material 002",
                     "theme": "Participation / Functionality",
@@ -434,7 +434,7 @@
                         }
                     ]
                 },
-                "cube014": {
+                {
                     "id": "cube014",
                     "title": "New Material 003",
                     "theme": "Participation / Functionality",
@@ -462,7 +462,7 @@
                         }
                     ]
                 },
-                "cube015": {
+                {
                     "id": "cube015",
                     "title": "New Material 004",
                     "theme": "Participation / Functionality",
@@ -490,7 +490,7 @@
                         }
                     ]
                 },
-                "cube016": {
+                {
                     "id": "cube016",
                     "title": "New Material 005",
                     "theme": "Perception / Altered View",
@@ -518,7 +518,7 @@
                         }
                     ]
                 },
-                "cube017": {
+                {
                     "id": "cube017",
                     "title": "New Material 006",
                     "theme": "Perception / Altered View",
@@ -546,7 +546,7 @@
                         }
                     ]
                 },
-                "cube018": {
+                {
                     "id": "cube018",
                     "title": "New Material 007",
                     "theme": "Perception / Altered View",
@@ -574,7 +574,7 @@
                         }
                     ]
                 },
-                "cube019": {
+                {
                     "id": "cube019",
                     "title": "New Material 008",
                     "theme": "Perception / Altered View",
@@ -602,7 +602,7 @@
                         }
                     ]
                 },
-                "cube020": {
+                {
                     "id": "cube020",
                     "title": "New Material 009",
                     "theme": "Perception / Altered View",
@@ -630,7 +630,7 @@
                         }
                     ]
                 },
-                "cube021": {
+                {
                     "id": "cube021",
                     "title": "New Material 010",
                     "theme": "Perception / Altered View",
@@ -658,7 +658,7 @@
                         }
                     ]
                 }
-            }
+            ]
             
         },
         {
