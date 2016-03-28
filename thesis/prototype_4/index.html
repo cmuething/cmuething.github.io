@@ -25,7 +25,7 @@
         <script id="icons" type="text/x-mustache-template">
         {{#everything}}
             {{#floaters}}
-                <div id="limit-small" class="{{prop}} {{mat}}" data-vx='{{vx}}' data-vy='{{vy}}'>
+                <div id="limit-small" class="{{prop}} {{mat}}" data-vx='{{vx}}' data-vy='{{vy}}' data-url={{url}}>
                     <a id='golink {{id}}' href="{{url}}">
                         {{#entry}}
                             {{#icon}}<div class="{{icon}}"></div>{{/icon}}
@@ -136,6 +136,8 @@
         </div>
     </div>
     
+    <div id="magic-cube" class="hidden"></div>
+    
 </div>
     
 <script src="js/three.min.js"></script>
@@ -219,6 +221,11 @@
             var listView = $('.list-view');            
             
             listView.toggleClass("appear");
+            
+//            for (i = 1, i < 22, i++) {
+//                var material = '.mat' + i;
+//                console.log(material);
+//            }
             
             if( $('.mat1').parent().attr("class") == "limit"){
                 $('.mat1').appendTo('.list #mat1');
@@ -430,7 +437,7 @@
         var geometry = new THREE.BoxGeometry( 50, 50, 50 );
         
         var materialArray = [];
-        
+            
             materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/themes/form/_21.png' ) }));
     
             materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images/themes/form/_22.png' ) }));
