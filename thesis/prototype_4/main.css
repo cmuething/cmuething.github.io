@@ -308,12 +308,6 @@ border-spacing: 0;
     display: block !important; 
 }
 
-div h1 {
-    font-size: 2em;
-    font-family: 'Fugue';
-    color: white;
-}
-
 a:link {
     text-decoration: none;
 }
@@ -328,7 +322,8 @@ div p {
 .title-left,
 .title-right {
     font-family: 'Fugue';
-    font-size: 2em; 
+    color: white;
+    font-size: 3em; 
 }
 
 .title-left {

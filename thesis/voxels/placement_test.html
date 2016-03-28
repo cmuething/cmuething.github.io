@@ -13,6 +13,7 @@
         <script src="js/three.min.js"></script>
         <script src="js/three.js"></script>
         <script src="js/Plane.js"></script>
+        <script src="js/Projector.js"></script>
         <script src="js/Detector.js"></script>
         <script src="js/STLLoader.js"></script>
         <script src="js/CanvasRenderer.js"></script>
@@ -26,12 +27,15 @@
             var camera, scene, renderer;
             var plane, cube;
             var mouse, raycaster, isShiftDown = false;
-            
+                        
             var rollOverMesh, rollOverMaterial;
             var cubeGeo, cubeMaterial;
             var radious = 1600, theta = 45, phi = 60;
             
             var objects = [];
+            
+            init();
+            render();
                         
             function init() {
                 
@@ -40,7 +44,7 @@
                 
                 var info = document.createElement( 'div' );
                 info.style.position = 'absolute';
-                info.style.top = '0px';
+                info.style.bottom = '100px';
                 info.style.width = '100%';
                 container.appendChild( info );
                 
@@ -122,11 +126,14 @@
                 renderer.setClearColor( 0xf0f0f0 );
                 renderer.setPixelRatio( window.devicePixelRatio );
                 renderer.setSize( window.innerWidth, window.innerHeight );
+                
                 container.appendChild( renderer.domElement );
                 
                 document.addEventListener( 'mousemove', onDocumentMouseMove, false );
                 document.addEventListener( 'mousedown', onDocumentMouseDown, false );
                 
+                document.addEventListener( 'keyup', onDocumentKeyUp, false );
+                document.addEventListener( 'keydown', onDocumentKeyDown, false );
                 
                 //
                 
@@ -136,12 +143,24 @@
                                 
             }
             
-            function onWindowResize() {
+            
+            function onDocumentKeyDown( event ) {
                 
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
+                switch( event.keyCode ) {
+                        
+                    case 16: isShiftDown = true; render(); break;
+                        
+                }
                 
-                renderer.setSize( window.innerWidth, window.innerHeight );
+            }
+            
+            function onDocumentKeyUp( event ) {
+                
+                switch( event.keyCode ) {
+                        
+                    case 16: isShiftDown = false; render(); break;
+                        
+                }
                 
             }
             
@@ -204,6 +223,7 @@
                         formGeo.load( "./stl/test.stl", function ( geometry ) {
                             
                         formMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, shininess: 200 });
+                            
                         
                         var voxel = new THREE.Mesh( geometry, formMaterial );
                         voxel.position.copy( intersect.point ).add( intersect.face.normal );
@@ -226,6 +246,25 @@
                 
             }
             
+            function onWindowResize() {
+                
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                
+                renderer.setSize( window.innerWidth, window.innerHeight );
+                
+            }
+            
+            function save() {
+                
+                scene.remove( rollOverMesh );
+                render();
+                window.open( renderer.domElement.toDataURL('image/png'), 'mywindow' );
+                scene.add( rollOverMesh );
+                return false;
+                                
+            }
+            
             
             function render() {
                     
@@ -233,7 +272,6 @@
                     
             }
             
-            init();
                                
         </script>
         
@@ -246,6 +284,7 @@
         </div>
         
         <div id="bottom">
+            <a href="javascript:save()">save</a>
         </div>
         
     </body>
