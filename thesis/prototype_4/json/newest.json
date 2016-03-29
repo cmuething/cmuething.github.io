@@ -422,8 +422,9 @@
                             "face": "/hydrocal001/_4.png"
                         },
                         {   
+                            "title": "Visual 018",
                             "type": "concept",
-                            "icon": "",
+                            "icon": "visual",
                             "face": "/hydrocal001/_5.png"
                         },
                         {
@@ -762,19 +763,22 @@
                             "face": "/newmaterial002/_5.png"
                         },
                         {
-                            "icon": ""
+                            "title": "Content 045",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial002/_6.png"
                         }
                     ]
                 },
                 {
                     "id": "cube016",
                     "title": "New Material 003",
-                    "theme": "Perception / Altered View",
+                    "theme": "Participation / Functionality",
                     "property": "",
-                    "prop": "prop4",
+                    "prop": "prop3",
                     "mat": "mat16",
-                    "vx": "1",
-                    "vy": "-1",
+                    "vx": "-1",
+                    "vy": "1",
                     "url": "/newmaterial003",
                     "entry": [
                         {
@@ -783,34 +787,25 @@
                             "face": "/newmaterial003/_1.png"
                         },
                         {
-                            "title": "Media 016",
+                            "title": "Content 046",
                             "type": "concept",
-                            "icon": "media",
+                            "icon": "content",
                             "face": "/newmaterial003/_2.png"
                         },
                         {
-                            "title": "Content 027",
+                            "title": "Content 047",
                             "type": "concept",
                             "icon": "content",
-                            "face": "/newmaterial003/_3.png"
+                            "face": "/newmaterial003/_2.png"
                         },
                         {
-                            "title": "Content 026",
-                            "type": "concept",
-                            "icon": "content",
-                            "face": "/newmaterial003/_4.png"
+                            "type": "concept"
                         },
                         {
-                            "title": "Content 028",
-                            "type": "concept",
-                            "icon": "content",
-                            "face": "/newmaterial003/_5.png"
+                            "type": "concept"
                         },
                         {
-                            "title": "Content 025",
-                            "type": "concept",
-                            "icon": "content",
-                            "face": "/newmaterial003/_6.png"
+                            "type": "concept"
                         }
                     ]
                 },
@@ -822,7 +817,7 @@
                     "prop": "prop4",
                     "mat": "mat17",
                     "vx": "1",
-                    "vy": "1",
+                    "vy": "-1",
                     "url": "/newmaterial004",
                     "entry": [
                         {
@@ -831,33 +826,33 @@
                             "face": "/newmaterial004/_1.png"
                         },
                         {
-                            "title": "Content 018",
+                            "title": "Media 016",
                             "type": "concept",
-                            "icon": "content",
+                            "icon": "media",
                             "face": "/newmaterial004/_2.png"
                         },
                         {
-                            "title": "Media 006",
+                            "title": "Content 027",
                             "type": "concept",
-                            "icon": "media",
+                            "icon": "content",
                             "face": "/newmaterial004/_3.png"
                         },
                         {
-                            "title": "Media 001",
+                            "title": "Content 026",
                             "type": "concept",
-                            "icon": "media",
+                            "icon": "content",
                             "face": "/newmaterial004/_4.png"
                         },
                         {
-                            "title": "Content 017",
+                            "title": "Content 028",
                             "type": "concept",
                             "icon": "content",
                             "face": "/newmaterial004/_5.png"
                         },
                         {
-                            "title": "Media 018",
+                            "title": "Content 025",
                             "type": "concept",
-                            "icon": "media",
+                            "icon": "content",
                             "face": "/newmaterial004/_6.png"
                         }
                     ]
@@ -869,7 +864,7 @@
                     "property": "",
                     "prop": "prop4",
                     "mat": "mat18",
-                    "vx": "-1",
+                    "vx": "1",
                     "vy": "1",
                     "url": "/newmaterial005",
                     "entry": [
@@ -879,31 +874,31 @@
                             "face": "/newmaterial005/_1.png"
                         },
                         {
-                            "title": "Content 008",
+                            "title": "Content 018",
                             "type": "concept",
                             "icon": "content",
                             "face": "/newmaterial005/_2.png"
                         },
                         {
-                            "title": "Content 011",
+                            "title": "Media 006",
                             "type": "concept",
-                            "icon": "content",
+                            "icon": "media",
                             "face": "/newmaterial005/_3.png"
                         },
                         {
-                            "title": "Content 014",
+                            "title": "Media 001",
                             "type": "concept",
-                            "icon": "content",
+                            "icon": "media",
                             "face": "/newmaterial005/_4.png"
                         },
                         {
-                            "title": "Content 022",
+                            "title": "Content 017",
                             "type": "concept",
                             "icon": "content",
                             "face": "/newmaterial005/_5.png"
                         },
                         {
-                            "title": "Media 010",
+                            "title": "Media 018",
                             "type": "concept",
                             "icon": "media",
                             "face": "/newmaterial005/_6.png"
@@ -917,43 +912,43 @@
                     "property": "",
                     "prop": "prop4",
                     "mat": "mat19",
-                    "vx": "1",
-                    "vy": "-1",
+                    "vx": "-1",
+                    "vy": "1",
                     "url": "/newmaterial006",
                     "entry": [
                         {
                             "title": "New Material 006",
                             "type": "material",
-                            "face": "/newmaterial006/_1.png"
+                            "face": "/newmaterial005/_1.png"
                         },
                         {
-                            "title": "Media 017",
+                            "title": "Content 008",
                             "type": "concept",
-                            "icon": "media",
+                            "icon": "content",
                             "face": "/newmaterial006/_2.png"
                         },
                         {
-                            "title": "Media 012",
+                            "title": "Content 011",
                             "type": "concept",
-                            "icon": "media",
+                            "icon": "content",
                             "face": "/newmaterial006/_3.png"
                         },
                         {
-                            "title": "Media 008",
+                            "title": "Content 014",
                             "type": "concept",
-                            "icon": "media",
+                            "icon": "content",
                             "face": "/newmaterial006/_4.png"
                         },
                         {
-                            "title": "Content 029",
+                            "title": "Content 022",
                             "type": "concept",
                             "icon": "content",
                             "face": "/newmaterial006/_5.png"
                         },
                         {
-                            "title": "Content 032",
+                            "title": "Media 010",
                             "type": "concept",
-                            "icon": "content",
+                            "icon": "media",
                             "face": "/newmaterial006/_6.png"
                         }
                     ]
@@ -966,7 +961,7 @@
                     "prop": "prop4",
                     "mat": "mat20",
                     "vx": "1",
-                    "vy": "1",
+                    "vy": "-1",
                     "url": "/newmaterial007",
                     "entry": [
                         {
@@ -975,31 +970,31 @@
                             "face": "/newmaterial007/_1.png"
                         },
                         {
-                            "title": "Content 034",
+                            "title": "Media 017",
                             "type": "concept",
-                            "icon": "content",
+                            "icon": "media",
                             "face": "/newmaterial007/_2.png"
                         },
                         {
-                            "title": "Content 037",
+                            "title": "Media 012",
                             "type": "concept",
-                            "icon": "content",
+                            "icon": "media",
                             "face": "/newmaterial007/_3.png"
                         },
                         {
-                            "title": "Content 040",
+                            "title": "Media 008",
                             "type": "concept",
-                            "icon": "content",
+                            "icon": "media",
                             "face": "/newmaterial007/_4.png"
                         },
                         {
-                            "title": "Media 025",
+                            "title": "Content 029",
                             "type": "concept",
-                            "icon": "media",
+                            "icon": "content",
                             "face": "/newmaterial007/_5.png"
                         },
                         {
-                            "title": "Content 041",
+                            "title": "Content 032",
                             "type": "concept",
                             "icon": "content",
                             "face": "/newmaterial007/_6.png"
@@ -1013,7 +1008,7 @@
                     "property": "",
                     "prop": "prop4",
                     "mat": "mat21",
-                    "vx": "-1",
+                    "vx": "1",
                     "vy": "1",
                     "url": "/newmaterial008",
                     "entry": [
@@ -1023,22 +1018,76 @@
                             "face": "/newmaterial008/_1.png"
                         },
                         {
-                            "title": "Content 042",
+                            "title": "Content 034",
                             "type": "concept",
                             "icon": "content",
                             "face": "/newmaterial008/_2.png"
                         },
                         {
-                            "title": "Content 043",
+                            "title": "Content 037",
                             "type": "concept",
                             "icon": "content",
                             "face": "/newmaterial008/_3.png"
                         },
                         {
-                            "icon": ""
+                            "title": "Content 040",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial008/_4.png"
                         },
                         {
-                            "icon": ""
+                            "title": "Media 025",
+                            "type": "concept",
+                            "icon": "media",
+                            "face": "/newmaterial008/_5.png"
+                        },
+                        {
+                            "title": "Content 041",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial008/_6.png"
+                        }
+                    ]
+                },
+                {
+                    "id": "cube022",
+                    "title": "New Material 009",
+                    "theme": "Perception / Altered View",
+                    "property": "",
+                    "prop": "prop4",
+                    "mat": "mat22",
+                    "vx": "-1",
+                    "vy": "1",
+                    "url": "/newmaterial009",
+                    "entry": [
+                        {
+                            "title": "New Material 009",
+                            "type": "material",
+                            "face": "/newmaterial009/_1.png"
+                        },
+                        {
+                            "title": "Content 042",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial009/_2.png"
+                        },
+                        {
+                            "title": "Content 043",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial009/_3.png"
+                        },
+                        {
+                            "title": "Content 044",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial009/_4.png"
+                        },
+                        {
+                            "title": "Content 048",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/newmaterial009/_5.png"
                         },
                         {
                             "icon": ""

@@ -26,7 +26,7 @@
         {{#everything}}
             {{#floaters}}
                 <div id="limit-small" class="{{prop}} {{mat}}" data-vx='{{vx}}' data-vy='{{vy}}' data-url={{url}}>
-                    <a id='golink {{id}}' href="{{url}}">
+                    <a class="golink" id='{{id}}' href="{{url}}">
                         {{#entry}}
                             {{#icon}}<div class="{{icon}}"></div>{{/icon}}
                         {{/entry}}
@@ -137,9 +137,9 @@
     </div>
     
     <div id="magic-cube" class="hidden"></div>
-    
+        
 </div>
-    
+        
 <script src="js/three.min.js"></script>
 <script src="js/OrbitControls.js"></script>
 <script src="js/mustache.min.js"></script>
@@ -311,10 +311,14 @@
                 $('.mat21').appendTo('.list #mat21'); 
             }
             
+            if( $('.mat22').parent().attr("class") == "limit"){
+                $('.mat22').appendTo('.list #mat22'); 
+            }
+            
             else{
-                $('.mat1, .mat2, .mat3, .mat4, .mat5, .mat6, mat7, .mat8, .mat9, .mat10, .mat11, .mat12, .mat13, .mat14, .mat15, .mat16, .mat17, .mat18, .mat19, .mat20, .mat21').appendTo(".limit")
+                $('.mat1, .mat2, .mat3, .mat4, .mat5, .mat6, mat7, .mat8, .mat9, .mat10, .mat11, .mat12, .mat13, .mat14, .mat15, .mat16, .mat17, .mat18, .mat19, .mat20, .mat21, .mat22').appendTo(".limit")
                 
-                $('.mat1, .mat2, .mat3, .mat4, .mat5, .mat6, mat7, .mat8, .mat9, .mat10, .mat11, .mat12, .mat13, .mat14, .mat15, .mat16, .mat17, .mat18, .mat19, .mat20, .mat21').each(function(i){
+                $('.mat1, .mat2, .mat3, .mat4, .mat5, .mat6, mat7, .mat8, .mat9, .mat10, .mat11, .mat12, .mat13, .mat14, .mat15, .mat16, .mat17, .mat18, .mat19, .mat20, .mat21, .mat22').each(function(i){
                     // list the one you are working on
                     //alert(i);
 
@@ -411,11 +415,11 @@
     
     var camera, scenes, renderer, raycaster;
     
-    var container = document.getElementById( 'container' );
+    var container = document.getElementById( 'magic-cube' );
     
     var cameraControls;
     
-//    var cube;
+    var cube;
     
     function init() {
         scene = new THREE.Scene();
