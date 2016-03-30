@@ -12,9 +12,9 @@ MAIN.CSS
 
 @font-face {
     font-family: 'Graphik Web';
-    src: url('Graphik-Regular-Web.eot');
-    src: url('Graphik-Regular-Web.eot?#iefix') format('embedded-opentype'),
-    url('Graphik-Regular-Web.woff') format('woff');
+    src: url('css/Graphik-Regular-Web.eot');
+    src: url('css/Graphik-Regular-Web.eot?#iefix') format('embedded-opentype'),
+    url('css/Graphik-Regular-Web.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-stretch: normal;
@@ -22,17 +22,17 @@ MAIN.CSS
 
 @font-face {
     font-family: 'Graphik Semibold';
-    src: url('Graphik-Semibold.otf');
+    src: url('css/Graphik-Semibold.otf');
 }
 
 @font-face {
     font-family: 'Fugue';
-    src: url('Fugue-Regular.otf');
+    src: url('css/Fugue-Regular.otf');
 }
 
 @font-face {
     font-family: 'Ogg';
-    src: url('Ogg-Roman.otf')
+    src: url('css/Ogg-Roman.otf')
 }
 
 html, body, div, span, applet, object, iframe,
@@ -101,7 +101,19 @@ border-spacing: 0;
 /*    overflow: hidden;*/
 }
 
-.hidden { display: none; visibility: hidden; }
+.appear {
+    display: block !important; 
+}
+
+.disable {
+    pointer-events: none;
+    opacity: .35;
+}
+
+.hidden { 
+    display: none; 
+    visibility: hidden; 
+}
 
 .prop1,
 .prop2,
@@ -146,14 +158,20 @@ border-spacing: 0;
 }
 
 /** Special hover/color changing of icons **/
+/*
 .prop1:hover .location {
     background-image: url("images/location_prop1.svg");
 }
+*/
 
-.prop2:hover .location {
+.prop1:hover .location,
+.prop2:hover .location, 
+.prop3:hover .location,
+.prop4:hover .location {
     background-image: url("images/location_prop2.svg");
 }
 
+/*
 .prop3:hover .location {
     background-image: url("images/location_prop3.svg");
 }
@@ -165,11 +183,16 @@ border-spacing: 0;
 .prop1:hover .visual {
     background-image: url("images/visual_prop1.svg");
 }
+*/
 
-.prop2:hover .visual {
+.prop1:hover .visual,
+.prop2:hover .visual, 
+.prop3:hover .visual,
+.prop4:hover .visual {
     background-image: url("images/visual_prop2.svg");
 }
 
+/*
 .prop3:hover .visual {
     background-image: url("images/visual_prop3.svg");
 }
@@ -181,11 +204,16 @@ border-spacing: 0;
 .prop1:hover .media {
     background-image: url("images/media_prop1.svg");
 }
+*/
 
-.prop2:hover .media {
+.prop1:hover .media,
+.prop2:hover .media,
+.prop3:hover .media, 
+.prop4:hover .media {
     background-image: url("images/media_prop2.svg");
 }
 
+/*
 .prop3:hover .media {
     background-image: url("images/media_prop3.svg");
 }
@@ -197,17 +225,23 @@ border-spacing: 0;
 .prop1:hover .content {
     background-image: url("images/content_prop1.svg");
 }
+*/
 
-.prop2:hover .content {
+.prop1:hover .content,
+.prop2:hover .content, 
+.prop3:hover .content, 
+.prop4:hover .content {
     background-image: url("images/content_prop2.svg");
 }
 
+/*
 .prop3:hover .content {
     background-image: url("images/content_prop3.svg");
 }
 
 .prop4:hover .content {
     background-image: url("images/content_prop4.svg");
+*/
 }
 /** End Special hover/color changing of icons **/
 
@@ -236,7 +270,10 @@ border-spacing: 0;
    width: 40%;
    height: 250px;
    background: none;
-   border: 2px solid #4c7dfa; 
+}
+
+.sort #prop1:hover {
+    border: 2px solid white;
 }
 
 .sort #prop2 {
@@ -246,7 +283,11 @@ border-spacing: 0;
    width: 40%;
    height: 250px;
    background: none;
-   border: 2px solid #28bc6e; 
+/*   border: 2px solid #28bc6e; */
+}
+
+.sort #prop2:hover {
+    border: 2px solid white;
 }
 
 .sort #prop3 {
@@ -256,7 +297,11 @@ border-spacing: 0;
    width: 40%;
    height: 250px;
    background: none;
-   border: 2px solid #c4d305; 
+/*   border: 2px solid #c4d305; */
+}
+
+.sort #prop3:hover {
+    border: 2px solid white;
 }
 
 .sort #prop4 {
@@ -266,13 +311,60 @@ border-spacing: 0;
    width: 40%;
    height: 250px;
    background: none;
-   border: 2px solid #b5380e; 
+/*   border: 2px solid #b5380e; */
+}
+
+.sort #prop4:hover {
+    border: 2px solid white;
 }
 
 .sort .prop1,
 .sort .prop2,
 .sort .prop3,
 .sort .prop4 {
+    position: relative;
+    display: inline-block;
+    left: 35px !important;
+    top: 45px !important;
+    transform: scale(.5);
+    margin-top: 30px;
+    margin-right: 60px;
+    z-index: 999999;
+}
+
+.sort #them1 {
+   position: absolute;
+   top: 120px;
+   left: 100px;
+   width: 40%;
+   height: 250px;
+   background: none;
+/*   border: 2px solid #4c7dfa; */
+}
+
+.sort #them2 {
+   position: absolute;
+   top: 120px;
+   right: 100px;
+   width: 40%;
+   height: 250px;
+   background: none;
+/*   border: 2px solid #28bc6e; */
+}
+
+.sort #them3 {
+   position: absolute;
+   bottom: 120px;
+   left: 100px;
+   width: 40%;
+   height: 250px;
+   background: none;
+/*   border: 2px solid #c4d305; */
+}
+
+.sort .them1,
+.sort .them2,
+.sort .them3 {
     position: relative;
     display: inline-block;
     left: 35px !important;
@@ -303,7 +395,6 @@ border-spacing: 0;
 }
 
 .allcontent {
-/*    border: 1px solid black;*/
     padding: 25px;
     margin-bottom: 50px;
 }
@@ -348,8 +439,8 @@ border-spacing: 0;
 .list .icon .mat22 {
     position: relative;
     display: inline-block;
-    left: -30px !important;
-    top: -10px !important;
+    left: -50px !important;
+    top: -50px !important;
     transform: scale(.75);
     z-index: 0;
 }
@@ -357,9 +448,11 @@ border-spacing: 0;
 .list ul {
     font-family: 'Graphik Web';
     margin-left: 250px;
+    line-height: 22px;
 }
 
 .list li {
+    display: table-row;
     margin-bottom: 4px;
 }
 
@@ -367,10 +460,10 @@ border-spacing: 0;
     display: none;
     pointer-events: none;
     position: absolute;
-    top: 200px;
-    right: 260px;
-    width: 400px;
-    height: 400px;
+    top: 180px;
+    right: 200px;
+    width: 450px;
+    height: 450px;
     border: 1px solid black;
 }
 
@@ -379,8 +472,8 @@ border-spacing: 0;
 }
 
 .list li:hover {
-    cursor: pointer;
-    color: red; 
+    cursor: none;
+    color: #28bc6e; 
 }
 
 .active {
@@ -459,6 +552,15 @@ div p {
     z-index: 999999999;
 }
 
+.sort-types {
+    text-align: right;
+    float: right;
+    cursor: pointer;
+    padding-top: 15px;
+    padding-left: 40px;
+    z-index: 999999999; 
+}
+
 .schedule {
     top: 0px;
     overflow: scroll;
@@ -535,19 +637,6 @@ div p {
     text-align: center;
     margin-top: 100px;
     z-index: 9999999;
-}
-
-.appear {
-    display: block !important; 
-}
-
-.hide {
-    display: none;
-}
-
-.disable {
-    pointer-events: none;
-    opacity: .35;
 }
 
 .material {

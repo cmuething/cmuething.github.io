@@ -1,60 +1,13 @@
 {
     "everything": [
         {
-            "icons": [
-                {
-                    "content": "content.svg",
-                    "hover": [
-                        {
-                        "prop1": "content_prop1.svg",
-                        "prop2": "content_prop2.svg",
-                        "prop3": "content_prop3.svg",
-                        "prop4": "content_prop4.svg"
-                        }
-                    ]
-                },
-                {
-                    "location": "location.svg",
-                    "hover": [
-                        {
-                        "prop1": "location_prop1.svg",
-                        "prop2": "location_prop2.svg",
-                        "prop3": "location_prop3.svg",
-                        "prop4": "location_prop4.svg"
-                        }
-                    ]
-                },
-                {
-                    "media": "media.svg",
-                    "hover": [
-                        {
-                        "prop1": "media_prop1.svg",
-                        "prop2": "media_prop2.svg",
-                        "prop3": "media_prop3.svg",
-                        "prop4": "media_prop4.svg"
-                        }
-                    ]
-                },
-                {
-                    "visual": "visual.svg",
-                    "hover": [
-                        {
-                        "prop1": "visual_prop1.svg",
-                        "prop2": "visual_prop2.svg",
-                        "prop3": "visual_prop3.svg",
-                        "prop4": "visual_prop4.svg"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "floaters": [
                 {
                     "id": "cube001",
                     "title": "Plaster 001",
                     "theme": "Form",
                     "property": "Surface",
+                    "them": "them1",
                     "prop": "prop1",
                     "mat": "mat1",
                     "vx": "1",
@@ -103,6 +56,7 @@
                     "title": "Plaster 002",
                     "theme": "Form",
                     "property": "",
+                    "them": "them1",
                     "prop": "prop1",
                     "mat": "mat2",
                     "vx": "1",
@@ -151,6 +105,7 @@
                     "title": "Plaster 003",
                     "theme": "Form",
                     "property": "",
+                    "them": "them1",
                     "prop": "prop1",
                     "mat": "mat3",
                     "vx": "-1",
@@ -199,6 +154,7 @@
                     "title": "Plaster 004",
                     "theme": "Form",
                     "property": "",
+                    "them": "them1",
                     "prop": "prop1",
                     "mat": "mat4",
                     "vx": "1",
@@ -247,6 +203,7 @@
                     "title": "Concrete 001",
                     "theme": "Form",
                     "property": "",
+                    "them": "them1",
                     "prop": "prop1",
                     "mat": "mat5",
                     "vx": "1",
@@ -295,6 +252,7 @@
                     "title": "Fiberglass Resin 001",
                     "theme": "Form",
                     "property": "",
+                    "them": "them1",
                     "prop": "prop2",
                     "mat": "mat6",
                     "vx": "-1",
@@ -343,6 +301,7 @@
                     "title": "Concrete 002",
                     "theme": "Form",
                     "property": "",
+                    "them": "them1",
                     "prop": "prop2",
                     "mat": "mat7",
                     "vx": "1",
@@ -391,6 +350,7 @@
                     "title": "Hydrocal 001",
                     "theme": "Form",
                     "property": "",
+                    "them": "them1",
                     "prop": "prop2",
                     "mat": "mat8",
                     "vx": "1",
@@ -401,7 +361,7 @@
                             "title": "Hydrocal 001",
                             "type": "concept",
                             "type": "material",
-                            "face": "/hyrdocal001/_1.png"
+                            "face": "/hydrocal001/_1.png"
                         },
                         {
                             "title": "Visual 015",
@@ -439,6 +399,7 @@
                     "title": "Hydro Stone 001",
                     "theme": "Participation / Functionality",
                     "property": "",
+                    "them": "them2",
                     "prop": "prop2",
                     "mat": "mat9",
                     "vx": "-1",
@@ -448,7 +409,7 @@
                         {
                             "title": "Hydro Stone 001",
                             "type": "material",
-                            "face": "/hyrdostone001/_1.png"
+                            "face": "/hydrostone001/_1.png"
                         },
                         {
                             "title": "Content 015",
@@ -487,6 +448,7 @@
                     "title": "Winterstone 001",
                     "theme": "Participation / Functionality",
                     "property": "",
+                    "them": "them2",
                     "prop": "prop2",
                     "mat": "mat10",
                     "vx": "1",
@@ -535,6 +497,7 @@
                     "title": "Drystone 001",
                     "theme": "Participation / Functionality",
                     "property": "",
+                    "them": "them2",
                     "prop": "prop3",
                     "mat": "mat11",
                     "vx": "1",
@@ -583,6 +546,7 @@
                     "title": "Feather Lite 001",
                     "theme": "Participation / Functionality",
                     "property": "",
+                    "them": "them2",
                     "prop": "prop3",
                     "mat": "mat12",
                     "vx": "-1",
@@ -631,6 +595,7 @@
                     "title": "Aquaresin 001",
                     "theme": "Participation / Functionality",
                     "property": "",
+                    "them": "them2",
                     "prop": "prop3",
                     "mat": "mat13",
                     "vx": "1",
@@ -679,6 +644,7 @@
                     "title": "New Material 001",
                     "theme": "Participation / Functionality",
                     "property": "",
+                    "them": "them2",
                     "prop": "prop3",
                     "mat": "mat14",
                     "vx": "1",
@@ -727,6 +693,7 @@
                     "title": "New Material 002",
                     "theme": "Participation / Functionality",
                     "property": "",
+                    "them": "them2",
                     "prop": "prop3",
                     "mat": "mat15",
                     "vx": "-1",
@@ -775,6 +742,7 @@
                     "title": "New Material 003",
                     "theme": "Participation / Functionality",
                     "property": "",
+                    "them": "them2",
                     "prop": "prop3",
                     "mat": "mat16",
                     "vx": "-1",
@@ -814,6 +782,7 @@
                     "title": "New Material 004",
                     "theme": "Perception / Altered View",
                     "property": "",
+                    "them": "them3",
                     "prop": "prop4",
                     "mat": "mat17",
                     "vx": "1",
@@ -862,6 +831,7 @@
                     "title": "New Material 005",
                     "theme": "Perception / Altered View",
                     "property": "",
+                    "them": "them3",
                     "prop": "prop4",
                     "mat": "mat18",
                     "vx": "1",
@@ -910,6 +880,7 @@
                     "title": "New Material 006",
                     "theme": "Perception / Altered View",
                     "property": "",
+                    "them": "them3",
                     "prop": "prop4",
                     "mat": "mat19",
                     "vx": "-1",
@@ -958,6 +929,7 @@
                     "title": "New Material 007",
                     "theme": "Perception / Altered View",
                     "property": "",
+                    "them": "them3",
                     "prop": "prop4",
                     "mat": "mat20",
                     "vx": "1",
@@ -1006,6 +978,7 @@
                     "title": "New Material 008",
                     "theme": "Perception / Altered View",
                     "property": "",
+                    "them": "them3",
                     "prop": "prop4",
                     "mat": "mat21",
                     "vx": "1",
@@ -1054,6 +1027,7 @@
                     "title": "New Material 009",
                     "theme": "Perception / Altered View",
                     "property": "",
+                    "them": "them3",
                     "prop": "prop4",
                     "mat": "mat22",
                     "vx": "-1",
