@@ -388,6 +388,7 @@
                             "face": "/hydrocal001/_5.png"
                         },
                         {
+                            "title": "No Entry",
                             "type": "concept",
                             "icon": "",
                             "face": "/hydrocal001/_6.png"
@@ -767,13 +768,19 @@
                             "face": "/newmaterial003/_2.png"
                         },
                         {
-                            "type": "concept"
+                            "title": "No Entry",
+                            "type": "concept",
+                            "face": "/newmaterial003/_4.png"
                         },
                         {
-                            "type": "concept"
+                            "title": "No Entry",
+                            "type": "concept",
+                            "face": "/newmaterial003/_5.png"
                         },
                         {
-                            "type": "concept"
+                            "title": "No Entry",
+                            "type": "concept",
+                            "face": "/newmaterial003/_6.png"
                         }
                     ]
                 },
@@ -1064,7 +1071,9 @@
                             "face": "/newmaterial009/_5.png"
                         },
                         {
-                            "icon": ""
+                            "title": "No Entry",
+                            "icon": "",
+                            "face": "/newmaterial009/_6.png"
                         }
                     ]
                 }

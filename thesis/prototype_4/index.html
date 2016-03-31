@@ -26,7 +26,7 @@
         {{#everything}}
             {{#floaters}}
                 <div id="limit-small" class="{{them}} {{prop}} {{mat}}" data-vx='{{vx}}' data-vy='{{vy}}' >
-                    <a class="golink" id='{{id}}' href="#{{url}}" data-url={{url}}>
+                    <a class="golink" id='{{id}}' href="{{url}}" data-url={{url}}>
                         {{#entry}}
                             {{#icon}}<div class="{{icon}}"></div>{{/icon}}
                         {{/entry}}
@@ -35,6 +35,20 @@
             {{/floaters}}
         {{/everything}}
         </script>
+    </div>
+        
+    <div class="sort">
+        <div id="properties">
+            <div id="prop1"></div>
+            <div id="prop2"></div>
+            <div id="prop3"></div>
+            <div id="prop4"></div>
+        </div>
+        <div id="themes">
+            <div id="them1"></div>
+            <div id="them2"></div>
+            <div id="them3"></div>
+        </div>
     </div>
         
     </div>
@@ -64,7 +78,7 @@
             <li>Week 14</li>
             <li>Week 13</li>
             <li>Week 12</li>
-            <li>Week 11</li>
+            <li class="complete">Week 11</li>
             <li class="complete">Week 10</li>
             <li class="complete">Week 9</li>
             <li class="complete">Week 8</li>
@@ -103,20 +117,6 @@
         </script>
         </div>
     </div>
-        
-    <div class="sort">
-        <div id="properties">
-            <div id="prop1"></div>
-            <div id="prop2"></div>
-            <div id="prop3"></div>
-            <div id="prop4"></div>
-        </div>
-        <div id="themes">
-            <div id="them1"></div>
-            <div id="them2"></div>
-            <div id="them3"></div>
-        </div>
-    </div>
     
     <div id="bottom">
         <div class="manifesto-toggle">
@@ -125,8 +125,11 @@
         <div class="schedule-toggle">
             <p>Schedule</p>
         </div>
+        <div class="table">
+            <p>Table</p>
+        </div>
         <div class="build">
-            <a target="_blank" href="/cmuething.github.io/thesis/prototype_4/build.html"><p>BUILD!</p></a>
+            <a target="_blank" href="/cmuething.github.io/thesis/prototype_4/build.html"><p>Build</p></a>
         </div>
         <div class="list-toggle">
             <p>List</p>
@@ -141,7 +144,7 @@
     </div>
     
     <div id="magic-cube" class="hidden"></div>
-    <div id="deleteItAll" class="hidden" style="position:fixed; right:1em;top:1em; z-index:999999999999; font-size: 2em;">FU</div>
+    <div id="deleteItAll" class="hidden">X</div>
         
 </div>
         
@@ -151,9 +154,7 @@
     
 <script language="javascript" type="text/javascript" src="js/jquery-1.11.3.js"></script>
 <script language="javascript" type="text/javascript" src="js/jquery-ui.js"></script>
-    
-<script src="js/hover.js"></script>
-    
+        
 <script>
     
     $.getJSON("./json/newest.json", function(data) {
@@ -412,6 +413,8 @@
         });
 
         $('.golink').on('click', function(event){
+            event.preventDefault();
+            
             console.log( "cube test" );
 
             var urlbit = $(this).attr('data-url');
@@ -419,6 +422,7 @@
             var floaters = $('.dictionary');
             var sortmenu = $('.sort-toggle');
             var listmenu = $('.list-toggle');
+            var spaces = $('.title-right');
             var emptyMagicCube = $('#deleteItAll');
 
             var camera, scenes, renderer, raycaster;
@@ -426,6 +430,7 @@
             var cameraControls;
             var cube;
 
+            spaces.addClass('cube-page');
             listmenu.addClass('disable');
             sortmenu.addClass('disable');
             floaters.addClass('hidden');
@@ -446,7 +451,7 @@
                 container.appendChild( renderer.domElement );
 
                 cameraControls = new THREE.OrbitControls(camera, renderer.domElement);
-                cameraControls.target.set( 0, -15, 0);
+                cameraControls.target.set( 0, -10, 0);
                 cameraControls.maxDistance = 400;
                 cameraControls.minDistance = 30;
                 cameraControls.update();
@@ -530,6 +535,7 @@
             
             magiccube.empty();
             
+            spaces.removeClass('cube-page');
             listmenu.removeClass('disable');
             sortmenu.removeClass('disable');
             floaters.removeClass('hidden');
@@ -594,45 +600,60 @@
             var sortmenu = $('.sort-toggle');
             var listmenu = $('.list-toggle');
             var scheduleOff = $('.schedule-toggle');
+            var tableOff = $('.table');
 
             manifestoTop.toggleClass('appear');
             scheduleOff.toggleClass('disable');
             sortmenu.toggleClass('disable');
             listmenu.toggleClass('disable');
+            tableOff.toggleClass('disable');
 
         });
+        
         $('.schedule-toggle').on('click', function(event){
             event.preventDefault();
             var manifestoOff = $('.manifesto-toggle');
             var sortmenu = $('.sort-toggle');
             var listmenu = $('.list-toggle');
             var scheduleTop = $('.schedule');
+            var tableOff = $('.table');
 
             scheduleTop.toggleClass('appear');
             manifestoOff.toggleClass('disable');
             sortmenu.toggleClass('disable');
             listmenu.toggleClass('disable');
-
+            tableOff.toggleClass('disable');
         });
+        
+        $('.table').on('click', function(event){
+            event.preventDefault();
+            
+        });
+        
         $('.sort-types').on('click', function(event){
             event.preventDefault();
             var manifestoOff = $('.manifesto-toggle');
             var listmenu = $('.list-toggle');
             var scheduleOff = $('.schedule-toggle');
+            var tableOff = $('.table');
 
             scheduleOff.toggleClass('disable');
             manifestoOff.toggleClass('disable');
             listmenu.toggleClass('disable');
+            tableOff.toggleClass('disable');
         });
+        
         $('.list-toggle, .list-view').on('click', function(event){
             event.preventDefault();
             var manifestoOff = $('.manifesto-toggle');
             var sortmenu = $('.sort-toggle');
             var scheduleOff = $('.schedule-toggle');
+            var tableOff = $('.table');
 
             scheduleOff.toggleClass('disable');
             manifestoOff.toggleClass('disable');
             sortmenu.toggleClass('disable');
+            tableOff.toggleClass('disable');
         });
         
         $('.sort-toggle').hover(function(){
