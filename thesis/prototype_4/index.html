@@ -39,15 +39,29 @@
         
     <div class="sort">
         <div id="properties">
-            <div id="prop1"></div>
-            <div id="prop2"></div>
-            <div id="prop3"></div>
-            <div id="prop4"></div>
+            <div id="prop1">
+                <h1>JOINING</h1>
+            </div>
+            <div id="prop2">
+                <h1>SURFACE</h1>
+            </div>
+            <div id="prop3">
+                <h1>WEATHER-RESISTANT</h1>
+            </div>
+            <div id="prop4">
+                <h1>WEIGHT/DENSITY</h1>
+            </div>
         </div>
         <div id="themes">
-            <div id="them1"></div>
-            <div id="them2"></div>
-            <div id="them3"></div>
+            <div id="them1">
+                <h1>FORM</h1>
+            </div>
+            <div id="them2">
+                <h1>PARTICIPATION</h1>
+            </div>
+            <div id="them3">
+                <h1>PERCEPTION</h1>
+            </div>
         </div>
     </div>
         
@@ -154,6 +168,127 @@
     
 <script language="javascript" type="text/javascript" src="js/jquery-1.11.3.js"></script>
 <script language="javascript" type="text/javascript" src="js/jquery-ui.js"></script>
+    
+<script>
+    
+    $(document).ready(function () {
+        $('.manifesto-toggle').on('click', function(event){
+            event.preventDefault();
+            var manifestoTop = $('.manifesto');
+            var sortmenu = $('.sort-toggle');
+            var listmenu = $('.list-toggle');
+            var scheduleOff = $('.schedule-toggle');
+            var tableOff = $('.table');
+
+            manifestoTop.addClass('appear');
+            scheduleOff.addClass('disable');
+            sortmenu.addClass('disable');
+            listmenu.addClass('disable');
+            tableOff.addClass('disable');
+            
+            $('.manifesto').on('click', function(event){
+                
+                manifestoTop.removeClass('appear')
+                scheduleOff.removeClass('disable');
+                sortmenu.removeClass('disable');
+                listmenu.removeClass('disable');
+                tableOff.removeClass('disable');
+        
+            })
+
+        });
+        
+        $('.schedule-toggle').on('click', function(event){
+            event.preventDefault();
+            var manifestoOff = $('.manifesto-toggle');
+            var sortmenu = $('.sort-toggle');
+            var listmenu = $('.list-toggle');
+            var scheduleTop = $('.schedule');
+            var tableOff = $('.table');
+
+            scheduleTop.addClass('appear');
+            manifestoOff.addClass('disable');
+            sortmenu.addClass('disable');
+            listmenu.addClass('disable');
+            tableOff.addClass('disable');
+            
+            $('.schedule').on('click', function(event){
+                
+                scheduleTop.removeClass('appear')
+                manifestoOff.removeClass('disable');
+                sortmenu.removeClass('disable');
+                listmenu.removeClass('disable');
+                tableOff.removeClass('disable');
+        
+            });
+            
+        });
+        
+        $('.table').on('click', function(event){
+            event.preventDefault();
+            
+        });
+        
+        $('.list-toggle').on('click', function(event){
+            event.preventDefault();
+            var manifestoOff = $('.manifesto-toggle');
+            var sortmenu = $('.sort-toggle');
+            var listmenu = $('.list-toggle');
+            var scheduleOff = $('.schedule-toggle');
+            var tableOff = $('.table');
+            var spaces = $('.title-right');
+            var emptyListView = $('#deleteItAll');
+
+            spaces.addClass('cube-page');
+            scheduleOff.addClass('disable');
+            manifestoOff.addClass('disable');
+            sortmenu.addClass('disable');
+            listmenu.addClass('disable');
+            tableOff.addClass('disable');
+            emptyListView.removeClass('hidden');
+            
+            $('#deleteItAll').on('click', function(event){
+                
+                spaces.removeClass('cube-page');
+                scheduleOff.removeClass('disable');
+                manifestoOff.removeClass('disable');
+                sortmenu.removeClass('disable');
+                listmenu.removeClass('disable');
+                tableOff.removeClass('disable');
+                emptyListView.addClass('hidden');
+                
+            });
+            
+        });
+        
+        $('.sort-toggle').hover(function(){
+            event.preventDefault();
+            var sortmenu = $('.sort-toggle');
+            var sortoptions = $('.sort-types');
+            
+            sortoptions.removeClass('hidden');
+            sortmenu.addClass('hidden'); 
+        });
+        
+        $('.sort-types').on('mouseleave', function(event){
+            event.preventDefault();
+            var sortmenu = $('.sort-toggle');
+            var sortoptions = $('.sort-types');
+            
+            sortoptions.addClass('hidden');
+            sortmenu.removeClass('hidden'); 
+        });
+        
+        $('.sort-types').on('click', function(event){
+            event.preventDefault();
+            var listmenu = $('.list-toggle');
+
+            listmenu.toggleClass('disable');
+        });
+        
+    });
+      
+</script>
         
 <script>
     
@@ -259,16 +394,11 @@
             }
         });
         
-        $('.list-toggle, .list-view').on('click', function (){
+        $('.list-toggle').on('click', function (){
            
             var listView = $('.list-view');            
             
-            listView.toggleClass("appear");
-            
-//            for (i = 1, i < 22, i++) {
-//                var material = '.mat' + i;
-//                console.log(material);
-//            }
+            listView.addClass("appear");
             
             if( $('.mat1').parent().attr("class") == "limit"){
                 $('.mat1').appendTo('.list #mat1');
@@ -358,7 +488,10 @@
                 $('.mat22').appendTo('.list #mat22'); 
             }
             
-            else{
+            $('#deleteItAll').on('click', function(event){
+                
+                listView.removeClass("appear");
+                
                 $('.mat1, .mat2, .mat3, .mat4, .mat5, .mat6, mat7, .mat8, .mat9, .mat10, .mat11, .mat12, .mat13, .mat14, .mat15, .mat16, .mat17, .mat18, .mat19, .mat20, .mat21, .mat22').appendTo(".limit")
                 
                 $('.mat1, .mat2, .mat3, .mat4, .mat5, .mat6, mat7, .mat8, .mat9, .mat10, .mat11, .mat12, .mat13, .mat14, .mat15, .mat16, .mat17, .mat18, .mat19, .mat20, .mat21, .mat22').each(function(i){
@@ -373,7 +506,8 @@
                     $(this).css('top', t);
                     $(this).css('left', l);
                 });
-            }
+                    
+                });
             
         });
         
@@ -421,6 +555,7 @@
             var magiccube = $('#magic-cube')
             var floaters = $('.dictionary');
             var sortmenu = $('.sort-toggle');
+            var sortContent = $('.sort');
             var listmenu = $('.list-toggle');
             var spaces = $('.title-right');
             var emptyMagicCube = $('#deleteItAll');
@@ -535,6 +670,7 @@
             
             magiccube.empty();
             
+            sortContent.removeClass('appear');
             spaces.removeClass('cube-page');
             listmenu.removeClass('disable');
             sortmenu.removeClass('disable');
@@ -542,6 +678,8 @@
             
             magiccube.addClass('hidden');
             emptyMagicCube.addClass('hidden');
+            
+            $('.prop1, .prop2, .prop3, .prop4').appendTo(".limit")
             
             $('.prop1, .prop2, .prop3, .prop4').each(function(i){
                 // store a random number in a variable
@@ -553,34 +691,6 @@
                 $(this).css('left', l);
             });
             
-//            function hitLR(el, bounding) {
-//                if (el.offsetLeft <= 0 && $(el).data('vx') < 0) {
-//                    $(el).data('vx', -1 * $(el).data('vx'))
-//                }
-//                if ((el.offsetLeft + el.offsetWidth) >= bounding.offsetWidth) {
-//                    $(el).data('vx',  -1 * $(el).data('vx'));
-//                }
-//                if (el.offsetTop <= 0 && $(el).data('vy') < 0) {
-//                    $(el).data('vy', -1 * $(el).data('vy'));
-//                }
-//                if ((el.offsetTop + el.offsetHeight) >= bounding.offsetHeight) {
-//                    $(el).data('vy', -1 * $(el).data('vy'));
-//                }
-//            }
-//
-//            function mover(el, bounding) {
-//                hitLR(el, bounding);
-//                el.style.left = el.offsetLeft + $(el).data('vx') + 'px';
-//                el.style.top = el.offsetTop + $(el).data('vy') + 'px';
-//            }
-//
-//            setInterval(function() {
-//                $('.prop1, .prop2, .prop3, .prop4').each(function(){
-//
-//                    mover(this, $('.limit')[0]);
-//                });
-//            }, 50);
-            
         });
             
 
@@ -589,93 +699,6 @@
         
     });
     
-</script>
-
-<script>
-    
-    $(document).ready(function () {
-        $('.manifesto-toggle').on('click', function(event){
-            event.preventDefault();
-            var manifestoTop = $('.manifesto');
-            var sortmenu = $('.sort-toggle');
-            var listmenu = $('.list-toggle');
-            var scheduleOff = $('.schedule-toggle');
-            var tableOff = $('.table');
-
-            manifestoTop.toggleClass('appear');
-            scheduleOff.toggleClass('disable');
-            sortmenu.toggleClass('disable');
-            listmenu.toggleClass('disable');
-            tableOff.toggleClass('disable');
-
-        });
-        
-        $('.schedule-toggle').on('click', function(event){
-            event.preventDefault();
-            var manifestoOff = $('.manifesto-toggle');
-            var sortmenu = $('.sort-toggle');
-            var listmenu = $('.list-toggle');
-            var scheduleTop = $('.schedule');
-            var tableOff = $('.table');
-
-            scheduleTop.toggleClass('appear');
-            manifestoOff.toggleClass('disable');
-            sortmenu.toggleClass('disable');
-            listmenu.toggleClass('disable');
-            tableOff.toggleClass('disable');
-        });
-        
-        $('.table').on('click', function(event){
-            event.preventDefault();
-            
-        });
-        
-        $('.sort-types').on('click', function(event){
-            event.preventDefault();
-            var manifestoOff = $('.manifesto-toggle');
-            var listmenu = $('.list-toggle');
-            var scheduleOff = $('.schedule-toggle');
-            var tableOff = $('.table');
-
-            scheduleOff.toggleClass('disable');
-            manifestoOff.toggleClass('disable');
-            listmenu.toggleClass('disable');
-            tableOff.toggleClass('disable');
-        });
-        
-        $('.list-toggle, .list-view').on('click', function(event){
-            event.preventDefault();
-            var manifestoOff = $('.manifesto-toggle');
-            var sortmenu = $('.sort-toggle');
-            var scheduleOff = $('.schedule-toggle');
-            var tableOff = $('.table');
-
-            scheduleOff.toggleClass('disable');
-            manifestoOff.toggleClass('disable');
-            sortmenu.toggleClass('disable');
-            tableOff.toggleClass('disable');
-        });
-        
-        $('.sort-toggle').hover(function(){
-            event.preventDefault();
-            var sortmenu = $('.sort-toggle');
-            var sortoptions = $('.sort-types');
-            
-            sortoptions.removeClass('hidden');
-            sortmenu.addClass('hidden'); 
-        });
-        
-        $('.sort-types').on('mouseleave', function(event){
-            event.preventDefault();
-            var sortmenu = $('.sort-toggle');
-            var sortoptions = $('.sort-types');
-            
-            sortoptions.addClass('hidden');
-            sortmenu.removeClass('hidden'); 
-        });
-        
-    });
-      
 </script>  
     
 <script>
