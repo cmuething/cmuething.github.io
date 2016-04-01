@@ -170,28 +170,28 @@ border-spacing: 0;
 .prop2:hover .location, 
 .prop3:hover .location,
 .prop4:hover .location {
-    background-image: url("images/location_prop2.svg");
+    background-image: url("images/location_hover.svg");
 }
 
 .prop1:hover .visual,
 .prop2:hover .visual, 
 .prop3:hover .visual,
 .prop4:hover .visual {
-    background-image: url("images/visual_prop2.svg");
+    background-image: url("images/visual_hover.svg");
 }
 
 .prop1:hover .media,
 .prop2:hover .media,
 .prop3:hover .media, 
 .prop4:hover .media {
-    background-image: url("images/media_prop2.svg");
+    background-image: url("images/media_hover.svg");
 }
 
 .prop1:hover .content,
 .prop2:hover .content, 
 .prop3:hover .content, 
 .prop4:hover .content {
-    background-image: url("images/content_prop2.svg");
+    background-image: url("images/content_hover.svg");
 }
 
 /** End Special hover/color changing of icons **/
@@ -226,7 +226,7 @@ border-spacing: 0;
 
 .sort #prop1 {
     position: absolute;
-    top: 100px;
+    top: 120px;
     left: 100px;
     width: 40%;
     height: 250px;
@@ -235,7 +235,7 @@ border-spacing: 0;
 
 .sort #prop2 {
     position: absolute;
-    top: 100px;
+    top: 120px;
     right: 100px;
     width: 40%;
     height: 250px;
@@ -244,7 +244,7 @@ border-spacing: 0;
 
 .sort #prop3 {
    position: absolute;
-   bottom: 160px;
+   bottom: 120px;
    left: 100px;
    width: 40%;
    height: 250px;
@@ -253,7 +253,7 @@ border-spacing: 0;
 
 .sort #prop4 {
    position: absolute;
-   bottom: 160px;
+   bottom: 120px;
    right: 100px;
    width: 40%;
    height: 250px;
@@ -266,8 +266,8 @@ border-spacing: 0;
 .sort .prop4 {
     position: relative;
     display: inline-block;
-    left: 35px !important;
-    top: 45px !important;
+    left: 0px !important;
+    top: 0px !important;
     transform: scale(.5);
     margin-top: 30px;
     margin-right: 60px;
@@ -276,7 +276,7 @@ border-spacing: 0;
 
 .sort #them1 {
     position: absolute;
-    top: 100px;
+    top: 120px;
     left: 100px;
     width: 40%;
     height: 250px;
@@ -285,7 +285,7 @@ border-spacing: 0;
 
 .sort #them2 {
    position: absolute;
-   top: 100px;
+   top: 120px;
    right: 100px;
    width: 40%;
    height: 250px;
@@ -294,7 +294,7 @@ border-spacing: 0;
 
 .sort #them3 {
    position: absolute;
-   bottom: 160px;
+   bottom: 120px;
    left: 100px;
    width: 40%;
    height: 250px;
@@ -306,8 +306,8 @@ border-spacing: 0;
 .sort .them3 {
     position: relative;
     display: inline-block;
-    left: 35px !important;
-    top: 45px !important;
+    left: 0px !important;
+    top: 0px !important;
     transform: scale(.5);
     margin-top: 30px;
     margin-right: 60px;
@@ -411,7 +411,7 @@ border-spacing: 0;
 }
 
 .list li:hover {
-    cursor: none;
+    cursor: crosshair;
     color: #29c171; 
 }
 
@@ -529,7 +529,7 @@ div p {
     width: 100%;
     height: 100%;
     text-align: center;
-    margin-top: 100px;
+    padding-top: 100px;
     z-index: 9999999;
 }
 
@@ -542,7 +542,7 @@ div p {
     font-size: 40px;
     letter-spacing: 2px;
     font-family: "Ogg";
-    color: white;
+    color: #29c171;
     text-transform: uppercase;
 }
 
@@ -555,7 +555,7 @@ div p {
 }
 
 .versions {
-    color: white;
+    color: #29c171;
     font-size: 2em;
 }
 
@@ -579,7 +579,7 @@ div p {
 }
 
 .versions p {
-    color: white;
+    color: #29c171;
     font-family: "Ogg";
     font-size: 20px;
     line-height: 24px;
@@ -599,7 +599,7 @@ div p {
     width: 100%;
     height: 100%;
     text-align: center;
-    margin-top: 100px;
+    padding-top: 100px;
     z-index: 9999999;
 }
 

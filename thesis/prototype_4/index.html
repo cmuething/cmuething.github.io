@@ -594,6 +594,9 @@
             var magiccube = $('#magic-cube')
             var floaters = $('.dictionary');
             var sortmenu = $('.sort-toggle');
+            var manifestoOff = $('.manifesto-toggle');
+            var scheduleOff = $('.schedule-toggle');
+            var tableOff = $('.table');
             var sortContent = $('.sort');
             var listmenu = $('.list-toggle');
             var spaces = $('.title-right');
@@ -605,6 +608,9 @@
             var cube;
 
             spaces.addClass('cube-page');
+            scheduleOff.addClass('disable');
+            manifestoOff.addClass('disable');
+            tableOff.addClass('disable');
             listmenu.addClass('disable');
             sortmenu.addClass('disable');
             floaters.addClass('hidden');
@@ -711,6 +717,9 @@
             
             sortContent.removeClass('appear');
             spaces.removeClass('cube-page');
+            scheduleOff.removeClass('disable');
+            manifestoOff.removeClass('disable');
+            tableOff.removeClass('disable');
             listmenu.removeClass('disable');
             sortmenu.removeClass('disable');
             floaters.removeClass('hidden');
