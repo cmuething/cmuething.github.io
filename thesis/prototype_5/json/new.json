@@ -1,0 +1,731 @@
+{
+    "everything": [
+        {
+            "icons": [
+                {
+                    "content": "content.svg",
+                    "hover": [
+                        {
+                        "prop1": "content_prop1.svg",
+                        "prop2": "content_prop2.svg",
+                        "prop3": "content_prop3.svg",
+                        "prop4": "content_prop4.svg"
+                        }
+                    ]
+                },
+                {
+                    "location": "location.svg",
+                    "hover": [
+                        {
+                        "prop1": "location_prop1.svg",
+                        "prop2": "location_prop2.svg",
+                        "prop3": "location_prop3.svg",
+                        "prop4": "location_prop4.svg"
+                        }
+                    ]
+                },
+                {
+                    "media": "media.svg",
+                    "hover": [
+                        {
+                        "prop1": "media_prop1.svg",
+                        "prop2": "media_prop2.svg",
+                        "prop3": "media_prop3.svg",
+                        "prop4": "media_prop4.svg"
+                        }
+                    ]
+                },
+                {
+                    "visual": "visual.svg",
+                    "hover": [
+                        {
+                        "prop1": "visual_prop1.svg",
+                        "prop2": "visual_prop2.svg",
+                        "prop3": "visual_prop3.svg",
+                        "prop4": "visual_prop4.svg"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "floaters": {
+                "cube001": {
+                    "id": "cube001",
+                    "title": "Plaster 001",
+                    "theme": "Form",
+                    "property": "",
+                    "prop": "prop1",
+                    "mat": "mat1",
+                    "vx": "1",
+                    "vy": "-1",
+                    "url": "/plaster001",
+                    "entry": [
+                        {
+                           "title": "Plaster 001",
+                            "type": "material",
+                            "face": "/plaster001/_1.png"
+                        },
+                        {
+                            "title": "Location 003",
+                            "icon": "location",
+                            "face": "/plaster001/_2.png"
+                        },
+                        {
+                            "title": "Location 002",
+                            "icon": "location",
+                            "face": "/plaster001/_3.png"
+                        },
+                        {
+                            "title": "Content 024",
+                            "icon": "content",
+                            "face": "/plaster001/_4.png"
+                        },
+                        {
+                            "title": "Media 014",
+                            "icon": "media",
+                            "face": "/plaster001/_5.png"
+                        },
+                        {
+                            "title": "Location 013",
+                            "icon": "location",
+                            "face": "/plaster001/_6.png"
+                        }
+                    ]
+                },
+                "cube002": {
+                    "id": "cube002",
+                    "title": "Plaster 002",
+                    "theme": "Form",
+                    "property": "",
+                    "prop": "prop1",
+                    "mat": "mat2",
+                    "vx": "1",
+                    "vy": "1",
+                    "url": "/plaster002",
+                    "entry": [
+                        {
+                            "title": "Visual 001",
+                            "icon": "visual"
+                        },
+                        {
+                            "title": "Media 005",
+                            "icon": "media"
+                        },
+                        {
+                            "title": "Location 006",
+                            "icon": "location"
+                        },
+                        {
+                            "title": "Location 005",
+                            "icon": "location"
+                        },
+                        {
+                            "title": "Media 013",
+                            "icon": "media"
+                        }
+                    ]
+                },
+                "cube003": {
+                    "id": "cube003",
+                    "title": "Plaster 003",
+                    "theme": "Form",
+                    "property": "",
+                    "prop": "prop1",
+                    "mat": "mat3",
+                    "vx": "-1",
+                    "vy": "1",
+                    "url": "/plaster003",
+                    "entry": [
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "media"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "visual"
+                        },
+                        {
+                            "icon": "location"
+                        }
+                    ]
+                },
+                "cube004": {
+                    "id": "cube004",
+                    "title": "Plaster 004",
+                    "theme": "Form",
+                    "property": "",
+                    "prop": "prop1",
+                    "mat": "mat4",
+                    "vx": "1",
+                    "vy": "-1",
+                    "url": "/plaster004",
+                    "entry": [
+                        {
+                            "icon": "visual"
+                        },
+                        {
+                            "icon": "location"
+                        },
+                        {
+                            "icon": "location"
+                        },
+                        {
+                            "icon": "location"
+                        },
+                        {
+                            "icon": "visual"
+                        }
+                    ]
+                },
+                "cube005": {
+                    "id": "cube005",
+                    "title": "Concrete 001",
+                    "theme": "Form",
+                    "property": "",
+                    "prop": "prop1",
+                    "mat": "mat5",
+                    "vx": "1",
+                    "vy": "1",
+                    "url": "/concrete001",
+                    "entry": [
+                        {
+                            "icon": "media"
+                        },
+                        {
+                            "icon": "visual"
+                        },
+                        {
+                            "icon": "visual"
+                        },
+                        {
+                            "icon": "location"
+                        },
+                        {
+                            "icon": "content"
+                        }
+                    ]
+                },
+                "cube006": {
+                    "id": "cube006",
+                    "title": "Fiberglass Resin 001",
+                    "theme": "Form",
+                    "property": "",
+                    "prop": "prop2",
+                    "mat": "mat6",
+                    "vx": "-1",
+                    "vy": "1",
+                    "url": "/fiberglassresin001",
+                    "entry": [
+                        {
+                            "icon": "media"
+                        },
+                        {
+                            "icon": "media"
+                        },
+                        {
+                            "icon": "location"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "location"
+                        }
+                    ]
+                },
+                "cube007": {
+                    "id": "cube007",
+                    "title": "Concrete 002",
+                    "theme": "Form",
+                    "property": "",
+                    "prop": "prop2",
+                    "mat": "mat7",
+                    "vx": "1",
+                    "vy": "-1",
+                    "url": "/concrete002",
+                    "entry": [
+                        {
+                            "icon": "location"
+                        },
+                        {
+                            "icon": "visual"
+                        },
+                        {
+                            "icon": "visual"
+                        },
+                        {
+                            "icon": "visual"
+                        },
+                        {
+                            "icon": "visual"
+                        }
+                    ]
+                },
+                "cube008": {
+                    "id": "cube008",
+                    "title": "Hydrocal 001",
+                    "theme": "Form",
+                    "property": "",
+                    "prop": "prop2",
+                    "mat": "mat8",
+                    "vx": "1",
+                    "vy": "1",
+                    "url": "/hydrocal001",
+                    "entry": [
+                        {
+                            "icon": "visual"
+                        },
+                        {
+                            "icon": "visual"
+                        },
+                        {
+                            "icon": "location"
+                        },
+                        {
+                            "icon": ""
+                        },
+                        {
+                            "icon": ""
+                        }
+                    ]
+                },
+                "cube009": {
+                    "id": "cube009",
+                    "title": "Hydro Stone 001",
+                    "theme": "Participation / Functionality",
+                    "property": "",
+                    "prop": "prop2",
+                    "mat": "mat9",
+                    "vx": "-1",
+                    "vy": "1",
+                    "url": "/hydrostone001",
+                    "entry": [
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "media"
+                        },
+                        {
+                            "icon": "visual"
+                        },
+                        {
+                            "icon": "content"
+                        }
+                    ]
+                },
+                "cube010": {
+                    "id": "cube010",
+                    "title": "Drystone 001",
+                    "theme": "Participation / Functionality",
+                    "property": "",
+                    "prop": "prop2",
+                    "mat": "mat10",
+                    "vx": "1",
+                    "vy": "-1",
+                    "url": "/drystone001",
+                    "entry": [
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "media"
+                        },
+                        {
+                            "icon": "media"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "content"
+                        }
+                    ]
+                },
+                "cube011": {
+                    "id": "cube011",
+                    "title": "Feather Lite 001",
+                    "theme": "Participation / Functionality",
+                    "property": "",
+                    "prop": "prop3",
+                    "mat": "mat11",
+                    "vx": "1",
+                    "vy": "1",
+                    "url": "/featherlite001",
+                    "entry": [
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "media"
+                        }
+                    ]
+                },
+                "cube012": {
+                    "id": "cube012",
+                    "title": "New Material 001",
+                    "theme": "Participation / Functionality",
+                    "property": "",
+                    "prop": "prop3",
+                    "mat": "mat12",
+                    "vx": "-1",
+                    "vy": "1",
+                    "url": "/newmaterial001",
+                    "entry": [
+                        {
+                            "icon": "visual"
+                        },
+                        {
+                            "icon": "visual"
+                        },
+                        {
+                            "icon": "media"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "content"
+                        }
+                    ]
+                },
+                "cube013": {
+                    "id": "cube013",
+                    "title": "New Material 002",
+                    "theme": "Participation / Functionality",
+                    "property": "",
+                    "prop": "prop3",
+                    "mat": "mat13",
+                    "vx": "1",
+                    "vy": "-1",
+                    "url": "/newmaterial002",
+                    "entry": [
+                        {
+                            "icon": "media"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "media"
+                        },
+                        {
+                            "icon": "content"
+                        }
+                    ]
+                },
+                "cube014": {
+                    "id": "cube014",
+                    "title": "New Material 003",
+                    "theme": "Participation / Functionality",
+                    "property": "",
+                    "prop": "prop3",
+                    "mat": "mat14",
+                    "vx": "1",
+                    "vy": "1",
+                    "url": "/newmaterial003",
+                    "entry": [
+                        {
+                            "icon": "media"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "content"
+                        }
+                    ]
+                },
+                "cube015": {
+                    "id": "cube015",
+                    "title": "New Material 004",
+                    "theme": "Participation / Functionality",
+                    "property": "",
+                    "prop": "prop3",
+                    "mat": "mat15",
+                    "vx": "-1",
+                    "vy": "1",
+                    "url": "/newmaterial004",
+                    "entry": [
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "visual"
+                        },
+                        {
+                            "icon": "visual"
+                        },
+                        {
+                            "icon": "media"
+                        },
+                        {
+                            "icon": ""
+                        }
+                    ]
+                },
+                "cube016": {
+                    "id": "cube016",
+                    "title": "New Material 005",
+                    "theme": "Perception / Altered View",
+                    "property": "",
+                    "prop": "prop4",
+                    "mat": "mat16",
+                    "vx": "1",
+                    "vy": "-1",
+                    "url": "/newmaterial005",
+                    "entry": [
+                        {
+                            "icon": "media"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "content"
+                        }
+                    ]
+                },
+                "cube017": {
+                    "id": "cube017",
+                    "title": "New Material 006",
+                    "theme": "Perception / Altered View",
+                    "property": "",
+                    "prop": "prop4",
+                    "mat": "mat17",
+                    "vx": "1",
+                    "vy": "1",
+                    "url": "/newmaterial008",
+                    "entry": [
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "media"
+                        },
+                        {
+                            "icon": "media"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "media"
+                        }
+                    ]
+                },
+                "cube018": {
+                    "id": "cube018",
+                    "title": "New Material 007",
+                    "theme": "Perception / Altered View",
+                    "property": "",
+                    "prop": "prop4",
+                    "mat": "mat18",
+                    "vx": "-1",
+                    "vy": "1",
+                    "url": "/newmaterial007",
+                    "entry": [
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "media"
+                        }
+                    ]
+                },
+                "cube019": {
+                    "id": "cube019",
+                    "title": "New Material 008",
+                    "theme": "Perception / Altered View",
+                    "property": "",
+                    "prop": "prop4",
+                    "mat": "mat19",
+                    "vx": "1",
+                    "vy": "-1",
+                    "url": "/newmaterial008",
+                    "entry": [
+                        {
+                            "icon": "media"
+                        },
+                        {
+                            "icon": "media"
+                        },
+                        {
+                            "icon": "media"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "content"
+                        }
+                    ]
+                },
+                "cube020": {
+                    "id": "cube020",
+                    "title": "New Material 009",
+                    "theme": "Perception / Altered View",
+                    "property": "",
+                    "prop": "prop4",
+                    "mat": "mat20",
+                    "vx": "1",
+                    "vy": "1",
+                    "url": "/newmaterial009",
+                    "entry": [
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "media"
+                        },
+                        {
+                            "icon": "content"
+                        }
+                    ]
+                },
+                "cube021": {
+                    "id": "cube021",
+                    "title": "New Material 010",
+                    "theme": "Perception / Altered View",
+                    "property": "",
+                    "prop": "prop4",
+                    "mat": "mat21",
+                    "vx": "-1",
+                    "vy": "1",
+                    "url": "/newmaterial010",
+                    "entry": [
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": "content"
+                        },
+                        {
+                            "icon": ""
+                        },
+                        {
+                            "icon": ""
+                        },
+                        {
+                            "icon": ""
+                        }
+                    ]
+                }
+            }
+            
+        },
+        {
+            "manifesto": [
+                {
+                    "title": "Manifesto",
+                    "number": "006",
+                    "text": "Public space is by nature a participatory and collaborative experience. People come to connect with people and by using the space, it is made all the better. At this time, however, with the proliferation of VR environments and Google Street View, spatial understanding is rarely comprised of the pure first person experience of a space. Tools for the design of public spaces have traditionally been high-level, viewing an urban space from William H. Whyte’s perspective — known for his birds-eye analytical footage of urban public spaces in the film The Social Life of Small Urban Spaces — and making decisions accordingly. Now that our understanding of space is changing, why hasn’t the design system / process changed too? Olafur Eliasson says that “[If] I have a sense of the space, if I feel that the space is tangible, if I feel there is time…I also feel that I can change the space.” By incorporating various design tools that play between the worlds of user input, designer control, and automation, I hope to present a system that is more in tune with how we experience public space. Allowing crucial entry points into a spaces design by way of the environmental conditions, materials, form, etc. will only assist in making these future spaces more participatory / collaborative / flexible." 
+                },
+                {
+                    "title": "Manifesto",
+                    "number": "005",
+                    "text": "Public space is by nature a participatory and collaborative event. People come to experience people and by inputing activity, the space is made better. But at this time, with the proliferation of VR environments and Google Street View, spatial experience rarely occurs unencumbered by other experiences of that space. Tools for the design of these public spaces have traditionally been high-level, viewing an urban space from William H. Whyte’s perspective and making decisions accordingly. Now that spatial experience has changed, why haven’t the tools changed too? Olafur Eliasson says that “[If] I have a sense of the space, if I feel that the space is tangible, if I feel there is time…I also feel that I can change the space.” By presenting both physical and digital design tools and playing between the worlds of user input, designer control, and automation, I hope to present a process that is in tune with how we experience *public* space. As a result of this process, the public *future* space may exist as more viable and collaborative." 
+                },
+                {
+                    "title": "Manifesto",
+                    "number": "004",
+                    "text": "With the ever increasing fidelity of architectural renderings and VR environments, I am interested in how this pre-physical vision of a space can help generate the form of future spaces, specifically public space. Public space by nature must be a collective venture featuring both flexibility—in order to foster multi-use—and rigidity—to maintain its status as a public space. Olafur Eliasson said “[If] I have a sense of the space, if I feel that the space is tangible, if I feel there is time…I also feel that I can change the space.” Through the use of a number of physical and digital tools, I hope to generate the forms, layout, and signage of a physical public space that is inherently tied to this collaborative process. Along the way, this site will live as the documentation." 
+                },
+                {
+                    "title": "Manifesto",
+                    "number": "003",
+                    "text": "With the ever increasing fidelity of architectural renderings and VR environments, I am interested in how this initial vision can generate the form of future spaces, specifically public space. Public space by nature must be a collective venture featuring both flexibility—in order to foster multi-use—and rigidity—to maintain its status as a public space. Olafur Eliasson said “[If] I have a sense of the space, if I feel that the space is tangible, if I feel there is time…I also feel that I can change the space.” Through the use of a web environment and an VR “game”, I hope to generate the forms, layout, and signage of a physical public space that is inherently tied to this collaborative and ocularcentric process." 
+                },
+                {
+                    "title": "Manifesto",
+                    "number": "002",
+                    "text": "Public space has, from the beginning, existed in the liminal space between architecture and planning. Even in the academic worlds of William Whyte and his contemporary Jan Gehl, I think this description holds true. However, looking at public space in a more digestible, less lofty—and definitely less agreeable for the aforementioned academics—way: it exists as a purely human aspect of the city with largely inhumane origins. To explain, I think there are inherent properties of public space that make it fertile ground for user input, but the tools that have become common in both the architectural and planning practices, namely hi-resolution renderings, have stripped the capability for users to input in a free, more human way. This is a design problem, a problem of user input that, to my knowledge, has yet to be solved. The tools that exist today are powerful, but often misguided and over-complicated. For something as basically interactive as public space, it is imperative that the use of these tools is extremely considered. A failure to do so could rip the simple and utterly human joys from public space.<br>The tool of rendering is a powerful one; one that has changed the built environment and the look of architect’s and planner’s portfolios drastically. But even though rendering provides the unarguably valuable service of client buy-in for the two professions, it is an example of a much more pressing and glaring issue in today’s tech landscape. The proliferation of things like Google Maps Street View (the web and virtual reality versions) give us an initial vision of a space, beginning our experience of the space before we have stepped foot in it. This description lines up almost exactly with that of architectural renderings, so the leap is not all too grand.<br>Our ocularcentric society, as discussed by Juhani Pallasmaa in The Eyes of the Skin: Architecture and the Senses, results in “an imbalance in our sensory system”. He goes on to argue that vision must exist not just as a physical act of the eyes—and brain—but as a whole body experience. “’The fundamental event of the modern age is the conquest of the world as a picture,’ writes [Martin] Heidegger. [His] speculation has certainly materialized in our age of the fabricated, mass-produced and manipulated image.” So if our tendency towards ocularcentrism has led to the development of society based on and informed by information perceived by the eyes, it is imperative that “the narcissistic and nihilistic eye”—as Pallasmaa describes it—is avoided. More than a call for architects to change their ways, this made me think of the tools and gadgets that exist today, largely focused on enhanced or altered vision. How could these tools be used to reroute the design process for public space in order to alter its final form? Further more, can the integration of those tools into a new paradigm for the design of public space bring—or return?—a sense of empathy? As Olafur Eliasson said, “So if I have a sense of the space, if I feel that the space is tangible, if I feel there is time, if there is a dimension I could call time, I also feel that I can change the space. And suddenly it makes a difference in terms of making space accessible. One could say this is about community, collectivity. It’s about being together.”<br>Beginning with a bare, unaltered and uninhabited space, it is important to take note of what already exists. From a planning perspective, you have a contour of the space. From that contour, you can figure out the area. You also have the GPS location and address of the space. After these high level aspects are noted, what remains is data about the environment itself. What is the flora and fauna like? What is the temperature, humidity, and amount of rainfall, wind and light? When we look at a space on Street View, these aspects are not retained. We are given a snap shot of a space on a particular day, from a particular angle—whatever is most convenient for the Google car driving by—and with a particular motive. Furthermore, with the globalization of trading, the materials being used in any given space aren’t necessarily sourced from a local market, nor did a local architect or planner necessarily design the space. This is a roundabout way of saying that there is a definite disconnect between a viewer and a space when viewed on Street View or in any screen based rendering. But, something that the web and virtual reality platforms like Google Cardboard do very well is proliferate information and experiences to a massive audience. Before the benefits of these platforms can be utilized in the design of public space, a more integrated form must be established to represent the space in a screen-based context.<br>If a system for the design of materials and forms used to construct a space is established before the initial vision and that system is communicated to the viewer, then a physical space is brought to the surface; a physical space where environmental phenomena and the passage of time occur. Working with a select number of the elements that a space brings to the table before people use it, I developed a system in an attempt to create the foundation for a more fruitful design process down the line. Using the 3d modeling program Rhino as the output, I used a plugin called Grasshopper that allows you to write a node-based program that will affect forms in Rhino. A plugin for Grasshopper was recently developed called Firefly that connects the 3d modeling world with the world of Arduino, a small microprocessor with its own programming language. All of these tools working in tandem enabled me to use temperature, wind speed, and light sensors to generate the form of a modular building unit, site specific to wherever I am collecting data.1 The Jan Gehl’s of the world might say that this process disregards the humanity of public space and the history of planned spaces that began in the Renaissance. But on a core level, I, the designer, am actually working with the real stuff of the space, the stuff that Gehl might regard as limitations. I, or whoever is using this collection of sensors, am also required to be in the space, experiencing those environmental phenomena first hand. Ideally a larger time frame would be targeted to better inform that end modular building unit, but for the prototype’s sake, an initial 30- minute intake of data was used. And though my apparent dismissal of Gehl seems rash, it is out of his global view of these problems—urban space, public space, cities for people—that my urge to reimagine the design process was born.<br>The scope of the larger project, the design of a system for user input into public space, is multilayered; incorporating a web build environment, a virtual reality experience, as well as the final fabricated public space. The modular building unit will be the only component of the web build environment. Within the site, users will be prompted to create forms that they might find in a public space. Pulled from the academic conversation around public space as well as my own observations, the user will be presented with a question like: “What does a table look like?” Whatever is created here will then populate the virtual reality where users will be prompted to do an action that might be common to a public space like: “read a book”. Wherever that user chooses to ‘pin’ that action will then inform how the final fabricated space is configured. Though built from modules, the space is not meant to be physically moveable by the public. As it stands, there are a lot of steps to the process and user participation is crucial. That is where I see the benefit of my study as a graphic designer coming into play. Building those interfaces for user input and finding a clear and concise way to convey the idea and information will inevitably lead to better, more informed space. Being knowledgeable of the tradition, dating back to the Renaissance, as Gehl discusses in Life between buildings, will only help in solving the design problems for this project." 
+                },
+                {
+                    "title": "Manifesto",
+                    "number": "001",
+                    "text": "The spaces that make up our world are increasingly experienced through 3d renderings and applications such as Google Maps. Furthermore, the architects and designers creating the structures that may be built in the future utilize 3d software to provide a view of how their proposed space would exist once constructed. In this suspension of reality, the inputted visitors act in a limited spectrum of human behavior, usually standing or sitting; this is understandable. The human figure is usually introduced not in an effort to call attention to how someone might interact with the space, but rather to show scale. And thus, in some instances, the scale becomes one of the dominating factors of the scene, regardless of where and what the figures might be doing.<br>The rendered space is presented in portfolios and spread through the press, heightening the mysticism around structures-to-be. When and if a project is realized, it has become removed from whatever research or consideration was given originally to the intended audience of the final product. The way a human interacts with the resulting physical space is tainted by the separation which was cultivated by the rendered space. Though it may seem like this calls for a revision in the way a space is presented in scale models or 3d renderings, I lack the technical expertise to pass such a judgment. There does not seem to be a limit to the success of a 3d rendering in capturing photographic reality. However, I do believe that embedded in the patterns with which we interact and exist in a particular space lie an expression of base human connectivity to that space. The artist and designer Olafur Elaisson said “[If] I have a sense of the space, if I feel that the space is tangible, if I feel there is time, if there is a dimension I could call time, I also feel that I can change the space.” In short, this feeling of connectivity or lack there of affects the way we access a space, the way we fill a space, and the way we change a space. Its presence denotes a space that has been built with consideration for the flexibility required by any population and structure in order to balance the relationship between the two parties.<br>The architects Aldo Rossi, Peter Eisenmann, and Rem Koolhaas consider this relationship and make structures that encapsulate an evolutionary trajectory akin to that of mankind. In Koolhaas’s book Delirious New York, a view of the skyscraper is presented that captures not only change as a result of human interaction, but change overarching the canon of modern architecture. There is an aspect of Koolhaas’s buildings that suggests refinement to a point where the resulting structure is an exact balance between the architects hand and openness to be filled by the intended audience. Similarly, Rossi and Eisenmann have both produced structures over their careers that frame this architectural practice/mindset. Rossi was interested in the origins of architecture and explored them through the use of static forms. He created forms wrought with personal meaning but still rooted in the history of architectural construction. Nearly converse to the way in which Rossi connected his forms to personal experience, Eisenmann presents a view from the other end of the spectrum. Eisenmann’s structures were objects first, existing in tension with the inevitable function for which it was built. These architects frame the gamut of approaches to the design of spaces that reflect human connectivity.<br>Prior to any human entering the space, it exists, oftentimes with intense realism, in a rendered world. This moment of digital physicality is crucial and I think holds a unique opportunity for us to learn about its future. Different than entering a space physically, this experience with a rendered structure provides an interesting middle ground. The elements of the structure in this dimension are inherently flexible. Also, the nature of the interaction with such software allows for uninhibited angles and perspectives.<br>The way we talk about any space, physical or rendered, reveals a key aspect of our underlying feelings of connectivity and accessibility of that space. The immediacy of spoken word, avoiding the barriers of available vocabulary and spelling presents a more direct access to those subconscious feelings."
+                }
+            ]
+        },
+        {
+            "space": "material1",
+            "url": "/plaster001/",
+            "property": "surface",
+            "theme": "form",
+            "cube": [
+                {
+                "title": "Location 003",
+                "face1": "_1.png"
+                },
+                {
+                "title": "Location 002",
+                "face2": "_2.png"
+                },
+                {
+                "title": "Content 024",
+                "face3": "_3.png"
+                },
+                {
+                "title": "Media 014",
+                "face4": "_4.png"
+                },
+                {
+                "title": "Plaster 001",
+                "face5": "_1.png"
+                },
+                {
+                "title": "Location 013",
+                "face6": "_5.png"
+                }
+            ]
+        }
+    ]
+}
