@@ -39,31 +39,57 @@
         
     <div class="sort">
         <div id="properties">
-            <div id="prop1">
+            <div id="prop1" class="properties">
                 <h1>JOINING</h1>
             </div>
-            <div id="prop2">
+            <div id="prop2" class="properties">
                 <h1>SURFACE</h1>
             </div>
-            <div id="prop3">
+            <div id="prop3" class="properties">
                 <h1>WEATHER-RESISTANT</h1>
             </div>
-            <div id="prop4">
+            <div id="prop4" class="properties">
                 <h1>WEIGHT/DENSITY</h1>
             </div>
         </div>
         <div id="themes">
-            <div id="them1">
+            <div id="them1" class="themes">
                 <h1>FORM</h1>
             </div>
-            <div id="them2">
+            <div id="them2" class="themes">
                 <h1>PARTICIPATION</h1>
             </div>
-            <div id="them3">
+            <div id="them3" class="themes">
                 <h1>PERCEPTION</h1>
             </div>
         </div>
     </div>
+        
+        <div class="list-view">
+            <div class="list">
+            <script id="list" type="text/x-mustache-template">
+                {{#everything}}
+                    {{#floaters}}
+                        <div class="allcontent">
+                            <div class="icon">
+                                <h1>{{theme}}</h1>
+                                <h1>{{property}}</h1>
+                                <div id="{{mat}}"></div>
+                            </div>
+                            <ul>
+                                {{#entry}}
+                                <li>
+                                    {{title}}
+                                    <img src="images{{face}}">
+                                </li>
+                                {{/entry}}
+                            </ul>
+                        </div>
+                    {{/floaters}}
+                {{/everything}}
+            </script>
+            </div>
+        </div>
         
     </div>
 
@@ -106,32 +132,6 @@
         </ul>
     </div>
     
-    <div class="list-view">
-        <div class="list">
-        <script id="list" type="text/x-mustache-template">
-            {{#everything}}
-                {{#floaters}}
-                    <div class="allcontent">
-                        <div class="icon">
-                            <h1>{{theme}}</h1>
-                            <h1>{{property}}</h1>
-                            <div id="{{mat}}"></div>
-                        </div>
-                        <ul>
-                            {{#entry}}
-                            <li>
-                                {{title}}
-                                <img src="images{{face}}">
-                            </li>
-                            {{/entry}}
-                        </ul>
-                    </div>
-                {{/floaters}}
-            {{/everything}}
-        </script>
-        </div>
-    </div>
-    
     <div id="bottom">
         <div class="manifesto-toggle">
             <p>Manifesto</p>
@@ -158,7 +158,7 @@
     </div>
     
     <div id="magic-cube" class="hidden"></div>
-    <div id="deleteItAll" class="hidden">X</div>
+    <div id="deleteItAll" class="hidden"><img src="cursor_white.cur"></div>
         
 </div>
         
@@ -187,7 +187,7 @@
             tableOff.addClass('disable');
             
             $('.manifesto').on('click', function(event){
-                
+                                
                 manifestoTop.removeClass('appear')
                 scheduleOff.removeClass('disable');
                 sortmenu.removeClass('disable');
@@ -213,6 +213,10 @@
             tableOff.addClass('disable');
             
             $('.schedule').on('click', function(event){
+                
+//                if( $('#themes').hasClass("appear")){
+//                $('#themes').removeClass("appear");
+//                }   
                 
                 scheduleTop.removeClass('appear')
                 manifestoOff.removeClass('disable');
@@ -281,9 +285,30 @@
         
         $('.sort-types').on('click', function(event){
             event.preventDefault();
+            var manifestoOff = $('.manifesto-toggle');
+            var scheduleOff = $('.schedule-toggle');
+            var tableOff = $('.table');
             var listmenu = $('.list-toggle');
+            var spaces = $('.title-right');
+            var emptyListView = $('#deleteItAll');
 
-            listmenu.toggleClass('disable');
+            listmenu.addClass('disable');
+            scheduleOff.addClass('disable');
+            manifestoOff.addClass('disable');
+            tableOff.addClass('disable');
+            spaces.addClass('cube-page');
+            emptyListView.removeClass('hidden');
+            
+            $('#deleteItAll').on('click', function(event){
+                
+                listmenu.removeClass('disable');
+                scheduleOff.removeClass('disable');
+                manifestoOff.removeClass('disable');
+                tableOff.removeClass('disable');
+                spaces.removeClass('cube-page');
+                emptyListView.addClass('hidden');
+            });    
+            
         });
         
     });
@@ -318,28 +343,35 @@
     
         $('.prop-toggle').on('click', function (){
             
-            var sortView = $('.sort');
+            var sortView = $('#properties');
             var sortTitle = $('.sort-toggle p')
             
-            sortView.toggleClass("appear");
+            sortView.addClass("appear");
                                                 
-            if( $('.prop1').parent().attr("class") == "limit"){
+            if( $('.prop1').parent().attr("class") == "limit" || $('.prop1').parent().attr("class") == "themes"){
                 $('.prop1').appendTo('.sort #prop1'); 
             }
             
-            if( $('.prop2').parent().attr("class") == "limit"){
+            if( $('.prop2').parent().attr("class") == "limit" || $('.prop2').parent().attr("class") == "themes"){
                 $('.prop2').appendTo('.sort #prop2'); 
             }
             
-            if( $('.prop3').parent().attr("class") == "limit"){
+            if( $('.prop3').parent().attr("class") == "limit" || $('.prop3').parent().attr("class") == "themes"){
                 $('.prop3').appendTo('.sort #prop3'); 
             }
             
-            if( $('.prop4').parent().attr("class") == "limit"){
+            if( $('.prop4').parent().attr("class") == "limit" || $('.prop4').parent().attr("class") == "themes"){
                 $('.prop4').appendTo('.sort #prop4'); 
             }
             
-            else{
+            if( $('#themes').hasClass("appear")){
+                $('#themes').removeClass("appear");
+            }
+            
+            $('#deleteItAll').on('click', function(event){
+                
+                sortView.removeClass("appear");
+                
                 $('.prop1, .prop2, .prop3, .prop4').appendTo(".limit")
                 
                 $('.prop1, .prop2, .prop3, .prop4').each(function(i){
@@ -354,29 +386,36 @@
                     $(this).css('top', t);
                     $(this).css('left', l);
                 });
-            }
+            });
         });
         
         $('.theme-toggle').on('click', function (){
             
-            var sortView = $('.sort');
+            var sortView = $('#themes');
             var sortTitle = $('.sort-toggle p')
             
-            sortView.toggleClass("appear");
+            sortView.addClass("appear");
                                                 
-            if( $('.them1').parent().attr("class") == "limit"){
+            if( $('.them1').parent().attr("class") == "limit" || $('.them1').parent().attr("class") == "properties"){
                 $('.them1').appendTo('.sort #them1'); 
             }
             
-            if( $('.them2').parent().attr("class") == "limit"){
+            if( $('.them2').parent().attr("class") == "limit" || $('.them2').parent().attr("class") == "properties"){
                 $('.them2').appendTo('.sort #them2'); 
             }
             
-            if( $('.them3').parent().attr("class") == "limit"){
+            if( $('.them3').parent().attr("class") == "limit" || $('.them3').parent().attr("class") == "properties"){
                 $('.them3').appendTo('.sort #them3'); 
             }
             
-            else{
+            if( $('#properties').hasClass("appear")){
+                $('#properties').removeClass("appear");
+            }
+            
+            $('#deleteItAll').on('click', function(event){
+                
+                sortView.removeClass("appear");
+                
                 $('.them1, .them2, .them3').appendTo(".limit")
                 
                 $('.them1, .them2, .them3').each(function(i){
@@ -391,7 +430,7 @@
                     $(this).css('top', t);
                     $(this).css('left', l);
                 });
-            }
+            });
         });
         
         $('.list-toggle').on('click', function (){

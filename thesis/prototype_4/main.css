@@ -210,8 +210,12 @@ border-spacing: 0;
     color: black;
 }
 
-.sort {
-    display: none;
+.sort #properties {
+    display: none;  
+}
+
+.sort #themes {
+    display: none;  
 }
 
 .sort h1 {
@@ -529,6 +533,10 @@ div p {
     z-index: 9999999;
 }
 
+.schedule:hover {
+    cursor: url('cursor_white.cur'), auto;
+}
+
 .schedule li {
     margin-bottom: 20px;
     font-size: 40px;
@@ -593,6 +601,10 @@ div p {
     text-align: center;
     margin-top: 100px;
     z-index: 9999999;
+}
+
+.manifesto:hover {
+    cursor: url('cursor_white.cur'), auto;
 }
 
 .material {
