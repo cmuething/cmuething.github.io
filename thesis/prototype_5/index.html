@@ -37,19 +37,42 @@
         </script>
     </div>
         
+    <div class="table-photos">
+        <ul>        
+            <li><img src="images/table/photo_1.JPG"</li>
+            <li><img src="images/table/photo_2.JPG"</li>
+            <li><img src="images/table/photo_3.JPG"</li>
+            <li><img src="images/table/photo_4.JPG"</li>
+            <li><img src="images/table/photo_5.JPG"</li>
+            <li><img src="images/table/photo_6.JPG"</li>
+            <li><img src="images/table/photo_7.JPG"</li>
+            <li><img src="images/table/photo_8.JPG"</li>
+            <li><img src="images/table/photo_9.JPG"</li>
+            <li><img src="images/table/photo_10.JPG"</li>
+            <li><img src="images/table/photo_11.JPG"</li>
+            <li><img src="images/table/photo_12.JPG"</li>
+            <li><img src="images/table/photo_13.JPG"</li>
+            <li><img src="images/table/photo_14.JPG"</li>
+            <li><img src="images/table/photo_15.JPG"</li>
+            <li><img src="images/table/photo_16.JPG"</li>
+            <li><img src="images/table/photo_17.JPG"</li>
+            <li><img src="images/table/photo_18.JPG"</li>
+        </ul>
+    </div>
+        
     <div class="sort">
         <div id="properties">
             <div id="prop1" class="properties">
-                <h1>JOINING</h1>
+                <h1>GYPSUM</h1>
             </div>
             <div id="prop2" class="properties">
-                <h1>SURFACE</h1>
+                <h1>CONCRETE</h1>
             </div>
             <div id="prop3" class="properties">
-                <h1>WEATHER-RESISTANT</h1>
+                <h1>RESIN</h1>
             </div>
             <div id="prop4" class="properties">
-                <h1>WEIGHT/DENSITY</h1>
+                <h1>OTHER</h1>
             </div>
         </div>
         <div id="themes">
@@ -179,20 +202,25 @@
             var listmenu = $('.list-toggle');
             var scheduleOff = $('.schedule-toggle');
             var tableOff = $('.table');
+            var icons = $('.limit');
 
             manifestoTop.addClass('appear');
             scheduleOff.addClass('disable');
             sortmenu.addClass('disable');
             listmenu.addClass('disable');
             tableOff.addClass('disable');
+            icons.addClass('invisible');
             
             $('.manifesto').on('click', function(event){
                                 
+                $(".manifesto").scrollTop( 0 );
+                
                 manifestoTop.removeClass('appear')
                 scheduleOff.removeClass('disable');
                 sortmenu.removeClass('disable');
                 listmenu.removeClass('disable');
                 tableOff.removeClass('disable');
+                icons.removeClass('invisible');
         
             })
 
@@ -205,32 +233,57 @@
             var listmenu = $('.list-toggle');
             var scheduleTop = $('.schedule');
             var tableOff = $('.table');
+            var icons = $('.limit');
 
             scheduleTop.addClass('appear');
             manifestoOff.addClass('disable');
             sortmenu.addClass('disable');
             listmenu.addClass('disable');
             tableOff.addClass('disable');
+            icons.addClass('invisible');
             
-            $('.schedule').on('click', function(event){
+            $('.schedule').on('click', function(event){ 
                 
-//                if( $('#themes').hasClass("appear")){
-//                $('#themes').removeClass("appear");
-//                }   
+                $(".schedule").scrollTop( 0 );
                 
                 scheduleTop.removeClass('appear')
                 manifestoOff.removeClass('disable');
                 sortmenu.removeClass('disable');
                 listmenu.removeClass('disable');
                 tableOff.removeClass('disable');
-        
+                icons.removeClass('invisible');
             });
             
         });
         
         $('.table').on('click', function(event){
             event.preventDefault();
+            var manifestoOff = $('.manifesto-toggle');
+            var sortmenu = $('.sort-toggle');
+            var listmenu = $('.list-toggle');
+            var scheduleOff = $('.schedule-toggle');
+            var tableTop = $('.table-photos');
+            var icons = $('.limit');
+
+            tableTop.addClass('appear');
+            scheduleOff.addClass('disable');
+            manifestoOff.addClass('disable');
+            sortmenu.addClass('disable');
+            listmenu.addClass('disable');
+            icons.addClass('invisible');
             
+            $('.table-photos').on('click', function(event){ 
+                
+                $(".table-photos").scrollTop( 0 );
+                
+                tableTop.removeClass('appear');
+                scheduleOff.removeClass('disable');
+                manifestoOff.removeClass('disable');
+                sortmenu.removeClass('disable');
+                listmenu.removeClass('disable');
+                icons.removeClass('invisible');
+                
+            });
         });
         
         $('.list-toggle').on('click', function(event){
@@ -252,6 +305,8 @@
             emptyListView.removeClass('hidden');
             
             $('#deleteItAll').on('click', function(event){
+                
+                $(".list").scrollTop( 0 );
                 
                 spaces.removeClass('cube-page');
                 scheduleOff.removeClass('disable');
@@ -550,20 +605,20 @@
             
         });
         
+        //randomly place icons on the page
+        
         $('.prop1, .prop2, .prop3, .prop4').each(function(i){
-        // list the one you are working on
-        //alert(i);
 
-        // store a random number in a variable
         console.log( "stuff" );
         var t = Math.round(Math.random() * 800);
         var l = Math.round(Math.random() * 1400);
 
-        // use that to position the elements
         $(this).css('top', t);
         $(this).css('left', l);
             
         });
+        
+        //randomly generating icons
         
         $('.location, .visual, .media, .content').each(function(i){
         
@@ -576,14 +631,45 @@
         
         var randPosX = Math.floor((Math.random() * limitWidth));
         var randPosY = Math.floor((Math.random() * limitHeight));
-        
-//        $(this).css('z-index', b );
-        
+                
         $(this).css('left', randPosX);
         $(this).css('top', randPosY);
         
         $(this).css('transform', 'rotate(' + a + 'deg) scale(.75)');
         });
+        
+        //moving the icons around
+        
+        function hitLR(el, bounding) {
+            if (el.offsetLeft <= 0 && $(el).data('vx') < 0) {
+                $(el).data('vx', -1 * $(el).data('vx'))
+            }
+            if ((el.offsetLeft + el.offsetWidth) >= bounding.offsetWidth) {
+                $(el).data('vx',  -1 * $(el).data('vx'));
+            }
+            if (el.offsetTop <= 0 && $(el).data('vy') < 0) {
+                $(el).data('vy', -1 * $(el).data('vy'));
+            }
+            if ((el.offsetTop + el.offsetHeight) >= bounding.offsetHeight) {
+                $(el).data('vy', -1 * $(el).data('vy'));
+            }
+        }
+
+        function mover(el, bounding) {
+            hitLR(el, bounding);
+            el.style.left = el.offsetLeft + $(el).data('vx') + 'px';
+            el.style.top = el.offsetTop + $(el).data('vy') + 'px';
+
+        }
+
+        setInterval(function() {
+            $('.prop1, .prop2, .prop3, .prop4').each(function(){
+
+                mover(this, $('.limit')[0]);
+            });
+        }, 50);
+        
+        //clicking on a icon to access cube
 
         $('.golink').on('click', function(event){
             event.preventDefault();
@@ -727,60 +813,25 @@
             magiccube.addClass('hidden');
             emptyMagicCube.addClass('hidden');
             
-            $('.prop1, .prop2, .prop3, .prop4').appendTo(".limit")
-            
-            $('.prop1, .prop2, .prop3, .prop4').each(function(i){
-                // store a random number in a variable
-                console.log( "stuff" );
-                var t = Math.round(Math.random() * 800);
-                var l = Math.round(Math.random() * 1400);
-                // use that to position the elements
-                $(this).css('top', t);
-                $(this).css('left', l);
-            });
-            
-        });
-            
+                $('.prop1, .prop2, .prop3, .prop4').appendTo(".limit")
 
+                $('.prop1, .prop2, .prop3, .prop4').each(function(i){
+                    // store a random number in a variable
+                    console.log( "stuff" );
+                    var t = Math.round(Math.random() * 800);
+                    var l = Math.round(Math.random() * 1400);
+                    // use that to position the elements
+                    $(this).css('top', t);
+                    $(this).css('left', l);
+                });
+            
+            });
 
         });
         
     });
     
 </script>  
-    
-<script>
-        
-    function hitLR(el, bounding) {
-        if (el.offsetLeft <= 0 && $(el).data('vx') < 0) {
-            $(el).data('vx', -1 * $(el).data('vx'))
-        }
-        if ((el.offsetLeft + el.offsetWidth) >= bounding.offsetWidth) {
-            $(el).data('vx',  -1 * $(el).data('vx'));
-        }
-        if (el.offsetTop <= 0 && $(el).data('vy') < 0) {
-            $(el).data('vy', -1 * $(el).data('vy'));
-        }
-        if ((el.offsetTop + el.offsetHeight) >= bounding.offsetHeight) {
-            $(el).data('vy', -1 * $(el).data('vy'));
-        }
-    }
-
-    function mover(el, bounding) {
-        hitLR(el, bounding);
-        el.style.left = el.offsetLeft + $(el).data('vx') + 'px';
-        el.style.top = el.offsetTop + $(el).data('vy') + 'px';
-    
-    }
-
-    setInterval(function() {
-        $('.prop1, .prop2, .prop3, .prop4').each(function(){
-
-            mover(this, $('.limit')[0]);
-        });
-    }, 50);
-
-</script>
     
 </body>
 

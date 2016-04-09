@@ -122,6 +122,10 @@ border-spacing: 0;
     visibility: hidden; 
 }
 
+.invisible {
+    visibility: hidden; 
+}
+
 .prop1,
 .prop2,
 .prop3,
@@ -415,10 +419,6 @@ border-spacing: 0;
     color: #29c171; 
 }
 
-.active {
-    display: block !important; 
-}
-
 a:link {
     text-decoration: none;
 }
@@ -542,7 +542,7 @@ div p {
     font-size: 40px;
     letter-spacing: 2px;
     font-family: "Ogg";
-    color: #29c171;
+    color: white;
     text-transform: uppercase;
 }
 
@@ -555,7 +555,7 @@ div p {
 }
 
 .versions {
-    color: #29c171;
+    color: white;
     font-size: 2em;
 }
 
@@ -579,7 +579,7 @@ div p {
 }
 
 .versions p {
-    color: #29c171;
+    color: white;
     font-family: "Ogg";
     font-size: 20px;
     line-height: 24px;
@@ -605,6 +605,31 @@ div p {
 
 .manifesto:hover {
     cursor: url('cursor_white.cur'), auto;
+}
+
+.table-photos {
+    top: 0px;
+    left: 0px;
+    overflow: scroll;
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 100px;
+    z-index: 9999999;
+}
+
+.table-photos:hover {
+    cursor: url('cursor_white.cur'), auto;
+}
+
+.table-photos li {
+    margin-bottom: 50px;
+}
+
+.table-photos ul:last-child {
+    margin-bottom: 200px;
 }
 
 .material {
