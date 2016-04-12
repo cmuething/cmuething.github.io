@@ -10,6 +10,8 @@
         </style>
     </head>
     <body>
+        <script language="javascript" type="text/javascript" src="js/jquery-1.11.3.js"></script>
+
         <script src="js/three.min.js"></script>
         <script src="js/three.js"></script>
         <script src="js/Plane.js"></script>
@@ -29,16 +31,37 @@
             var mouse, raycaster, isShiftDown = false;
                         
             var rollOverMesh, rollOverMaterial;
-            var cubeGeo, cubeMaterial;
             var radious = 1600, theta = 45, phi = 60;
             
             var objects = [];
             
+            var goLeft = false
+            var goRight = false
+            var goUp = false
+            var goDown = false
+            
+            //vars
+            var rotationx = rotationy = rotationz = 0
+    
+//            var _q1 = new THREE.Quaternion(); // CHANGED
+//            var axisX = new THREE.Vector3( 1, 0, 0 ); // CHANGED
+//            var axisZ = new THREE.Vector3( 0, 0, 1 ); // CHANGED
+//
+//            function rotateOnAxis( object, axis, angle ) { // CHANGED
+//
+//                _q1.setFromAxisAngle( axis, angle );
+//                object.quaternion.multiplySelf( _q1 );
+//
+//            } 
+            
             init();
             render();
+            animate();
                         
             function init() {
                 
+                rollOverMesh = new THREE.Object3D();
+                                
                 container = document.createElement( 'div' );
                 document.body.appendChild( container );
                 
@@ -48,14 +71,6 @@
                 info.style.width = '100%';
                 container.appendChild( info );
                 
-                //rotate the camera test
-                
-//                camera = new THREE.Camera( 40, window.innerWidth / window.innerHeight, 1, 1000 );
-//                camera.position.x = radious * Math.sin( theta * Math.PI / 360 ) * Math.cos( phi * Math.PI / 360 );
-//                camera.position.y = radious * Math.sin( phi * Math.PI / 360 );
-//                camera.position.z = radious * Math.cos( theta * Math.PI / 360 ) * Math.cos( phi * Math.PI / 360 );
-//                camera.target.position.y = 200;
-                
                 //camera
                 
                 camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 10000 );
@@ -64,20 +79,24 @@
                 
                 scene = new THREE.Scene();
                 
+                var axes = new THREE.AxisHelper();
+                scene.add( axes );
+                
                 //stl
                 
                 rollOverGeo = new THREE.STLLoader();
-                rollOverGeo.load( "./stl/test.stl", function ( geometry ) {
+                rollOverGeo.load( "./stl/module_1.stl", function ( geometry ) {
                     
-                    rollOverMaterial = new THREE.MeshPhongMaterial( { color: 0xff5533, specular: 0x111111, shininess: 200, opacity: 0.5, transparent: true });
+                    rollOverMaterial = new THREE.MeshPhongMaterial( { color: 0x29c171, specular: 0x111111, shininess: 200, opacity: 0.75, transparent: true });
                     rollOverMesh = new THREE.Mesh( geometry, rollOverMaterial );
                                         
-                    rollOverMesh.scale.set( 25, 25, 25 );
+                    rollOverMesh.scale.set( 5, 5, 5 );
+                    rollOverMesh.rotation.z = -Math.PI / 1;
                     rollOverMesh.rotation.x = -Math.PI / 2;
                     
                     scene.add( rollOverMesh );
                     
-                } );
+                });
                 
                 //grid
                 
@@ -143,6 +162,13 @@
                                 
             }
             
+            function animate() {
+                
+                requestAnimationFrame( animate );
+                
+                render();
+                
+            }
             
             function onDocumentKeyDown( event ) {
                 
@@ -181,7 +207,7 @@
                     var intersect = intersects[ 0 ];
                     
                     rollOverMesh.position.copy( intersect.point ).add( intersect.face.normal );
-                    rollOverMesh.position.divideScalar( 50 ).floor().multiplyScalar( 50 ).addScalar( 50 );
+                    rollOverMesh.position.divideScalar( 40 ).floor().multiplyScalar( 40 ).addScalar( 40 );
                     
                 }
                 
@@ -220,17 +246,18 @@
                     } else {
                         
                         formGeo = new THREE.STLLoader();
-                        formGeo.load( "./stl/test.stl", function ( geometry ) {
+                        formGeo.load( "./stl/module_1.stl", function ( geometry ) {
                             
                         formMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, shininess: 200 });
                             
                         
                         var voxel = new THREE.Mesh( geometry, formMaterial );
                         voxel.position.copy( intersect.point ).add( intersect.face.normal );
-                        voxel.position.divideScalar( 50 ).floor().multiplyScalar( 50 ).addScalar( 25 );
+                        voxel.position.divideScalar( 50 ).floor().multiplyScalar( 50 ).addScalar( 50 );
                             
-                        voxel.scale.set( 25, 25, 25 );
+                        voxel.scale.set( 5, 5, 5 );
                         voxel.rotation.x = -Math.PI / 2;
+                        voxel.rotation.z = -Math.PI / 1;
                             
                         scene.add( voxel );
                         
@@ -265,13 +292,69 @@
                                 
             }
             
+            //rotating the form 
             
             function render() {
-                    
+                
+                if(goLeft)
+                    rotationz+=.08
+
+                if(goRight)
+                    rotationz-=.08
+
+                if(goUp)
+                    rotationx+=.08
+
+                if(goDown)
+                    rotationx-=.08
+
+                //loop values within -PI to PI (180 to -180)
+                if(rotationz > Math.PI)
+                    rotationz = -Math.PI
+                if(rotationz < -Math.PI)
+                    rotationz = Math.PI
+
+                if(rotationx > Math.PI)
+                    rotationx = -Math.PI
+                if(rotationx < -Math.PI)
+                    rotationx = Math.PI
+
+                //apply rotation
+                rollOverMesh.rotation.x = rotationx
+                rollOverMesh.rotation.y = rotationy 
+                rollOverMesh.rotation.z = rotationz
+                                    
                 renderer.render( scene, camera );
                     
-            }
+            } 
+                
             
+            $(document).keydown(function(e){
+                if (e.keyCode == 37) {  //left arrow
+                    goLeft = true
+                    goRight = false
+                    console.log( "LEFT" );
+                }
+                if (e.keyCode == 39) { //right arrow
+                    goRight = true
+                    goLeft = false
+                }
+                if (e.keyCode == 38) {  //up arrow
+                    goDown = true
+                    goUp = false
+                }
+                if (e.keyCode == 40) { //down arrow
+                    goUp = true
+                    goDown = false
+                }
+            });
+
+            $(document).keyup(function(){
+                goLeft = false
+                goRight = false
+                goUp = false
+                goDown = false
+            });
                                
         </script>
         
