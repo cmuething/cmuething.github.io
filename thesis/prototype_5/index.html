@@ -19,6 +19,11 @@
          <h1>SPACES</h2>
     </div>
     
+    <div id="popup" class="hidden">
+        <h1>Jquery Popup On Page Load Demo</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
+    </div>
+    
     <div class="dictionary">
         
     <div class="limit" id="limit">
@@ -192,7 +197,27 @@
 <script language="javascript" type="text/javascript" src="js/jquery-1.11.3.js"></script>
 <script language="javascript" type="text/javascript" src="js/jquery-ui.js"></script>
     
+<script src="js/google-analytics.js"></script>
+    
 <script>
+    
+    $(document).ready(function(e) {  
+        
+        var everything = $('.dictionary');
+        var menubar = $('#bottom');
+        
+        $('#popup').removeClass('hidden');
+        $('#container').addClass('close-popup');
+        everything.addClass('read-first');
+        menubar.addClass('read-first');
+        
+        $('#container').on('click', function(event){
+            $('#popup').addClass('hidden');
+            $('#container').removeClass('close-popup');
+            everything.removeClass('read-first');
+            menubar.removeClass('read-first');
+        })
+    });
     
     $(document).ready(function () {
         $('.manifesto-toggle').on('click', function(event){
@@ -832,6 +857,19 @@
     });
     
 </script>  
+    
+<!--
+<script>
+    
+    $(document).ready(function(e) {                                   $('#popup').removeClass('hidden');
+        
+        $('.dictionary').click(function() {
+            $('#popup').addClass('hidden');
+        })
+    });
+    
+</script>    
+-->
     
 </body>
 
