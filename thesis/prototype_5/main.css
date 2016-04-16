@@ -357,13 +357,18 @@ border-spacing: 0;
     overflow: visible;
 }
 
-.list .icon h1 {
+.list .icon #list-theme,
+.list .icon #list-prop {
     position: relative;
     font-size: 1em;
     font-family: 'Ogg';
     text-transform: uppercase;
     color: black;
     z-index: 99999999;
+}
+
+.list .icon #list-theme {
+    margin-bottom: 30px;
 }
 
 .list .icon .mat1,
@@ -391,8 +396,8 @@ border-spacing: 0;
     position: relative;
     display: inline-block;
     left: -50px !important;
-    top: -50px !important;
-    transform: scale(.75);
+    top: -90px !important;
+    transform: scale(.85);
     z-index: 0;
 }
 
@@ -400,6 +405,10 @@ border-spacing: 0;
     font-family: 'Graphik Web';
     margin-left: 250px;
     line-height: 22px;
+}
+
+.list li:first-child {
+    text-transform: uppercase;
 }
 
 .list li {
