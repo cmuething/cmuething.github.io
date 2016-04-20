@@ -19,11 +19,6 @@
          <h1>SPACES</h2>
     </div>
     
-    <div id="popup" class="hidden">
-        <h1>Jquery Popup On Page Load Demo</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
-    </div>
-    
     <div class="dictionary">
         
     <div class="limit" id="limit">
@@ -43,6 +38,7 @@
     </div>
         
     <div class="table-photos">
+        <h1>This photo is being used to inform the public space below</h1>
         <ul>        
             <li class="selected"><img src="images/table/photo_1.JPG"</li>
             <li><img src="images/table/photo_2.JPG"</li>
@@ -120,6 +116,13 @@
         </div>
         
     </div>
+    
+    <div class="about hidden">
+        <div id="popup">
+            <h1>About this page</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</p>
+        </div>
+    </div>
 
     <div id="manifesto" class="manifesto">
         
@@ -128,7 +131,7 @@
             {{#everything}}
                 <ul>
                     {{#manifesto}}
-                        <li>
+                        <li style="opacity:{{opacity}};">
                             <h1>Manifesto<div class="number">{{number}}</div></h1>
                             <p>{{{text}}}</p>
                         </li>
@@ -144,7 +147,7 @@
             <li>Week 16</li>
             <li>Week 15</li>
             <li>Week 14</li>
-            <li>Week 13</li>
+            <li class="complete">Week 13</li>
             <li class="complete">Week 12</li>
             <li class="complete">Week 11</li>
             <li class="complete">Week 10</li>
@@ -161,6 +164,9 @@
     </div>
     
     <div id="bottom">
+        <div class="about-toggle">
+            <p>About</p>
+        </div>
         <div class="manifesto-toggle">
             <p>Manifesto</p>
         </div>
@@ -201,21 +207,33 @@
     
 <script>
     
-    $(document).ready(function(e) {  
+    $('.about-toggle').on('click', function(event){  
         
-        var everything = $('.dictionary');
-        var menubar = $('#bottom');
+//        var everything = $('.dictionary');
+//        var menubar = $('#bottom');
         
-        $('#popup').removeClass('hidden');
+        var manifestoOff = $('.manifesto-toggle');
+        var sortmenu = $('.sort-toggle');
+        var listmenu = $('.list-toggle');
+        var scheduleOff = $('.schedule-toggle');
+        var tableOff = $('.table');
+        
+        $('.about').removeClass('hidden');
         $('#container').addClass('close-popup');
-        everything.addClass('read-first');
-        menubar.addClass('read-first');
+        manifestoOff.addClass('disable');
+        scheduleOff.addClass('disable');
+        sortmenu.addClass('disable');
+        listmenu.addClass('disable');
+        tableOff.addClass('disable');
         
-        $('#container').on('click', function(event){
-            $('#popup').addClass('hidden');
+        $('.about').on('click', function(event){
+            $('.about').addClass('hidden');
             $('#container').removeClass('close-popup');
-            everything.removeClass('read-first');
-            menubar.removeClass('read-first');
+            manifestoOff.removeClass('disable');
+            scheduleOff.removeClass('disable');
+            sortmenu.removeClass('disable');
+            listmenu.removeClass('disable');
+            tableOff.removeClass('disable');
         })
     });
     
@@ -281,7 +299,7 @@
             
         });
         
-        $('.table').on('click', function(event){
+        $('.table p').on('click', function(event){
             event.preventDefault();
             var manifestoOff = $('.manifesto-toggle');
             var sortmenu = $('.sort-toggle');
@@ -743,15 +761,15 @@
 
                 cameraControls = new THREE.OrbitControls(camera, renderer.domElement);
                 cameraControls.target.set( 0, -10, 0);
-                cameraControls.maxDistance = 400;
-                cameraControls.minDistance = 30;
+                cameraControls.maxDistance = 200;
+                cameraControls.minDistance = 50;
                 cameraControls.update();
 
                 var geometry = new THREE.BoxGeometry( 50, 50, 50 );
 
                 var materialArray = [];
 
-                    materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images' + urlbit + '/_1.png' ) }));
+                    materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images' + urlbit + '/_5.png' ) }));
 
                     materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images' + urlbit + '/_2.png' ) }));
 
@@ -759,7 +777,7 @@
 
                     materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images' + urlbit + '/_4.png' ) }));
 
-                    materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images' + urlbit + '/_5.png' ) }));
+                    materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images' + urlbit + '/_1.png' ) }));
 
                     materialArray.push(new THREE.MeshBasicMaterial( { map: THREE.ImageUtils.loadTexture( 'images' + urlbit + '/_6.png' ) }));
 
@@ -857,19 +875,6 @@
     });
     
 </script>  
-    
-<!--
-<script>
-    
-    $(document).ready(function(e) {                                   $('#popup').removeClass('hidden');
-        
-        $('.dictionary').click(function() {
-            $('#popup').addClass('hidden');
-        })
-    });
-    
-</script>    
--->
     
 </body>
 
