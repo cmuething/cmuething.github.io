@@ -844,6 +844,7 @@ THREE.CanvasRenderer = function ( parameters ) {
 		}
 
 		var canvas = document.createElement( 'canvas' );
+        canvas.setAttribute("id", "canvas");
 		canvas.width = image.width;
 		canvas.height = image.height;
 

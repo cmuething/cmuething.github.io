@@ -21,6 +21,10 @@
         <script src="js/CanvasRenderer.js"></script>
         <script src="js/LineSegments.js"></script>
         
+        <script src="js/FileSaver.js"></script>
+        <script src="js/Blob.js"></script>
+        <script src="js/canvas-toBlob.js"></script>
+        
         <script>
             
             if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
@@ -42,17 +46,6 @@
             
             //vars
             var rotationx = rotationy = rotationz = 0
-    
-//            var _q1 = new THREE.Quaternion(); // CHANGED
-//            var axisX = new THREE.Vector3( 1, 0, 0 ); // CHANGED
-//            var axisZ = new THREE.Vector3( 0, 0, 1 ); // CHANGED
-//
-//            function rotateOnAxis( object, axis, angle ) { // CHANGED
-//
-//                _q1.setFromAxisAngle( axis, angle );
-//                object.quaternion.multiplySelf( _q1 );
-//
-//            } 
             
             init();
             render();
@@ -63,6 +56,7 @@
                 rollOverMesh = new THREE.Object3D();
                                 
                 container = document.createElement( 'div' );
+                container.setAttribute("id", "canvas");
                 document.body.appendChild( container );
                 
                 var info = document.createElement( 'div' );
@@ -284,13 +278,26 @@
             
             function save() {
                 
+                var canvas = document.getElementById("canvas");
+                
                 scene.remove( rollOverMesh );
                 render();
                 window.open( renderer.domElement.toDataURL('image/png'), 'mywindow' );
                 scene.add( rollOverMesh );
                 return false;
-                                
             }
+            
+            $('#submit').on('click', function (){
+                    event.preventDefault();
+                    
+                    container.toBlob(function(blob) {
+                        saveAs(
+                              blob
+                            , (canvas_filename.value || canvas_filename.placeholder) + ".png"
+                        );
+                    }, "image/png");
+                
+            });
             
             //rotating the form 
             
@@ -333,7 +340,6 @@
                 if (e.keyCode == 37) {  //left arrow
                     goLeft = true
                     goRight = false
-                    console.log( "LEFT" );
                 }
                 if (e.keyCode == 39) { //right arrow
                     goRight = true
@@ -354,6 +360,14 @@
                 goRight = false
                 goUp = false
                 goDown = false
+            });
+            
+            $(document).keyup(function(e) {    
+                if (e.keyCode == 27) { //escape key
+
+                //reload the page if you still need to
+                window.location.reload();
+                }
             });
                                
         </script>
@@ -387,7 +401,7 @@
         
         <div id="bottom">
             <div class="save-toggle">
-                <a href="javascript:save()">save</a>
+                <a id="submit" href="javascript:save()">submit</a>
             </div>
             <div class="past-toggle">
                 <p>Past Entries</p>
