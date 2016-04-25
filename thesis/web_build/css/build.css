@@ -106,13 +106,55 @@ div p {
     margin: 30px 30px 0 0;
 }
 
+.forms {
+    position: absolute;
+    margin-top: 60px;
+    margin-left: -20px;
+    top: 0px;
+    left: 0px;
+    height: 335px;
+    width: 250px;
+}
+
+.forms .desc {
+    float: right;
+    text-align: left;
+    padding-top: 50px;
+    font-size: .75em;
+    font-family: 'Graphik Web';
+    font-weight: 200;
+    color: black;
+    text-transform: uppercase;
+}
+
+.forms #module-1,
+.forms #module-2 {
+    position: absolute;
+    cursor: pointer;
+    transform: scale(0.5, 0.5);
+    -ms-transform: scale(0.5, 0.5);
+    -webkit-transform: scale(0.5, 0.5);
+}
+
+#module-1 {
+    bottom: 0px;
+}
+
+.forms ul {
+    padding-top: 50px;
+}
+
+.forms .desc li {
+    padding-bottom: 105px;
+}
+
 .navigation {
     position: absolute;
-    bottom: 40px;
+    top: 0px;
     right: 0px;
-    margin-top: 250px;
+    margin-top: 120px;
     margin-right: 30px;
-    height: 300px;
+    height: 150px;
     width: 390px;
 }
 
@@ -149,7 +191,7 @@ div p {
     -webkit-transform: scale(0.5, 0.5);
 }
 
-.navigation #desc {
+.navigation .desc {
     float: right;
     text-align: left;
     padding-top: 50px;
@@ -160,7 +202,7 @@ div p {
     text-transform: uppercase;
 }
 
-.navigation #desc li {
+.navigation .desc li {
     padding-bottom: 45px;
 }
 
@@ -192,6 +234,14 @@ div p {
 }
 
 .past-toggle {
+    float: left;
+    cursor: pointer;
+    padding-top: 20px;
+    padding-right: 40px;
+    z-index: 999999999;
+}
+
+.about-toggle {
     float: left;
     cursor: pointer;
     padding-top: 20px;

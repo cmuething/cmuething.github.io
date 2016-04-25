@@ -240,7 +240,7 @@
                     } else {
                         
                         formGeo = new THREE.STLLoader();
-                        formGeo.load( "./stl/module_1.stl", function ( geometry ) {
+                        formGeo.load( "./stl/module_2.stl", function ( geometry ) {
                             
                         formMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, shininess: 200 });
                             
@@ -380,6 +380,19 @@
             <h1>SPACES</h2>
         </div>
         
+        <div class="forms">
+            <div id="modules">
+                <div id="module-1"><img src="images/module_1.png"></div>
+                <div id="module-2"><img src="images/module_2.png"></div>
+            </div>
+            <div class="desc">
+                <ul>
+                    <li><p>Module One</p></li>
+                    <li><p>Module Two</p></li>
+                </ul>
+            </div>
+        </div>
+        
         <div class="navigation">
             <div id="icons">
                 <ul>
@@ -389,7 +402,7 @@
                     <li><img src="images/esc.png"></li>
                 </ul>
             </div>
-            <div id="desc">
+            <div class="desc">
                 <ul>
                     <li><p>to rotate the form</p></li>
                     <li><p>to add a form</p></li>
@@ -402,6 +415,9 @@
         <div id="bottom">
             <div class="save-toggle">
                 <a id="submit" href="javascript:save()">submit</a>
+            </div>
+            <div class="about-toggle">
+                <p>About</p>
             </div>
             <div class="past-toggle">
                 <p>Past Entries</p>
