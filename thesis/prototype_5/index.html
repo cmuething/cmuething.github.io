@@ -209,9 +209,6 @@
     
     $('.about-toggle').on('click', function(event){  
         
-//        var everything = $('.dictionary');
-//        var menubar = $('#bottom');
-        
         var manifestoOff = $('.manifesto-toggle');
         var sortmenu = $('.sort-toggle');
         var listmenu = $('.list-toggle');
@@ -237,179 +234,192 @@
         })
     });
     
-    $(document).ready(function () {
-        $('.manifesto-toggle').on('click', function(event){
-            event.preventDefault();
-            var manifestoTop = $('.manifesto');
-            var sortmenu = $('.sort-toggle');
-            var listmenu = $('.list-toggle');
-            var scheduleOff = $('.schedule-toggle');
-            var tableOff = $('.table');
-            var icons = $('.limit');
+    $('.manifesto-toggle').on('click', function(event){
+        event.preventDefault();
+        var manifestoTop = $('.manifesto');
+        var sortmenu = $('.sort-toggle');
+        var listmenu = $('.list-toggle');
+        var scheduleOff = $('.schedule-toggle');
+        var tableOff = $('.table');
+        var aboutOff = $('.about-toggle')
+        var icons = $('.limit');
 
-            manifestoTop.addClass('appear');
-            scheduleOff.addClass('disable');
-            sortmenu.addClass('disable');
-            listmenu.addClass('disable');
-            tableOff.addClass('disable');
-            icons.addClass('invisible');
-            
-            $('.manifesto').on('click', function(event){
-                                
-                $(".manifesto").scrollTop( 0 );
-                
-                manifestoTop.removeClass('appear')
-                scheduleOff.removeClass('disable');
-                sortmenu.removeClass('disable');
-                listmenu.removeClass('disable');
-                tableOff.removeClass('disable');
-                icons.removeClass('invisible');
-        
-            })
+        manifestoTop.addClass('appear');
+        scheduleOff.addClass('disable');
+        sortmenu.addClass('disable');
+        listmenu.addClass('disable');
+        tableOff.addClass('disable');
+        aboutOff.addClass('disable');
+        icons.addClass('invisible');
 
-        });
-        
-        $('.schedule-toggle').on('click', function(event){
-            event.preventDefault();
-            var manifestoOff = $('.manifesto-toggle');
-            var sortmenu = $('.sort-toggle');
-            var listmenu = $('.list-toggle');
-            var scheduleTop = $('.schedule');
-            var tableOff = $('.table');
-            var icons = $('.limit');
+        $('.manifesto').on('click', function(event){
 
-            scheduleTop.addClass('appear');
-            manifestoOff.addClass('disable');
-            sortmenu.addClass('disable');
-            listmenu.addClass('disable');
-            tableOff.addClass('disable');
-            icons.addClass('invisible');
-            
-            $('.schedule').on('click', function(event){ 
-                
-                $(".schedule").scrollTop( 0 );
-                
-                scheduleTop.removeClass('appear')
-                manifestoOff.removeClass('disable');
-                sortmenu.removeClass('disable');
-                listmenu.removeClass('disable');
-                tableOff.removeClass('disable');
-                icons.removeClass('invisible');
-            });
-            
-        });
-        
-        $('.table p').on('click', function(event){
-            event.preventDefault();
-            var manifestoOff = $('.manifesto-toggle');
-            var sortmenu = $('.sort-toggle');
-            var listmenu = $('.list-toggle');
-            var scheduleOff = $('.schedule-toggle');
-            var tableTop = $('.table-photos');
-            var icons = $('.limit');
+            $(".manifesto").scrollTop( 0 );
 
-            tableTop.addClass('appear');
-            scheduleOff.addClass('disable');
-            manifestoOff.addClass('disable');
-            sortmenu.addClass('disable');
-            listmenu.addClass('disable');
-            icons.addClass('invisible');
-            
-            $('.table-photos').on('click', function(event){ 
-                
-                $(".table-photos").scrollTop( 0 );
-                
-                tableTop.removeClass('appear');
-                scheduleOff.removeClass('disable');
-                manifestoOff.removeClass('disable');
-                sortmenu.removeClass('disable');
-                listmenu.removeClass('disable');
-                icons.removeClass('invisible');
-                
-            });
-        });
-        
-        $('.list-toggle').on('click', function(event){
-            event.preventDefault();
-            var manifestoOff = $('.manifesto-toggle');
-            var sortmenu = $('.sort-toggle');
-            var listmenu = $('.list-toggle');
-            var scheduleOff = $('.schedule-toggle');
-            var tableOff = $('.table');
-            var spaces = $('.title-right');
-            var emptyListView = $('#deleteItAll');
+            manifestoTop.removeClass('appear')
+            scheduleOff.removeClass('disable');
+            sortmenu.removeClass('disable');
+            listmenu.removeClass('disable');
+            tableOff.removeClass('disable');
+            aboutOff.removeClass('disable');
+            icons.removeClass('invisible');
 
-            spaces.addClass('cube-page');
-            scheduleOff.addClass('disable');
-            manifestoOff.addClass('disable');
-            sortmenu.addClass('disable');
-            listmenu.addClass('disable');
-            tableOff.addClass('disable');
-            emptyListView.removeClass('hidden');
-            
-            $('#deleteItAll').on('click', function(event){
-                
-                $(".list").scrollTop( 0 );
-                
-                spaces.removeClass('cube-page');
-                scheduleOff.removeClass('disable');
-                manifestoOff.removeClass('disable');
-                sortmenu.removeClass('disable');
-                listmenu.removeClass('disable');
-                tableOff.removeClass('disable');
-                emptyListView.addClass('hidden');
-                
-            });
-            
-        });
-        
-        $('.sort-toggle').hover(function(){
-            event.preventDefault();
-            var sortmenu = $('.sort-toggle');
-            var sortoptions = $('.sort-types');
-            
-            sortoptions.removeClass('hidden');
-            sortmenu.addClass('hidden'); 
-        });
-        
-        $('.sort-types').on('mouseleave', function(event){
-            event.preventDefault();
-            var sortmenu = $('.sort-toggle');
-            var sortoptions = $('.sort-types');
-            
-            sortoptions.addClass('hidden');
-            sortmenu.removeClass('hidden'); 
-        });
-        
-        $('.sort-types').on('click', function(event){
-            event.preventDefault();
-            var manifestoOff = $('.manifesto-toggle');
-            var scheduleOff = $('.schedule-toggle');
-            var tableOff = $('.table');
-            var listmenu = $('.list-toggle');
-            var spaces = $('.title-right');
-            var emptyListView = $('#deleteItAll');
+        })
 
-            listmenu.addClass('disable');
-            scheduleOff.addClass('disable');
-            manifestoOff.addClass('disable');
-            tableOff.addClass('disable');
-            spaces.addClass('cube-page');
-            emptyListView.removeClass('hidden');
-            
-            $('#deleteItAll').on('click', function(event){
-                
-                listmenu.removeClass('disable');
-                scheduleOff.removeClass('disable');
-                manifestoOff.removeClass('disable');
-                tableOff.removeClass('disable');
-                spaces.removeClass('cube-page');
-                emptyListView.addClass('hidden');
-            });    
-            
-        });
-        
     });
+
+    $('.schedule-toggle').on('click', function(event){
+        event.preventDefault();
+        var manifestoOff = $('.manifesto-toggle');
+        var sortmenu = $('.sort-toggle');
+        var listmenu = $('.list-toggle');
+        var scheduleTop = $('.schedule');
+        var tableOff = $('.table');
+        var aboutOff = $('.about-toggle')
+        var icons = $('.limit');
+
+        scheduleTop.addClass('appear');
+        manifestoOff.addClass('disable');
+        sortmenu.addClass('disable');
+        listmenu.addClass('disable');
+        tableOff.addClass('disable');
+        aboutOff.addClass('disable');
+        icons.addClass('invisible');
+
+        $('.schedule').on('click', function(event){ 
+
+            $(".schedule").scrollTop( 0 );
+
+            scheduleTop.removeClass('appear')
+            manifestoOff.removeClass('disable');
+            sortmenu.removeClass('disable');
+            listmenu.removeClass('disable');
+            tableOff.removeClass('disable');
+            aboutOff.removeClass('disable');
+            icons.removeClass('invisible');
+        });
+
+    });
+
+    $('.table p').on('click', function(event){
+        event.preventDefault();
+        var manifestoOff = $('.manifesto-toggle');
+        var sortmenu = $('.sort-toggle');
+        var listmenu = $('.list-toggle');
+        var scheduleOff = $('.schedule-toggle');
+        var tableTop = $('.table-photos');
+        var aboutOff = $('.about-toggle')
+        var icons = $('.limit');
+
+        tableTop.addClass('appear');
+        scheduleOff.addClass('disable');
+        manifestoOff.addClass('disable');
+        sortmenu.addClass('disable');
+        listmenu.addClass('disable');
+        aboutOff.addClass('disable');
+        icons.addClass('invisible');
+
+        $('.table-photos').on('click', function(event){ 
+
+            $(".table-photos").scrollTop( 0 );
+
+            tableTop.removeClass('appear');
+            scheduleOff.removeClass('disable');
+            manifestoOff.removeClass('disable');
+            sortmenu.removeClass('disable');
+            listmenu.removeClass('disable');
+            aboutOff.removeClass('disable');
+            icons.removeClass('invisible');
+
+        });
+    });
+
+    $('.list-toggle').on('click', function(event){
+        event.preventDefault();
+        var manifestoOff = $('.manifesto-toggle');
+        var sortmenu = $('.sort-toggle');
+        var listmenu = $('.list-toggle');
+        var scheduleOff = $('.schedule-toggle');
+        var aboutOff = $('.about-toggle')
+        var tableOff = $('.table');
+        var spaces = $('.title-right');
+        var emptyListView = $('#deleteItAll');
+
+        spaces.addClass('cube-page');
+        scheduleOff.addClass('disable');
+        manifestoOff.addClass('disable');
+        sortmenu.addClass('disable');
+        listmenu.addClass('disable');
+        tableOff.addClass('disable');
+        aboutOff.addClass('disable');
+        emptyListView.removeClass('hidden');
+
+        $('#deleteItAll').on('click', function(event){
+
+            $(".list").scrollTop( 0 );
+
+            spaces.removeClass('cube-page');
+            scheduleOff.removeClass('disable');
+            manifestoOff.removeClass('disable');
+            sortmenu.removeClass('disable');
+            listmenu.removeClass('disable');
+            tableOff.removeClass('disable');
+            aboutOff.removeClass('disable');
+            emptyListView.addClass('hidden');
+
+        });
+
+    });
+
+    $('.sort-toggle').hover(function(){
+        event.preventDefault();
+        var sortmenu = $('.sort-toggle');
+        var sortoptions = $('.sort-types');
+
+        sortoptions.removeClass('hidden');
+        sortmenu.addClass('hidden'); 
+    });
+
+    $('.sort-types').on('mouseleave', function(event){
+        event.preventDefault();
+        var sortmenu = $('.sort-toggle');
+        var sortoptions = $('.sort-types');
+
+        sortoptions.addClass('hidden');
+        sortmenu.removeClass('hidden'); 
+    });
+
+    $('.sort-types').on('click', function(event){
+        event.preventDefault();
+        var manifestoOff = $('.manifesto-toggle');
+        var scheduleOff = $('.schedule-toggle');
+        var tableOff = $('.table');
+        var aboutOff = $('.about-toggle')
+        var listmenu = $('.list-toggle');
+        var spaces = $('.title-right');
+        var emptyListView = $('#deleteItAll');
+
+        listmenu.addClass('disable');
+        scheduleOff.addClass('disable');
+        manifestoOff.addClass('disable');
+        tableOff.addClass('disable');
+        aboutOff.addClass('disable');
+        spaces.addClass('cube-page');
+        emptyListView.removeClass('hidden');
+
+        $('#deleteItAll').on('click', function(event){
+
+            listmenu.removeClass('disable');
+            scheduleOff.removeClass('disable');
+            manifestoOff.removeClass('disable');
+            tableOff.removeClass('disable');
+            aboutOff.removeClass('disable');
+            spaces.removeClass('cube-page');
+            emptyListView.addClass('hidden');
+        });    
+
+    });
+        
       
 </script>
         

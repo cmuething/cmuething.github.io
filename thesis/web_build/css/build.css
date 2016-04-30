@@ -78,40 +78,29 @@ div p {
     color: black;
 }
 
-.title-left,
-.title-right {
+.title {
     position: absolute;
     top: 0px;
     font-family: 'Fugue';
-    font-size: 2em; 
+    font-size: 3em; 
 }
 
 .title-left {
-    font-family: 'Fugue';
-    font-size: 3em; 
-    position: absolute;
-    top: 0px;
-    left: 0px;
     float: left;
     margin: 30px 0 0 30px;
 }
 
 .title-right {
-    font-family: 'Fugue';
-    font-size: 3em; 
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    float: right;
-    margin: 30px 30px 0 0;
+    float: left;
+    margin: 30px 0 0 20px;
 }
 
 .forms {
     position: absolute;
-    margin-top: 60px;
-    margin-left: -20px;
-    top: 0px;
-    left: 0px;
+    margin-top: -25px;
+    margin-right: 75px;
+    top: 0;
+    right: 0;
     height: 335px;
     width: 250px;
 }
@@ -150,11 +139,11 @@ div p {
 
 .navigation {
     position: absolute;
-    top: 0px;
+    bottom: 0px;
     right: 0px;
     margin-top: 120px;
     margin-right: 30px;
-    height: 150px;
+    height: 335px;
     width: 390px;
 }
 

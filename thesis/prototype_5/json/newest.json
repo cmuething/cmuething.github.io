@@ -20,9 +20,9 @@
                             "face": "/plaster001/_1.png"
                         },
                         {
-                            "title": "Location 003",
+                            "title": "Media 014",
                             "type": "concept",
-                            "icon": "location",
+                            "icon": "media",
                             "face": "/plaster001/_2.png"
                         },
                         {
@@ -32,21 +32,21 @@
                             "face": "/plaster001/_3.png"
                         },
                         {
-                            "title": "Content 024",
+                            "title": "Visual 004",
                             "type": "concept",
-                            "icon": "content",
+                            "icon": "visual",
                             "face": "/plaster001/_4.png"
                         },
                         {
-                            "title": "Media 014",
+                            "title": "Visual 008",
                             "type": "concept",
-                            "icon": "media",
+                            "icon": "visual",
                             "face": "/plaster001/_5.png"
                         },
                         {
-                            "title": "Location 013",
+                            "title": "Visual 017",
                             "type": "concept",
-                            "icon": "location",
+                            "icon": "visual",
                             "face": "/plaster001/_6.png"
                         }
                     ]
@@ -69,33 +69,33 @@
                             "face": "/plaster002/_1.png"
                         },
                         {
-                            "title": "Visual 001",
+                            "title": "Location 004",
                             "type": "concept",
-                            "icon": "visual",
+                            "icon": "location",
                             "face": "/plaster002/_2.png"
-                        },
-                        {
-                            "title": "Media 005",
-                            "type": "concept",
-                            "icon": "media",
-                            "face": "/plaster002/_3.png"
                         },
                         {
                             "title": "Location 006",
                             "type": "concept",
                             "icon": "location",
+                            "face": "/plaster002/_3.png"
+                        },
+                        {
+                            "title": "Content 005",
+                            "type": "concept",
+                            "icon": "content",
                             "face": "/plaster002/_4.png"
                         },
                         {
-                            "title": "Location 005",
+                            "title": "Visual 013",
                             "type": "concept",
-                            "icon": "location",
+                            "icon": "visual",
                             "face": "/plaster002/_5.png"
                         },
                         {
-                            "title": "Media 013",
+                            "title": "Location 012",
                             "type": "concept",
-                            "icon": "media",
+                            "icon": "location",
                             "face": "/plaster002/_6.png"
                         }
                     ]
@@ -118,33 +118,33 @@
                             "face": "/plaster003/_1.png"
                         },
                         {
-                            "title": "Content 020",
+                            "title": "Location 014",
                             "type": "concept",
-                            "icon": "content",
+                            "icon": "location",
                             "face": "/plaster003/_2.png"
                         },
                         {
-                            "title": "Media 019",
+                            "title": "Location 001",
                             "type": "concept",
-                            "icon": "media",
+                            "icon": "location",
                             "face": "/plaster003/_3.png"
                         },
                         {
-                            "title": "Content 010",
+                            "title": "Content 001",
                             "type": "concept",
                             "icon": "content",
                             "face": "/plaster003/_4.png"
                         },
                         {
-                            "title": "Visual 007",
+                            "title": "Media 005",
                             "type": "concept",
-                            "icon": "visual",
+                            "icon": "media",
                             "face": "/plaster003/_5.png"
                         },
                         {
-                            "title": "Location 010",
+                            "title": "Visual 019",
                             "type": "concept",
-                            "icon": "location",
+                            "icon": "visual",
                             "face": "/plaster003/_6.png"
                         }
                     ]
@@ -167,31 +167,31 @@
                             "face": "/plaster004/_1.png"
                         },
                         {
-                            "title": "Visual 008",
+                            "title": "Location 003",
                             "type": "concept",
-                            "icon": "visual",
+                            "icon": "location",
                             "face": "/plaster004/_2.png"
                         },
                         {
-                            "title": "Location 009",
+                            "title": "Visual 018",
                             "type": "concept",
-                            "icon": "location",
+                            "icon": "visual",
                             "face": "/plaster004/_3.png"
                         },
                         {
-                            "title": "Location 004",
+                            "title": "Visual 007",
                             "type": "concept",
-                            "icon": "location",
+                            "icon": "visual",
                             "face": "/plaster004/_4.png"
                         },
                         {
-                            "title": "Location 001",
+                            "title": "Visual 010",
                             "type": "concept",
-                            "icon": "location",
+                            "icon": "visual",
                             "face": "/plaster004/_5.png"
                         },
                         {
-                            "title": "Visual 010",
+                            "title": "Visual 001",
                             "type": "concept",
                             "icon": "visual",
                             "face": "/plaster004/_6.png"
@@ -216,33 +216,33 @@
                             "face": "/concrete001/_1.png"
                         },
                         {
-                            "title": "Media 015",
+                            "title": "Visual 002",
                             "type": "concept",
-                            "icon": "media",
+                            "icon": "visual",
                             "face": "/concrete001/_2.png"
                         },
                         {
-                            "title": "Visual 004",
+                            "title": "Location 009",
                             "type": "concept",
-                            "icon": "visual",
+                            "icon": "location",
                             "face": "/concrete001/_3.png"
                         },
                         {
-                            "title": "Visual 009",
+                            "title": "Visual 012",
                             "type": "concept",
                             "icon": "visual",
                             "face": "/concrete001/_4.png"
                         },
                         {
-                            "title": "Location 008",
+                            "title": "Location 005",
                             "type": "concept",
                             "icon": "location",
                             "face": "/concrete001/_5.png"
                         },
                         {
-                            "title": "Content 001",
+                            "title": "Media 013",
                             "type": "concept",
-                            "icon": "content",
+                            "icon": "media",
                             "face": "/concrete001/_6.png"
                         }
                     ]
@@ -265,7 +265,7 @@
                             "face": "/fiberglassresin001/_1.png"
                         },
                         {
-                            "title": "Media 021",
+                            "title": "Media 015",
                             "type": "concept",
                             "icon": "media",
                             "face": "/fiberglassresin001/_2.png"
@@ -277,19 +277,19 @@
                             "face": "/fiberglassresin001/_3.png"
                         },
                         {
-                            "title": "Location 007",
+                            "title": "Visual 014",
                             "type": "concept",
-                            "icon": "location",
+                            "icon": "visual",
                             "face": "/fiberglassresin001/_4.png"
                         },
                         {
-                            "title": "Content 005",
+                            "title": "Content 010",
                             "type": "concept",
                             "icon": "content",
                             "face": "/fiberglassresin001/_5.png"
                         },
                         {
-                            "title": "Location 011",
+                            "title": "Location 007",
                             "type": "concept",
                             "icon": "location",
                             "face": "/fiberglassresin001/_6.png"
@@ -314,33 +314,33 @@
                             "face": "/concrete002/_1.png"
                         },
                         {
-                            "title": "Location 012",
+                            "title": "Visual 015",
                             "type": "concept",
-                            "icon": "location",
+                            "icon": "visual",
                             "face": "/concrete002/_2.png"
                         },
                         {
-                            "title": "Visual 002",
+                            "title": "Location 008",
                             "type": "concept",
-                            "icon": "visual",
+                            "icon": "location",
                             "face": "/concrete002/_3.png"
                         },
                         {
-                            "title": "Visual 012",
+                            "title": "Location 011",
                             "type": "concept",
-                            "icon": "visual",
+                            "icon": "location",
                             "face": "/concrete002/_4.png"
                         },
                         {
-                            "title": "Visual 013",
+                            "title": "Media 021",
                             "type": "concept",
-                            "icon": "visual",
+                            "icon": "media",
                             "face": "/concrete002/_5.png"
                         },
                         {
-                            "title": "Visual 014",
+                            "title": "Content 024",
                             "type": "concept",
-                            "icon": "visual",
+                            "icon": "content",
                             "face": "/concrete002/_6.png"
                         }
                     ]
@@ -364,33 +364,33 @@
                             "face": "/concrete003/_1.png"
                         },
                         {
-                            "title": "Visual 015",
+                            "title": "Location 010",
                             "type": "concept",
-                            "icon": "visual",
+                            "icon": "location",
                             "face": "/concrete003/_2.png"
                         },
                         {
-                            "title": "Visual 017",
+                            "title": "Media 019",
                             "type": "concept",
-                            "icon": "visual",
+                            "icon": "media",
                             "face": "/concrete003/_3.png"
                         },
                         {
-                            "title": "Location 014",
+                            "title": "Content 020",
                             "type": "concept",
-                            "icon": "location",
+                            "icon": "content",
                             "face": "/concrete003/_4.png"
                         },
                         {   
-                            "title": "Visual 018",
+                            "title": "Location 013",
                             "type": "concept",
-                            "icon": "visual",
+                            "icon": "location",
                             "face": "/concrete003/_5.png"
                         },
                         {
-                            "title": "No Entry",
+                            "title": "Visual 009",
                             "type": "concept",
-                            "icon": "",
+                            "icon": "visual",
                             "face": "/concrete003/_6.png"
                         }
                     ]
@@ -413,33 +413,33 @@
                             "face": "/hydrocal001/_1.png"
                         },
                         {
-                            "title": "Content 015",
+                            "title": "Content 019",
                             "type": "concept",
                             "icon": "content",
                             "face": "/hydrocal001/_2.png"
                         },
                         {
-                            "title": "Content 031",
+                            "title": "Media 004",
                             "type": "concept",
-                            "icon": "content",
+                            "icon": "media",
                             "face": "/hydrocal001/_3.png"
                         },
                         {
-                            "title": "Media 023",
+                            "title": "Content 004",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/hydrocal001/_4.png"
+                        },
+                        {
+                            "title": "Media 026",
                             "type": "concept",
                             "icon": "media",
-                            "face": "/hydrocal001/_4.png"
+                            "face": "/hydrocal001/_5.png"
                         },
                         {
                             "title": "Visual 005",
                             "type": "concept",
                             "icon": "visual",
-                            "face": "/hydrocal001/_5.png"
-                        },
-                        {
-                            "title": "Content 030",
-                            "type": "concept",
-                            "icon": "content",
                             "face": "/hydrocal001/_6.png"
                         }
                     ]
@@ -462,33 +462,33 @@
                             "face": "/hydrocal002/_1.png"
                         },
                         {
-                            "title": "Content 002",
+                            "title": "Content 047",
                             "type": "concept",
                             "icon": "content",
                             "face": "/hydrocal002/_2.png"
                         },
                         {
-                            "title": "Media 002",
+                            "title": "Content 012",
                             "type": "concept",
-                            "icon": "media",
+                            "icon": "content",
                             "face": "/hydrocal002/_3.png"
                         },
                         {
-                            "title": "Media 022",
+                            "title": "Visual 011",
                             "type": "concept",
-                            "icon": "media",
+                            "icon": "visual",
                             "face": "/hydrocal002/_4.png"
                         },
                         {
-                            "title": "Content 007",
+                            "title": "Content 016",
                             "type": "concept",
                             "icon": "content",
                             "face": "/hydrocal002/_5.png"
                         },
                         {
-                            "title": "Content 009",
+                            "title": "Visual 020",
                             "type": "concept",
-                            "icon": "content",
+                            "icon": "visual",
                             "face": "/hydrocal002/_6.png"
                         }
                     ]
@@ -511,33 +511,33 @@
                             "face": "/hydrostone001/_1.png"
                         },
                         {
-                            "title": "Content 016",
+                            "title": "Media 024",
                             "type": "concept",
-                            "icon": "content",
+                            "icon": "media",
                             "face": "/hydrostone001/_2.png"
                         },
                         {
-                            "title": "Content 021",
+                            "title": "Content 033",
                             "type": "concept",
                             "icon": "content",
                             "face": "/hydrostone001/_3.png"
                         },
                         {
-                            "title": "Content 006",
+                            "title": "Content 023",
                             "type": "concept",
                             "icon": "content",
                             "face": "/hydrostone001/_4.png"
                         },
                         {
-                            "title": "Content 012",
+                            "title": "Visual 003",
                             "type": "concept",
-                            "icon": "content",
+                            "icon": "visual",
                             "face": "/hydrostone001/_5.png"
                         },
                         {
-                            "title": "Media 004",
+                            "title": "Content 015",
                             "type": "concept",
-                            "icon": "media",
+                            "icon": "content",
                             "face": "/hydrostone001/_6.png"
                         }
                     ]
@@ -560,33 +560,33 @@
                             "face": "/drystone001/_1.png"
                         },
                         {
-                            "title": "Visual 003",
+                            "title": "Content 039",
                             "type": "concept",
-                            "icon": "visual",
+                            "icon": "content",
                             "face": "/drystone001/_2.png"
                         },
                         {
-                            "title": "Visual 006",
+                            "title": "Content 046",
                             "type": "concept",
-                            "icon": "visual",
+                            "icon": "content",
                             "face": "/drystone001/_3.png"
                         },
                         {
-                            "title": "Media 003",
+                            "title": "Content 050",
                             "type": "concept",
-                            "icon": "media",
+                            "icon": "content",
                             "face": "/drystone001/_4.png"
                         },
                         {
-                            "title": "Content 019",
+                            "title": "Content 009",
                             "type": "concept",
                             "icon": "content",
                             "face": "/drystone001/_5.png"
                         },
                         {
-                            "title": "Content 013",
+                            "title": "Visual 016",
                             "type": "concept",
-                            "icon": "content",
+                            "icon": "visual",
                             "face": "/drystone001/_6.png"
                         }
                     ]
@@ -609,31 +609,31 @@
                             "face": "/winterstone001/_1.png"
                         },
                         {
-                            "title": "Media 002",
+                            "title": "Media 020",
                             "type": "concept",
                             "icon": "media",
                             "face": "/winterstone001/_2.png"
                         },
                         {
-                            "title": "Content 023",
-                            "type": "concept",
-                            "icon": "content",
-                            "face": "/winterstone001/_2.png"
-                        },
-                        {
-                            "title": "Content 003",
-                            "type": "concept",
-                            "icon": "content",
-                            "face": "/winterstone001/_2.png"
-                        },
-                        {
-                            "title": "Media 009",
+                            "title": "Media 007",
                             "type": "concept",
                             "icon": "media",
                             "face": "/winterstone001/_2.png"
                         },
                         {
-                            "title": "Content 004",
+                            "title": "Content 006",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/winterstone001/_2.png"
+                        },
+                        {
+                            "title": "Content 002",
+                            "type": "concept",
+                            "icon": "content",
+                            "face": "/winterstone001/_2.png"
+                        },
+                        {
+                            "title": "Content 045",
                             "type": "concept",
                             "icon": "content",
                             "face": "/winterstone001/_2.png"
@@ -642,7 +642,7 @@
                 },
                 {
                     "id": "cube014",
-                    "title": "AquaResin 001",
+                    "title": "Aqua Resin 001",
                     "theme": "Participation",
                     "property": "Resin",
                     "them": "them2",
@@ -658,31 +658,31 @@
                             "face": "/aquaresin001/_1.png"
                         },
                         {
-                            "title": "Media 020",
+                            "title": "Content 030",
                             "type": "concept",
-                            "icon": "media",
+                            "icon": "content",
                             "face": "/aquaresin001/_2.png"
                         },
                         {
-                            "title": "Content 033",
+                            "title": "Content 013",
                             "type": "concept",
                             "icon": "content",
                             "face": "/aquaresin001/_3.png"
                         },
                         {
-                            "title": "Content 035",
+                            "title": "Content 036",
                             "type": "concept",
                             "icon": "content",
                             "face": "/aquaresin001/_4.png"
                         },
                         {
-                            "title": "Content 036",
+                            "title": "Content 035",
                             "type": "concept",
                             "icon": "content",
                             "face": "/aquaresin001/_5.png"
                         },
                         {
-                            "title": "Content 038",
+                            "title": "Content 031",
                             "type": "concept",
                             "icon": "content",
                             "face": "/aquaresin001/_6.png"
@@ -695,7 +695,7 @@
                     "theme": "Participation",
                     "property": "Other",
                     "them": "them2",
-                    "prop": "prop3",
+                    "prop": "prop4",
                     "mat": "mat15",
                     "vx": "-1",
                     "vy": "1",
@@ -707,31 +707,31 @@
                             "face": "/featherlite001/_1.png"
                         },
                         {
-                            "title": "Content 039",
+                            "title": "Media 009",
                             "type": "concept",
-                            "icon": "content",
+                            "icon": "media",
                             "face": "/featherlite001/_2.png"
                         },
                         {
-                            "title": "Visual 011",
+                            "title": "Media 002",
                             "type": "concept",
-                            "icon": "visual",
+                            "icon": "media",
                             "face": "/featherlite001/_3.png"
                         },
                         {
-                            "title": "Visual 016",
+                            "title": "Content 021",
                             "type": "concept",
-                            "icon": "visual",
+                            "icon": "content",
                             "face": "/featherlite001/_4.png"
                         },
                         {
-                            "title": "Media 024",
+                            "title": "Media 022",
                             "type": "concept",
                             "icon": "media",
                             "face": "/featherlite001/_5.png"
                         },
                         {
-                            "title": "Content 045",
+                            "title": "Content 006",
                             "type": "concept",
                             "icon": "content",
                             "face": "/featherlite001/_6.png"
@@ -740,7 +740,7 @@
                 },
                 {
                     "id": "cube016",
-                    "title": "AquaResin 002",
+                    "title": "Aqua Resin 002",
                     "theme": "Participation",
                     "property": "Resin",
                     "them": "them2",
@@ -756,30 +756,33 @@
                             "face": "/aquaresin002/_1.png"
                         },
                         {
-                            "title": "Content 046",
+                            "title": "Media 023",
                             "type": "concept",
-                            "icon": "content",
+                            "icon": "media",
                             "face": "/aquaresin002/_2.png"
                         },
                         {
-                            "title": "Content 047",
+                            "title": "Visual 006",
                             "type": "concept",
-                            "icon": "content",
+                            "icon": "visual",
                             "face": "/aquaresin002/_2.png"
                         },
                         {
-                            "title": "No Entry",
+                            "title": "Content 038",
                             "type": "concept",
+                            "icon": "content",
                             "face": "/aquaresin002/_4.png"
                         },
                         {
-                            "title": "No Entry",
+                            "title": "Media 003",
                             "type": "concept",
+                            "icon": "media",
                             "face": "/aquaresin002/_5.png"
                         },
                         {
-                            "title": "No Entry",
+                            "title": "Content 003",
                             "type": "concept",
+                            "icon": "content",
                             "face": "/aquaresin002/_6.png"
                         }
                     ]
@@ -788,7 +791,7 @@
                     "id": "cube017",
                     "title": "New Material 001",
                     "theme": "Perception",
-                    "property": "",
+                    "property": "Other",
                     "them": "them3",
                     "prop": "prop4",
                     "mat": "mat17",
@@ -802,31 +805,31 @@
                             "face": "/newmaterial001/_1.png"
                         },
                         {
-                            "title": "Media 016",
+                            "title": "Content 028",
                             "type": "concept",
                             "icon": "media",
                             "face": "/newmaterial001/_2.png"
                         },
                         {
-                            "title": "Content 027",
+                            "title": "Content 018",
                             "type": "concept",
                             "icon": "content",
                             "face": "/newmaterial001/_3.png"
                         },
                         {
-                            "title": "Content 026",
+                            "title": "Media 008",
                             "type": "concept",
                             "icon": "content",
                             "face": "/newmaterial001/_4.png"
                         },
                         {
-                            "title": "Content 028",
+                            "title": "Media 017",
                             "type": "concept",
                             "icon": "content",
                             "face": "/newmaterial001/_5.png"
                         },
                         {
-                            "title": "Content 025",
+                            "title": "Media 018",
                             "type": "concept",
                             "icon": "content",
                             "face": "/newmaterial001/_6.png"
@@ -837,7 +840,7 @@
                     "id": "cube018",
                     "title": "New Material 002",
                     "theme": "Perception",
-                    "property": "",
+                    "property": "Other",
                     "them": "them3",
                     "prop": "prop4",
                     "mat": "mat18",
@@ -851,13 +854,13 @@
                             "face": "/newmaterial002/_1.png"
                         },
                         {
-                            "title": "Content 018",
+                            "title": "Content 040",
                             "type": "concept",
                             "icon": "content",
                             "face": "/newmaterial002/_2.png"
                         },
                         {
-                            "title": "Media 006",
+                            "title": "Media 016",
                             "type": "concept",
                             "icon": "media",
                             "face": "/newmaterial002/_3.png"
@@ -869,13 +872,13 @@
                             "face": "/newmaterial002/_4.png"
                         },
                         {
-                            "title": "Content 017",
+                            "title": "Content 014",
                             "type": "concept",
                             "icon": "content",
                             "face": "/newmaterial002/_5.png"
                         },
                         {
-                            "title": "Media 018",
+                            "title": "Content 043",
                             "type": "concept",
                             "icon": "media",
                             "face": "/newmaterial002/_6.png"
@@ -886,7 +889,7 @@
                     "id": "cube019",
                     "title": "New Material 003",
                     "theme": "Perception",
-                    "property": "",
+                    "property": "Other",
                     "them": "them3",
                     "prop": "prop4",
                     "mat": "mat19",
@@ -900,33 +903,33 @@
                             "face": "/newmaterial003/_1.png"
                         },
                         {
-                            "title": "Content 008",
+                            "title": "Media 006",
                             "type": "concept",
-                            "icon": "content",
+                            "icon": "media",
                             "face": "/newmaterial003/_2.png"
                         },
                         {
-                            "title": "Content 011",
+                            "title": "Content 037",
                             "type": "concept",
                             "icon": "content",
                             "face": "/newmaterial003/_3.png"
                         },
                         {
-                            "title": "Content 014",
+                            "title": "Content 032",
                             "type": "concept",
                             "icon": "content",
                             "face": "/newmaterial003/_4.png"
                         },
                         {
-                            "title": "Content 022",
-                            "type": "concept",
-                            "icon": "content",
-                            "face": "/newmaterial003/_5.png"
-                        },
-                        {
                             "title": "Media 010",
                             "type": "concept",
                             "icon": "media",
+                            "face": "/newmaterial003/_5.png"
+                        },
+                        {
+                            "title": "Content 026",
+                            "type": "concept",
+                            "icon": "content",
                             "face": "/newmaterial003/_6.png"
                         }
                     ]
@@ -935,7 +938,7 @@
                     "id": "cube020",
                     "title": "New Material 004",
                     "theme": "Perception",
-                    "property": "",
+                    "property": "Other",
                     "them": "them3",
                     "prop": "prop4",
                     "mat": "mat20",
@@ -949,31 +952,31 @@
                             "face": "/newmaterial004/_1.png"
                         },
                         {
-                            "title": "Media 017",
+                            "title": "Content 041",
                             "type": "concept",
-                            "icon": "media",
+                            "icon": "content",
                             "face": "/newmaterial004/_2.png"
                         },
                         {
-                            "title": "Media 012",
+                            "title": "Content 042",
                             "type": "concept",
-                            "icon": "media",
+                            "icon": "content",
                             "face": "/newmaterial004/_3.png"
-                        },
-                        {
-                            "title": "Media 008",
-                            "type": "concept",
-                            "icon": "media",
-                            "face": "/newmaterial004/_4.png"
                         },
                         {
                             "title": "Content 029",
                             "type": "concept",
                             "icon": "content",
+                            "face": "/newmaterial004/_4.png"
+                        },
+                        {
+                            "title": "Content 044",
+                            "type": "concept",
+                            "icon": "content",
                             "face": "/newmaterial004/_5.png"
                         },
                         {
-                            "title": "Content 032",
+                            "title": "Content 008",
                             "type": "concept",
                             "icon": "content",
                             "face": "/newmaterial004/_6.png"
@@ -984,7 +987,7 @@
                     "id": "cube021",
                     "title": "New Material 005",
                     "theme": "Perception",
-                    "property": "",
+                    "property": "Other",
                     "them": "them3",
                     "prop": "prop4",
                     "mat": "mat21",
@@ -998,31 +1001,31 @@
                             "face": "/newmaterial005/_1.png"
                         },
                         {
-                            "title": "Content 034",
+                            "title": "Media 025",
                             "type": "concept",
-                            "icon": "content",
+                            "icon": "media",
                             "face": "/newmaterial005/_2.png"
                         },
                         {
-                            "title": "Content 037",
+                            "title": "Content 049",
                             "type": "concept",
                             "icon": "content",
                             "face": "/newmaterial005/_3.png"
                         },
                         {
-                            "title": "Content 040",
+                            "title": "Content 011",
                             "type": "concept",
                             "icon": "content",
                             "face": "/newmaterial005/_4.png"
                         },
                         {
-                            "title": "Media 025",
+                            "title": "Media 012",
                             "type": "concept",
                             "icon": "media",
                             "face": "/newmaterial005/_5.png"
                         },
                         {
-                            "title": "Content 041",
+                            "title": "Content 048",
                             "type": "concept",
                             "icon": "content",
                             "face": "/newmaterial005/_6.png"
@@ -1033,7 +1036,7 @@
                     "id": "cube022",
                     "title": "New Material 006",
                     "theme": "Perception",
-                    "property": "",
+                    "property": "Other",
                     "them": "them3",
                     "prop": "prop4",
                     "mat": "mat22",
@@ -1047,32 +1050,33 @@
                             "face": "/newmaterial006/_1.png"
                         },
                         {
-                            "title": "Content 042",
+                            "title": "Content 017",
                             "type": "concept",
                             "icon": "content",
                             "face": "/newmaterial006/_2.png"
                         },
                         {
-                            "title": "Content 043",
+                            "title": "Content 025",
                             "type": "concept",
                             "icon": "content",
                             "face": "/newmaterial006/_3.png"
                         },
                         {
-                            "title": "Content 044",
+                            "title": "Content 027",
                             "type": "concept",
                             "icon": "content",
                             "face": "/newmaterial006/_4.png"
                         },
                         {
-                            "title": "Content 048",
+                            "title": "Content 022",
                             "type": "concept",
                             "icon": "content",
                             "face": "/newmaterial006/_5.png"
                         },
                         {
-                            "title": "No Entry",
-                            "icon": "",
+                            "title": "Content 034",
+                            "icon": "concept",
+                            "icon": "content",
                             "face": "/newmaterial006/_6.png"
                         }
                     ]

@@ -278,7 +278,7 @@
             
             function save() {
                 
-                var canvas = document.getElementById("canvas");
+//                var canvas = document.getElementById("canvas");
                 
                 scene.remove( rollOverMesh );
                 render();
@@ -287,17 +287,17 @@
                 return false;
             }
             
-            $('#submit').on('click', function (){
-                    event.preventDefault();
-                    
-                    container.toBlob(function(blob) {
-                        saveAs(
-                              blob
-                            , (canvas_filename.value || canvas_filename.placeholder) + ".png"
-                        );
-                    }, "image/png");
-                
-            });
+//            $('#submit').on('click', function (){
+//                    event.preventDefault();
+//                    
+//                    container.toBlob(function(blob) {
+//                        saveAs(
+//                              blob
+//                            , (canvas_filename.value || canvas_filename.placeholder) + ".png"
+//                        );
+//                    }, "image/png");
+//                
+//            });
             
             //rotating the form 
             
@@ -372,12 +372,14 @@
                                
         </script>
         
-        <div class="title-left">
-            <h1>FUTURE</h1>
-        </div>
+        <div class="title">
+            <div class="title-left">
+                <h1>FUTURE</h1>
+            </div>
 
-        <div class="title-right">
-            <h1>SPACES</h2>
+            <div class="title-right">
+                <h1>SPACES</h2>
+            </div>
         </div>
         
         <div class="forms">
