@@ -674,7 +674,7 @@ div p {
     font-family: 'Ogg';
     color: white;
     text-transform: uppercase;
-    padding-bottom: 55px;
+    padding-top: 15px;
 }
 
 .table-photos:hover {
@@ -686,7 +686,12 @@ div p {
 }
 
 .table-photos .selected .selected-img {
-    border: 4px solid white;
+    border: 4px solid transparent;
+}
+
+.table-photos .selected .selected-img:hover {
+    box-sizing: border-box;
+    border: 4px solid #29c171;
 }
 
 .table-photos .selected .eyes-below {
@@ -694,7 +699,7 @@ div p {
     position: absolute;
     width: 640px;
     left: 50%;
-    top: 320px;
+    top: 260px;
     transform: translateX(-50%);
 }
 
