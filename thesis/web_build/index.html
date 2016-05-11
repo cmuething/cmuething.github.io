@@ -277,27 +277,13 @@
             }
             
             function save() {
-                
-//                var canvas = document.getElementById("canvas");
-                
+                                
                 scene.remove( rollOverMesh );
                 render();
                 window.open( renderer.domElement.toDataURL('image/png'), 'mywindow' );
                 scene.add( rollOverMesh );
                 return false;
             }
-            
-//            $('#submit').on('click', function (){
-//                    event.preventDefault();
-//                    
-//                    container.toBlob(function(blob) {
-//                        saveAs(
-//                              blob
-//                            , (canvas_filename.value || canvas_filename.placeholder) + ".png"
-//                        );
-//                    }, "image/png");
-//                
-//            });
             
             //rotating the form 
             
@@ -367,7 +353,30 @@
 
                 //reload the page if you still need to
                 window.location.reload();
-                }
+                } 
+            });
+            
+             $('#module-2').on('click', function(event){
+                 
+                 console.log( "loading stuff" );
+                 
+                 scene.remove( rollOverGeo );
+                 
+                rollOverGeo = new THREE.STLLoader();
+                rollOverGeo.load( "./stl/module_2.stl", function ( geometry ) {
+                    
+                    rollOverMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, shininess: 200, opacity: 0.75, transparent: true });
+                    rollOverMesh = new THREE.Mesh( geometry, rollOverMaterial );
+                                        
+                    rollOverMesh.scale.set( 5, 5, 5 );
+                    rollOverMesh.rotation.z = -Math.PI / 1;
+                    rollOverMesh.rotation.x = -Math.PI / 2;
+                    
+                    scene.add( rollOverMesh );
+                    
+                    render();
+                    
+                });
             });
                                
         </script>
@@ -447,32 +456,50 @@
             
         </div>
         
+        <div id="deleteItAll" class="hidden"><img src="cursor_black.cur"></div>
+        
         <script>
         
             $('.about-toggle').on('click', function(event){
+                
+                var pastPhotos = $('.past-toggle');
+                var submit = $('.save-toggle');
+                var close = $('#deleteItAll');
                                 
                 $('.about').removeClass('hidden');
+                pastPhotos.addClass('disable');
+                submit.addClass('disable');
+                close.removeClass('hidden');
                 
-                    $('.about').on('click', function(event){
+                    $('#deleteItAll').on('click', function(event){
                         
                         $('.about').addClass('hidden');
-                        
+                        pastPhotos.removeClass('disable');
+                        submit.removeClass('disable');
+                        close.addClass('hidden');
                     })
             });
             
             $('.past-toggle').on('click', function(event){
                 
-                var tableTop = $('.table-photos');
+                var aboutBox = $('.about-toggle');
+                var submit = $('.save-toggle');
+                var close = $('#deleteItAll');
 
-                tableTop.removeClass('hidden');
+                $('.table-photos').removeClass('hidden');
+                aboutBox.addClass('disable');
+                submit.addClass('disable');
+                close.removeClass('hidden');
 
-                $('.table-photos').on('click', function(event){ 
+                    $('#deleteItAll').on('click', function(event){ 
 
-                    $(".table-photos").scrollTop( 0 );
+                        $(".table-photos").scrollTop( 0 );
 
-                    tableTop.addClass('hidden');
-
-                });
+                        $('.table-photos').addClass('hidden');
+                        aboutBox.removeClass('disable');
+                        submit.removeClass('disable');
+                        close.addClass('hidden');
+                    });
             });
             
             $('.selected-img').on('mouseenter', function(event){
