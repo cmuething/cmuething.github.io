@@ -414,6 +414,26 @@
             </div>
         </div>
         
+        <div class="about hidden">
+            <div id="popup">
+                <h1>About this site</h1>
+                <p>This site is the culmination of a lengthy conceptual and material research process conducted in 2016 as part of Future Spaces. Each cluster of icons represents a new material test along with five entries into this dictionary. The concept based research, either media, content, visual, or location, has been divided into three different themes. Similarly, the material research has been divided into four different types. As a result of both of these research processes, a final manifesto for the project and material choice for the corresponding objects used in the build environments and final space have been reached. This site allows you to interact with the integral process that led to this installation.</p><p>Special thanks to Jennifer Hock, James Rouvelle, Kristian Bjornard, Ryan Hoover, Ben Kelley, Pete Karis, and David East for their help with Future Spaces.</p>
+            </div>
+        </div>
+        
+        <div class="table-photos hidden">
+        <ul>        
+            <li class="selected">
+                <img class="selected-img" src="images/photo_1.png">
+                <div class="eyes-below hidden"><img src="images/eyes-20.png"></div>
+                <h1>This photo is being used to design the public space below</h1>
+            </li>
+            <li><img src="images/photo_2.png"></li>
+            <li><img src="images/photo_3.png"></li>
+            <li><img src="images/photo_4.png"></li>
+        </ul>
+    </div>
+        
         <div id="bottom">
             <div class="save-toggle">
                 <a id="submit" href="javascript:save()">Submit</a>
@@ -426,6 +446,50 @@
             </div>
             
         </div>
+        
+        <script>
+        
+            $('.about-toggle').on('click', function(event){
+                                
+                $('.about').removeClass('hidden');
+                
+                    $('.about').on('click', function(event){
+                        
+                        $('.about').addClass('hidden');
+                        
+                    })
+            });
+            
+            $('.past-toggle').on('click', function(event){
+                
+                var tableTop = $('.table-photos');
+
+                tableTop.removeClass('hidden');
+
+                $('.table-photos').on('click', function(event){ 
+
+                    $(".table-photos").scrollTop( 0 );
+
+                    tableTop.addClass('hidden');
+
+                });
+            });
+            
+            $('.selected-img').on('mouseenter', function(event){
+                event.preventDefault();
+
+                var eyes = $('.eyes-below');
+
+                eyes.removeClass('hidden');
+
+                $('.selected-img').on('mouseleave', function(event){
+
+                    eyes.addClass('hidden');
+
+                });
+            });
+        
+        </script>
         
     </body>
 </html>
