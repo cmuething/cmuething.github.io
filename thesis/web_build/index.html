@@ -127,8 +127,14 @@
             
             var client = new Dropbox.Client({
                 key: "tt34ahtartutnwo",
-                secret: "pneguga7vpbxy5f"
+                secret: "pneguga7vpbxy5f",
+                token: "p9-V9pdznKoAAAAAAAAB3THZmV0tdWDdK8BYtmDBUqSz1flDtlWho-bwOZUxmT1b"
             });
+            
+//            var client = new Dropbox.Client({
+//                key: "tt34ahtartutnwo",
+//                secret: "pneguga7vpbxy5f"
+//            });
             
             init();
             render();
@@ -384,13 +390,15 @@
                     //create form
                     
                     } else {
-                                                
-//                        formGeo = new THREE.STLLoader();
-//                        formGeo.load( "./stl/module_1.stl", function ( geometry ) {
                         
-                        rollOverMesh = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, shininess: 200 });
+                        //make the rollover mesh what is placed, not formGeo
                         
-                        var voxel = new THREE.Mesh( geometry, rollOverMesh );
+                        formGeo = new THREE.STLLoader();
+                        formGeo.load( "./stl/module_1.stl", function ( geometry ) {
+                        
+                        formGeo = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, shininess: 200 });
+                        
+                        var voxel = new THREE.Mesh( geometry, formGeo );
                         voxel.position.copy( intersect.point ).add( intersect.face.normal );
                         voxel.position.divideScalar( 50 ).floor().multiplyScalar( 50 ).addScalar( 50 );
                             
@@ -405,12 +413,14 @@
                         scene.add( rollOverMesh );
                         render();
                         
-                    }
+                    });
                     
                     render();
                     
                 }
                                 
+            }
+                
             }
             
             function onWindowResize() {
@@ -446,16 +456,33 @@
 
             function savePicture() {
                 
-//                client.authDriver(new Dropbox.AuthDriver.NodeServer(8191));
-                
+                    var fileName = Math.floor((Math.random() * 10000) + 1) + ".png";
+                                
                     // Try to use cached credentials.
                     client.authenticate( function(error, client) {
                       if (error) {
                         return handleError(error);
                       }
                       if (client.isAuthenticated()) {
-                        // Cached credentials are available, make Dropbox API calls.
-                        doSomethingCool();
+                          
+                        //Get data from canvas
+                        scene.remove( rollOverMesh );
+                        render();
+                        var imageSringData = renderer.domElement.toDataURL('image/png');
+                        //Convert it to an arraybuffer
+                        var imageData = _base64ToArrayBuffer(imageSringData);
+
+                        client.writeFile(fileName, imageData, function(error, stat) {
+                        if (error) {
+                            console.log('Error: ' + error);
+                        } else {
+                            console.log('File written successfully!');
+                            
+                        }
+                    });
+                        scene.add( rollOverMesh );
+                        return false;  
+                          
                       } else {
                         // show and set up the "Sign into Dropbox" button
                         var button = document.querySelector("#signin-button");
@@ -466,24 +493,15 @@
                             if (error) {
                               return handleError(error);
                             }
+                              
+                              
                             doSomethingCool();
+                              
+                              
                           });
                         });
                       }
                     });
-                
-                    //Get data from canvas
-                    var imageSringData = renderer.domElement.toDataURL('image/png');
-                    //Convert it to an arraybuffer
-                    var imageData = _base64ToArrayBuffer(imageSringData);
-
-                    client.writeFile('/Public/the_image.png', imageData, function(error, stat) {
-                    if (error) {
-                        console.log('Error: ' + error);
-                    } else {
-                        console.log('File written successfully!');
-                    }
-                });
                 
             }
             
