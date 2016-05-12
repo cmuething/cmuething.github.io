@@ -61,7 +61,7 @@
                 <ul>
                     <li><img src="images/arrow-keys.png"></li>
                     <li><img src="images/click.png"></li>
-                    <li><img src="images/shift-click.png"></li>
+<!--                    <li><img src="images/shift-click.png"></li>-->
                     <li><img src="images/esc.png"></li>
                 </ul>
             </div>
@@ -69,7 +69,7 @@
                 <ul>
                     <li><p>to rotate the form</p></li>
                     <li><p>to add a form</p></li>
-                    <li><p>to delete a form</p></li>
+<!--                    <li><p>to delete a form</p></li>-->
                     <li><p>to clear all forms</p></li>
                 </ul>
             </div>
@@ -78,7 +78,8 @@
         <div class="about hidden">
             <div id="popup">
                 <h1>About this site</h1>
-                <p>This site is the culmination of a lengthy conceptual and material research process conducted in 2016 as part of Future Spaces. Each cluster of icons represents a new material test along with five entries into this dictionary. The concept based research, either media, content, visual, or location, has been divided into three different themes. Similarly, the material research has been divided into four different types. As a result of both of these research processes, a final manifesto for the project and material choice for the corresponding objects used in the build environments and final space have been reached. This site allows you to interact with the integral process that led to this installation.</p><p>Special thanks to Jennifer Hock, James Rouvelle, Kristian Bjornard, Ryan Hoover, Ben Kelley, Pete Karis, and David East for their help with Future Spaces.</p>
+                <p>This site is the virtual build environment that accompanies the physical build environment to your right. The submissions from each help to inform the design of the space below.</p>
+                <p>To add new modules, simply click on the corresponding buttons for each module and submit when your design is complete.</p>
             </div>
         </div>
         
@@ -167,7 +168,7 @@
                 scene.add( axes );
                 
                 //stl
-                
+                                
                 rollOverGeo = new THREE.STLLoader();
                 rollOverGeo.load( "./stl/module_1.stl", function ( geometry ) {
                     
@@ -274,31 +275,6 @@
                 
             }
             
-            function onDocumentMouseMove( event ) {
-                
-                event.preventDefault();
-                
-                //what is this doing?
-                
-                mouse.set( ( event.clientX / window.innerWidth ) * 2 - 1, - ( event.clientY / window.innerHeight ) * 2 + 1 );
-                                
-                raycaster.setFromCamera( mouse, camera );
-                
-                var intersects = raycaster.intersectObjects( objects );
-                
-                if ( intersects.length > 0 ) {
-                    
-                    var intersect = intersects[ 0 ];
-                    
-                    rollOverMesh.position.copy( intersect.point ).add( intersect.face.normal );
-                    rollOverMesh.position.divideScalar( 40 ).floor().multiplyScalar( 40 ).addScalar( 40 );
-                    
-                }
-                
-                render();
-                
-            }
-            
             //rotating the form 
             
             function render() {
@@ -393,34 +369,71 @@
                     } else {
                         
                         //make the rollover mesh what is placed, not formGeo
+                        //just making the rollover mesh that it adds transparent for the time being
                         
-                        formGeo = new THREE.STLLoader();
-                        formGeo.load( "./stl/module_1.stl", function ( geometry ) {
+                        rollOverMesh = new THREE.STLLoader();
+                        rollOverMesh.load( "./stl/module_1.stl", function ( geometry ) {
                         
-                        formGeo = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, shininess: 200 });
+                        rollOverMesh = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, shininess: 200, transparent: true, opacity: 0 });
                         
-                        var voxel = new THREE.Mesh( geometry, formGeo );
+                        var voxel = new THREE.Mesh( geometry, rollOverMesh );
                         voxel.position.copy( intersect.point ).add( intersect.face.normal );
                         voxel.position.divideScalar( 50 ).floor().multiplyScalar( 50 ).addScalar( 50 );
                             
                         voxel.scale.set( 5, 5, 5 );
 //                        voxel.rotation.x = -Math.PI / 2;
 //                        voxel.rotation.z = -Math.PI / 1;
-                            
+                                                
                         scene.add( voxel );
                         
                         objects.push( voxel );
                         
-                        scene.add( rollOverMesh );
                         render();
-                        
+                                                
                     });
                     
+                }
+                    
+                rollOverGeo = new THREE.STLLoader();
+                rollOverGeo.load( "./stl/module_1.stl", function ( geometry ) {
+                    
+                    rollOverMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, shininess: 200 });
+                    rollOverMesh = new THREE.Mesh( geometry, rollOverMaterial );
+                                        
+                    rollOverMesh.scale.set( 5, 5, 5 );
+                    
+                    scene.add( rollOverMesh );
+                    
                     render();
+                        
+                    });
+        
+            }
+                
+            }
+            
+            function onDocumentMouseMove( event ) {
+                
+                event.preventDefault();
+                
+                //what is this doing?
+                
+                mouse.set( ( event.clientX / window.innerWidth ) * 2 - 1, - ( event.clientY / window.innerHeight ) * 2 + 1 );
+                                
+                raycaster.setFromCamera( mouse, camera );
+                
+                var intersects = raycaster.intersectObjects( objects );
+                
+                if ( intersects.length > 0 ) {
+                    
+                    var intersect = intersects[ 0 ];
+                    
+                    rollOverMesh.position.copy( intersect.point ).add( intersect.face.normal );
+                    rollOverMesh.position.divideScalar( 40 ).floor().multiplyScalar( 40 ).addScalar( 40 );
                     
                 }
-                                
-            }
+                
+                render();
                 
             }
             
@@ -460,9 +473,10 @@
                       }
                       if (client.isAuthenticated()) {
                           
-                        //Get data from canvas
+//                        //Get data from canvas
                         scene.remove( rollOverMesh );
                         render();
+                          
                         var imageSringData = renderer.domElement.toDataURL('image/png');
                         //Convert it to an arraybuffer
                         var imageData = _base64ToArrayBuffer(imageSringData);
