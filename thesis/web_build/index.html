@@ -25,6 +25,85 @@
         <script src="js/Blob.js"></script>
         <script src="js/canvas-toBlob.js"></script>
         
+        <script src="https://www.dropbox.com/static/api/dropbox-datastores-1.2-latest.js" type="text/javascript"></script>
+        
+        <div class="title">
+            <div class="title-left">
+                <h1>FUTURE</h1>
+            </div>
+
+            <div class="title-right">
+                <h1>SPACES</h2>
+            </div>
+        </div>
+        
+        <div class="forms">
+            <div id="modules">
+                <div id="module-1"><img src="images/module_1.png"></div>
+                <div id="module-2"><img src="images/module_2.png"></div>
+            </div>
+            <div class="desc">
+                <ul>
+                    <li class="underline" id="module-one"><p>Module One</p></li>
+                    <li id="module-two"><p>Module Two</p></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="navigation">
+            <div id="icons">
+                <ul>
+                    <li><img src="images/arrow-keys.png"></li>
+                    <li><img src="images/click.png"></li>
+                    <li><img src="images/shift-click.png"></li>
+                    <li><img src="images/esc.png"></li>
+                </ul>
+            </div>
+            <div class="desc">
+                <ul>
+                    <li><p>to rotate the form</p></li>
+                    <li><p>to add a form</p></li>
+                    <li><p>to delete a form</p></li>
+                    <li><p>to clear all forms</p></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="about hidden">
+            <div id="popup">
+                <h1>About this site</h1>
+                <p>This site is the culmination of a lengthy conceptual and material research process conducted in 2016 as part of Future Spaces. Each cluster of icons represents a new material test along with five entries into this dictionary. The concept based research, either media, content, visual, or location, has been divided into three different themes. Similarly, the material research has been divided into four different types. As a result of both of these research processes, a final manifesto for the project and material choice for the corresponding objects used in the build environments and final space have been reached. This site allows you to interact with the integral process that led to this installation.</p><p>Special thanks to Jennifer Hock, James Rouvelle, Kristian Bjornard, Ryan Hoover, Ben Kelley, Pete Karis, and David East for their help with Future Spaces.</p>
+            </div>
+        </div>
+        
+        <div class="table-photos hidden">
+        <ul>        
+            <li class="selected">
+                <img class="selected-img" src="images/photo_1.png">
+                <div class="eyes-below hidden"><img src="images/eyes-20.png"></div>
+                <h1>This photo is being used to design the public space below</h1>
+            </li>
+            <li><img src="images/photo_2.png"></li>
+            <li><img src="images/photo_3.png"></li>
+            <li><img src="images/photo_4.png"></li>
+        </ul>
+    </div>
+        
+        <div id="bottom">
+            <div class="save-toggle">
+                <a id="submit" href="javascript:savePicture()">Submit</a>
+            </div>
+            <div class="about-toggle">
+                <p>About</p>
+            </div>
+            <div class="past-toggle">
+                <p>Past Entries</p>
+            </div>
+            
+        </div>
+        
+        <div id="deleteItAll" class="hidden"><img src="cursor_black.cur"></div>
+        
         <script>
             
             if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
@@ -44,8 +123,12 @@
             var goUp = false
             var goDown = false
             
-            //vars
             var rotationx = rotationy = rotationz = 0
+            
+            var client = new Dropbox.Client({
+                key: "tt34ahtartutnwo",
+                secret: "pneguga7vpbxy5f"
+            });
             
             init();
             render();
@@ -81,11 +164,11 @@
                 rollOverGeo = new THREE.STLLoader();
                 rollOverGeo.load( "./stl/module_1.stl", function ( geometry ) {
                     
-                    rollOverMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, shininess: 200, opacity: 0.75, transparent: true });
+                    rollOverMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, shininess: 200 });
                     rollOverMesh = new THREE.Mesh( geometry, rollOverMaterial );
                                         
                     rollOverMesh.scale.set( 5, 5, 5 );
-                    rollOverMesh.rotation.z = -Math.PI / 1;
+                    rollOverMesh.rotation.z = -Math.PI / 2;
                     rollOverMesh.rotation.x = -Math.PI / 2;
                     
                     scene.add( rollOverMesh );
@@ -209,82 +292,6 @@
                 
             }
             
-            function onDocumentMouseDown( event ) {
-                
-                event.preventDefault();
-                
-                mouse.set( ( event.clientX / window.innerWidth ) * 2 - 1, - ( event.clientY / window.innerHeight ) * 2 + 1 );
-                
-                raycaster.setFromCamera( mouse, camera );
-                
-                var intersects = raycaster.intersectObjects( objects );
-                
-                if ( intersects.length > 0 ) {
-                    
-                    var intersect = intersects[ 0 ];
-                    
-                    //delete form
-                    
-                    if ( isShiftDown ) {
-                        
-                        if ( intersect.object != plane ) {
-                            
-                            scene.remove( intersect.object );
-                            
-                            objects.splice( objects.indexOf( intersect.object ), 1 );
-                        }
-                    
-                    
-                    //create form
-                    
-                    } else {
-                        
-                        formGeo = new THREE.STLLoader();
-                        formGeo.load( "./stl/module_2.stl", function ( geometry ) {
-                            
-                        formMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, shininess: 200 });
-                            
-                        
-                        var voxel = new THREE.Mesh( geometry, formMaterial );
-                        voxel.position.copy( intersect.point ).add( intersect.face.normal );
-                        voxel.position.divideScalar( 50 ).floor().multiplyScalar( 50 ).addScalar( 50 );
-                            
-                        voxel.scale.set( 5, 5, 5 );
-                        voxel.rotation.x = -Math.PI / 2;
-                        voxel.rotation.z = -Math.PI / 1;
-                            
-                        scene.add( voxel );
-                        
-                        objects.push( voxel );
-                            
-                        })
-                        
-                    }
-                    
-                    render();
-                    
-                }
-                
-            }
-            
-            function onWindowResize() {
-                
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-                
-                renderer.setSize( window.innerWidth, window.innerHeight );
-                
-            }
-            
-            function save() {
-                                
-                scene.remove( rollOverMesh );
-                render();
-                window.open( renderer.domElement.toDataURL('image/png'), 'mywindow' );
-                scene.add( rollOverMesh );
-                return false;
-            }
-            
             //rotating the form 
             
             function render() {
@@ -317,7 +324,7 @@
                 rollOverMesh.rotation.y = rotationy 
                 rollOverMesh.rotation.z = rotationz
                                     
-                renderer.render( scene, camera );
+                renderer.render( scene, camera ); 
                     
             } 
                 
@@ -348,6 +355,136 @@
                 goDown = false
             });
             
+            function onDocumentMouseDown( event ) {
+                
+                event.preventDefault();
+                
+                mouse.set( ( event.clientX / window.innerWidth ) * 2 - 1, - ( event.clientY / window.innerHeight ) * 2 + 1 );
+                
+                raycaster.setFromCamera( mouse, camera );
+                
+                var intersects = raycaster.intersectObjects( objects );
+                
+                if ( intersects.length > 0 ) {
+                    
+                    var intersect = intersects[ 0 ];
+                    
+                    //delete form
+                    
+                    if ( isShiftDown ) {
+                        
+                        if ( intersect.object != plane ) {
+                            
+                            scene.remove( intersect.object );
+                            
+                            objects.splice( objects.indexOf( intersect.object ), 1 );
+                        }
+                    
+                    
+                    //create form
+                    
+                    } else {
+                                                
+//                        formGeo = new THREE.STLLoader();
+//                        formGeo.load( "./stl/module_1.stl", function ( geometry ) {
+                        
+                        rollOverMesh = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, shininess: 200 });
+                        
+                        var voxel = new THREE.Mesh( geometry, rollOverMesh );
+                        voxel.position.copy( intersect.point ).add( intersect.face.normal );
+                        voxel.position.divideScalar( 50 ).floor().multiplyScalar( 50 ).addScalar( 50 );
+                            
+                        voxel.scale.set( 5, 5, 5 );
+//                        voxel.rotation.x = -Math.PI / 2;
+//                        voxel.rotation.z = -Math.PI / 1;
+                            
+                        scene.add( voxel );
+                        
+                        objects.push( voxel );
+                        
+                        scene.add( rollOverMesh );
+                        render();
+                        
+                    }
+                    
+                    render();
+                    
+                }
+                                
+            }
+            
+            function onWindowResize() {
+                
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                
+                renderer.setSize( window.innerWidth, window.innerHeight );
+                
+            }
+            
+//            function save() {
+//                                
+//                scene.remove( rollOverMesh );
+//                render();
+//                window.open( renderer.domElement.toDataURL('image/png'), 'mywindow' );
+//                scene.add( rollOverMesh );
+//                return false;
+//            }
+            
+            function _base64ToArrayBuffer(base64) {
+                base64 = base64.split('data:image/png;base64,').join('');
+                var binary_string =  window.atob(base64),
+                    len = binary_string.length,
+                    bytes = new Uint8Array( len ),
+                    i;
+
+                for (i = 0; i < len; i++)        {
+                    bytes[i] = binary_string.charCodeAt(i);
+                }
+                return bytes.buffer;
+            }
+
+            function savePicture() {
+                
+//                    // Try to use cached credentials.
+//                    client.authenticate({interactive: false}, function(error, client) {
+//                      if (error) {
+//                        return handleError(error);
+//                      }
+//                      if (client.isAuthenticated()) {
+//                        // Cached credentials are available, make Dropbox API calls.
+//                        doSomethingCool();
+//                      } else {
+//                        // show and set up the "Sign into Dropbox" button
+//                        var button = document.querySelector("#signin-button");
+//                        button.setAttribute("class", "visible");
+//                        button.addEventListener("click", function() {
+//                          // The user will have to click an 'Authorize' button.
+//                          client.authenticate(function(error, client) {
+//                            if (error) {
+//                              return handleError(error);
+//                            }
+//                            doSomethingCool();
+//                          });
+//                        });
+//                      }
+//                    });
+                
+                    //Get data from canvas
+                    var imageSringData = renderer.domElement.toDataURL('image/png');
+                    //Convert it to an arraybuffer
+                    var imageData = _base64ToArrayBuffer(imageSringData);
+
+                    client.writeFile('/Public/the_image.png', imageData, function(error, stat) {
+                    if (error) {
+                        console.log('Error: ' + error);
+                    } else {
+                        console.log('File written successfully!');
+                    }
+                });
+                
+            }
+            
             $(document).keyup(function(e) {    
                 if (e.keyCode == 27) { //escape key
 
@@ -356,21 +493,23 @@
                 } 
             });
             
-             $('#module-2').on('click', function(event){
-                 
-                 console.log( "loading stuff" );
-                 
-                 scene.remove( rollOverGeo );
+            $('#module-2').on('click', function(event){
+                
+                var selected = $('#module-two');
+                var notSelected = $('#module-one');
+                
+                notSelected.removeClass('underline');
+                selected.addClass('underline');
+                                  
+                scene.remove( rollOverMesh );
                  
                 rollOverGeo = new THREE.STLLoader();
                 rollOverGeo.load( "./stl/module_2.stl", function ( geometry ) {
                     
-                    rollOverMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, shininess: 200, opacity: 0.75, transparent: true });
+                    rollOverMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, shininess: 200 });
                     rollOverMesh = new THREE.Mesh( geometry, rollOverMaterial );
                                         
                     rollOverMesh.scale.set( 5, 5, 5 );
-                    rollOverMesh.rotation.z = -Math.PI / 1;
-                    rollOverMesh.rotation.x = -Math.PI / 2;
                     
                     scene.add( rollOverMesh );
                     
@@ -378,85 +517,34 @@
                     
                 });
             });
+            
+            $('#module-1').on('click', function(event){
+                
+                var selected = $('#module-one');
+                var notSelected = $('#module-two');
+                
+                notSelected.removeClass('underline');
+                selected.addClass('underline');
+                                 
+                scene.remove( rollOverMesh );
+                 
+                rollOverGeo = new THREE.STLLoader();
+                rollOverGeo.load( "./stl/module_1.stl", function ( geometry ) {
+                    
+                    rollOverMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, shininess: 200 });
+                    rollOverMesh = new THREE.Mesh( geometry, rollOverMaterial );
+                                        
+                    rollOverMesh.scale.set( 5, 5, 5 );
+                    
+                    scene.add( rollOverMesh );
+                    
+                    render();
+                    
+                });
+            }); 
+            
                                
         </script>
-        
-        <div class="title">
-            <div class="title-left">
-                <h1>FUTURE</h1>
-            </div>
-
-            <div class="title-right">
-                <h1>SPACES</h2>
-            </div>
-        </div>
-        
-        <div class="forms">
-            <div id="modules">
-                <div id="module-1"><img src="images/module_1.png"></div>
-                <div id="module-2"><img src="images/module_2.png"></div>
-            </div>
-            <div class="desc">
-                <ul>
-                    <li><p>Module One</p></li>
-                    <li><p>Module Two</p></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="navigation">
-            <div id="icons">
-                <ul>
-                    <li><img src="images/arrow-keys.png"></li>
-                    <li><img src="images/click.png"></li>
-                    <li><img src="images/shift-click.png"></li>
-                    <li><img src="images/esc.png"></li>
-                </ul>
-            </div>
-            <div class="desc">
-                <ul>
-                    <li><p>to rotate the form</p></li>
-                    <li><p>to add a form</p></li>
-                    <li><p>to delete a form</p></li>
-                    <li><p>to clear all forms</p></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="about hidden">
-            <div id="popup">
-                <h1>About this site</h1>
-                <p>This site is the culmination of a lengthy conceptual and material research process conducted in 2016 as part of Future Spaces. Each cluster of icons represents a new material test along with five entries into this dictionary. The concept based research, either media, content, visual, or location, has been divided into three different themes. Similarly, the material research has been divided into four different types. As a result of both of these research processes, a final manifesto for the project and material choice for the corresponding objects used in the build environments and final space have been reached. This site allows you to interact with the integral process that led to this installation.</p><p>Special thanks to Jennifer Hock, James Rouvelle, Kristian Bjornard, Ryan Hoover, Ben Kelley, Pete Karis, and David East for their help with Future Spaces.</p>
-            </div>
-        </div>
-        
-        <div class="table-photos hidden">
-        <ul>        
-            <li class="selected">
-                <img class="selected-img" src="images/photo_1.png">
-                <div class="eyes-below hidden"><img src="images/eyes-20.png"></div>
-                <h1>This photo is being used to design the public space below</h1>
-            </li>
-            <li><img src="images/photo_2.png"></li>
-            <li><img src="images/photo_3.png"></li>
-            <li><img src="images/photo_4.png"></li>
-        </ul>
-    </div>
-        
-        <div id="bottom">
-            <div class="save-toggle">
-                <a id="submit" href="javascript:save()">Submit</a>
-            </div>
-            <div class="about-toggle">
-                <p>About</p>
-            </div>
-            <div class="past-toggle">
-                <p>Past Entries</p>
-            </div>
-            
-        </div>
-        
-        <div id="deleteItAll" class="hidden"><img src="cursor_black.cur"></div>
         
         <script>
         

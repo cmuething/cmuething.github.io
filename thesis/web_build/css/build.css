@@ -99,6 +99,10 @@ div p {
     opacity: .35;
 }
 
+.underline {
+    text-decoration: underline;
+}
+
 .title {
     position: fixed;
     top: 0px;
