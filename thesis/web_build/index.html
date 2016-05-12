@@ -37,6 +37,12 @@
             </div>
         </div>
         
+        <div class="thanks hidden">
+            <h1>
+                THANK YOU FOR YOUR SUBMISSION!
+            </h1>
+        </div>
+        
         <div class="forms">
             <div id="modules">
                 <div id="module-1"><img src="images/module_1.png"></div>
@@ -442,7 +448,10 @@
 
             function savePicture() {
                 
-                    var fileName = Math.floor((Math.random() * 10000) + 1) + ".png";
+                    var fileName = Math.floor((Math.random() * 100000) + 1) + ".png";
+                    var thankYou = $('.thanks');
+                
+                    var delay = 3000;
                                 
                     // Try to use cached credentials.
                     client.authenticate( function(error, client) {
@@ -466,8 +475,15 @@
                             console.log('File written successfully!');
                             
                         }
+                        
+                        thankYou.removeClass('hidden');    
                             
-                        window.location.reload();
+                        setTimeout(function() {
+                        
+                            window.location.reload();
+                                                            
+                        }, delay);
+                            
                     });
                         scene.add( rollOverMesh );
                         return false;  

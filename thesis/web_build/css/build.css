@@ -25,6 +25,11 @@ MAIN.CSS
     src: url('Fugue-Regular.otf');
 }
 
+@font-face {
+    font-family: 'Ogg';
+    src: url('css/Ogg-Roman.otf')
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -119,6 +124,21 @@ div p {
     float: left;
     margin: 30px 0 0 20px;
 }
+
+.thanks {
+    width: 100%;
+    text-align: center;
+}
+
+.thanks h1 {
+    position: absolute;
+    top: 275px;
+    width: 600px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Ogg';
+    font-size: 5em;
+}   
 
 .forms {
     position: fixed;
