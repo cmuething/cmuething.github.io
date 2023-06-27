@@ -1,0 +1,624 @@
+@font-face {
+    font-family: 'Graphik Web';
+    src: url('Graphik-Regular-Web.eot');
+    src: url('Graphik-Regular-Web.eot?#iefix') format('embedded-opentype'),
+    url('Graphik-Regular-Web.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: 'Graphik Light';
+    src: url('graphik_light.ttf');
+}
+
+body {
+    margin: 0;
+    font-family: 'Graphik Web', Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    -moz-font-feature-settings: "liga", "kern";
+    -moz-font-feature-settings:"liga=1, kern=1";
+    -ms-font-feature-settings:"liga", "kern";
+    -o-font-feature-settings:"liga", "kern";
+    -webkit-font-feature-settings:"liga", "kern";
+    font-feature-settings: "liga", "kern";
+}
+
+#whole-page {
+    display: none;
+}
+
+#loading {
+    position: absolute;
+    z-index: 99999999;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+/*add whatever you want the loading screen to be here*/
+    background-color: white;
+}
+
+.no_api {
+    opacity: .4;
+    position: absolute;
+    line-height: 8em;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999;
+    text-align: center;
+    padding-top: 20%;
+}
+
+.no_api a:hover {
+    border-bottom: solid 6px white;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    z-index: 9999998;
+}
+
+.too-much {
+    text-decoration: none;
+    color: black;
+    font-size: 7em;
+}
+
+.gradient {
+    opacity: .4;
+    z-index: 999999;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.gradient:hover {
+    cursor: url('cursor_white.cur'), auto;
+}
+
+#connor {
+    position: absolute;
+    font-size: 20px;
+    line-height: 22px;
+    z-index: 99999999;
+    left: 40px;
+    top: 1%;
+}
+
+.keep-name {
+    pointer-events: none;
+}
+
+.connor-info-toggle,
+.overview-toggle,
+.project-details-toggle {
+    cursor: pointer;
+}
+
+.connor-info {
+    position: absolute;
+    left: -500px;
+    top: 0;
+    width: 500px;
+    height: 100%;
+    background-color: white;
+    z-index: 9999999;
+}
+
+.connor-info .social-media {
+    position: absolute;
+    font-size: 14px;
+    line-height: 20px;
+    bottom: 40px;
+    right: 40px;
+}
+
+.connor-info .social-media a {
+    text-decoration: none;
+    color: black;
+    padding-left: 8px;
+}
+
+.connor-info .description {
+    top: 125px;
+    left: 40px;
+}
+
+.connor-info p {
+    position: absolute;
+    font-size: 14px;
+    line-height: 20px;
+    padding-right: 40px;
+}
+
+.connor-info .contact {
+    bottom: 40px;
+    left: 40px;
+    margin-bottom: 0;
+}
+
+.connor-info .contact a {
+    text-decoration: underline;
+    color: black;
+}
+
+.connor-info .experience {
+    position: absolute;
+    line-height: 20px;
+    font-size: 14px;
+    left: 40px;
+    top: 230px;
+}
+
+.connor-info .experience ul {
+    list-style: none;
+    padding: 0;
+}
+
+.connor-info .experience a {
+    text-decoration: underline;
+    color: black;
+}
+
+.thumbnail-icon {
+    position: absolute;
+    width: 100%;
+    top: 3%;
+    text-align: center;
+    z-index: 999999; 
+}
+
+#tops {
+    position: relative;
+    font-size: 10pt;
+    z-index: 9999;
+}
+
+.overview {
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    top: -500px;
+    width: 100%;
+    height: 500px;
+    background-color: white;
+    z-index: 9999999;
+    box-sizing: border-box;
+    padding: 50px 17% 3% 17%;
+}
+
+.overview .overview-toggle {
+    position: absolute;
+	top: 12px;
+	right: 10px;
+}
+
+.thumbnail {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    float: left;
+    margin: 15px;
+    overflow: hidden;
+}
+
+.thumbnail-text {
+    display: none; 
+}
+
+.thumbnail:hover .thumbnail-text {
+    display:block;
+}
+
+.thumbnail-text {
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    font-size: 7em;
+    z-index: 99999;
+    top: 60px;
+    left: 0;
+    pointer-events: none;
+}
+
+.thumbnail p {
+    color: black;
+}
+
+.thumbnail {
+    overflow: visible;
+}
+
+.project-label {
+    cursor: pointer;
+    text-decoration: underline;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 2%;
+    z-index: 9998;
+}
+
+.project-label h1 {
+    font-size: 14px;
+    font-weight: 300;   
+}
+
+.project-item .project-name {
+    display: none;
+}
+
+.project-item .project-description {
+    display: none;
+}
+
+#bottoms {
+    position: relative;
+    font-size: 10pt;
+}
+
+.project-details {
+    position: fixed;
+    bottom: -400px;
+    width: 100%;
+    height: 400px;
+    background-color: white;
+    z-index: 9999999;
+    box-sizing: border-box;
+    overflow: scroll;
+}
+
+.project-details p {
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 18px;
+    position: absolute;
+    max-width: 1000px;
+    height: 300px;
+    -webkit-columns: 400px 2;
+    -moz-columns: 400px 2;
+    columns: 400px 2;
+	top: 12px;
+	left: 250px;  
+}
+
+.project-details h1 {
+    font-family: 'Graphik Web', Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    font-size: 14px;
+    line-height: 18px;
+    position: absolute;
+    width: 200px;
+	top: 12px;
+	left: 40px;  
+}
+.project-item {
+    z-index: 0;
+    opacity: 0;
+    -ms-transition: all 400ms;
+    -webkit-transition: all 400ms;
+    transition: all 400ms;
+}
+
+.curr {
+    opacity: 1;
+    z-index: 1;
+}
+
+.text {
+    display: none !important;
+}
+
+#image {
+    position: relative;
+    width: auto;
+    height: 100%;
+    display: block;
+    margin: 0 auto 1em;
+}
+
+.video:hover {
+    opacity: .5;
+    background-color: red;
+}
+    
+.embed-wrapper {
+    position: relative; 
+    height: 100%; 
+    overflow: hidden; 
+    width: auto;
+    margin: auto;
+    margin-bottom: 16px;
+}
+
+.embed-wrapper:hover {
+    cursor: url('cursor_white.cur'), auto;
+}
+
+.embed-wrapper iframe, 
+.embed-wrapper object, 
+.embed-wrapper embed { 
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100% !important; 
+    height: 100% !important; 
+}
+
+.module:last-child {
+    margin-bottom: 0;
+}
+
+#move {
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
+}
+
+.scroll {
+    cursor: row-resize;
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    overflow: scroll;
+    height: 75%;
+    z-index: 999998;
+}
+
+#limit-r {
+    cursor: e-resize;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+    height: 100%;
+    z-index: 999999;
+}
+
+#limit-l {
+    cursor: w-resize;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30%;
+    height: 100%;
+    z-index: 999999;
+}
+
+/*MEDIA QUERIES*/
+
+
+@media (max-width: 1200px) {
+    
+    #image {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto 1em;
+    }
+
+    .embed-wrapper {
+        position: relative; 
+        padding-bottom: 56.25%; 
+        height: 0; 
+        overflow: hidden; 
+        max-width: 100%;
+        margin: auto;
+        margin-bottom: 16px;    
+    }
+
+    .overview {
+        overflow: scroll;
+        position: absolute;
+        top: -600px;
+        width: 100%;
+        height: 600px;
+        background-color: white;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 3% 17% 3% 17%;
+    }
+
+    .thumbnail {
+        cursor: pointer;
+        position: relative;
+        height: 158px;
+        display: block;
+        float: left;
+        margin: 10px;
+        overflow: hidden;
+    }
+
+    .project-details p {
+        font-size: 14px;
+        line-height: 18px;
+        position: absolute;
+        max-width: 800px;
+        -webkit-columns: 400px 1;
+        -moz-columns: 400px 1;
+        columns: 400px 1;
+        padding-left: 0;
+        padding-right: 40px;
+        top: 12px;
+        left: 250px;  
+    }
+
+    .project-details h1 {
+        font-size: 14px;
+        line-height: 18px;
+        position: absolute;
+        padding-left: 0;
+        width: 200px;
+        top: 12px;
+        left: 40px;  
+    }
+    
+}
+
+
+@media (max-width: 795px) {
+    
+    .scroll {
+        height: 75%;
+    }
+
+    .overview {
+        display: none;
+    /*temporary for initial launch without mobile*/    
+        overflow: scroll;
+        position: fixed;
+        text-align: center;
+        top: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        box-sizing: border-box;
+        padding: 75px 8% 2% 8%;
+    }
+
+    .thumbnail {
+        cursor: pointer;
+        position: relative;
+        height: 158px;
+        display: block;
+        float: left;
+        margin: 10px;
+        overflow: hidden;
+    }
+
+    #image {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto 1em;
+    }
+
+    .thumbnail-icon {
+        display: none;
+    /*temporary for initial launch without mobile*/
+        position: absolute;
+        width: 100%;
+        top: 3%;
+        text-align: right;
+    }
+
+    #tops {
+        margin-right: 40px;    
+    }
+
+    .project-details {
+
+    }
+
+    .project-details p {
+        font-size: 14px;
+        line-height: 18px;
+        position: relative;
+        padding-left: 40px;
+        padding-right: 40px;
+        top: 12px;
+        left: 0;
+    }
+
+    .project-details h1 {
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 300;
+        position: relative;
+        width: 100%;
+        padding-left: 40px;
+        top: 12px;
+        left: 0;
+    }
+    
+    .connor-info-toggle {
+        pointer-events: none;
+    }
+
+    .connor-info {
+        position: absolute;
+        left: -100%;
+        top: 0;
+        width: 100%;
+        height: 75%;
+        background-color: white;
+    }
+
+}
+
+
+@media (max-width: 670px) {
+    
+    .no_api {
+        padding-top: 45%;
+    }
+  
+    .overview {
+
+    }
+
+    .project-details {
+        bottom: -100%;
+        width: 100%;
+        height: 75%;
+    }
+
+    .thumbnail {
+        margin-top: 25px;
+        overflow: auto;
+    }
+
+    .thumbnail-text {
+        position: absolute;
+        display: inline-block;
+        width: 158px;
+        text-align: left;
+        font-size: 16px;
+        top: 200px;
+        z-index: 99999;
+    }
+
+    .thumbnail p {
+        color: black;
+        text-shadow: 0 0 0rem rgba(0,0,0,0);
+    }
+
+    .thumbnail:hover:after {
+        opacity:1;
+    }
+
+    .thumbnail:after {
+        content:'\A';
+        position:absolute;
+        width:100%; 
+        height:100%;
+        top:0; 
+        left:0;
+        background:rgba(0,0,0,0.25);
+        opacity:0;
+    }
+    
+}
+
