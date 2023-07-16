@@ -173,8 +173,6 @@
         };
         console.log(urlArray);
         
-        console.log(projectdesc);
-
         for (var j = 0; j < thumbNum; j++) {
           var projectUrl = urlArray[j]
           $.getJSON(projectUrl, function(data) {
@@ -194,6 +192,7 @@
           });
         };
 
+        console.log(projectdesc);
 
         // this should allow for making a project active
         $('.thumbnail a').click(function() {
