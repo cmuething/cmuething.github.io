@@ -381,7 +381,7 @@ body {
     -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
     overflow: scroll;
-    height: 75%;
+    height: 100%;
     z-index: 999998;
 }
 
@@ -403,6 +403,20 @@ body {
     width: 30%;
     height: 100%;
     z-index: 999999;
+}
+
+#triangle-container:before {
+    content: '';
+    position: absolute;
+    display: block;
+    left: -25px;
+    top: 0;
+    bottom: 0;
+    width: 25px;
+    height: 100%;
+    background: #007bff;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 50%);
+    clip-path: polygon(100% 0, 100% 100%, 0 50%);
 }
 
 /*MEDIA QUERIES*/
