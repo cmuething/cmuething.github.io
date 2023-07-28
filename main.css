@@ -91,7 +91,7 @@ body {
     position: absolute;
     font-size: 20px;
     line-height: 22px;
-    z-index: 99999999;
+    z-index: 99999997;
     left: 40px;
     top: 1%;
 }
