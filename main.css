@@ -344,7 +344,6 @@ body {
     width: auto;
     margin: auto;
     margin-bottom: 16px;
-    pointer-events: none;
 }
 
 .embed-wrapper:hover {
