@@ -330,10 +330,12 @@ body {
     margin: 0 auto 1em;
 }
 
+/*
 .video:hover {
     opacity: .5;
     background-color: red;
 }
+*/
     
 .embed-wrapper {
     position: relative; 
@@ -342,6 +344,7 @@ body {
     width: auto;
     margin: auto;
     margin-bottom: 16px;
+    pointer-events: none;
 }
 
 .embed-wrapper:hover {
@@ -356,7 +359,6 @@ body {
     left: 0; 
     width: 100% !important; 
     height: 100% !important; 
-    pointer-events: none;
 }
 
 .module:last-child {
