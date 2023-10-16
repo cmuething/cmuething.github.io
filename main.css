@@ -114,6 +114,7 @@ body {
     height: 100%;
     background-color: white;
     z-index: 9999999;
+    overflow: hidden;
 }
 
 .connor-info .social-media {
@@ -133,6 +134,8 @@ body {
 .connor-info .description {
     top: 125px;
     left: 40px;
+    overflow: scroll;
+    height: 80vh;
 }
 
 .connor-info p {
