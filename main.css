@@ -186,7 +186,7 @@ body {
 }
 
 .overview {
-    overflow: hidden;
+    overflow: scroll;
     position: absolute;
     text-align: center;
     top: -500px;
@@ -195,7 +195,7 @@ body {
     background-color: white;
     z-index: 9999999;
     box-sizing: border-box;
-    padding: 50px 17% 3% 17%;
+    padding: 50px 8% 3% 8%;
 }
 
 .overview .overview-toggle {
@@ -207,9 +207,9 @@ body {
 .thumbnail {
     cursor: pointer;
     position: relative;
-    display: block;
-    float: left;
-    margin: 15px;
+    display: inline-block;
+/*     float: left; */
+    margin: 20px 10px auto;
     overflow: hidden;
 }
 
