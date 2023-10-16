@@ -224,8 +224,9 @@ body {
 .thumbnail-text {
     width: 100%;
     text-align: center;
+    text-transform: capitalize; 
     position: fixed;
-    font-size: 7em;
+    font-size: 5em;
     z-index: 99999;
     top: 60px;
     left: 0;
@@ -234,6 +235,7 @@ body {
 
 .thumbnail p {
     color: black;
+    filter: drop-shadow(0 0 0.75rem crimson);
 }
 
 .thumbnail {
@@ -242,12 +244,13 @@ body {
 
 .project-label {
     cursor: pointer;
-    text-decoration: underline;
+/*     text-decoration: underline; */
     position: absolute;
     width: 100%;
     text-align: center;
     bottom: 2%;
     z-index: 9998;
+    pointer-events: none;
 }
 
 .project-label h1 {
