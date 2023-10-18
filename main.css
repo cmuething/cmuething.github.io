@@ -95,6 +95,8 @@ body {
     z-index: 99999997;
     left: 40px;
     top: 1%;
+    width: auto;
+	text-align: none;
 }
 
 .keep-name {
@@ -395,7 +397,7 @@ body {
 }
 
 #limit-r {
-    cursor: e-resize;
+/*     cursor: e-resize; */
     position: absolute;
     right: 0;
     top: 0;
@@ -412,7 +414,7 @@ body {
 }
 
 #limit-l {
-    cursor: w-resize;
+/*     cursor: w-resize; */
     position: absolute;
     left: 0;
     top: 0;
