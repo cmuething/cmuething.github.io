@@ -52,7 +52,7 @@ body {
     height: 100%;
     z-index: 9999999;
     text-align: center;
-    padding-top: 20%;
+/*     padding-top: 20%; */
 }
 
 .no_api a:hover {
@@ -70,11 +70,12 @@ body {
 }
 
 .too-much {
+	position: absolute;
     text-decoration: none;
     color: white;
     font-size: 7em;
     top: 50%;
-    transform: translate(0, -50%)
+    transform: translate(-50%, -50%)
 }
 
 .gradient {
@@ -159,6 +160,10 @@ body {
 .connor-info .contact a {
     text-decoration: underline;
     color: black;
+}
+
+.experience {
+	display: none;
 }
 
 .connor-info .experience {
