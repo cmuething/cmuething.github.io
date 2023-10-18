@@ -638,7 +638,7 @@ body {
 @media (max-width: 670px) {
     
     .no_api {
-        padding-top: 45%;
+/*         padding-top: 45%; */
     }
   
     .overview {
