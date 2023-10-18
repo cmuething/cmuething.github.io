@@ -112,7 +112,7 @@
         {{#project.fields}}<p class="project-description">{{{project.fields_html}}}</p>{{/project.fields}}
                 
                 <section class="module">    
-                    <article class="scroll">
+                    <article id="images-videos" class="scroll">
                             {{#project.modules}}
                             {{#embed}}<div class="video"><div class="embed-wrapper">{{{embed}}}</div></div>{{/embed}}
               {{^embed}}
@@ -193,7 +193,7 @@
           
         };
         
-        var count = (".scroll").find('img').length;
+        var count = ("#images-videos").find('img').length;
         console.log(count);
         
 
