@@ -397,7 +397,7 @@ body {
 }
 
 #limit-r {
-/*     cursor: e-resize; */
+    cursor: e-resize;
     position: absolute;
     right: 0;
     top: 50%;
@@ -415,7 +415,7 @@ body {
 }
 
 #limit-l {
-/*     cursor: w-resize; */
+    cursor: w-resize;
     position: absolute;
     left: 0;
     top: 50%;
@@ -611,6 +611,18 @@ body {
         width: 100%;
         height: 75%;
         background-color: white;
+    }
+    
+    #limit-r {
+    	height: 100%;
+    	transform: translate(0, 0%);
+    	top: 0;
+    }
+    
+    #limit-l {
+    	height: 100%;
+    	transform: translate(0, 0%);
+    	top: 0;
     }
 
 }
