@@ -37,6 +37,7 @@
         
 	        window.onload = function() {
 		         var count1 = $(".scroll").find('img').length;
+		         var count2 = $('.project-element').length;
 		         console.log(count1);
 	        };
                 
@@ -123,9 +124,9 @@
                 <section class="module">    
                     <article id="images-videos" class="scroll">
                             {{#project.modules}}
-                            {{#embed}}<div class="video"><div class="embed-wrapper">{{{embed}}}</div></div>{{/embed}}
+                            {{#embed}}<div class="video project-element"><div class="embed-wrapper">{{{embed}}}</div></div>{{/embed}}
               {{^embed}}
-                                <img id="image" class="{{type}}" src="{{#sizes.max_1200}}{{sizes.max_1200}}{{/sizes.max_1200}}{{^sizes.max_1200}}{{sizes.original}}{{/sizes.max_1200}}
+                                <img id="image" class="{{type}} project-element" src="{{#sizes.max_1200}}{{sizes.max_1200}}{{/sizes.max_1200}}{{^sizes.max_1200}}{{sizes.original}}{{/sizes.max_1200}}
                " />              {{/embed}}
 
                             {{/project.modules}}
