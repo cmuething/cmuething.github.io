@@ -40,6 +40,11 @@
 		         var count2 = $('.project-element').length;
 		         console.log(count1);
 		         console.log(count2);
+		         
+		         function addCounter() {
+		         var projectElement = document.getElementByClassName("project-element");
+		         
+		         }
 	        };
                 
         </script>
@@ -125,10 +130,10 @@
                 <section class="module">    
                     <article id="images-videos" class="scroll">
                             {{#project.modules}}
-                            {{#embed}}<div class="video project-element"><div class="embed-wrapper">{{{embed}}}</div></div>{{/embed}}
+                            {{#embed}}<div class="video project-element"><div class="embed-wrapper">{{{embed}}}</div></div><p>001</p>{{/embed}}
               {{^embed}}
                                 <img id="image" class="{{type}} project-element" src="{{#sizes.max_1200}}{{sizes.max_1200}}{{/sizes.max_1200}}{{^sizes.max_1200}}{{sizes.original}}{{/sizes.max_1200}}
-               " />              {{/embed}}
+               " /><p>001</p>              {{/embed}}
 
                             {{/project.modules}}
                     </article>
