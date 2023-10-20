@@ -51,10 +51,11 @@
 		         console.log(projectElements);
 
 		         
-		         /*
-for (var i = 0; i < count2; i++) {
+		         for (var i = 0; i < count2; i++) {
+		         
+		         document.querySelectorAll(".project-element").innerHTML = count2[i];
+		         
 		         }
-*/
 		         
 /* 		         } */
 	        };
@@ -207,7 +208,7 @@ for (var i = 0; i < count2; i++) {
             // print out project by project images
             var template = $('#project-item').html();
             var info = Mustache.to_html(template, data);
-            $('#full-projects').append(info);
+            
             $('.project-item').first().addClass('curr');
               
             var projectname = $('.curr h1').html();
