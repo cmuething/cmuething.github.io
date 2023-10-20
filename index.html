@@ -43,6 +43,18 @@
 		         
 		         function addCounter() {
 		         var projectElement = document.getElementByClassName("project-element");
+		         var projectElements = Array.prototype.map.call(projectElement, function(element) {
+			         return. element.value;
+			         
+			     console.log(projectElements);
+
+		         });
+		         
+		         
+		         /*
+for (var i = 0; i < count2; i++) {
+		         }
+*/
 		         
 		         }
 	        };
@@ -130,10 +142,10 @@
                 <section class="module">    
                     <article id="images-videos" class="scroll">
                             {{#project.modules}}
-                            {{#embed}}<div class="video project-element"><div class="embed-wrapper">{{{embed}}}</div></div><p>001</p>{{/embed}}
+                            {{#embed}}<div class="video project-element"><div class="embed-wrapper">{{{embed}}}</div></div><p class="serial-number">001</p>{{/embed}}
               {{^embed}}
                                 <img id="image" class="{{type}} project-element" src="{{#sizes.max_1200}}{{sizes.max_1200}}{{/sizes.max_1200}}{{^sizes.max_1200}}{{sizes.original}}{{/sizes.max_1200}}
-               " /><p>001</p>              {{/embed}}
+               " /><p class="serial-number">001</p>              {{/embed}}
 
                             {{/project.modules}}
                     </article>
@@ -155,7 +167,7 @@
 //COMPILING EVERYTHING
 
         var initialUrl = 'https://api.behance.net/v2/users/' + userName + '/projects/?api_key=' + apiKey +'&per_page=10&callback=?';
-      var userUrl = 'https://api.behance.net/v2/users/' + userName + '/?api_key=' + apiKey +'&callback=?';
+        var userUrl = 'https://api.behance.net/v2/users/' + userName + '/?api_key=' + apiKey +'&callback=?';
             
         $.getJSON(userUrl, function(data) {
                 var template = $('#myname').html();

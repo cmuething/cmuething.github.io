@@ -403,6 +403,10 @@ body {
     z-index: 999998;
 }
 
+.serial-number {
+	text-align: center;
+}
+
 #limit-r {
     cursor: e-resize;
     position: absolute;
