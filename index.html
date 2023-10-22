@@ -45,17 +45,16 @@
 		         var projectElement = document.querySelectorAll(".project-element");
 		         var projectElements = Array.prototype.map.call(projectElement, function(element) {
 			         return element.value;
-			         
 		         });
 		         
-		         console.log(projectElements);
+		         console.log(projectElement);
 
 		         
-		         for (var i = 0; i < projectElements; i++) {
+		         for (var i = 0; i < projectElement; i++) {
 		          
-		         	document.querySelectorAll(".serial-number").innerHTML = "00" + projectElements[i] + ".";
+		         	document.querySelectorAll(".serial-number").innerHTML = "00" + projectElement[i] + ".";
 					
-					console.log(projectElements[i]);
+					console.log(projectElement[i]);
 		         
 		         }
 		         
