@@ -158,10 +158,10 @@ var projectElement = document.querySelectorAll(".project-element");
                 <section class="module">    
                     <article id="images-videos" class="scroll">
                             {{#project.modules}}
-                            {{#embed}}<div class="project-element-container"><div class="video project-element"><div class="embed-wrapper">{{{embed}}}</div></div><p class="serial-number">000</p></div>{{/embed}}
+                            {{#embed}}<section class="project-element-container"><div class="video project-element"><div class="embed-wrapper">{{{embed}}}</div></div><p class="serial-number">000</p></section>{{/embed}}
               {{^embed}}
-                                <div class="project-element-container"><img id="image" class="{{type}} project-element" src="{{#sizes.max_1200}}{{sizes.max_1200}}{{/sizes.max_1200}}{{^sizes.max_1200}}{{sizes.original}}{{/sizes.max_1200}}
-               " /><p class="serial-number">000</p></div>              {{/embed}}
+                                <section class="project-element-container"><img id="image" class="{{type}} project-element" src="{{#sizes.max_1200}}{{sizes.max_1200}}{{/sizes.max_1200}}{{^sizes.max_1200}}{{sizes.original}}{{/sizes.max_1200}}
+               " /><p class="serial-number">000</p></section>              {{/embed}}
 
                             {{/project.modules}}
                     </article>
