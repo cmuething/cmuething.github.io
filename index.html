@@ -41,8 +41,21 @@
 		         console.log(count1);
 		         console.log(count2);
 		         
+		         document.querySelectorAll('.project-element-container').forEach((element, index) => {
+			     	var projectElement = element.querySelector('.project-element');
+			     	
+			     	for (var i = 0; i < projectElement; i++) {
+			     	element.querySelector('.serial-number').innerHTML = "00" + projectElement[i] + ".";
+			     	
+			     	console.log(projectElement[i]);
+			     	
+			     	}
+			     	
+		         });
+		         
 /* 		         function addCounter() { */
-		         var projectElement = document.querySelectorAll(".project-element");
+		         /*
+var projectElement = document.querySelectorAll(".project-element");
 		         var projectElements = Array.prototype.map.call(projectElement, function(element) {
 			         return element.value;
 		         });
@@ -57,6 +70,7 @@
 					console.log(projectElement[i]);
 		         
 		         }
+*/
 		         
 /* 		         } */
 	        };
@@ -144,10 +158,10 @@
                 <section class="module">    
                     <article id="images-videos" class="scroll">
                             {{#project.modules}}
-                            {{#embed}}<div class="video project-element"><div class="embed-wrapper">{{{embed}}}</div></div><div><p class="serial-number">000</p></div>{{/embed}}
+                            {{#embed}}<div class="project-element-container"><div class="video project-element"><div class="embed-wrapper">{{{embed}}}</div></div><p class="serial-number">000</p></div>{{/embed}}
               {{^embed}}
-                                <img id="image" class="{{type}} project-element" src="{{#sizes.max_1200}}{{sizes.max_1200}}{{/sizes.max_1200}}{{^sizes.max_1200}}{{sizes.original}}{{/sizes.max_1200}}
-               " /><div><p class="serial-number">000</p></div>              {{/embed}}
+                                <div class="project-element-container"><img id="image" class="{{type}} project-element" src="{{#sizes.max_1200}}{{sizes.max_1200}}{{/sizes.max_1200}}{{^sizes.max_1200}}{{sizes.original}}{{/sizes.max_1200}}
+               " /><p class="serial-number">000</p></div>              {{/embed}}
 
                             {{/project.modules}}
                     </article>
