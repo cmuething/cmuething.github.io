@@ -41,24 +41,23 @@
 		         console.log(count1);
 		         console.log(count2);
 		         
-		         /*
-document.querySelectorAll('.project-element-container').forEach((element, index) => {
-			     	var projectElement = element.querySelector('.project-element');
+		         document.querySelectorAll('.project-element-container').forEach((element, index) => {
+			     	var projectElement = element.querySelectorAll('.project-element').length;
 			     	
 			     	console.log(projectElement);
 			     	
 			     	for (var i = 0; i < projectElement; i++) {
-			     	element.querySelector('.serial-number').innerHTML = "00" + projectElement[i] + ".";
+			     	element.querySelectorAll('.serial-number').innerHTML = "00" + projectElement[i] + ".";
 			     	
 			     	console.log(projectElement[i]);
 			     	
 			     	}
 			     	
 		        });
-*/
 		         		         
 /* 		         function addCounter() { */
-		         var projectElement = document.querySelectorAll(".project-element");
+		         /*
+var projectElement = document.querySelectorAll(".project-element");
 		         var projectElements = Array.prototype.map.call(projectElement, function(element) {
 			         return element.value;
 		         });
@@ -73,6 +72,7 @@ document.querySelectorAll('.project-element-container').forEach((element, index)
 					console.log(projectElement[i]);
 		         
 		         }
+*/
 		         
 /* 		         } */
 	        };
