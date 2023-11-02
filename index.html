@@ -42,14 +42,14 @@
 		         console.log(count2);
 		         
 		         document.querySelectorAll('.project-element-container').forEach((element, index) => {
-			     	var projectElement = element.querySelectorAll('.project-element').length;
+			     	var projectElement = element.querySelectorAll('.project-element');
 			     	
 			     	console.log(projectElement);
 			     	
 			     	for (var i = 0; i < projectElement; i++) {
-			     	element.querySelectorAll('.serial-number').innerHTML = "00" + projectElement[i] + ".";
+			     	element.querySelector('.serial-number').innerHTML = "00" + projectElement[i] + ".";
 			     	
-			     	console.log(projectElement[i]);
+/* 			     	console.log(projectElement[i]); */
 			     	
 			     	}
 			     	
