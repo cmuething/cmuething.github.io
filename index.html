@@ -34,9 +34,18 @@
 <section class="connor-info">
 
 		<script>
-		
-			document.querySelectorAll('.project-element-container').forEach((element, index) => {
+		        
+	        window.onload = function() {
+		         var count1 = $(".scroll").find('img').length;
+		         var count2 = $('.project-element').length;
+		         console.log(count1);
+		         console.log(count2);
+		         
+		         /*
+document.querySelectorAll('.project-element-container').forEach((element, index) => {
 			     	var projectElement = element.querySelector('.project-element');
+			     	
+			     	console.log(projectElement);
 			     	
 			     	for (var i = 0; i < projectElement; i++) {
 			     	element.querySelector('.serial-number').innerHTML = "00" + projectElement[i] + ".";
@@ -46,16 +55,10 @@
 			     	}
 			     	
 		        });
-        
-	        window.onload = function() {
-		         var count1 = $(".scroll").find('img').length;
-		         var count2 = $('.project-element').length;
-		         console.log(count1);
-		         console.log(count2);
+*/
 		         		         
 /* 		         function addCounter() { */
-		         /*
-var projectElement = document.querySelectorAll(".project-element");
+		         var projectElement = document.querySelectorAll(".project-element");
 		         var projectElements = Array.prototype.map.call(projectElement, function(element) {
 			         return element.value;
 		         });
@@ -70,7 +73,6 @@ var projectElement = document.querySelectorAll(".project-element");
 					console.log(projectElement[i]);
 		         
 		         }
-*/
 		         
 /* 		         } */
 	        };
