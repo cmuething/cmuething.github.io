@@ -48,7 +48,16 @@
 			     	console.log(projectElement);
 			     	
 			     	for (var i = 0; i < projectElement; i++) {
-			     	element.querySelector('.serial-number').innerHTML = "0" + i + ".";
+			     	
+			     	var allSerials = document.querySelectorAll('.serial-number');
+			     	var serialsArray = [...allSerials];
+			     	serialsArray.forEach(p => {
+				     	
+				     	console.log(i);
+				     	
+			     	});
+			     	
+/* 			     	element.querySelector('.serial-number').innerHTML = "0" + i + "."; */
 			     	
 /* 			     	console.log(projectElement[i]); */
 			     	
