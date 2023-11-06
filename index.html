@@ -47,6 +47,10 @@
 			     	
 			     	console.log(projectElement);
 			     	
+			     	projectElement.forEach((instance) => {
+				     	console.log(instance);
+			     	});
+			     	
 			     	for (var i = 0; i < projectElement; i++) {
 					
 			     		element.querySelector('.serial-number').innerHTML = "0" + projectElement[i] + ".";
