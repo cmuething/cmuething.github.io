@@ -41,20 +41,21 @@
 		         console.log(count1);
 		         console.log(count2);
 		         
-/* 		         document.querySelectorAll('.project-element-container').forEach((element, index) => { */
+		         document.querySelectorAll('.project-element-container').forEach((element, index) => {
 			     	var projectElement = document.querySelectorAll('.project-element').length;
 			     	
 			     	
-			     	console.log(projectElement);
+/* 			     	console.log(projectElement); */
 			     	
-			     	for (var i = 0; i < projectElement; i++) {
-			     	element.querySelector('.serial-number').innerHTML = "0" + i + ".";
+/* 			     	for (var i = 0; i < projectElement; i++) { */
+					projectElement.forEach((element, index) => {
+			     		element.querySelector('.serial-number').innerHTML = "0" +  + ".";
 			     	
-			     	console.log(projectElement[i]);
+/* 			     	console.log(projectElement[i]); */
 			     	
-			     	}
+			     	});
 			     	
-/* 		        }); */
+		        });
 		         		         
 /* 		         function addCounter() { */
 		         /*
