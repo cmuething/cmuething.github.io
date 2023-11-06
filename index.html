@@ -43,12 +43,11 @@
 		         
 		         document.querySelectorAll('.project-element-container').forEach((element, index) => {
 		         
-			     	var projectElement = document.querySelectorAll('.project-element');
-			     	
+			     	var projectElement = document.querySelectorAll('.project-element').length;
 			     	
 			     	console.log(projectElement);
 			     	
-			     	for (var i = 0; i < projectElement.length; i++) {
+			     	for (var i = 0; i < projectElement; i++) {
 					
 			     		element.querySelector('.serial-number').innerHTML = "0" + projectElement[i] + ".";
 			     					     	
