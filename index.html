@@ -192,8 +192,10 @@
         
 /*         for (var j = 0; j < 10; j++) { */
 /*           var projectUrl = urlArray[j] */
+/*
 		urlArray.forEach((element) => {
           $.getJSON(element, function(data) {
+*/
             // print out project by project images
             var template = $('#project-item').html();
             var info = Mustache.to_html(template, data);
@@ -208,12 +210,14 @@
             $('.project-label .project-name').html(projectname);
 /*             $('.project-details .project-description').html(projectdesc); */
                                                
+/*
           });
           
           console.log(projectUrl);
           console.log(element);
           
         });
+*/
 
 /*         console.log(projectdesc); */
 
