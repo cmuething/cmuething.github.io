@@ -35,7 +35,7 @@
 
 		<script>
 		        
-/* 	        window.onload = function() { */
+	        window.onload = function() {
 		         var count1 = $(".scroll").find('img').length;
 		         var count2 = $('.project-element').length;
 		         console.log(count1);
@@ -46,7 +46,7 @@
 						instance.innerHTML = index;
 				     					     	
 			     	});		         		         
-/* 	        }; */
+	        };
                 
         </script>
     
@@ -198,7 +198,7 @@
             var info = Mustache.to_html(template, data);
             $('#full-projects').append(info);
             
-            $('.project-item').first().addClass('curr');
+            $('.project-item').addClass('curr');
               
             var projectname = $('.curr h1').html();
 /*             var projectdesc = $('.curr p').html(); */
