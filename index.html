@@ -192,7 +192,7 @@
         
 /*         for (var j = 0; j < thumbNum; j++) { */
 /*           var projectUrl = urlArray[j] */
-		urlArray.forEach((element) => {
+		urlArray.forEach((element, index) => {
           $.getJSON(element, function(data) {
             // print out project by project images
             var template = $('#project-item').html();
@@ -210,8 +210,9 @@
                                                
           });
           
-          console.log(projectUrl);
+/*           console.log(projectUrl); */
           console.log(element);
+          console.log(index);
           
         });
 
