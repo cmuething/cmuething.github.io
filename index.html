@@ -41,6 +41,17 @@
 		         console.log(count1);
 		         console.log(count2);
 		         
+		         /*
+var projectElement = document.querySelectorAll('.project-element').length;
+
+		         
+		         for (var i = 0; i < projectElement; i++) {
+					
+			     		document.querySelectorAll('.serial-number').innerHTML = "0" + projectElement[i] + ".";
+			     					     				     	
+			     	}
+*/
+		         
 		         document.querySelectorAll('.project-element-container').forEach((element, index) => {
 		         
 			     	var projectElement = document.querySelectorAll('.project-element').length;
@@ -51,7 +62,7 @@
 				     	
 						instance.innerHTML = "0" + projectElement + ".";
 				     	
-/* 				     	console.log(instance.length); */
+				     	console.log(instance.length);
 			     	
 			     	});
 			     	
