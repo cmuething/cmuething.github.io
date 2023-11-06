@@ -190,8 +190,8 @@
         };
         console.log(urlArray);
         
-        for (var j = 0; j < thumbNum; j++) {
-          var projectUrl = urlArray[j]
+/*         for (var j = 0; j < thumbNum; j++) { */
+/*           var projectUrl = urlArray[j] */
           $.getJSON(projectUrl, function(data) {
             // print out project by project images
             var template = $('#project-item').html();
@@ -211,7 +211,7 @@
           
           console.log(projectUrl);
           
-        };
+/*         }; */
 
 /*         console.log(projectdesc); */
 
