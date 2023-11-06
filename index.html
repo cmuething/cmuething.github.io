@@ -41,11 +41,11 @@
 		         console.log(count1);
 		         console.log(count2);
 			     	
-			     document.querySelectorAll('.serial-number').forEach((instance, index) => {
-				     	
-						instance.innerHTML = index;
-				     					     	
-			     	});		         		         
+				     document.querySelectorAll('.serial-number').forEach((instance, index) => {
+					     	
+							instance.innerHTML = "0" + index + ".";
+					     					     	
+				     	});		         		         
 	        };
                 
         </script>
@@ -198,7 +198,7 @@
             var info = Mustache.to_html(template, data);
             $('#full-projects').append(info);
             
-            $('.project-item').addClass('curr');
+            $('.project-item').first().addClass('curr');
               
             var projectname = $('.curr h1').html();
 /*             var projectdesc = $('.curr p').html(); */
