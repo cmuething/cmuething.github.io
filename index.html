@@ -190,9 +190,9 @@
         };
         console.log(urlArray);
         
-/*         for (var j = 0; j < thumbNum; j++) { */
-/*           var projectUrl = urlArray[j] */
-          $.getJSON(urlArray, function(data) {
+        for (var j = 0; j < 10; j++) {
+          var projectUrl = urlArray[j]
+          $.getJSON(projectUrl, function(data) {
             // print out project by project images
             var template = $('#project-item').html();
             var info = Mustache.to_html(template, data);
@@ -211,7 +211,7 @@
           
           console.log(projectUrl);
           
-/*         }; */
+        };
 
 /*         console.log(projectdesc); */
 
