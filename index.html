@@ -35,44 +35,18 @@
 
 		<script>
 		        
-	        window.onload = function() {
+/* 	        window.onload = function() { */
 		         var count1 = $(".scroll").find('img').length;
 		         var count2 = $('.project-element').length;
 		         console.log(count1);
 		         console.log(count2);
-		         
-		         /*
-var projectElement = document.querySelectorAll('.project-element').length;
-
-		         
-		         for (var i = 0; i < projectElement; i++) {
-					
-			     		document.querySelectorAll('.serial-number').innerHTML = "0" + projectElement[i] + ".";
-			     					     				     	
-			     	}
-*/
-		         
-/* 		         document.querySelectorAll('.project-element-container').forEach((element, index) => { */
-		         
-/* 			     	var projectElement = document.querySelectorAll('.project-element'); */
 			     	
-/* 			     	console.log(projectElement); */
-			     	
-/* 			     	var count =  */
-			     	
-/* 			     	for (var i = 0; i < projectElement.length; i++) { */
-			     	
-				     document.querySelectorAll('.serial-number').forEach((instance, index) => {
-					     	
-							instance.innerHTML = "0" + index + ".";
-					     					     	
-				     	});
-			     	
-/* 			     	} */
-			     				     	
-/* 		        }); */
-		         		         
-	        };
+			     document.querySelectorAll('.serial-number').forEach((instance, index) => {
+				     	
+						instance.innerHTML = index;
+				     					     	
+			     	});		         		         
+/* 	        }; */
                 
         </script>
     
