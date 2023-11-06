@@ -41,8 +41,7 @@
 		         console.log(count1);
 		         console.log(count2);
 		         
-		         /*
-var projectElement = document.querySelectorAll('.project-element').length;
+		         var projectElement = document.querySelectorAll('.project-element').length;
 
 		         
 		         for (var i = 0; i < projectElement; i++) {
@@ -50,9 +49,9 @@ var projectElement = document.querySelectorAll('.project-element').length;
 			     		document.querySelectorAll('.serial-number').innerHTML = "0" + projectElement[i] + ".";
 			     					     				     	
 			     	}
-*/
 		         
-		         document.querySelectorAll('.project-element-container').forEach((element, index) => {
+		         /*
+document.querySelectorAll('.project-element-container').forEach((element, index) => {
 		         
 			     	var projectElement = document.querySelectorAll('.project-element').length;
 			     	
@@ -60,46 +59,17 @@ var projectElement = document.querySelectorAll('.project-element').length;
 			     	
 			     	for (var i = 0; i < 80; i++) {
 			     	
-				     	element.querySelector('.serial-number').forEach((instance) => {
+				     	document.querySelectorAll('.serial-number').forEach((instance) => {
 					     	
 							instance.innerHTML = "0" + [i] + ".";
-					     	
-/* 					     	console.log(instance.length); */
-				     	
+					     					     	
 				     	});
 			     	
 			     	}
-			     	
-			     	/*
-for (var i = 0; i < 80; i++) {
-					
-			     		element.querySelectorAll('.serial-number').innerHTML = "0" + i + ".";
-			     					     				     	
-			     	}
-*/
 			     				     	
 		        });
-		         		         
-/* 		         function addCounter() { */
-		         /*
-var projectElement = document.querySelectorAll(".project-element");
-		         var projectElements = Array.prototype.map.call(projectElement, function(element) {
-			         return element.value;
-		         });
-		         
-		         console.log(projectElement);
-
-		         
-		         for (var i = 0; i < projectElement; i++) {
-		          
-		         	document.querySelectorAll(".serial-number").innerHTML = "00" + projectElement[i] + ".";
-					
-					console.log(projectElement[i]);
-		         
-		         }
 */
-		         
-/* 		         } */
+		         		         
 	        };
                 
         </script>
