@@ -52,23 +52,25 @@ var projectElement = document.querySelectorAll('.project-element').length;
 			     	}
 */
 		         
-		         document.querySelectorAll('.project-element-container').forEach((element, index) => {
+/* 		         document.querySelectorAll('.project-element-container').forEach((element, index) => { */
 		         
-			     	var projectElement = document.querySelectorAll('.project-element');
+/* 			     	var projectElement = document.querySelectorAll('.project-element'); */
 			     	
-			     	console.log(projectElement);
+/* 			     	console.log(projectElement); */
 			     	
-			     	for (var i = 0; i < projectElement.length; i++) {
+/* 			     	var count =  */
 			     	
-				     	document.querySelectorAll('.serial-number').forEach((instance) => {
+/* 			     	for (var i = 0; i < projectElement.length; i++) { */
+			     	
+				     document.querySelectorAll('.serial-number').forEach((instance, index) => {
 					     	
-							instance.innerHTML = "0" + i + ".";
+							instance.innerHTML = "0" + index + ".";
 					     					     	
 				     	});
 			     	
-			     	}
+/* 			     	} */
 			     				     	
-		        });
+/* 		        }); */
 		         		         
 	        };
                 
