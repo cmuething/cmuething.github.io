@@ -192,7 +192,7 @@
         
 /*         for (var j = 0; j < thumbNum; j++) { */
 /*           var projectUrl = urlArray[j] */
-          $.getJSON(projectUrl, function(data) {
+          $.getJSON(urlArray, function(data) {
             // print out project by project images
             var template = $('#project-item').html();
             var info = Mustache.to_html(template, data);
