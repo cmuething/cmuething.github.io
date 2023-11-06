@@ -42,21 +42,19 @@
 		         console.log(count2);
 		         
 		         document.querySelectorAll('.project-element-container').forEach((element, index) => {
-/* 			     	var projectElement = document.querySelectorAll('.project-element').length; */
+		         
+			     	var projectElement = document.querySelectorAll('.project-element');
 			     	
 			     	
-/* 			     	console.log(projectElement); */
+			     	console.log(projectElement);
 			     	
-/* 			     	for (var i = 0; i < projectElement; i++) { */
-					element.querySelectorAll('.project-element').forEach((element) => {
+			     	for (var i = 0; i < projectElement.length; i++) {
 					
-						console.log(element);
-					
-			     		element.querySelector('.serial-number').innerHTML = "0" + ".";
+			     		element.querySelector('.serial-number').innerHTML = "0" + projectElement[i] + ".";
 			     					     	
-/* 			     	console.log(projectElement[i]); */
+			     		console.log(projectElement[i]);
 			     	
-			     	});
+			     	}
 			     	
 		        });
 		         		         
