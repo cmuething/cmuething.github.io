@@ -192,38 +192,55 @@
         
 /*         for (var j = 0; j < thumbNum; j++) { */
 /*           var projectUrl = urlArray[j] */
-		urlArray.forEachAsync(function (item, next) {
-			console.log(item + "started")
-			setTimeout(function () {
-		        
-	          $.getJSON(element, function(data) {
-	            // print out project by project images
-	            var template = $('#project-item').html();
-	            var info = Mustache.to_html(template, data);
-	            $('#full-projects').append(info);
-	            
-	            $('.project-item').first().addClass('curr');
-	              
-	            var projectname = $('.curr h1').html();
-	/*             var projectdesc = $('.curr p').html(); */
-	
-	            $('.project-details .project-name').html(projectname);
-	            $('.project-label .project-name').html(projectname);
-	/*             $('.project-details .project-description').html(projectdesc); */
-	               
-	               console.log(element);
-	               console.log(index);
-	               console.log(template);
-	               console.log(info);
-                                     
-	               });
-            
-             console.log(item + " done");
-		        next();
-		    }, 1000);                       
-          
-/*           console.log(projectUrl); */
-          
+
+		var asyncLoop = function(o){
+		    var i=-1,
+		        length = o.length;
+		    
+		    var loop = function(){
+		        i++;
+		        if(i==length){o.callback(); return;}
+		        o.functionToLoop(loop, i);
+		    } 
+		    loop();//init
+		}
+		
+		asyncLoop({
+			length: 10,
+			functionToLoop: function(loop, i){
+				setTimeout(function(){
+					urlArray.forEach((element, index) => {
+			          $.getJSON(element, function(data) {
+			            // print out project by project images
+			            var template = $('#project-item').html();
+			            var info = Mustache.to_html(template, data);
+			            $('#full-projects').append(info);
+			            
+			            $('.project-item').first().addClass('curr');
+			              
+			            var projectname = $('.curr h1').html();
+			/*             var projectdesc = $('.curr p').html(); */
+			
+			            $('.project-details .project-name').html(projectname);
+			            $('.project-label .project-name').html(projectname);
+			/*             $('.project-details .project-description').html(projectdesc); */
+			               
+			               console.log(element);
+			               console.log(index);
+			               console.log(template);
+			               console.log(info);
+			                                               
+			          });
+			          
+			/*           console.log(projectUrl); */
+			          
+			        });
+			    }, 1000);
+		    },
+		    callback: function(){
+			    console.log('All done!');
+		    }
+        
         });
 
 /*         console.log(projectdesc); */
