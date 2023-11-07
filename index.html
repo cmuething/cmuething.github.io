@@ -197,7 +197,9 @@
             // print out project by project images
             var template = $('#project-item').html();
             var info = Mustache.to_html(template, data);
-            $('#full-projects').append(info);
+            if(index = 0) {
+            	$('#full-projects').append(info);
+            }
             
             $('.project-item').first().addClass('curr');
               
