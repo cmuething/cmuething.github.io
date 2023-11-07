@@ -193,14 +193,14 @@
 /*         for (var j = 0; j < thumbNum; j++) { */
 /*           var projectUrl = urlArray[j] */
 
-		var asyncLoop = function(urlArray){
-		    var i=-1,
-		        length = urlArray.length;
+		var asyncLoop = function(o){
+		    var i=urlArray,
+		        length = o.length;
 		    
 		    var loop = function(){
 		        i++;
-		        if(i==length){urlArray.callback(); return;}
-		        urlArray.functionToLoop(loop, i);
+		        if(i==length){o.callback(); return;}
+		        o.functionToLoop(loop, i);
 		    } 
 		    loop();//init
 		}
@@ -236,7 +236,7 @@
 			          
 /* 			        }); */
 			        
-			    }, 1000);
+			    }, 100);
 		    },
 		    callback: function(){
 			    console.log('All done!');
