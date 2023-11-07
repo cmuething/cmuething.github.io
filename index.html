@@ -209,8 +209,8 @@
 			length: 10,
 			functionToLoop: function(loop, i){
 				setTimeout(function(){
-					urlArray.forEach((element, index) => {
-			          $.getJSON(element, function(data) {
+/* 					urlArray.forEach((element, index) => { */
+			          $.getJSON('https://api.behance.net/v2/projects/32486825/?api_key=zWfyjN5rPM1gCo5tbVYSP4I2ToyzKxXL&callback=?', function(data) {
 			            // print out project by project images
 			            var template = $('#project-item').html();
 			            var info = Mustache.to_html(template, data);
@@ -234,7 +234,8 @@
 			          
 			/*           console.log(projectUrl); */
 			          
-			        });
+/* 			        }); */
+			        
 			    }, 1000);
 		    },
 		    callback: function(){
