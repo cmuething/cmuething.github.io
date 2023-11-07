@@ -194,7 +194,7 @@
 /*           var projectUrl = urlArray[j] */
 
 		var asyncLoop = function(o){
-		    var i=0,
+		    var i=-1,
 		        length = o.length;
 		    
 		    var loop = function(){
@@ -205,7 +205,7 @@
 		    loop();//init
 		}
 		
-		console.log(i);
+/* 		console.log(i); */
 		
 		asyncLoop({
 			length: 10,
@@ -228,7 +228,7 @@
 			/*             $('.project-details .project-description').html(projectdesc); */
 			               
 /* 			               console.log(element); */
-			               console.log(index);
+			               console.log(urlArray[i]);
 			               console.log(template);
 			               console.log(info);
 			                                               
