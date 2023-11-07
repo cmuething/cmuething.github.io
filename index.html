@@ -35,7 +35,7 @@
 
 		<script>
 		        
-	        document.onload = function() {
+	        window.onload = function() {
 		         var count1 = $(".scroll").find('img').length;
 		         var count2 = $('.project-element').length;
 		         console.log(count1);
@@ -214,6 +214,8 @@
 /*END TRADITIONAL LOOP TEST*/
 
 /*DECONSTRUCTED LOOP TEST*/
+
+/*It's not looping through, running the first item in the array and then stopping*/
 
 		/*
 var asyncLoop = function(o){
