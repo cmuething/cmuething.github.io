@@ -35,17 +35,17 @@
 
 		<script>
 		        
-	        document.getElementById("tops").onclick = function() {
+	        window.onload = function() {
 		         var count1 = $(".scroll").find('img').length;
 		         var count2 = $('.project-element').length;
 		         console.log(count1);
 		         console.log(count2);
-			     	
-				     document.querySelectorAll('.serial-number').forEach((instance, index) => {
-					     	
-							instance.innerHTML = index+1;
-					     					     	
-				     	});		         		         
+		     	
+			     document.querySelectorAll('.serial-number').forEach((instance, index) => {
+				     	
+						instance.innerHTML = index+1;
+				     					     	
+			     });		         		         
 	        };
                 
         </script>
@@ -193,24 +193,24 @@
 /*         for (var j = 0; j < thumbNum; j++) { */
 /*           var projectUrl = urlArray[j] */
 
-		var asyncLoop = function(o){
+		var asyncLoop = function(urlArray){
 		    var i=-1,
-		        length = o.length;
+		        length = urlArray.length;
 		    
 		    var loop = function(){
 		        i++;
-		        if(i==length){o.callback(); return;}
-		        o.functionToLoop(loop, i);
+		        if(i==length){urlArray.callback(); return;}
+		        urlArray.functionToLoop(loop, i);
 		    } 
 		    loop();//init
 		}
 		
 		asyncLoop({
-			length: 1,
+			length: 10,
 			functionToLoop: function(loop, i){
 				setTimeout(function(){
 /* 					urlArray.forEach((element, index) => { */
-			          $.getJSON('https://api.behance.net/v2/projects/32486825/?api_key=zWfyjN5rPM1gCo5tbVYSP4I2ToyzKxXL&callback=?', function(data) {
+			          $.getJSON(i, function(data) {
 			            // print out project by project images
 			            var template = $('#project-item').html();
 			            var info = Mustache.to_html(template, data);
