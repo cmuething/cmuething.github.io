@@ -196,11 +196,7 @@
           $.getJSON(element, function(data) {
             // print out project by project images
             var template = $('#project-item').html();
-            var info = Mustache.to_html(template, data);
-            if(index.length > 8) {
-            	$('#full-projects').append(info);
-            }
-            
+            var info = Mustache.to_html(template, data);            
             $('.project-item').first().addClass('curr');
               
             var projectname = $('.curr h1').html();
@@ -216,6 +212,10 @@
                console.log(info);
                                                
           });
+          
+            if(index.length > 8) {
+            	$('#full-projects').append(info);
+            }
           
 /*           console.log(projectUrl); */
           
