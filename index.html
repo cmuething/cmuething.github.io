@@ -194,7 +194,7 @@
 /*           var projectUrl = urlArray[j] */
 
 		var asyncLoop = function(o){
-		    var i=urlArray,
+		    var i=0,
 		        length = o.length;
 		    
 		    var loop = function(){
@@ -205,12 +205,14 @@
 		    loop();//init
 		}
 		
+		console.log(i);
+		
 		asyncLoop({
 			length: 10,
 			functionToLoop: function(loop, i){
 				setTimeout(function(){
 /* 					urlArray.forEach((element, index) => { */
-			          $.getJSON(i, function(data) {
+			          $.getJSON(urlArray[i], function(data) {
 			            // print out project by project images
 			            var template = $('#project-item').html();
 			            var info = Mustache.to_html(template, data);
