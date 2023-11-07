@@ -41,13 +41,11 @@
 		         console.log(count1);
 		         console.log(count2);
 			     	
-				     /*
-document.querySelectorAll('.serial-number').forEach((instance, index) => {
+				     document.querySelectorAll('.serial-number').forEach((instance, index) => {
 					     	
 							instance.innerHTML = index+1;
 					     					     	
-				     	});	
-*/	         		         
+				     	});		         		         
 	        };
                 
         </script>
@@ -208,11 +206,11 @@ document.querySelectorAll('.serial-number').forEach((instance, index) => {
 		}
 		
 		asyncLoop({
-			length: 10,
+			length: 1,
 			functionToLoop: function(loop, i){
 				setTimeout(function(){
 /* 					urlArray.forEach((element, index) => { */
-			          $.getJSON(urlArray, function(data) {
+			          $.getJSON('https://api.behance.net/v2/projects/32486825/?api_key=zWfyjN5rPM1gCo5tbVYSP4I2ToyzKxXL&callback=?', function(data) {
 			            // print out project by project images
 			            var template = $('#project-item').html();
 			            var info = Mustache.to_html(template, data);
@@ -239,17 +237,10 @@ document.querySelectorAll('.serial-number').forEach((instance, index) => {
 /* 			        }); */
 			        
 			    }, 1000);
-			    
 		    },
 		    callback: function(){
 			    console.log('All done!');
 		    }
-		    
-		    document.querySelectorAll('.serial-number').forEach((instance, index) => {
-					     	
-				instance.innerHTML = index+1;
-					     					     	
-			});	
         
         });
 
