@@ -194,10 +194,10 @@
 /*           var projectUrl = urlArray[j] */
 
 		var asyncLoop = function(o){
-		    var i=3,
+		    let i=3,
 		        length = o.length;
 		    
-		    var loop = function(){
+		    let loop = function(){
 		        i++;
 		        if(i==length){o.callback(); return;}
 		        o.functionToLoop(loop, i);
@@ -210,7 +210,7 @@
 		asyncLoop({
 			length: 10,
 			functionToLoop: function(loop, i){
-				setTimeout(function(i){
+				setTimeout(function(){
 /* 					urlArray.forEach((element, index) => { */
 			          $.getJSON(urlArray[i], function(data) {
 			            // print out project by project images
