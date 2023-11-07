@@ -193,7 +193,30 @@
 /*         for (var j = 0; j < thumbNum; j++) { */
 /*           var projectUrl = urlArray[j] */
 
-		var asyncLoop = function(o){
+/*TRADITIONAL LOOP TEST*/
+		for (let j = 0; j < thumbNum; j++) {
+          var projectUrl = urlArray[j]
+          $.getJSON(projectUrl, function(data) {
+            var template = $('#project-item').html();
+            var info = Mustache.to_html(template, data);
+            $('#full-projects').append(info);
+            
+            $('.project-item').first().addClass('curr');
+              
+            var projectname = $('.curr h1').html();
+
+            $('.project-details .project-name').html(projectname);
+            $('.project-label .project-name').html(projectname);
+                                               
+          });
+          
+         };
+/*END TRADITIONAL LOOP TEST*/
+
+/*DECONSTRUCTED LOOP TEST*/
+
+		/*
+var asyncLoop = function(o){
 		    let i=3,
 		        length = o.length;
 		    
@@ -204,15 +227,11 @@
 		    } 
 		    loop();//init
 		}
-		
-/* 		console.log(i); */
-		
+				
 		asyncLoop({
 			length: 10,
 			functionToLoop: function(loop, i){
 				setTimeout(function(){
-/* 					urlArray.forEach((element, index) => { */
-				function getMyData( callback ){
 			          $.getJSON(urlArray[i], function(data) {
 			            // print out project by project images
 			            var template = $('#project-item').html();
@@ -222,27 +241,19 @@
 			            $('.project-item').first().addClass('curr');
 			              
 			            var projectname = $('.curr h1').html();
-			/*             var projectdesc = $('.curr p').html(); */
 			
 			            $('.project-details .project-name').html(projectname);
 			            $('.project-label .project-name').html(projectname);
-			/*             $('.project-details .project-description').html(projectdesc); */
 			               
-/* 			               console.log(element); */
+			               console.log(element);
 			               console.log(urlArray[i]);
 			               console.log(template);
 			               console.log(info);
-			               
-			               callback();
-			                                               
+			               			                                               
 			          });
 			          
 			          }
-			          
-			/*           console.log(projectUrl); */
-			          
-/* 			        }); */
-			        
+			          			        
 			    }, 100);
 		    },
 		    callback: function(){
@@ -250,8 +261,9 @@
 		    }
         
         });
+*/
 
-/*         console.log(projectdesc); */
+/*END DECONSTRUCTED LOOP TEST*/
 
         // this should allow for making a project active
         $('.thumbnail a').click(function() {
