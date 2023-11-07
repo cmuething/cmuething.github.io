@@ -212,6 +212,7 @@
 			functionToLoop: function(loop, i){
 				setTimeout(function(){
 /* 					urlArray.forEach((element, index) => { */
+					(function(i) {
 			          $.getJSON(urlArray[i], function(data) {
 			            // print out project by project images
 			            var template = $('#project-item').html();
@@ -233,6 +234,7 @@
 			               console.log(info);
 			                                               
 			          });
+			        })(i);
 			          
 			/*           console.log(projectUrl); */
 			          
