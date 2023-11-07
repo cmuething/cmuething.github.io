@@ -210,7 +210,7 @@
 		asyncLoop({
 			length: 10,
 			functionToLoop: function(loop, i){
-				setTimeout(function(){
+				setTimeout(function(i){
 /* 					urlArray.forEach((element, index) => { */
 			          $.getJSON(urlArray[i], function(data) {
 			            // print out project by project images
