@@ -199,29 +199,37 @@
 /*           var projectUrl = urlArray[j] */
 
 /*TRADITIONAL LOOP TEST*/
+
+		var info = [];
+		
 		for (let j = 0; j < thumbNum; j++) {
           var projectUrl = urlArray[j]
           
           $.getJSON(projectUrl, function(data) {
             var template = $('#project-item').html();
-            var info = Mustache.to_html(template, data);
-            
+            info.push(Mustache.to_html(template, data));
+                        
             //info as an array, go through sequentially
             //done
+                        
+            })
             
-            $('#full-projects').append(info);
-            
-            $('.project-item').first().addClass('curr');
-              
-            var projectname = $('.curr h1').html();
-
-            $('.project-details .project-name').html(projectname);
-            $('.project-label .project-name').html(projectname);
-                                               
+            .done(function(data) {
+	            if (info.length == urlArray.length){
+		            $('#full-projects').append(info);
+		            $('.project-item').first().addClass('curr');
+		              
+		            var projectname = $('.curr h1').html();
+		
+		            $('.project-details .project-name').html(projectname);
+		            $('.project-label .project-name').html(projectname);
+                 
+		            console.log(info);
+                 }                            
           });
           
           console.log(urlArray[j]);
-          console.log(info);
+/*           console.log(info); */
           
          };
 /*END TRADITIONAL LOOP TEST*/
