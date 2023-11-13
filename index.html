@@ -155,6 +155,7 @@
 
 //COMPILING EVERYTHING
 
+		//trying to make in synchronous
         $.ajaxSetup({
 		    async: false
 		});
@@ -200,9 +201,14 @@
 /*TRADITIONAL LOOP TEST*/
 		for (let j = 0; j < thumbNum; j++) {
           var projectUrl = urlArray[j]
+          
           $.getJSON(projectUrl, function(data) {
             var template = $('#project-item').html();
             var info = Mustache.to_html(template, data);
+            
+            //info as an array, go through sequentially
+            //done
+            
             $('#full-projects').append(info);
             
             $('.project-item').first().addClass('curr');
@@ -215,6 +221,7 @@
           });
           
           console.log(urlArray[j]);
+          console.log(info);
           
          };
 /*END TRADITIONAL LOOP TEST*/
