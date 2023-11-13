@@ -202,22 +202,22 @@
 
 		var info = [];
 		var counter = 0;
-		//urlArray
+		
+		addHTMLtoInfoArray(urlArray[0]);
 		
 		function addHTMLtoInfoArray(URL){
 		
-/* 		for (let j = 0; j < thumbNum; j++) { */
-/*           var projectUrl = urlArray[j] */
+			console.log(URL);
           
-          $.getJSON(projectUrl, function(data) {
-                                
-            })
-            
-            .done(function(data) {
-            	counter += 1;
+          $.getJSON(URL, function(data) {
+                 
+                counter += 1;
             
             	var template = $('#project-item').html();
 		        info.push(Mustache.to_html(template, data));
+		        
+		        console.log(data);
+		        console.log(counter);
             
 	            if (counter >= urlArray.length){
 	            
@@ -239,12 +239,10 @@
                  
                 else {
 	                addHTMLtoInfoArray(urlArray[counter])
-                }                           
-          });
-          
-          console.log(urlArray[j]);
-/*           console.log(info); */
-          
+                }
+                               
+            })
+                    
          };
 /*END TRADITIONAL LOOP TEST*/
 
