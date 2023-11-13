@@ -201,32 +201,45 @@
 /*TRADITIONAL LOOP TEST*/
 
 		var info = [];
+		var counter = 0;
+		//urlArray
 		
-		for (let j = 0; j < thumbNum; j++) {
-          var projectUrl = urlArray[j]
+		function addHTMLtoInfoArray(URL){
+		
+/* 		for (let j = 0; j < thumbNum; j++) { */
+/*           var projectUrl = urlArray[j] */
           
           $.getJSON(projectUrl, function(data) {
-            var template = $('#project-item').html();
-            info.push(Mustache.to_html(template, data));
-                        
-            //info as an array, go through sequentially
-            //done
-                        
+                                
             })
             
             .done(function(data) {
-	            if (info.length == urlArray.length){
-		            console.log(info);
+            	counter += 1;
+            
+            	var template = $('#project-item').html();
+		        info.push(Mustache.to_html(template, data));
+            
+	            if (counter >= urlArray.length){
 	            
-		            $('#full-projects').append(info[j]);
-		            $('.project-item').first().addClass('curr');
-		              
-		            var projectname = $('.curr h1').html();
-		
-		            $('.project-details .project-name').html(projectname);
-		            $('.project-label .project-name').html(projectname);
+		            console.log(info);
+		            
+		            for (let j = 0; j < info.length; j++) {
+		            	            
+			            $('#full-projects').append(info[j]);
+			            $('.project-item').first().addClass('curr');
+			              
+			            var projectname = $('.curr h1').html();
+			
+			            $('.project-details .project-name').html(projectname);
+			            $('.project-label .project-name').html(projectname);
+			            
+			         }
                  
-                 }                            
+                 }
+                 
+                else {
+	                addHTMLtoInfoArray(urlArray[counter])
+                }                           
           });
           
           console.log(urlArray[j]);
