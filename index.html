@@ -216,7 +216,9 @@
             
             .done(function(data) {
 	            if (info.length == urlArray.length){
-		            $('#full-projects').append(info);
+		            console.log(info);
+	            
+		            $('#full-projects').append(info[j]);
 		            $('.project-item').first().addClass('curr');
 		              
 		            var projectname = $('.curr h1').html();
@@ -224,7 +226,6 @@
 		            $('.project-details .project-name').html(projectname);
 		            $('.project-label .project-name').html(projectname);
                  
-		            console.log(info);
                  }                            
           });
           
