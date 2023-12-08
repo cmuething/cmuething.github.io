@@ -634,6 +634,10 @@ body {
         background-color: white;
     }
     
+    .connor-info .description {
+	    height: 55vh;
+	}
+    
     #limit-r {
     	height: 100%;
     	transform: translate(0, 0%);
