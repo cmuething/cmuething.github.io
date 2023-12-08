@@ -534,7 +534,7 @@ body {
 @media (max-width: 795px) {
     
     .scroll {
-        height: 85%;
+        height: 100%;
     }
 
     .overview {
@@ -581,6 +581,12 @@ body {
     #tops {
         margin-right: 40px;    
     }
+    
+    .project-item .project-name {
+	    color: red;
+	    filter: drop-shadow(0 0 0.75rem crimson);
+	    z-index: 9999997;
+	}
 
     .project-details {
 
@@ -611,6 +617,8 @@ body {
 	    width: 100%;
 	    text-align: center;
 	    left: 0;
+	    color: red;
+	    filter: drop-shadow(0 0 0.75rem crimson);
     }
     
     .connor-info-toggle {
