@@ -584,8 +584,8 @@ body {
     
     .project-label h1 {
 	    color: red;
-	    filter: drop-shadow(0 0 0.75rem crimson);
-	    z-index: 9999997;
+	    filter: drop-shadow(0 0 0.25rem red);
+	    z-index: 9999998;
 	}
 
     .project-details {
