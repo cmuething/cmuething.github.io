@@ -263,7 +263,7 @@ body {
     width: 100%;
     text-align: center;
     bottom: 2%;
-    z-index: 9998;
+    z-index: 9999998;
     pointer-events: none;
 }
 
