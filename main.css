@@ -650,6 +650,15 @@ body {
     .overview {
 
     }
+    
+    .connor-info .description {
+	    height: 55vh;
+	}
+	
+	.connor-info {
+		left: 0;
+		top: -800px;
+	}
 
     .project-details {
         bottom: -100%;
