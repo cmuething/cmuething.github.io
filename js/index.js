@@ -66,11 +66,32 @@ $(document).ready(function () {
     	var connorInfoWidth = $('.connor-info').width();
         var gradientMove = $('.test'); 
         var myName = $('#connor');
-    	    	
+        var x = window.matchMedia("(max-width: 795px)")
+        
+        function myFunction(x) {
+		  if (x.matches) { // If media query matches
+		     	
+	    	connorInfo.animate({
+		    	top: "0px"
+	    	}, 250);	
+
+		  } else {
+		     	
 	    	connorInfo.animate({
 		    	left: "0px"
-	    	});	
-            
+	    	}, 250);	
+
+		  }
+		}
+				
+		// Call listener function at run time
+		myFunction(x);
+		
+		// Attach listener function on state changes
+		x.addEventListener("change", function() {
+		  myFunction(x);
+		});
+    	               
             myName.addClass('keep-name');
     });
     
@@ -81,14 +102,35 @@ $(document).ready(function () {
         var gradientMove = $('.test');
     	var connorInfoWidth = $('.connor-info').width();
         var myName = $('#connor');
+        var x = window.matchMedia("(max-width: 795px)")
         
+        function myFunction(x) {
+		  if (x.matches) { // If media query matches
+		     	
+	    	connorInfo.animate({
+		    	top: "-800px"
+	    	}, 250);
+
+		  } else {
+		     	
 	    	connorInfo.animate({
 		    	left: "-800px"
-	    	}, 250);
+	    	}, 250);	
+
+		  }
+		}
+		
+		// Call listener function at run time
+		myFunction(x);
+		
+		// Attach listener function on state changes
+		x.addEventListener("change", function() {
+		  myFunction(x);
+		});
         
-            gradientMove.removeClass('gradient');
-        
-            myName.removeClass('keep-name');
+        gradientMove.removeClass('gradient');
+    
+        myName.removeClass('keep-name');
     });
 });
 
@@ -276,6 +318,3 @@ $('.overview-toggle').click(function () {
 //    $('.tumblr #icon').addClass("fa-tumblr-square");
 //    
 //});
-
-
-    
