@@ -293,6 +293,7 @@ body {
     z-index: 9999999;
     box-sizing: border-box;
     overflow: scroll;
+	pointer-events: none;
 }
 
 .project-details p {
